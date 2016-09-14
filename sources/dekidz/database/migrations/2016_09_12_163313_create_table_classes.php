@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableDepartementInfoTable extends Migration
+class CreateTableClasses extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,13 @@ class CreateTableDepartementInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('departement_info', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('chief_id');
+            $table->integer('teacher_id');
+            $table->string('room_number');
+            $table->integer('grade_id');
+            $table->string('accountability');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateTableDepartementInfoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('departement_info');
+        Schema::drop('classes');
     }
 }

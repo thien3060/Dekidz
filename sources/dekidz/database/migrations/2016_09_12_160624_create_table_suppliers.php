@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableStandardIndexesTable extends Migration
+class CreateTableSuppliers extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,11 @@ class CreateTableStandardIndexesTable extends Migration
      */
     public function up()
     {
-        Schema::create('standard_indexes', function (Blueprint $table) {
+        Schema::create('suppliers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('months');
-            $table->float('height');
-            $table->float('weight');
-            $table->float('bmi');
+            $table->string('name');
+            $table->string('type');
+            $table->string('product_type');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateTableStandardIndexesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('standard_indexes');
+        Schema::drop('suppliers');
     }
 }

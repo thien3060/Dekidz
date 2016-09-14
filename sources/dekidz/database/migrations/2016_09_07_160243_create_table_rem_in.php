@@ -23,13 +23,6 @@ class CreateTableRemIn extends Migration
             $table->text('in_note');
             $table->boolean('in_status');
             $table->timestamps();
-            $table->primary('id');
-
-            //command tao migration: php artisan make:migration create_table_rem_in --create=rem_in
-            //id trong tat ca bang deu dat la' "id" het nha
-            //bang nao cung co timestamp het'
-            //thong nhat' dat ten viet' thuong' het'
-            //kieu varchar tren 255 thi' dat. la text
         });
     }
 

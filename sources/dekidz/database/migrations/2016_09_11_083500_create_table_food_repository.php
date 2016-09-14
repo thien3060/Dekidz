@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableAssetOverviewTable extends Migration
+class CreateTableFoodRepository extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateTableAssetOverviewTable extends Migration
      */
     public function up()
     {
-        Schema::create('asset_overview', function (Blueprint $table) {
+        Schema::create('food_repository', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('quantity');
-            $table->string('supplier');
-            $table->date('import_date');
-            $table->string('maintenance_mode');
+            $table->date('input_date');
             $table->string('unit');
+            $table->integer('quantity');
+            $table->float('cost');
+            $table->text('supplier');
+            $table->date('expired_date');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateTableAssetOverviewTable extends Migration
      */
     public function down()
     {
-        Schema::drop('asset_overview');
+        Schema::drop('food_repository');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableStudentsTable extends Migration
+class CreateTableStudents extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +18,7 @@ class CreateTableStudentsTable extends Migration
             $table->string('name');
             $table->text('address');
             $table->string('nation');
-            $table->string('regilion');
+            $table->string('religion');
             $table->string('father_name');
             $table->date('father_dob');
             $table->string('father_job');

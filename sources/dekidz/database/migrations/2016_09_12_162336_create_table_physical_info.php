@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableSupplierDetailTable extends Migration
+class CreateTablePhysicalInfo extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,14 @@ class CreateTableSupplierDetailTable extends Migration
      */
     public function up()
     {
-        Schema::create('supplier_detail', function (Blueprint $table) {
+        Schema::create('physical_info', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('type');
-            $table->string('product_type');
+            $table->integer('student_id');
+            $table->string('gender');
+            $table->integer('months');
+            $table->float('height');
+            $table->float('weight');
+            $table->float('BMI');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateTableSupplierDetailTable extends Migration
      */
     public function down()
     {
-        Schema::drop('supplier_detail');
+        Schema::drop('physical_info');
     }
 }

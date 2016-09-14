@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableStaffInfoTable extends Migration
+class CreateTableStaffs extends Migration
 {
     /**
      * Run the migrations.
@@ -18,10 +18,10 @@ class CreateTableStaffInfoTable extends Migration
             $table->string('name');
             $table->string('gender');
             $table->date('dob');
-            $table->string('indentity_card');
+            $table->string('identity_card');
             $table->string('religion');
             $table->string('address');
-            $table->string('departement_id');
+            $table->string('department_id');
             $table->boolean('is_teacher');
             $table->string('issued_by');
             $table->date('date_range');
@@ -38,7 +38,7 @@ class CreateTableStaffInfoTable extends Migration
             $table->string('mother_phone');
             $table->string('father_phone');
             $table->string('picture');
-            $table->boolean('is_leagurer');
+            $table->boolean('is_leaguer');
             $table->string('working_status');
             $table->date('start_day');
             $table->string('type_of_contract');
