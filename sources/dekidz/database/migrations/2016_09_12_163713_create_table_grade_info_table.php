@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKmStandardIndexesTable extends Migration
+class CreateTableGradeInfoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,9 @@ class CreateKmStandardIndexesTable extends Migration
      */
     public function up()
     {
-        Schema::create('km_standard_indexes', function (Blueprint $table) {
+        Schema::create('grade_info', function (Blueprint $table) {
             $table->increments('id', true);
-            $table->integer('months');
-            $table->float('height');
-            $table->float('weight');
-            $table->float('bmi');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateKmStandardIndexesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('grade_info');
     }
 }

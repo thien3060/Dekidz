@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDdAssetOverviewTable extends Migration
+class CreateTableMenuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,12 @@ class CreateDdAssetOverviewTable extends Migration
      */
     public function up()
     {
-        Schema::create('am_asset_overview', function (Blueprint $table) {
+        Schema::create('menu', function (Blueprint $table) {
             $table->increments('id', true);
-            $table->string('name');
-            $table->integer('quantity');
-            $table->string('supplier');
-            $table->date('import_date');
-            $table->string('maintenance_mode');
-            $table->string('unit');
+            $table->date('date');
+            $table->integer('breakfast_id');
+            $table->integer('lunch_id');
+            $table->integer('mid_afternoon_id');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateDdAssetOverviewTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('menu');
     }
 }

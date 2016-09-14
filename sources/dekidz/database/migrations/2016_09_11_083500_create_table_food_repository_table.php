@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDdMenuTable extends Migration
+class CreateTableFoodRepositoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,14 @@ class CreateDdMenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('dd_menu', function (Blueprint $table) {
+        Schema::create('food_repository', function (Blueprint $table) {
             $table->increments('id', true);
-            $table->date('date');
-            $table->integer('breakfast_id');
-            $table->integer('lunch_id');
-            $table->integer('mid_afternoon_id');
+            $table->date('input_date');
+            $table->string('unit');
+            $table->integer('quantity');
+            $table->float('cost');
+            $table->text('supplier');
+            $table->date('expired_date');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateDdMenuTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('food_repository');
     }
 }

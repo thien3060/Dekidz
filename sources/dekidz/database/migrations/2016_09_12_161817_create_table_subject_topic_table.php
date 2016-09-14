@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDdPhysicalInfoTable extends Migration
+class CreateTableSubjectTopicTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,9 @@ class CreateDdPhysicalInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('km_physical_info', function (Blueprint $table) {
+        Schema::create('subject_topic', function (Blueprint $table) {
             $table->increments('id', true);
-            $table->int('student_id');
-            $table->string('gender');
-            $table->integer('months');
-            $table->float('height');
-            $table->float('weight');
-            $table->float('BMI');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ class CreateDdPhysicalInfoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('subject_topic');
     }
 }

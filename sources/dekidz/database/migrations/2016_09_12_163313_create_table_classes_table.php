@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDdTeachScheduleTable extends Migration
+class CreateTableClassesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,13 @@ class CreateDdTeachScheduleTable extends Migration
      */
     public function up()
     {
-        Schema::create('tm_teach_schedule', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->increments('id', true);
-            $table->string('day');
-            $table->date('date');
-            $table->string('morning_lesson');
-            $table->string('morning_teacher');
-            $table->string('afternoon_lesson');
-            $table->string('afternoon_teacher');
+            $table->string('name');
+            $table->integer('teacher_id');
+            $table->string('room_number');
+            $table->integer('grade_id');
+            $table->string('accountability');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateDdTeachScheduleTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('classes');
     }
 }

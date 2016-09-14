@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDdDishTypeTable extends Migration
+class CreateTableAssetOverviewTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,14 @@ class CreateDdDishTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('dd_dish_type', function (Blueprint $table) {
+        Schema::create('asset_overview', function (Blueprint $table) {
             $table->increments('id', true);
             $table->string('name');
+            $table->integer('quantity');
+            $table->string('supplier');
+            $table->date('import_date');
+            $table->string('maintenance_mode');
+            $table->string('unit');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateDdDishTypeTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('asset_overview');
     }
 }

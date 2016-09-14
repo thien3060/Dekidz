@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDdSubjectTopicTable extends Migration
+class CreateTableStandardIndexesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,12 @@ class CreateDdSubjectTopicTable extends Migration
      */
     public function up()
     {
-        Schema::create('tm_subject_topic', function (Blueprint $table) {
+        Schema::create('standard_indexes', function (Blueprint $table) {
             $table->increments('id', true);
-            $table->string('name');
+            $table->integer('months');
+            $table->float('height');
+            $table->float('weight');
+            $table->float('bmi');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateDdSubjectTopicTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('standard_indexes');
     }
 }

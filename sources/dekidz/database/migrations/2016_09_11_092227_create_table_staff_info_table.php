@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDdStaffInfoTable extends Migration
+class CreateTableStaffInfoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateDdStaffInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('sm_staffs', function (Blueprint $table) {
+        Schema::create('staffs', function (Blueprint $table) {
             $table->increments('id',true);
             $table->string('number');
             $table->string('name');
@@ -53,6 +53,6 @@ class CreateDdStaffInfoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('staffs');
     }
 }
