@@ -13,7 +13,7 @@ class CreateTableFoodDeposit extends Migration
     public function up()
     {
         Schema::create('food_deposit', function (Blueprint $table) {
-            $table->increments('id', true);
+            $table->increments('id');
             $table->string('type', 10);
             $table->string('name');
             $table->date('input_date');

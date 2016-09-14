@@ -13,7 +13,7 @@ class CreateTablePhysicalInfoTable extends Migration
     public function up()
     {
         Schema::create('physical_info', function (Blueprint $table) {
-            $table->increments('id', true);
+            $table->increments('id');
             $table->int('student_id');
             $table->string('gender');
             $table->integer('months');

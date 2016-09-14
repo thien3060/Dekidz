@@ -13,7 +13,7 @@ class CreateTableGradeInfoTable extends Migration
     public function up()
     {
         Schema::create('grade_info', function (Blueprint $table) {
-            $table->increments('id', true);
+            $table->increments('id');
             $table->string('name');
             $table->timestamps();
         });

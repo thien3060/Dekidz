@@ -13,13 +13,13 @@ class CreateTableTeachScheduleTable extends Migration
     public function up()
     {
         Schema::create('teach_schedule', function (Blueprint $table) {
-            $table->increments('id', true);
+            $table->increments('id');
             $table->string('day');
             $table->date('date');
-            $table->string('morning_lesson');
-            $table->string('morning_teacher');
-            $table->string('afternoon_lesson');
-            $table->string('afternoon_teacher');
+            $table->integer('morning_lesson_id');
+            $table->integer('morning_teacher_id');
+            $table->interger('afternoon_lesson_id');
+            $table->interger('afternoon_teacher_id');
             $table->timestamps();
         });
     }

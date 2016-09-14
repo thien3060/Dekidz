@@ -13,7 +13,7 @@ class CreateTableStaffInfoTable extends Migration
     public function up()
     {
         Schema::create('staffs', function (Blueprint $table) {
-            $table->increments('id',true);
+            $table->increments('id');
             $table->string('number');
             $table->string('name');
             $table->string('gender');

@@ -13,7 +13,7 @@ class CreateTableAssetOverviewTable extends Migration
     public function up()
     {
         Schema::create('asset_overview', function (Blueprint $table) {
-            $table->increments('id', true);
+            $table->increments('id');
             $table->string('name');
             $table->integer('quantity');
             $table->string('supplier');

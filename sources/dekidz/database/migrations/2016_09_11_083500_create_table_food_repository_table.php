@@ -13,7 +13,7 @@ class CreateTableFoodRepositoryTable extends Migration
     public function up()
     {
         Schema::create('food_repository', function (Blueprint $table) {
-            $table->increments('id', true);
+            $table->increments('id');
             $table->date('input_date');
             $table->string('unit');
             $table->integer('quantity');

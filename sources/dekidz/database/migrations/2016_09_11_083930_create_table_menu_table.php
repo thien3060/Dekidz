@@ -13,7 +13,7 @@ class CreateTableMenuTable extends Migration
     public function up()
     {
         Schema::create('menu', function (Blueprint $table) {
-            $table->increments('id', true);
+            $table->increments('id');
             $table->date('date');
             $table->integer('breakfast_id');
             $table->integer('lunch_id');

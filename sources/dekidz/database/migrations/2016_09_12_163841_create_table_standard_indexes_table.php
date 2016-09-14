@@ -13,7 +13,7 @@ class CreateTableStandardIndexesTable extends Migration
     public function up()
     {
         Schema::create('standard_indexes', function (Blueprint $table) {
-            $table->increments('id', true);
+            $table->increments('id');
             $table->integer('months');
             $table->float('height');
             $table->float('weight');

@@ -13,7 +13,7 @@ class CreateTableLessonProgramTable extends Migration
     public function up()
     {
         Schema::create('lesson_program', function (Blueprint $table) {
-            $table->increments('id', true);
+            $table->increments('id');
             $table->integer('subject_topic_id');
             $table->string('lesson_name');
             $table->text('lesson_goal');
