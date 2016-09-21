@@ -31,6 +31,7 @@ class CreateTableStudents extends Migration
             $table->string('admission_date');
             $table->string('completion_date');
             $table->string('note');
+            $table->string('entry_card',15);
             $table->timestamps();
         });
     }

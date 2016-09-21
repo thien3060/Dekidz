@@ -16,6 +16,7 @@ class CreateTableTeachSchedules extends Migration
             $table->increments('id');
             $table->string('day');
             $table->date('date');
+            $table->integer('class_id');
             $table->integer('morning_lesson_id');
             $table->integer('morning_teacher_id');
             $table->integer('afternoon_lesson_id');
