@@ -1,0 +1,10 @@
+http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/
+https://github.com/pingpong-labs/docs/blob/2.2/trusty.md
+https://github.com/laravel/socialite
+https://github.com/heroicpixels/filterable
+http://laravel-breadcrumbs.davejamesmiller.com/en/latest/
+http://image.intervention.io/getting_started/introduction
+https://github.com/mewebstudio/Purifier
+https://github.com/jenssegers/agent
+https://github.com/spatie/laravel-backup
+https://github.com/rap2hpoutre/laravel-log-viewer

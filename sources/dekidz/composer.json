@@ -7,13 +7,27 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "pingpong/admin": "^2.1"
+        "pingpong/admin": "^2.1",
+        "barryvdh/laravel-debugbar": "^2.2",
+        "laravel/socialite": "^2.0",
+        "heroicpixels/filterable": "dev-master",
+        "davejamesmiller/laravel-breadcrumbs": "^3.0",
+        "intervention/image": "^2.3",
+        "intervention/imagecache": "^2.3",
+        "mews/purifier": "^2.0",
+        "maatwebsite/excel": "^2.1",
+        "jenssegers/agent": "^2.3",
+        "spatie/laravel-backup": "^3.10",
+        "dingo/api": "1.0.x@dev",
+        "rap2hpoutre/laravel-log-viewer": "^0.7.0",
+        "yajra/laravel-datatables-oracle": "~6.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1"
+        "phpspec/phpspec": "~2.1",
+        "laracasts/generators": "^1.1"
     },
     "autoload": {
         "classmap": [
