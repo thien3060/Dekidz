@@ -23,29 +23,45 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 <h1><img src="images/logo.png" alt="logo"></h1>
             </a>
 
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="index.html">Trang chủ</a></li>
-                <li><a href="blogone.html">Thế giới của bé</a></li>
+                <li {{ (Request::is('/') ? 'class=active' : '') }}>
+                    <a href="/">Trang chủ</a>
+                </li>
+                <li {{ (Request::is('blogone') ? 'class=active' : '') }}>
+                    <a href="/blogone">Thế giới của bé</a>
+                </li>
                 <li class="dropdown"><a href="#">Giới thiệu<i class="fa fa-angle-down"></i></a>
                     <ul role="menu" class="sub-menu">
-                        <li><a href="aboutus.html">Giới thiệu về trường</a></li>
-                        <li><a href="aboutus2.html">Đội ngũ giáo viên</a></li>
-                        <li><a href="service.html">Cơ sở vật chất</a></li>
-                        <li><a href="pricing.html">Học phí</a></li>
-                        <li><a href="coming-soon.html">Tuyển dụng</a></li>
-                        <!--<li><a href="contact2.html">Contact us 2</a></li>
-                        <li><a href="404.html">404 error</a></li>-->
+                        <li {{ (Request::is('aboutus') ? 'class=active' : '') }}>
+                            <a href="/aboutus">Giới thiệu về trường</a>
+                        </li>
+                        <li {{ (Request::is('aboutus2') ? 'class=active' : '') }}>
+                            <a href="/aboutus2">Đội ngũ giáo viên</a>
+                        </li>
+                        <li {{ (Request::is('service') ? 'class=active' : '') }}>
+                            <a href="/service">Cơ sở vật chất</a>
+                        </li>
+                        <li {{ (Request::is('pricing') ? 'class=active' : '') }}>
+                            <a href="/pricing">Học phí</a>
+                        </li>
+                        <li>
+                            <a href="/coming-soon">Tuyển dụng</a>
+                        </li>
                     </ul>
                 </li>
-                <li><a href="blog.html">Góc phụ huynh</a></li>
-                <li><a href="coming-soon.html">Tuyển sinh</a></li>
-                <li><a href="contact.html">Liên hệ</a></li>
+                <li {{ (Request::is('blog') ? 'class=active' : '') }}>
+                    <a href="/blog">Góc phụ huynh</a>
+                </li>
+                <li><a href="/coming-soon">Tuyển sinh</a></li>
+                <li {{ (Request::is('contact') ? 'class=active' : '') }}>
+                    <a href="/contact">Liên hệ</a>
+                </li>
             </ul>
         </div>
         <div class="search">
