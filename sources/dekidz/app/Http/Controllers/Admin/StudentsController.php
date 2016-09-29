@@ -15,7 +15,7 @@ class StudentsController extends BaseController
      */
     public function index()
     {
-        //
+        return view('admin.pages.students.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class StudentsController extends BaseController
      */
     public function create()
     {
-        //
+        return view('admin.pages.students.create');
     }
 
     /**
