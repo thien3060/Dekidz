@@ -5,9 +5,28 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
 
 class StudentsController extends BaseController
 {
+    protected $students;
+
+    public function __construct()
+    {
+        $this->repository = $this->getRepository();
+    }
+
+    /**
+     * Get repository instance.
+     *
+     * @return mixed
+     */
+    public function getRepository()
+    {
+        $repository = 'App\Repositories\Contracts\StudentRepository';
+        return app($repository);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +34,11 @@ class StudentsController extends BaseController
      */
     public function index()
     {
-        return view('admin.pages.students.index');
+        $students = $this->repository->allOrSearch(Input::get('q'));
+
+        $no = $students->firstItem();
+
+        return $this->view('pages.students.index', compact('students', 'no'));
     }
 
     /**

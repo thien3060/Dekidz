@@ -17,6 +17,10 @@ return [
         'model' => 'Pingpong\Admin\Entities\Article',
         'perpage' => 10
     ],
+    'student' => [
+        'model' => 'App\Models\Student',
+        'perpage' => 10
+    ],
     'page' => [
         'perpage' => 10
     ],
