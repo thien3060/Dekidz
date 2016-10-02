@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Validation\Student;
+
+use App\Validation\Validator;
+
+class UpdateRequest extends Validator
+{
+    public function rules()
+    {
+        return [
+            'name' => 'required|min:5',
+            'dob' => 'required|date',
+            'address' => 'required',
+            'father_name' => 'required|min:5',
+            'mother_name' => 'required|min:5',
+            'father_phone' => 'required|regex:/(01)[0-9]{9}/',
+            'mother_phone' => 'required|regex:/(01)[0-9]{9}/',
+            'admission_date' => 'required|date',
+            'completion_date' => 'required|date',
+            'entry_card' => 'required|numeric',
+        ];
+    }
+}

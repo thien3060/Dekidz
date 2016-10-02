@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Validation\Student\CreateRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 
 class StudentsController extends BaseController
 {
@@ -57,9 +59,23 @@ class StudentsController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateRequest $request)
     {
-        //
+        $data = $request->all();
+
+        /*unset($data['image']);
+
+        if (\Input::hasFile('image')) {
+            // upload image
+            $this->uploader->upload('image')->save('images/articles');
+
+            $data['image'] = $this->uploader->getFilename();
+        }
+
+        $data['user_id'] = \Auth::id();*/
+        $this->repository->create($data);
+
+        return $this->redirect('students.index');
     }
 
     /**

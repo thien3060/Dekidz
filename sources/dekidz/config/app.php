@@ -161,6 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
         App\Providers\RepositoriesServiceProvider::class,
+        App\Providers\HelpersServiceProvider::class,
 
     ],
 
@@ -218,6 +219,7 @@ return [
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
 
+        'DateHelper' => App\Helpers\DateHelper::class,
     ],
 
 ];

@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Helpers\DateHelper;
 use App\Repositories\Contracts\StudentRepository;
 
 class EloquentStudentRepository implements StudentRepository
@@ -64,6 +65,13 @@ class EloquentStudentRepository implements StudentRepository
 
     public function create(array $data)
     {
+        //Date convert
+        $data['dob'] = DateHelper::sqlDateFormat($data['dob']);
+        $data['admission_date'] = DateHelper::sqlDateFormat($data['admission_date']);
+        $data['completion_date'] = DateHelper::sqlDateFormat($data['completion_date']);
+        $data['father_dob'] = DateHelper::sqlDateFormat($data['father_dob']);
+        $data['mother_dob'] = DateHelper::sqlDateFormat($data['mother_dob']);
+
         return $this->getModel()->create($data);
     }
 
