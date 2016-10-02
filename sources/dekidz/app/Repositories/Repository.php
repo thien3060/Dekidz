@@ -73,4 +73,14 @@ interface Repository
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function create(array $data);
+
+    /**
+     * Update new data.
+     *
+     * @param array $data
+     * @param $id
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function update(array $data, $id);
 }

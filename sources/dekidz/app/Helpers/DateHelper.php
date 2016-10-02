@@ -10,4 +10,11 @@ class DateHelper {
         }
         return "";
     }
+
+    public static function normalDateFormat($date) {
+        if ($date) {
+            return  date('m/d/Y', strtotime($date));
+        }
+        return "";
+    }
 }

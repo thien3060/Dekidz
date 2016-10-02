@@ -35,8 +35,8 @@
                 <td>{!! $student->entry_card !!}</td>
                 <td class="text-center">
                     <a href="{!! route('admin.students.edit', $student->id) !!}">Edit</a>
-                    {{--&middot;--}}
-                    {{--@include('admin::partials.modal', ['data' => $article, 'name' => 'articles'])--}}
+                    &middot;
+                    @include('admin::partials.modal', ['data' => $student, 'name' => 'students'])
                 </td>
             </tr>
             <?php $no++ ;?>

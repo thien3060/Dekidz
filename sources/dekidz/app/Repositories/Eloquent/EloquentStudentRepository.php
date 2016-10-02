@@ -75,6 +75,20 @@ class EloquentStudentRepository implements StudentRepository
         return $this->getModel()->create($data);
     }
 
+    public function update(array $data, $id)
+    {
+        $student = $this->findById($id);
+        
+        //Date convert
+        $data['dob'] = DateHelper::sqlDateFormat($data['dob']);
+        $data['admission_date'] = DateHelper::sqlDateFormat($data['admission_date']);
+        $data['completion_date'] = DateHelper::sqlDateFormat($data['completion_date']);
+        $data['father_dob'] = DateHelper::sqlDateFormat($data['father_dob']);
+        $data['mother_dob'] = DateHelper::sqlDateFormat($data['mother_dob']);
+
+        return $student->update($data);
+    }
+
     public function getStudent()
     {
         return $this->getModel();

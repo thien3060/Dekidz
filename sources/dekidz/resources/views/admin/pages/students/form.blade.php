@@ -1,4 +1,8 @@
-{!! Form::open(['files' => true, 'route' => 'admin.students.store']) !!}
+@if(isset($model))
+    {!! Form::model($model, ['method' => 'PUT', 'files' => true, 'route' => ['admin.students.update', $model->id]]) !!}
+@else
+    {!! Form::open(['files' => true, 'route' => 'admin.students.store']) !!}
+@endif
 <div class="row">
     <div class="col-sm-6">
         <div class="form-group">
