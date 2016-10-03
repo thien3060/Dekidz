@@ -16,7 +16,7 @@
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                 </div>
-                {!! Form::date('dob', null, ['class' => 'form-control']) !!}
+                {!! Form::text('dob', null, ['class' => 'form-control date-picker']) !!}
             </div>
             {!! $errors->first('dob', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -41,7 +41,7 @@
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                 </div>
-                {!! Form::date('admission_date', null, ['class' => 'form-control']) !!}
+                {!! Form::text('admission_date', null, ['class' => 'form-control date-picker']) !!}
             </div>
             {!! $errors->first('admission_date', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -51,7 +51,7 @@
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                 </div>
-                {!! Form::date('completion_date', null, ['class' => 'form-control']) !!}
+                {!! Form::text('completion_date', null, ['class' => 'form-control date-picker']) !!}
             </div>
             {!! $errors->first('completion_date', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -73,7 +73,7 @@
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                 </div>
-                {!! Form::date('father_dob', null, ['class' => 'form-control']) !!}
+                {!! Form::text('father_dob', null, ['class' => 'form-control date-picker']) !!}
             </div>
             {!! $errors->first('father_dob', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -98,7 +98,7 @@
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                 </div>
-                {!! Form::date('mother_dob', null, ['class' => 'form-control']) !!}
+                {!! Form::text('mother_dob', null, ['class' => 'form-control date-picker']) !!}
             </div>
             {!! $errors->first('mother_dob', '<div class="text-danger">:message</div>') !!}
         </div>

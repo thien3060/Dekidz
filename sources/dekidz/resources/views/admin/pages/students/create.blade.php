@@ -21,7 +21,7 @@
     {!! script('vendor/ckfinder/ckfinder.js') !!}
 
     <script>
-        $('input[type="date"]').datepicker({
+        $('.date-picker').datepicker({
             autoclose: true
         });
 
