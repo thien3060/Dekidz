@@ -93,3 +93,8 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         return "time table page";
     }]);
 });
+
+Route::get('oauth/google', 'OAuthController@redirectToGoogleProvider')->name('login.google');
+Route::get('oauth/google/callback', 'OAuthController@handleGoogleProviderCallback');
+Route::get('oauth/facebook', 'OAuthController@redirectToFacebookProvider')->name('login.facebook');
+Route::get('oauth/facebook/callback', 'OAuthController@handleFacebookProviderCallback');

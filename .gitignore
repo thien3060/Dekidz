@@ -1,4 +1,5 @@
 vendor/
+!sources/dekidz/resources/views/vendor/
 node_modules/
 .idea/
 
