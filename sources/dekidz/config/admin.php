@@ -29,6 +29,13 @@ return [
         'model' => 'App\Models\Dish',
         'perpage' => 10
     ],
+
+    'food' => [
+        'model' => 'App\Models\Food',
+        'perpage' => 10
+    ],
+
+
     'page' => [
         'perpage' => 10
     ],

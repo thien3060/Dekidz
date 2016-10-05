@@ -2,40 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebcb4793-154f-47a9-a6a7-de460c4bb65d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/ClassesController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Validation/DekidzClass/CreateRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Validation/Dish/CreateRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Validation/Food/CreateRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Models/DekidzClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Repositories/Contracts/DekidzClassRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Models/Dish.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Repositories/Contracts/DishRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/DishesController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Repositories/Eloquent/EloquentDekidzClassRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Repositories/Eloquent/EloquentDishRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Repositories/Eloquent/EloquentFoodRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Models/Food.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Repositories/Contracts/FoodRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/FoodsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Validation/DekidzClass/UpdateRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Validation/Dish/UpdateRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/app/Validation/Food/UpdateRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/classes/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/dishes/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/foods/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/classes/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/dishes/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/foods/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/classes/form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/dishes/form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/foods/form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/classes/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/dishes/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/foods/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/dekidz/app/Providers/RepositoriesServiceProvider.php" afterPath="$PROJECT_DIR$/sources/dekidz/app/Providers/RepositoriesServiceProvider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/dekidz/config/admin.php" afterPath="$PROJECT_DIR$/sources/dekidz/config/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/dekidz/app/Http/routes.admin.php" afterPath="$PROJECT_DIR$/sources/dekidz/app/Http/routes.admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sources/dekidz/app/menus.php" afterPath="$PROJECT_DIR$/sources/dekidz/app/menus.php" />
     </list>
     <ignored path="Dekidz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,8 +29,8 @@
       <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sources/dekidz/config/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.254902">
-              <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+            <state vertical-scroll-proportion="-6.1764708">
+              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -70,9 +39,11 @@
       <file leaf-file-name="FoodsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/FoodsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding />
+            <state vertical-scroll-proportion="-5.625">
+              <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+              <folding>
+                <element signature="e#46#84#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,8 +51,8 @@
       <file leaf-file-name="RepositoriesServiceProvider.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Providers/RepositoriesServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7504951">
-              <caret line="58" column="51" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.56435645">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -90,8 +61,8 @@
       <file leaf-file-name="routes.admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Http/routes.admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-33.75">
-              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -107,51 +78,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sources/dekidz/resources/views/vendor/pingpong/admin/partials/style.blade.php">
+      <file leaf-file-name="StudentsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/StudentsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-13.125">
+              <caret line="39" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/foods/create.blade.php">
+      <file leaf-file-name="menus.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sources/dekidz/app/menus.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="16" column="3" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="3" />
+            <state vertical-scroll-proportion="-13.75">
+              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/foods/edit.blade.php">
+      <file leaf-file-name="FoodRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Repositories/Contracts/FoodRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.791667">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="13" />
+            <state vertical-scroll-proportion="-1.875">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/foods/form.blade.php">
+      <file leaf-file-name="EloquentFoodRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Repositories/Eloquent/EloquentFoodRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.791667">
-              <caret line="180" column="17" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sources/dekidz/resources/views/vendor/pingpong/admin/partials/sidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.75">
-              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            <state vertical-scroll-proportion="-0.625">
+              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -165,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sources/dekidz/resources/views/frontend/pages/about.blade.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/resources/views/frontend/pages/blogone.blade.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/resources/views/frontend/pages/aboutus2.blade.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/resources/views/frontend/pages/service.blade.php" />
@@ -203,7 +163,6 @@
         <option value="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/classes/edit.blade.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/FoodsController.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/app/Models/Food.php" />
-        <option value="$PROJECT_DIR$/sources/dekidz/app/Providers/RepositoriesServiceProvider.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/app/Repositories/Contracts/FoodRepository.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/app/Repositories/Eloquent/EloquentFoodRepository.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/app/Validation/Food/UpdateRequest.php" />
@@ -214,8 +173,10 @@
         <option value="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/food/index.blade.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/food/form.blade.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/app/Http/routes.admin.php" />
-        <option value="$PROJECT_DIR$/sources/dekidz/config/admin.php" />
         <option value="$PROJECT_DIR$/sources/dekidz/resources/views/vendor/pingpong/admin/partials/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/sources/dekidz/config/admin.php" />
+        <option value="$PROJECT_DIR$/sources/dekidz/app/menus.php" />
+        <option value="$PROJECT_DIR$/sources/dekidz/app/Providers/RepositoriesServiceProvider.php" />
       </list>
     </option>
   </component>
@@ -318,86 +279,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dekidz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dekidz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dekidz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pingpong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dekidz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dekidz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dekidz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pingpong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1053,29 +934,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sources/dekidz/resources/views/admin/pages/students/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Repositories/Contracts/DekidzClassRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.375">
           <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/StudentsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875">
-          <caret line="19" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding>
-            <element signature="e#46#87#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1345,26 +1208,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Repositories/Eloquent/EloquentFoodRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Repositories/Contracts/DishRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Repositories/Contracts/FoodRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1417,46 +1264,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/dekidz/resources/views/vendor/pingpong/admin/partials/style.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/dekidz/resources/views/vendor/pingpong/admin/partials/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/dekidz/config/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.254902">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/FoodsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Http/routes.admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.75">
-          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Providers/RouteServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="10.208333">
@@ -1465,10 +1272,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sources/dekidz/config/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.1764708">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/StudentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="39" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Http/Controllers/Admin/FoodsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+          <folding>
+            <element signature="e#46#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Http/routes.admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/menus.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Repositories/Contracts/FoodRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Repositories/Eloquent/EloquentFoodRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sources/dekidz/app/Providers/RepositoriesServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7504951">
-          <caret line="58" column="51" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.56435645">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding />
         </state>
       </provider>

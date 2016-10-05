@@ -16,7 +16,8 @@ class RepositoriesServiceProvider extends ServiceProvider
     protected $entities = [
         'Student',
         'DekidzClass',
-        'Dish'
+        'Dish',
+        'Food'
     ];
 
     /**
