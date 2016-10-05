@@ -14,7 +14,9 @@ class RepositoriesServiceProvider extends ServiceProvider
     protected $defer = false;
 
     protected $entities = [
-        'Student'
+        'Student',
+        'DekidzClass',
+        'Dish'
     ];
 
     /**
@@ -32,6 +34,29 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\StudentRepository',
             'App\Repositories\Eloquent\EloquentStudentRepository'
+        );
+    }
+
+    protected function bindDekidzClassRepository() {
+        $this->app->bind(
+            'App\Repositories\Contracts\DekidzClassRepository',
+            'App\Repositories\Eloquent\EloquentDekidzClassRepository'
+        );
+    }
+
+    protected function bindDishRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\DishRepository',
+            'App\Repositories\Eloquent\EloquentDishRepository'
+        );
+    }
+
+    protected function bindFoodRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\FoodRepository',
+            'App\Repositories\Eloquent\EloquentFoodRepository'
         );
     }
 }

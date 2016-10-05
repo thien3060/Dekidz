@@ -13,16 +13,17 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'destroy' => 'admin.students.destroy',
         ],
     ]);
+
     Route::resource('classes', 'ClassesController', [
         'except' => 'show',
         'names' => [
-            'index' => 'admin.classes.index',
-            'create' => 'admin.classes.create',
-            'store' => 'admin.classes.store',
-            'show' => 'admin.classes.show',
-            'update' => 'admin.classes.update',
-            'edit' => 'admin.classes.edit',
-            'destroy' => 'admin.classes.destroy',
+            'index'     => 'admin.classes.index',
+            'create'    => 'admin.classes.create',
+            'store'     => 'admin.classes.store',
+            'show'      => 'admin.classes.show',
+            'update'    => 'admin.classes.update',
+            'edit'      => 'admin.classes.edit',
+            'destroy'   => 'admin.classes.destroy',
         ],
     ]);
 
@@ -51,16 +52,16 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'destroy' => 'admin.dishes.destroy',
         ],
     ]);
-    Route::resource('food', 'FoodController', [
+    Route::resource('foods', 'FoodsController', [
         'except' => 'show',
         'names' => [
-            'index' => 'admin.food.index',
-            'create' => 'admin.food.create',
-            'store' => 'admin.food.store',
-            'show' => 'admin.food.show',
-            'update' => 'admin.food.update',
-            'edit' => 'admin.food.edit',
-            'destroy' => 'admin.food.destroy',
+            'index' => 'admin.foods.index',
+            'create' => 'admin.foods.create',
+            'store' => 'admin.foods.store',
+            'show' => 'admin.foods.show',
+            'update' => 'admin.foods.update',
+            'edit' => 'admin.foods.edit',
+            'destroy' => 'admin.foods.destroy',
         ],
     ]);
     Route::resource('food_sets', 'FoodSetsController', [

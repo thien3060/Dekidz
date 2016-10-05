@@ -21,6 +21,14 @@ return [
         'model' => 'App\Models\Student',
         'perpage' => 10
     ],
+    'class' => [
+        'model' => 'App\Models\DekidzClass',
+        'perpage' => 10
+    ],
+    'dish' => [
+        'model' => 'App\Models\Dish',
+        'perpage' => 10
+    ],
     'page' => [
         'perpage' => 10
     ],
