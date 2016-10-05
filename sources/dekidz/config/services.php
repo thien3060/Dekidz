@@ -35,4 +35,16 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'google' => [
+        'client_id' => '35751916467-bkr7tjd03elnqftj97jbq0jh7h63h2q3.apps.googleusercontent.com',
+        'client_secret' => 'S7CqU9-xfS_oFPY1SyIs7R3e',
+        'redirect' => 'http://local.dekidz.com/admin/oauth/google/callback',
+    ],
+
+    'facebook' => [
+        'client_id' => '1084901388213775',
+        'client_secret' => '0d517fd860e5116550411da812febb74',
+        'redirect' => 'http://local.dekidz.com/admin/oauth/facebook/callback',
+    ],
+
 ];
