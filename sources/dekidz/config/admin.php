@@ -35,6 +35,10 @@ return [
         'perpage' => 10
     ],
 
+    'foodset' => [
+        'model' => 'App\Models\FoodSet',
+        'perpage' => 10
+    ],
 
     'page' => [
         'perpage' => 10

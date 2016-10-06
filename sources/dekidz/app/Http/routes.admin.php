@@ -64,16 +64,16 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'destroy' => 'admin.foods.destroy',
         ],
     ]);
-    Route::resource('food_sets', 'FoodSetsController', [
+    Route::resource('foodsets', 'FoodSetsController', [
         'except' => 'show',
         'names' => [
-            'index' => 'admin.food_sets.index',
-            'create' => 'admin.food_sets.create',
-            'store' => 'admin.food_sets.store',
-            'show' => 'admin.food_sets.show',
-            'update' => 'admin.food_sets.update',
-            'edit' => 'admin.food_sets.edit',
-            'destroy' => 'admin.food_sets.destroy',
+            'index' => 'admin.foodsets.index',
+            'create' => 'admin.foodsets.create',
+            'store' => 'admin.foodsets.store',
+            'show' => 'admin.foodsets.show',
+            'update' => 'admin.foodsets.update',
+            'edit' => 'admin.foodsets.edit',
+            'destroy' => 'admin.foodsets.destroy',
         ],
     ]);
 

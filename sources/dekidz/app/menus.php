@@ -32,7 +32,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     $menu->dropdown(trans('admin.menus.nutrition.title'), function ($sub) {
         $sub->route('admin.dishes.index', trans('admin.menus.nutrition.dishes'), [], 1);
         $sub->route('admin.foods.index', trans('admin.menus.nutrition.food'), [], 2);
-        $sub->route('admin.food_sets.index', trans('admin.menus.nutrition.food_set'), [], 3);
+        $sub->route('admin.foodsets.index', trans('admin.menus.nutrition.food_set'), [], 3);
     }, 4, ['icon' => 'fa fa-heartbeat']);
 
     //Education
