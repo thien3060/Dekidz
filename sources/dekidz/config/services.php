@@ -47,4 +47,10 @@ return [
         'redirect' => 'http://local.dekidz.com/admin/oauth/facebook/callback',
     ],
 
+    'twitter' => [
+        'client_id' => 'M7G2FafseY0kf8EiAW1sMCRXS',
+        'client_secret' => '5UCWoKoAsXDRvIaVQonBkyPnMpEX2XrAepTpaBx4WF23ITy0kP',
+        'redirect' => 'http://local.dekidz.com/admin/oauth/twitter/callback',
+    ],
+
 ];

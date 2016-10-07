@@ -98,3 +98,6 @@ Route::get('oauth/google', 'OAuthController@redirectToGoogleProvider')->name('lo
 Route::get('oauth/google/callback', 'OAuthController@handleGoogleProviderCallback');
 Route::get('oauth/facebook', 'OAuthController@redirectToFacebookProvider')->name('login.facebook');
 Route::get('oauth/facebook/callback', 'OAuthController@handleFacebookProviderCallback');
+Route::get('oauth/twitter', 'OAuthController@redirectToTwitterProvider')->name('login.twitter');
+Route::get('oauth/twitter/callback', 'OAuthController@handleTwitterProviderCallback');
+
