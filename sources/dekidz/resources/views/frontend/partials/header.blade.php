@@ -13,7 +13,7 @@
         </div>
     </div>
 </div>
-<div class="navbar navbar-inverse" role="banner">
+<div class="navbar navbar-inverse navbar-fixed-top" role="banner">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

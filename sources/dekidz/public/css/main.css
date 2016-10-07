@@ -167,7 +167,7 @@
 
 #header{
   margin-bottom: 0;
-  padding: 30px 0 60px 0;
+  padding: 30px 0 10px 0;
 }
 
 #header .navbar-inverse .container{
@@ -271,7 +271,7 @@
 }
 
 #header .navbar-brand h1 img {
-  width: 300px;
+  height: 58px;
 }
 
 #header .navbar-nav.navbar-right >li:last-child{
