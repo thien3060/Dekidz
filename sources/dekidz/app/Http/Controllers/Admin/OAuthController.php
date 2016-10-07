@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use Pingpong\Admin\Entities\User;
 
 class OAuthController extends BaseController
 {
@@ -26,10 +28,9 @@ class OAuthController extends BaseController
      */
     public function handleGoogleProviderCallback()
     {
-        $user = Socialite::driver('google')->user();
-        dd($user);
+        $userInfo = Socialite::driver('google')->user();
 
-        // $user->token;
+        return $this->authenticate($userInfo);
     }
 
     /**
@@ -49,9 +50,43 @@ class OAuthController extends BaseController
      */
     public function handleFacebookProviderCallback()
     {
-        $user = Socialite::driver('facebook')->user();
-        dd($user);
+        $userInfo = Socialite::driver('facebook')->user();
 
-        // $user->token;
+        return $this->authenticate($userInfo);
+    }
+
+    /**
+     * Redirect the user to the Twitter authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToTwitterProvider()
+    {
+        return Socialite::driver('twitter')->redirect();
+    }
+
+    /**
+     * Obtain the user information from Twitter.
+     *
+     * @return Response
+     */
+    public function handleTwitterProviderCallback()
+    {
+        $userInfo = Socialite::driver('twitter')->user();
+
+        return $this->authenticate($userInfo);
+    }
+
+    protected function authenticate($userInfo){
+        $user = User::where('email', '=', $userInfo->email)->first();
+        if (!is_null($user)) {
+            $user->remember_token = $userInfo->token;
+            $user->save();
+            Auth::login($user, true);
+            $_SESSION['admin'] = \Auth::id();
+            return $this->redirect('home')->withFlashMessage('Login Success!');
+        }
+
+        return \Redirect::to('admin/login')->withFlashMessage('Login failed!')->withFlashType('danger');
     }
 }

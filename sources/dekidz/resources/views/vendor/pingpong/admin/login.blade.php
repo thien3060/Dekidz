@@ -37,11 +37,6 @@ type="text/css"/>
                     <div class="form-group checkbox" style="margin-left:20px;">
                         <input type="checkbox" name="remember" value="1" /> Remember me
                     </div>
-                    <div class="row text-center">
-                        <a href="{{ route('login.google') }}"><i class="fa fa-google fa-2x" style="color: #dd4b39" aria-hidden="true"></i></a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="{{ route('login.facebook') }}"><i class="fa fa-facebook fa-2x" style="color: #3b5998" aria-hidden="true"></i></a>
-                    </div>
                 </div>
                 <div class="footer">
                     <button type="submit" class="btn bg-olive btn-block">Sign me in</button>
@@ -52,12 +47,12 @@ type="text/css"/>
                 </div>
             {!! Form::close() !!}
 
-            <div class="margin hidden text-center">
+            <div class="margin text-center">
                 <span>Sign in using social networks</span>
                 <br/>
-                <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
-                <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
-                <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+                <a class="btn bg-light-blue btn-circle" href="{{ route('login.facebook') }}"><i class="fa fa-facebook"></i></a>
+                {{--<a class="btn bg-aqua btn-circle" href="{{ route('login.twitter') }}"><i class="fa fa-twitter"></i></a>--}}
+                <a class="btn bg-red btn-circle" href="{{ route('login.google') }}"><i class="fa fa-google-plus"></i></a>
 
             </div>
         </div>
