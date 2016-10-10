@@ -24,7 +24,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     $menu->dropdown(trans('admin.menus.finances.title'), function ($sub) {
         $sub->route('admin.finances.rem_in', trans('admin.menus.finances.rem_in'), [], 1);
         $sub->route('admin.finances.rem_out', trans('admin.menus.finances.rem_out'), [], 2);
-        $sub->route('admin.finances.import', trans('admin.menus.finances.import'), [], 3);
+        $sub->route('admin.imports.index', trans('admin.menus.finances.import'), [], 3);
         $sub->route('admin.finances.export', trans('admin.menus.finances.export'), [], 4);
     }, 3, ['icon' => 'fa fa-usd']);
 

@@ -29,17 +29,18 @@ return [
         'model' => 'App\Models\Dish',
         'perpage' => 10
     ],
-
     'food' => [
         'model' => 'App\Models\Food',
         'perpage' => 10
     ],
-
     'foodset' => [
         'model' => 'App\Models\FoodSet',
         'perpage' => 10
     ],
-
+    'import' => [
+        'model' => 'App\Models\Import',
+        'perpage' => 10
+    ],
     'page' => [
         'perpage' => 10
     ],

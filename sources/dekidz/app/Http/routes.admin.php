@@ -33,9 +33,6 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
     Route::get('rem_out', ['as' => 'admin.finances.rem_out', 'uses' => function() {
         return "rem out page";
     }]);
-    Route::get('import', ['as' => 'admin.finances.import', 'uses' => function() {
-        return "import page";
-    }]);
     Route::get('export', ['as' => 'admin.finances.export', 'uses' => function() {
         return "export page";
     }]);
@@ -87,6 +84,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'update' => 'admin.teachers.update',
             'edit' => 'admin.teachers.edit',
             'destroy' => 'admin.teachers.destroy',
+        ],
+    ]);
+
+    Route::resource('imports', 'ImportsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.imports.index',
+            'create' => 'admin.imports.create',
+            'store' => 'admin.imports.store',
+            'show' => 'admin.imports.show',
+            'update' => 'admin.imports.update',
+            'edit' => 'admin.imports.edit',
+            'destroy' => 'admin.imports.destroy',
         ],
     ]);
     Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {

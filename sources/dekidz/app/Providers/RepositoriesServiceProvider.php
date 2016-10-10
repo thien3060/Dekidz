@@ -18,7 +18,8 @@ class RepositoriesServiceProvider extends ServiceProvider
         'DekidzClass',
         'Dish',
         'Food',
-        'FoodSet'
+        'FoodSet',
+        'Import'
     ];
 
     /**
@@ -68,6 +69,14 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\FoodSetRepository',
             'App\Repositories\Eloquent\EloquentFoodSetRepository'
+        );
+    }
+
+    protected function bindImportRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\ImportRepository',
+            'App\Repositories\Eloquent\EloquentImportRepository'
         );
     }
 
