@@ -16,8 +16,6 @@ class UpdateRequest extends Validator
             'mother_name' => 'required|min:5',
             'father_phone' => 'required|regex:/^[\d -]+$/',
             'mother_phone' => 'required|regex:/^[\d -]+$/',
-            'admission_date' => 'required|date',
-            'completion_date' => 'required|date',
             'entry_card' => 'required|numeric',
         ];
     }
