@@ -40,19 +40,19 @@
                     <tr>
                         <td>#</td>
                         <td>
-                            <input class="form-control" name=asset-name" id="asset-name" type="text">
+                            <input class="form-control asset-name" placeholder="Asset's name" name=asset-name[]" onkeyup="showHint(this)" type="text">
                         </td>
                         <td>
-                            <input class="form-control" name="asset-supplier" id="asset-supplier" type="text">
+                            <input class="form-control asset-supplier" placeholder="Asset's supplier" name="asset-supplier[]" type="text">
                         </td>
                         <td>
-                            <input class="form-control" name="asset-quantity" id="asset-quantity" type="text">
+                            <input class="form-control asset-quantity" placeholder="Asset's quantity" name="asset-quantity[]" type="text">
                         </td>
                         <td>
-                            <input class="form-control" name="asset-cost" id="asset-cost" type="text">
+                            <input class="form-control asset-cost" placeholder="Asset's cost" name="asset-cost[]" type="text">
                         </td>
-                        <td class="text-center">
-                            <a href="" class="asset-add">Add</a>
+                        <td style="text-align: center">
+                            <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)">delete</button>
                         </td>
                     </tr>
                     </tbody>
@@ -66,4 +66,31 @@
         </div>
     </div>
 </div>
+
+<ul class="asset-select" style="display: none">
+    @foreach($assets as $asset)
+        <li>{{$asset}}</li>
+    @endforeach
+</ul>
+
+<div id="modal-delete-confirm" class="modal text-left fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">Delete Data</h1>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Are you sure want to delete this asset?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="deleteCurrentItem()">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {!! Form::close() !!}

@@ -7,6 +7,10 @@ use Illuminate\Support\ServiceProvider;
 
 class ComposerServiceProvider extends ServiceProvider
 {
+    protected $composers = [
+        'admin.pages.*' => 'App\Http\Composers\LayoutComposer',
+        'admin.pages.imports.create' => 'App\Http\Composers\ImportFormComposer'
+    ];
     /**
      * Bootstrap the application services.
      *
@@ -14,9 +18,9 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(
-            'admin.pages.*', 'App\Http\Composers\LayoutComposer'
-        );
+        foreach ($this->composers as $view=>$composer){
+            View::composer($view, $composer);
+        }
     }
 
     /**
