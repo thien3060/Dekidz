@@ -70,11 +70,13 @@ class EloquentImportRepository implements ImportRepository
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
         $import = $this->getModel()->create($data);
         for($i = 0; $i < count($data['asset-name']); $i++){
-            $import->foods()->attach($data['asset-name'][$i], [
-                'supplier' => $data['asset-supplier'][$i],
-                'cost' => $data['asset-cost'][$i],
-                'quantity' => $data['asset-quantity'][$i]
-            ]);
+            if($data['asset-name'][$i] != 0){
+                $import->foods()->attach($data['asset-name'][$i], [
+                    'supplier' => $data['asset-supplier'][$i],
+                    'cost' => $data['asset-cost'][$i],
+                    'quantity' => $data['asset-quantity'][$i]
+                ]);
+            }
         }
         return $import;
     }
@@ -90,11 +92,13 @@ class EloquentImportRepository implements ImportRepository
         $import->foods()->detach();
 
         for($i = 0; $i < count($data['asset-name']); $i++){
-            $import->foods()->attach($data['asset-name'][$i], [
-                'supplier' => $data['asset-supplier'][$i],
-                'cost' => $data['asset-cost'][$i],
-                'quantity' => $data['asset-quantity'][$i]
-            ]);
+            if($data['asset-name'][$i] != 0){
+                $import->foods()->attach($data['asset-name'][$i], [
+                    'supplier' => $data['asset-supplier'][$i],
+                    'cost' => $data['asset-cost'][$i],
+                    'quantity' => $data['asset-quantity'][$i]
+                ]);
+            }
         }
 
         return $import;

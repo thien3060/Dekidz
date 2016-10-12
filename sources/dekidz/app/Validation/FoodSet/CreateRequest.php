@@ -10,10 +10,10 @@ class CreateRequest extends Validator
     {
         return [
             'type_id'=> 'required',
-            'age'=> 'required',
-            'quantity'=> 'required',
-            'name'=> 'required',
-            'total_cost'=> 'required',
+            'age'=> 'required|numeric',
+            'quantity'=> 'required|numeric',
+            'name'=> 'required|min:5',
+            'total_cost'=> 'required|numeric',
         ];
     }
 }
