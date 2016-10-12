@@ -30,7 +30,7 @@
             <div class="box-body text-center">
                 <table class="table">
                     <thead>
-                    <th>No</th>
+                    <th>ID</th>
                     <th>Asset Name</th>
                     <th>Supplier</th>
                     <th>Quantity</th>
@@ -39,15 +39,15 @@
                     </thead>
                     <tbody id="asset-list">
                     <tr>
-                        <td>#</td>
+                        <td class="asset-id">0</td>
                         <td>
-                            <select class="form-control">
-                                <option>Select asset</option>
-                                @foreach($assets as $asset)
-                                    <option>{{$asset}}</option>
+                            <select class="form-control asset-name" name="asset-name[]">
+                                <option value="0">Select asset</option>
+                                @foreach($assets as $key => $asset)
+                                    <option value="{{$key}}">{{$asset}}</option>
                                 @endforeach
                             </select>
-                            {{--<input class="form-control asset-name" placeholder="Asset's name" name=asset-name[]" onkeyup="showHint(this)" type="text">--}}
+                            {{--<input class="form-control asset-name" placeholder="Asset's name" name="asset-name[]" onkeyup="showHint(this)" type="text">--}}
                         </td>
                         <td>
                             <input class="form-control asset-supplier" placeholder="Asset's supplier" name="asset-supplier[]" type="text">
@@ -59,7 +59,7 @@
                             <input class="form-control asset-cost" placeholder="Asset's cost" name="asset-cost[]" type="number">
                         </td>
                         <td style="text-align: center">
-                            <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)">delete</button>
+                            <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                         </td>
                     </tr>
                     </tbody>
@@ -74,11 +74,11 @@
     </div>
 </div>
 
-<ul class="asset-select" style="display: none">
-    @foreach($assets as $asset)
-        <li>{{$asset}}</li>
-    @endforeach
-</ul>
+{{--<ul class="asset-select" style="display: none">--}}
+    {{--@foreach($assets as $asset)--}}
+        {{--<li>{{$asset}}</li>--}}
+    {{--@endforeach--}}
+{{--</ul>--}}
 
 <div id="modal-delete-confirm" class="modal text-left fade">
     <div class="modal-dialog">
