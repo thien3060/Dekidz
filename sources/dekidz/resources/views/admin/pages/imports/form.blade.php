@@ -24,6 +24,7 @@
         <div class="box box-solid">
             <div class="box-header with-border">
                 <h3 class="box-title">Asset list</h3>
+                <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">Add</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body text-center">
@@ -40,16 +41,22 @@
                     <tr>
                         <td>#</td>
                         <td>
-                            <input class="form-control asset-name" placeholder="Asset's name" name=asset-name[]" onkeyup="showHint(this)" type="text">
+                            <select class="form-control">
+                                <option>Select asset</option>
+                                @foreach($assets as $asset)
+                                    <option>{{$asset}}</option>
+                                @endforeach
+                            </select>
+                            {{--<input class="form-control asset-name" placeholder="Asset's name" name=asset-name[]" onkeyup="showHint(this)" type="text">--}}
                         </td>
                         <td>
                             <input class="form-control asset-supplier" placeholder="Asset's supplier" name="asset-supplier[]" type="text">
                         </td>
                         <td>
-                            <input class="form-control asset-quantity" placeholder="Asset's quantity" name="asset-quantity[]" type="text">
+                            <input class="form-control asset-quantity" placeholder="Asset's quantity" name="asset-quantity[]" type="number">
                         </td>
                         <td>
-                            <input class="form-control asset-cost" placeholder="Asset's cost" name="asset-cost[]" type="text">
+                            <input class="form-control asset-cost" placeholder="Asset's cost" name="asset-cost[]" type="number">
                         </td>
                         <td style="text-align: center">
                             <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)">delete</button>
@@ -76,10 +83,6 @@
 <div id="modal-delete-confirm" class="modal text-left fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h1 class="modal-title">Delete Data</h1>
-            </div>
             <div class="modal-body">
                 <p>
                     Are you sure want to delete this asset?
