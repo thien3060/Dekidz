@@ -32,7 +32,7 @@
                 <td class="text-center">
                     <a href="{!! route('admin.imports.edit', $import->id) !!}">Edit</a>
                     &middot;
-                    @include('admin::partials.modal', ['data' => $import, 'name' => 'students'])
+                    @include('admin::partials.modal', ['data' => $import, 'name' => 'imports'])
                 </td>
             </tr>
             <?php $no++ ;?>

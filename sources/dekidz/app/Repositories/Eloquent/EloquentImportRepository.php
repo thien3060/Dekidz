@@ -55,6 +55,7 @@ class EloquentImportRepository implements ImportRepository
         $import = $this->findById($id);
 
         if (!is_null($import)) {
+            $import->foods()->detach();
             $import->delete();
 
             return true;
@@ -67,18 +68,36 @@ class EloquentImportRepository implements ImportRepository
     {
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
-
-        return $this->getModel()->create($data);
+        $import = $this->getModel()->create($data);
+        for($i = 0; $i < count($data['asset-name']); $i++){
+            $import->foods()->attach($data['asset-name'][$i], [
+                'supplier' => $data['asset-supplier'][$i],
+                'cost' => $data['asset-cost'][$i],
+                'quantity' => $data['asset-quantity'][$i]
+            ]);
+        }
+        return $import;
     }
 
     public function update(array $data, $id)
     {
-        $student = $this->findById($id);
+        $import = $this->findById($id);
         
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
 
-        return $student->update($data);
+        $import->update($data);
+        $import->foods()->detach();
+
+        for($i = 0; $i < count($data['asset-name']); $i++){
+            $import->foods()->attach($data['asset-name'][$i], [
+                'supplier' => $data['asset-supplier'][$i],
+                'cost' => $data['asset-cost'][$i],
+                'quantity' => $data['asset-quantity'][$i]
+            ]);
+        }
+
+        return $import;
     }
 
     public function getImport()

@@ -9,7 +9,8 @@ class ComposerServiceProvider extends ServiceProvider
 {
     protected $composers = [
         'admin.pages.*' => 'App\Http\Composers\LayoutComposer',
-        'admin.pages.imports.create' => 'App\Http\Composers\ImportFormComposer'
+        'admin.pages.imports.create' => 'App\Http\Composers\ImportFormComposer',
+        'admin.pages.imports.edit' => 'App\Http\Composers\ImportFormComposer'
     ];
     /**
      * Bootstrap the application services.

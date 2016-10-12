@@ -14,4 +14,8 @@ class Import extends Model
     ];
     
     protected $table = 'import';
+
+    public function foods(){
+        return $this->belongsToMany('App\Models\Food', 'import_detail', 'import_id', 'good_id')->withPivot('supplier', 'quantity', 'cost');
+    }
 }

@@ -32,4 +32,8 @@ class Food extends Model
         'vitaminpp',
         'vitaminc'
     ];
+    
+    public function imports(){
+        return $this->belongsToMany('App\Models\Import', 'import_detail', 'good_id', 'import_id')->withPivot('supplier', 'quantity', 'cost');
+    }
 }

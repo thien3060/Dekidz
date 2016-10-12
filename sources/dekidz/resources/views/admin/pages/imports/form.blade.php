@@ -38,6 +38,34 @@
                     <th class="text-center">Action</th>
                     </thead>
                     <tbody id="asset-list">
+                    @if(isset($model))
+                        @foreach($model->foods as $food)
+                            <tr>
+                                <td class="asset-id">0</td>
+                                <td>
+                                    <select class="form-control asset-name" name="asset-name[]">
+                                        <option value="0">Select asset</option>
+                                        @foreach($assets as $key => $asset)
+                                            <option value="{{$key}}" @if($key == $food->id) selected="selected" @endif>{{$asset}}</option>
+                                        @endforeach
+                                    </select>
+                                    {{--<input class="form-control asset-name" placeholder="Asset's name" name="asset-name[]" onkeyup="showHint(this)" type="text">--}}
+                                </td>
+                                <td>
+                                    <input class="form-control asset-supplier" placeholder="Asset's supplier" name="asset-supplier[]" type="text" value="{{$food->pivot->supplier}}">
+                                </td>
+                                <td>
+                                    <input class="form-control asset-quantity" placeholder="Asset's quantity" name="asset-quantity[]" type="number" value="{{$food->pivot->quantity}}">
+                                </td>
+                                <td>
+                                    <input class="form-control asset-cost" placeholder="Asset's cost" name="asset-cost[]" type="number" value="{{$food->pivot->cost}}">
+                                </td>
+                                <td style="text-align: center">
+                                    <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                     <tr>
                         <td class="asset-id">0</td>
                         <td>
