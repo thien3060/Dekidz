@@ -16,6 +16,39 @@
 
 @stop
 
+@section('style')
+    <style>
+        #asset-list td{
+            text-align: left;
+            padding: 1;
+            border-top: 1px solid #ddd;
+        }
+        #asset-list input{
+            border: none;
+            padding-left: 0;
+        }
+        .asset-select{
+            padding:0;
+            margin: 0;
+            border: solid 1px #ddd;
+            list-style-type: none;
+            display: block;
+            position: fixed;
+            background-color: white;
+            max-height: 200px;
+            width: 280px;
+            overflow: auto;
+            z-index: 9999;
+        }
+        .asset-select li{
+            padding: 5px;
+        }
+        .asset-select li:hover{
+            background-color: #ddd;
+        }
+    </style>
+@endsection
+
 @section('script')
     {!! script('vendor/ckeditor/ckeditor.js') !!}
     {!! script('vendor/ckfinder/ckfinder.js') !!}
