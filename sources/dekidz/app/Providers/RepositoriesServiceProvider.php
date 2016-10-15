@@ -80,4 +80,12 @@ class RepositoriesServiceProvider extends ServiceProvider
         );
     }
 
+    protected function bindAssetRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\AssetRepository',
+            'App\Repositories\Eloquent\EloquentAssetRepository'
+        );
+    }
+
 }

@@ -22,24 +22,30 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
 
     //Finances
     $menu->dropdown(trans('admin.menus.finances.title'), function ($sub) {
-        $sub->route('admin.finances.rem_in', trans('admin.menus.finances.rem_in'), [], 1);
-        $sub->route('admin.finances.rem_out', trans('admin.menus.finances.rem_out'), [], 2);
-        $sub->route('admin.imports.index', trans('admin.menus.finances.import'), [], 3);
-        $sub->route('admin.finances.export', trans('admin.menus.finances.export'), [], 4);
+        $sub->route('admin.rem_ins.index', trans('admin.menus.finances.rem_in'), [], 1);
+        $sub->route('admin.rem_outs.index', trans('admin.menus.finances.rem_out'), [], 2);
     }, 3, ['icon' => 'fa fa-usd']);
+
+    //Assets
+    $menu->dropdown(trans('admin.menus.repository.title'), function ($sub) {
+        $sub->route('admin.assets.index', trans('admin.menus.repository.assets.all'), [], 1);
+        $sub->route('admin.assets.create', trans('admin.menus.repository.assets.create'), [], 2);
+        $sub->route('admin.imports.index', trans('admin.menus.repository.import'), [], 3);
+        $sub->route('admin.exports.index', trans('admin.menus.repository.export'), [], 4);
+    }, 4, ['icon' => 'fa fa-usd']);
 
     //Nutrition
     $menu->dropdown(trans('admin.menus.nutrition.title'), function ($sub) {
         $sub->route('admin.dishes.index', trans('admin.menus.nutrition.dishes'), [], 1);
         $sub->route('admin.foods.index', trans('admin.menus.nutrition.food'), [], 2);
         $sub->route('admin.foodsets.index', trans('admin.menus.nutrition.food_set'), [], 3);
-    }, 4, ['icon' => 'fa fa-heartbeat']);
+    }, 5, ['icon' => 'fa fa-heartbeat']);
 
     //Education
     $menu->dropdown(trans('admin.menus.education.title'), function ($sub) {
         $sub->route('admin.teachers.index', trans('admin.menus.education.teachers'), [], 1);
         $sub->route('admin.education.time_table', trans('admin.menus.education.time_table'), [], 2);
-    }, 5, ['icon' => 'fa fa-book']);
+    }, 6, ['icon' => 'fa fa-book']);
 
     //Users
     $menu->dropdown(trans('admin.menus.users.title'), function ($sub) {
@@ -48,5 +54,5 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->divider(3);
         $sub->route('admin.roles.index', trans('admin.menus.roles'), [], 4);
         $sub->route('admin.permissions.index', trans('admin.menus.permissions'), [], 5);
-    }, 8, ['icon' => 'fa fa-users']);
+    }, 7, ['icon' => 'fa fa-users']);
 });

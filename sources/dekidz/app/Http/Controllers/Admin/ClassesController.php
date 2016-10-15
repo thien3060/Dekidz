@@ -141,7 +141,7 @@ class ClassesController extends BaseController
      */
     protected function redirectNotFound()
     {
-        return $this->redirect('classed.index')
+        return $this->redirect('classes.index')
             ->withFlashMessage('Class not found!')
             ->withFlashType('danger');
     }

@@ -17,6 +17,14 @@ return [
 			'title' => 'Finances',
 			'rem_in' => 'Rem In',
 			'rem_out' => 'Rem Out',
+		],
+		'repository' => [
+			'title' => 'Repository',
+			'assets' => [
+				'title' => 'Assets',
+				'all' => 'All Assets',
+				'create' => 'Create Asset',
+			],
 			'import' => 'Import',
 			'export' => 'Export'
 		],

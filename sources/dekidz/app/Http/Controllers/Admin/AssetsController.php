@@ -1,19 +1,20 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: xuanthudoan
+ * Date: 10/3/16
+ * Time: 8:16 PM
+ */
 
 namespace App\Http\Controllers\Admin;
-
-use App\Helpers\DateHelper;
-use App\Validation\Import\CreateRequest;
-use App\Validation\Import\UpdateRequest;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-
-use App\Http\Requests;
-use Illuminate\Http\Response;
+use App\Validation\DekidzClass\UpdateRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use App\Validation\DekidzClass\CreateRequest;
 
-class ImportsController extends BaseController
+class AssetsController extends BaseController
 {
-    protected $imports;
+    protected $assets;
 
     public function __construct()
     {
@@ -27,7 +28,7 @@ class ImportsController extends BaseController
      */
     public function getRepository()
     {
-        $repository = 'App\Repositories\Contracts\ImportRepository';
+        $repository = 'App\Repositories\Contracts\AssetRepository';
         return app($repository);
     }
 
@@ -38,11 +39,11 @@ class ImportsController extends BaseController
      */
     public function index()
     {
-        $imports = $this->repository->allOrSearch(Input::get('q'));
+        $assets = $this->repository->allOrSearch(Input::get('q'));
 
-        $no = $imports->firstItem();
+        $no = $assets->firstItem();
 
-        return $this->view('pages.imports.index', compact('imports', 'no'));
+        return $this->view('pages.assets.index', compact('assets', 'no'));
     }
 
     /**
@@ -52,7 +53,7 @@ class ImportsController extends BaseController
      */
     public function create()
     {
-        return view('admin.pages.imports.create');
+        return $this->view('pages.assets.create');
     }
 
     /**
@@ -64,12 +65,8 @@ class ImportsController extends BaseController
     public function store(CreateRequest $request)
     {
         $data = $request->all();
-
-        $data['created_by'] = \Auth::id();
-        
         $this->repository->create($data);
-
-        return $this->redirect('imports.index');
+        return $this->redirect('assets.index');
     }
 
     /**
@@ -92,12 +89,9 @@ class ImportsController extends BaseController
     public function edit($id)
     {
         try {
-            $import = $this->repository->findById($id);
+            $class = $this->repository->findById($id);
 
-            //Date convert
-            $import->date = DateHelper::normalDateFormat($import->date);
-
-            return $this->view('pages.imports.edit', compact('import'));
+            return $this->view('pages.assets.edit', compact('class'));
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -117,7 +111,7 @@ class ImportsController extends BaseController
 
             $this->repository->update($data, $id);
 
-            return $this->redirect('imports.index');
+            return $this->redirect('assets.index');
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -134,7 +128,7 @@ class ImportsController extends BaseController
         try {
             $this->repository->delete($id);
 
-            return $this->redirect('imports.index');
+            return $this->redirect('assets.index');
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -147,8 +141,8 @@ class ImportsController extends BaseController
      */
     protected function redirectNotFound()
     {
-        return $this->redirect('imports.index')
-            ->withFlashMessage('Import not found!')
+        return $this->redirect('assets.index')
+            ->withFlashMessage('Asset not found!')
             ->withFlashType('danger');
     }
 }

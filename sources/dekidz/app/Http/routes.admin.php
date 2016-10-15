@@ -27,16 +27,6 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
-    Route::get('rem_in', ['as' => 'admin.finances.rem_in', 'uses' => function() {
-        return "rem in page";
-    }]);
-    Route::get('rem_out', ['as' => 'admin.finances.rem_out', 'uses' => function() {
-        return "rem out page";
-    }]);
-    Route::get('export', ['as' => 'admin.finances.export', 'uses' => function() {
-        return "export page";
-    }]);
-
     Route::resource('dishes', 'DishesController', [
         'except' => 'show',
         'names' => [
@@ -136,6 +126,23 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'update' => 'admin.rem_outs.update',
             'edit' => 'admin.rem_outs.edit',
             'destroy' => 'admin.rem_outs.destroy',
+        ],
+    ]);
+
+    Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {
+        return "time table page";
+    }]);
+
+    Route::resource('assets', 'AssetsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.assets.index',
+            'create' => 'admin.assets.create',
+            'store' => 'admin.assets.store',
+            'show' => 'admin.assets.show',
+            'update' => 'admin.assets.update',
+            'edit' => 'admin.assets.edit',
+            'destroy' => 'admin.assets.destroy',
         ],
     ]);
 
