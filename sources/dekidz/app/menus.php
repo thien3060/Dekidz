@@ -55,6 +55,12 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.categories.index', trans('admin.menus.categories'), [], 4);
     }, 7, ['icon' => 'fa fa-book']);
 
+    //Staff
+    $menu->dropdown(trans('admin.menus.staffs.title'), function ($sub) {
+        $sub->route('admin.staffs.index', trans('admin.menus.staffs.all'), [], 1);
+        $sub->route('admin.staffs.create', trans('admin.menus.staffs.create'), [], 2);
+    }, 8, ['icon' => 'fa fa-book']);
+
     //Users
     $menu->dropdown(trans('admin.menus.users.title'), function ($sub) {
         $sub->route('admin.users.index', trans('admin.menus.users.all'), [], 1);
@@ -62,5 +68,5 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->divider(3);
         $sub->route('admin.roles.index', trans('admin.menus.roles'), [], 4);
         $sub->route('admin.permissions.index', trans('admin.menus.permissions'), [], 5);
-    }, 8, ['icon' => 'fa fa-users']);
+    }, 9, ['icon' => 'fa fa-users']);
 });

@@ -44,6 +44,11 @@ return [
 			'all' => 'All Articles',
 			'create' => 'Add New'
 		],
+		'staffs' => [
+			'title' => 'Staffs',
+			'all' => 'All Staffs',
+			'create' => 'Add New'
+		],
 		'pages' => [
 			'title' => 'Pages',
 			'all' => 'All Pages',

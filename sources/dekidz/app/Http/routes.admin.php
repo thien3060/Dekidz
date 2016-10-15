@@ -76,6 +76,18 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('staffs', 'StaffsController', [
+        'names' => [
+            'index' => 'admin.staffs.index',
+            'create' => 'admin.staffs.create',
+            'store' => 'admin.staffs.store',
+            'show' => 'admin.staffs.show',
+            'update' => 'admin.staffs.update',
+            'edit' => 'admin.staffs.edit',
+            'destroy' => 'admin.staffs.destroy',
+        ],
+    ]);
+
     Route::resource('imports', 'ImportsController', [
         'except' => 'show',
         'names' => [
