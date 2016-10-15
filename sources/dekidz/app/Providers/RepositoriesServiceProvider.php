@@ -22,7 +22,9 @@ class RepositoriesServiceProvider extends ServiceProvider
         'Dish',
         'Food',
         'FoodSet',
-        'Import'
+        'Import',
+        'Asset',
+        'Supplier'
     ];
 
     /**
@@ -112,6 +114,14 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\AssetRepository',
             'App\Repositories\Eloquent\EloquentAssetRepository'
+        );
+    }
+
+    protected function bindSupplierRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\SupplierRepository',
+            'App\Repositories\Eloquent\EloquentSupplierRepository'
         );
     }
 

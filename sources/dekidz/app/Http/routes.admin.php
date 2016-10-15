@@ -155,6 +155,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('suppliers', 'SuppliersController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.suppliers.index',
+            'create' => 'admin.suppliers.create',
+            'store' => 'admin.suppliers.store',
+            'show' => 'admin.suppliers.show',
+            'update' => 'admin.suppliers.update',
+            'edit' => 'admin.suppliers.edit',
+            'destroy' => 'admin.suppliers.destroy',
+        ],
+    ]);
+
     Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {
         return "time table page";
     }]);

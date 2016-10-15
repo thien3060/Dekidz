@@ -30,8 +30,10 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     $menu->dropdown(trans('admin.menus.repository.title'), function ($sub) {
         $sub->route('admin.assets.index', trans('admin.menus.repository.assets.all'), [], 1);
         $sub->route('admin.assets.create', trans('admin.menus.repository.assets.create'), [], 2);
-        $sub->route('admin.imports.index', trans('admin.menus.repository.import'), [], 3);
-        $sub->route('admin.exports.index', trans('admin.menus.repository.export'), [], 4);
+        $sub->route('admin.suppliers.index', trans('admin.menus.repository.suppliers.all'), [], 3);
+        $sub->route('admin.suppliers.create', trans('admin.menus.repository.suppliers.create'), [], 4);
+        $sub->route('admin.imports.index', trans('admin.menus.repository.import'), [], 5);
+        $sub->route('admin.exports.index', trans('admin.menus.repository.export'), [], 6);
     }, 4, ['icon' => 'fa fa-usd']);
 
     //Nutrition
