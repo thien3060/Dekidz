@@ -89,7 +89,13 @@ class FoodsController extends BaseController
      */
     public function show($id)
     {
-        //
+        try {
+            $food = $this->repository->findById($id);
+
+            return $this->view('pages.foods.show', compact('food'));
+        } catch (ModelNotFoundException $e) {
+            return $this->redirectNotFound();
+        }
     }
 
     /**

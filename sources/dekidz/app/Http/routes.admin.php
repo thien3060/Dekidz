@@ -40,7 +40,6 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
     Route::resource('foods', 'FoodsController', [
-        'except' => 'show',
         'names' => [
             'index' => 'admin.foods.index',
             'create' => 'admin.foods.create',

@@ -47,6 +47,14 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.education.time_table', trans('admin.menus.education.time_table'), [], 2);
     }, 6, ['icon' => 'fa fa-book']);
 
+    //Article
+    $menu->dropdown(trans('admin.menus.articles.title'), function ($sub) {
+        $sub->route('admin.articles.index', trans('admin.menus.articles.all'), [], 1);
+        $sub->route('admin.articles.create', trans('admin.menus.articles.create'), [], 2);
+        $sub->divider(3);
+        $sub->route('admin.categories.index', trans('admin.menus.categories'), [], 4);
+    }, 7, ['icon' => 'fa fa-book']);
+
     //Users
     $menu->dropdown(trans('admin.menus.users.title'), function ($sub) {
         $sub->route('admin.users.index', trans('admin.menus.users.all'), [], 1);
@@ -54,5 +62,5 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->divider(3);
         $sub->route('admin.roles.index', trans('admin.menus.roles'), [], 4);
         $sub->route('admin.permissions.index', trans('admin.menus.permissions'), [], 5);
-    }, 7, ['icon' => 'fa fa-users']);
+    }, 8, ['icon' => 'fa fa-users']);
 });

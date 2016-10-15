@@ -44,7 +44,7 @@
         @foreach ($foods as $food)
             <tr>
                 <td>{!! $no !!}</td>
-                <td>{!! $food->name !!}</td>
+                <td><a href="{!! route('admin.foods.show', $food->id) !!}">{!! $food->name !!}</a></td>
                 <td>{!! $food->food_group_id !!}</td>
                 <td>{!! $food->animal_source !!}</td>
                 <td>{!! $food->in_kg !!}</td>
