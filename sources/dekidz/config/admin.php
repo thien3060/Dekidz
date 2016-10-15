@@ -25,6 +25,14 @@ return [
         'model' => 'App\Models\Staff',
         'perpage' => 10
     ],
+    'rem_in' => [
+        'model' => 'App\Models\RemIn',
+        'perpage' => 10
+    ],
+    'rem_out' => [
+        'model' => 'App\Models\RemOut',
+        'perpage' => 10
+    ],
     'class' => [
         'model' => 'App\Models\DekidzClass',
         'perpage' => 10

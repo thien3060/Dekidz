@@ -115,7 +115,6 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
     ]);
 
     Route::resource('rem_ins', 'RemInsController', [
-        'except' => 'show',
         'names' => [
             'index' => 'admin.rem_ins.index',
             'create' => 'admin.rem_ins.create',
@@ -128,7 +127,6 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
     ]);
 
     Route::resource('rem_outs', 'RemOutsController', [
-        'except' => 'show',
         'names' => [
             'index' => 'admin.rem_outs.index',
             'create' => 'admin.rem_outs.create',
