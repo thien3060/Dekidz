@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Import extends Model
+class Export extends Model
 {
     protected $fillable = [
         'date',
@@ -13,11 +13,9 @@ class Import extends Model
         'created_by'
     ];
     
-    protected $table = 'import';
+    protected $table = 'export';
 
     public function foods(){
         return $this->belongsToMany('App\Models\Food', 'import_detail', 'import_id', 'good_id')->withPivot('supplier', 'quantity', 'cost');
     }
-
-
 }

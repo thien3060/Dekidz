@@ -99,6 +99,46 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'destroy' => 'admin.imports.destroy',
         ],
     ]);
+
+    Route::resource('exports', 'ExportsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.exports.index',
+            'create' => 'admin.exports.create',
+            'store' => 'admin.exports.store',
+            'show' => 'admin.exports.show',
+            'update' => 'admin.exports.update',
+            'edit' => 'admin.exports.edit',
+            'destroy' => 'admin.exports.destroy',
+        ],
+    ]);
+
+    Route::resource('rem_ins', 'RemInsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.rem_ins.index',
+            'create' => 'admin.rem_ins.create',
+            'store' => 'admin.rem_ins.store',
+            'show' => 'admin.rem_ins.show',
+            'update' => 'admin.rem_ins.update',
+            'edit' => 'admin.rem_ins.edit',
+            'destroy' => 'admin.rem_ins.destroy',
+        ],
+    ]);
+
+    Route::resource('rem_outs', 'RemOutsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.rem_outs.index',
+            'create' => 'admin.rem_outs.create',
+            'store' => 'admin.rem_outs.store',
+            'show' => 'admin.rem_outs.show',
+            'update' => 'admin.rem_outs.update',
+            'edit' => 'admin.rem_outs.edit',
+            'destroy' => 'admin.rem_outs.destroy',
+        ],
+    ]);
+
     Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {
         return "time table page";
     }]);
