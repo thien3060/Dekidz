@@ -11,13 +11,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Asset extends Model
+class Supplier extends Model
 {
-    protected $table = 'assets';
+    protected $table = 'suppliers';
     protected $fillable = [
         'name',
-        'quantity',
-        'maintenance_mode',
-        'unit'
+        'type',
+        'product_type'
     ];
 }

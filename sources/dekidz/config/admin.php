@@ -21,6 +21,14 @@ return [
         'model' => 'App\Models\Student',
         'perpage' => 10
     ],
+    'asset' => [
+        'model' => 'App\Models\Asset',
+        'perpage' => 10
+    ],
+    'supplier' => [
+        'model' => 'App\Models\Supplier',
+        'perpage' => 10
+    ],
     'class' => [
         'model' => 'App\Models\DekidzClass',
         'perpage' => 10

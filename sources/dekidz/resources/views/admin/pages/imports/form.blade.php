@@ -18,7 +18,7 @@
         
         <div class="box box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title">Asset list</h3>
+                <h3 class="box-title">Food list</h3>
                 <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">Add</button>
             </div>
             <!-- /.box-header -->

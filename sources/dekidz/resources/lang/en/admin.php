@@ -25,6 +25,11 @@ return [
 				'all' => 'All Assets',
 				'create' => 'Create Asset',
 			],
+			'suppliers' => [
+				'title' => 'Supplier',
+				'all' => 'All Suppliers',
+				'create' => 'Create Supplier',
+			],
 			'import' => 'Import',
 			'export' => 'Export'
 		],

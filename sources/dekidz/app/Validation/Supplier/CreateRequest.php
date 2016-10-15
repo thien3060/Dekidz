@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Validation\Asset;
+namespace App\Validation\Supplier;
 
 use App\Validation\Validator;
 
@@ -10,8 +10,8 @@ class CreateRequest extends Validator
     {
         return [
             'name' => 'required|min:1',
-            'quantity' => 'required',
-            'unit'=> 'required',
+            'type' => 'required',
+            'product_type'=> 'required',
         ];
     }
 }

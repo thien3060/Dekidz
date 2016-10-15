@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Validation\Asset\CreateRequest;
-use App\Validation\Asset\UpdateRequest;
+use App\Validation\Supplier\CreateRequest;
+use App\Validation\Supplier\UpdateRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -12,9 +12,9 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
-class AssetsController extends BaseController
+class SuppliersController extends BaseController
 {
-    protected $assets;
+    protected $suppliers;
 
     public function __construct()
     {
@@ -28,7 +28,7 @@ class AssetsController extends BaseController
      */
     public function getRepository()
     {
-        $repository = 'App\Repositories\Contracts\AssetRepository';
+        $repository = 'App\Repositories\Contracts\SupplierRepository';
         return app($repository);
     }
 
@@ -39,11 +39,11 @@ class AssetsController extends BaseController
      */
     public function index()
     {
-        $assets = $this->repository->allOrSearch(Input::get('q'));
+        $suppliers = $this->repository->allOrSearch(Input::get('q'));
 
-        $no = $assets->firstItem();
+        $no = $suppliers->firstItem();
 
-        return $this->view('pages.assets.index', compact('assets', 'no'));
+        return $this->view('pages.suppliers.index', compact('suppliers', 'no'));
     }
 
     /**
@@ -53,7 +53,7 @@ class AssetsController extends BaseController
      */
     public function create()
     {
-        return view('admin.pages.assets.create');
+        return view('admin.pages.suppliers.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class AssetsController extends BaseController
 
         $this->repository->create($data);
 
-        return $this->redirect('assets.index');
+        return $this->redirect('suppliers.index');
     }
 
     /**
@@ -91,9 +91,9 @@ class AssetsController extends BaseController
     public function edit($id)
     {
         try {
-            $asset = $this->repository->findById($id);
+            $supplier = $this->repository->findById($id);
 
-            return $this->view('pages.assets.edit', compact('asset'));
+            return $this->view('pages.suppliers.edit', compact('supplier'));
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -113,7 +113,7 @@ class AssetsController extends BaseController
 
             $this->repository->update($data, $id);
 
-            return $this->redirect('assets.index');
+            return $this->redirect('suppliers.index');
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -130,7 +130,7 @@ class AssetsController extends BaseController
         try {
             $this->repository->delete($id);
 
-            return $this->redirect('assets.index');
+            return $this->redirect('suppliers.index');
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -143,8 +143,8 @@ class AssetsController extends BaseController
      */
     protected function redirectNotFound()
     {
-        return $this->redirect('assets.index')
-            ->withFlashMessage('Asset not found!')
+        return $this->redirect('suppliers.index')
+            ->withFlashMessage('Supplier not found!')
             ->withFlashType('danger');
     }
 }
