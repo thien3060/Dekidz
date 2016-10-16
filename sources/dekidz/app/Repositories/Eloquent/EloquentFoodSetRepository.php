@@ -36,7 +36,7 @@ class EloquentFoodSetRepository implements FoodSetRepository
         $search = "%{$searchQuery}%";
 
         return $this->getFoodSet()
-            ->where('name', 'like', $search)
+            //->where('name', 'like', $search)
             ->paginate($this->perPage());
     }
 
@@ -55,6 +55,7 @@ class EloquentFoodSetRepository implements FoodSetRepository
         $foodset = $this->findById($id);
 
         if (!is_null($foodset)) {
+            $foodset->dishes()->detach();
             $foodset->delete();
 
             return true;
@@ -65,13 +66,40 @@ class EloquentFoodSetRepository implements FoodSetRepository
 
     public function create(array $data)
     {
-        return $this->getModel()->create($data);
+        $foodset = $this->getModel()->create($data);
+        for($i = 0; $i < count($data['asset-name']); $i++){
+            if($data['asset-name'][$i] != 0){
+                $foodset->dishes()->attach($data['asset-name'][$i], [
+                    'price' => $data['asset-price'][$i],
+                    'quantity' => $data['asset-quantity'][$i]
+                ]);
+            }
+        }
+        return $foodset;
     }
 
     public function update(array $data, $id)
     {
         $foodset = $this->findById($id);
-        return $foodset->update($data);
+        
+        //Date convert
+        $data['date'] = DateHelper::sqlDateFormat($data['date']);
+
+        $foodset->update($data);
+        $foodset->dishes()->detach();
+
+        for($i = 0; $i < count($data['asset-name']); $i++){
+            if($data['asset-name'][$i] != 0){
+                if($data['asset-name'][$i] != 0){
+                    $foodset->dishes()->attach($data['asset-name'][$i], [
+                        'price' => $data['asset-price'][$i],
+                        'quantity' => $data['asset-quantity'][$i]
+                    ]);
+                }
+            }
+        }
+
+        return $foodset;
     }
 
     public function getFoodSet()

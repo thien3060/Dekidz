@@ -34,7 +34,7 @@ class FoodSet extends Model
     ];
 
     public function dishes(){
-        return $this->belongsToMany('App\Models\Dish', 'food_set_detail', 'food_set_id', 'dish_id')->withPivot('quantity', 'price', 'from_deposit');
+        return $this->belongsToMany('App\Models\Dish', 'food_set_detail', 'food_set_id', 'dish_id')->withPivot('quantity', 'price');
     }
 
 }
