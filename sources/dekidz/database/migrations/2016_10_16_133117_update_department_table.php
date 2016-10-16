@@ -18,7 +18,7 @@ class UpdateDepartmentTable extends Migration
         });
 
         Schema::table('food_set_detail', function (Blueprint $table) {
-            $table->dropIfExists('from_deposit');
+            $table->dropColumn('from_deposit');
         });
     }
 
@@ -30,8 +30,8 @@ class UpdateDepartmentTable extends Migration
     public function down()
     {
         Schema::table('departments', function (Blueprint $table) {
-            $table->dropIfExists('description');
-            $table->dropIfExists('wage_index');
+            $table->dropColumn('description');
+            $table->dropColumn('wage_index');
         });
 
         Schema::table('food_set_detail', function (Blueprint $table) {
