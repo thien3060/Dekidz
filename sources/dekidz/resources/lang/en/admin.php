@@ -8,6 +8,11 @@ return [
 			'all' => 'All Students',
 			'create' => 'Create Student'
 		],
+		'physical_infos' => [
+			'title' => 'Student`s Physical Info',
+			'all' => 'Physical Info',
+			'create' => 'Create Physical Info'
+		],
 		'classes' => [
 			'title' => 'Classes',
 			'all' => 'All Classes',

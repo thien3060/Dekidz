@@ -21,6 +21,10 @@ return [
         'model' => 'App\Models\Student',
         'perpage' => 10
     ],
+    'physical_info' => [
+        'model' => 'App\Models\PhysicalInfo',
+        'perpage' => 10
+    ],
     'staff' => [
         'model' => 'App\Models\Staff',
         'perpage' => 10

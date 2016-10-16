@@ -15,6 +15,7 @@ class RepositoriesServiceProvider extends ServiceProvider
 
     protected $entities = [
         'Student',
+        'PhysicalInfo',
         'Staff',
         'RemIn',
         'RemOut',
@@ -42,6 +43,14 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\StudentRepository',
             'App\Repositories\Eloquent\EloquentStudentRepository'
+        );
+    }
+
+    protected function bindPhysicalInfoRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\PhysicalInfoRepository',
+            'App\Repositories\Eloquent\EloquentPhysicalInfoRepository'
         );
     }
 
