@@ -32,4 +32,9 @@ class FoodSet extends Model
         'lipid_tv',
         'total_cost'
     ];
+
+    public function dishes(){
+        return $this->belongsToMany('App\Models\Dish', 'food_set_detail', 'food_set_id', 'dish_id')->withPivot('quantity', 'price', 'from_deposit');
+    }
+
 }
