@@ -15,7 +15,7 @@
         <th>No</th>
         <th>Name</th>
         <th>Type</th>
-        <th></th>Age</th>
+        <th>Age</th>
         <th>Quantity</th>
         <th>Description</th>
         <th>Cal</th>
