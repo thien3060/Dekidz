@@ -29,6 +29,10 @@ return [
         'model' => 'App\Models\Staff',
         'perpage' => 10
     ],
+    'department' => [
+        'model' => 'App\Models\Department',
+        'perpage' => 10
+    ],
     'rem_in' => [
         'model' => 'App\Models\RemIn',
         'perpage' => 10

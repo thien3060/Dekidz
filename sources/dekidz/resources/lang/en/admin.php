@@ -59,6 +59,11 @@ return [
 			'all' => 'All Staffs',
 			'create' => 'Add New'
 		],
+		'departments' => [
+			'title' => 'Departments',
+			'all' => 'All Departments',
+			'create' => 'Add New'
+		],
 		'pages' => [
 			'title' => 'Pages',
 			'all' => 'All Pages',

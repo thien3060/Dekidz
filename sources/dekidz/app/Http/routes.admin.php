@@ -100,6 +100,18 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('departments', 'DepartmentsController', [
+        'names' => [
+            'index' => 'admin.departments.index',
+            'create' => 'admin.departments.create',
+            'store' => 'admin.departments.store',
+            'show' => 'admin.departments.show',
+            'update' => 'admin.departments.update',
+            'edit' => 'admin.departments.edit',
+            'destroy' => 'admin.departments.destroy',
+        ],
+    ]);
+
     Route::resource('imports', 'ImportsController', [
         'except' => 'show',
         'names' => [

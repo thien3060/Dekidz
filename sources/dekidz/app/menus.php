@@ -62,6 +62,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     $menu->dropdown(trans('admin.menus.staffs.title'), function ($sub) {
         $sub->route('admin.staffs.index', trans('admin.menus.staffs.all'), [], 1);
         $sub->route('admin.staffs.create', trans('admin.menus.staffs.create'), [], 2);
+        $sub->route('admin.departments.create', trans('admin.menus.departments.title'), [], 3);
     }, 8, ['icon' => 'fa fa-book']);
 
     //Users
