@@ -1,12 +1,12 @@
 @if(isset($model))
-    {!! Form::model($model, ['method' => 'PUT', 'files' => true, 'route' => ['admin.imports.update', $model->id]]) !!}
+    {!! Form::model($model, ['method' => 'PUT', 'files' => true, 'route' => ['admin.exports.update', $model->id]]) !!}
 @else
-    {!! Form::open(['files' => true, 'route' => 'admin.imports.store']) !!}
+    {!! Form::open(['files' => true, 'route' => 'admin.exports.store']) !!}
 @endif
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('date', 'Import Date:') !!}
+            {!! Form::label('date', 'Export Date:') !!}
             <div class="input-group date">
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
@@ -27,7 +27,6 @@
                     <thead>
                     <th>#</th>
                     <th>Asset Name</th>
-                    <th>Supplier</th>
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>Cost</th>

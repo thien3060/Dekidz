@@ -15,7 +15,8 @@ class CreateTableImport extends Migration
         Schema::create('import', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-            $table->float('cost');
+            $table->integer('supplier');
+            $table->double('total_cost', 18, 2);
             $table->boolean('is_food');
             $table->integer('created_by');
             $table->timestamps();

@@ -15,7 +15,6 @@ class CreateTableExport extends Migration
         Schema::create('export', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-            $table->float('cost');
             $table->boolean('is_food');
             $table->integer('created_by');
             $table->timestamps();

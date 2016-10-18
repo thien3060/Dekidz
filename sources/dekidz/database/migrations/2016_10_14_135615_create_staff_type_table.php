@@ -15,11 +15,8 @@ class CreateStaffTypeTable extends Migration
         Schema::create('staff_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->float('wage_index');
+            $table->note('description');
             $table->timestamps();
-        });
-        Schema::table('staffs', function (Blueprint $table) {
-            $table->dropColumn('is_teacher');
         });
     }
 
@@ -31,8 +28,5 @@ class CreateStaffTypeTable extends Migration
     public function down()
     {
         Schema::drop('staff_types');
-        Schema::table('staffs', function (Blueprint $table) {
-            $table->boolean('is_teacher')->after('department_id');
-        });
     }
 }

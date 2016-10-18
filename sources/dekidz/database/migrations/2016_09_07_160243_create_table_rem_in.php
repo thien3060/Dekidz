@@ -14,14 +14,13 @@ class CreateTableRemIn extends Migration
     {
         Schema::create('rem_in', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('in_code',10);
-            $table->date('in_date');
-            $table->text('in_reason');
-            $table->float('in_total');
-            $table->float('in_received');
-            $table->float('in_dept');
-            $table->text('in_note');
-            $table->boolean('in_status');
+            $table->string('code',10);
+            $table->date('date');
+            $table->text('reason');
+            $table->double('total', 20, 2);
+            $table->double('received', 20, 2);
+            $table->double('debt', 20, 2);
+            $table->text('note');
             $table->timestamps();
         });
     }

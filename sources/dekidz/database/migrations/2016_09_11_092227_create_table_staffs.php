@@ -14,29 +14,19 @@ class CreateTableStaffs extends Migration
     {
         Schema::create('staffs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('number');
+            $table->string('code');
             $table->string('name');
             $table->string('gender');
             $table->date('dob');
             $table->string('identity_card');
             $table->string('religion');
             $table->string('address');
-            $table->string('department_id');
-            $table->boolean('is_teacher');
+            $table->integer('department_id');
             $table->string('issued_by');
-            $table->date('date_range');
             $table->string('phone');
             $table->string('email');
             $table->string('position');
             $table->string('degree');
-            $table->string('father_name');
-            $table->date('father_dob');
-            $table->string('father_job');
-            $table->string('mother_name');
-            $table->date('mother_dob');
-            $table->string('mother_job');
-            $table->string('mother_phone');
-            $table->string('father_phone');
             $table->string('picture');
             $table->boolean('is_leaguer');
             $table->string('working_status');

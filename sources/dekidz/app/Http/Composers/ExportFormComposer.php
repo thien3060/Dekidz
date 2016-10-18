@@ -2,13 +2,13 @@
 
 namespace App\Http\Composers;
 
-use App\Models\Dish;
+use App\Models\Food;
 
-class FoodSetFormComposer
+class ExportFormComposer
 {
     public function compose($view)
     {
-        $assets = Dish::lists('name', 'id');
+        $assets = Food::lists('name', 'id');
 
         $view->with(compact('assets'));
     }

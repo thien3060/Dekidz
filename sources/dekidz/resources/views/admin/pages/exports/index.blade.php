@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Imports
+        All Exports
         &middot;
-        <small>{!! link_to_route('admin.imports.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.exports.create', 'Add New') !!}</small>
     </h1>
 @stop
 
@@ -13,7 +13,7 @@
     <table class="table">
         <thead>
         <th>No</th>
-        <th>Import Date</th>
+        <th>Export Date</th>
         <th>Cost</th>
         <th>Created By</th>
         <th>Created At</th>
@@ -21,18 +21,18 @@
         <th class="text-center">Action</th>
         </thead>
         <tbody>
-        @foreach ($imports as $import)
+        @foreach ($exports as $export)
             <tr>
                 <td>{!! $no !!}</td>
-                <td>{!! $import->date !!}</td>
-                <td>{!! $import->cost !!}</td>
-                <td>{!! $import->created_by !!}</td>
-                <td>{!! $import->created_at !!}</td>
-                <td>{!! $import->updated_at !!}</td>
+                <td>{!! $export->date !!}</td>
+                <td>{!! $export->cost !!}</td>
+                <td>{!! $export->created_by !!}</td>
+                <td>{!! $export->created_at !!}</td>
+                <td>{!! $export->updated_at !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.imports.edit', $import->id) !!}">Edit</a>
+                    <a href="{!! route('admin.exports.edit', $export->id) !!}">Edit</a>
                     &middot;
-                    @include('admin::partials.modal', ['data' => $import, 'name' => 'imports'])
+                    @include('admin::partials.modal', ['data' => $export, 'name' => 'exports'])
                 </td>
             </tr>
             <?php $no++ ;?>
@@ -41,6 +41,6 @@
     </table>
 
     <div class="text-center">
-        {!! pagination_links($imports) !!}
+        {!! pagination_links($exports) !!}
     </div>
 @stop

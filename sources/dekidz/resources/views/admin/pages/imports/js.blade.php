@@ -15,10 +15,6 @@
         }
     });
 
-    $('#asset-list').on('change', '.asset-name', function () {
-        $(this).parent().parent().find('.asset-id').html($(this).val());
-    });
-
     function confirmDelete(item) {
         deleteItem = $(item);
         $('#modal-delete-confirm').modal('show');

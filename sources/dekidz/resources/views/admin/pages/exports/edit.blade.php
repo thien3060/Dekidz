@@ -4,14 +4,14 @@
     <h1>
         Edit
         &middot;
-        <small>{!! link_to_route('admin.imports.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.exports.index', 'Back') !!}</small>
     </h1>
 @stop
 
 @section('content')
 
     <div>
-        @include('admin.pages.imports.form', array('model' => $import))
+        @include('admin.pages.exports.form', array('model' => $export))
     </div>
 
 @stop
@@ -39,5 +39,5 @@
         CKFinder.setupCKEditor( editor, prefix + '/vendor/ckfinder/') ;
     </script>
 
-    @include('admin.pages.imports.js')
+    @include('admin.pages.exports.js')
 @endsection

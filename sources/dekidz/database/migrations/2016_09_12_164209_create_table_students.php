@@ -22,15 +22,15 @@ class CreateTableStudents extends Migration
             $table->string('father_name');
             $table->date('father_dob');
             $table->string('father_job');
+            $table->string('father_phone');
             $table->string('mother_name');
             $table->date('mother_dob');
             $table->string('mother_job');
             $table->string('mother_phone');
-            $table->string('father_phone');
             $table->string('picture');
             $table->string('admission_date');
             $table->string('completion_date');
-            $table->string('note');
+            $table->text('note');
             $table->string('entry_card',15);
             $table->timestamps();
         });

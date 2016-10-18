@@ -16,9 +16,8 @@ class CreateTableImportDetail extends Migration
             $table->increments('id');
             $table->integer('import_id');
             $table->integer('good_id');
-            $table->integer('supplier');
-            $table->float('cost');
-            $table->integer('quantity');
+            $table->double('price', 18, 2);
+            $table->double('quantity', 10, 2);
             $table->timestamps();
         });
     }

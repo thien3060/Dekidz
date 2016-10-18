@@ -18,7 +18,6 @@ class CreateTableClasses extends Migration
             $table->integer('teacher_id');
             $table->string('room_number');
             $table->integer('grade_id');
-            $table->string('accountability');
             $table->timestamps();
         });
     }

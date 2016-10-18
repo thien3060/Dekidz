@@ -16,7 +16,8 @@ class CreateTableDishDetail extends Migration
             $table->increments('id');
             $table->integer('dish_id');
             $table->integer('food_id');
-            $table->integer('quantity');
+            $table->double('quantity', 10, 2);
+            $table->double('price', 20, 2);
             $table->timestamps();
         });
     }

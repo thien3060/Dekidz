@@ -16,6 +16,6 @@ class Export extends Model
     protected $table = 'export';
 
     public function foods(){
-        return $this->belongsToMany('App\Models\Food', 'import_detail', 'import_id', 'good_id')->withPivot('supplier', 'quantity', 'cost');
+        return $this->belongsToMany('App\Models\Food', 'export_detail', 'export_id', 'good_id')->withPivot('quantity');
     }
 }

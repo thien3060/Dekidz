@@ -16,7 +16,7 @@ class CreateTableExportDetail extends Migration
             $table->increments('id');
             $table->integer('export_id');
             $table->integer('good_id');
-            $table->integer('quantity');
+            $table->double('quantity', 10, 2);
             $table->timestamps();
         });
     }

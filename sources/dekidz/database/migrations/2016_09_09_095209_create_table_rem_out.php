@@ -14,12 +14,12 @@ class CreateTableRemOut extends Migration
     {
         Schema::create('rem_out', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('out_code', 10);
-            $table->date('out_date');
-            $table->text('out_reason');
-            $table->float('out_total');
-            $table->float('out_paid');
-            $table->float('out_debt');
+            $table->string('code', 10);
+            $table->date('date');
+            $table->text('reason');
+            $table->double('total', 20, 2);
+            $table->double('paid', 20, 2);
+            $table->double('debt', 20, 2);
             $table->timestamps();
         });
     }

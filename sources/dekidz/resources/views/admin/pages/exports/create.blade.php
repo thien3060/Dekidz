@@ -2,16 +2,16 @@
 
 @section('content-header')
     <h1>
-        Add Import
+        Add Export
         &middot;
-        <small>{!! link_to_route('admin.imports.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.exports.index', 'Back') !!}</small>
     </h1>
 @stop
 
 @section('content')
 
     <div>
-        @include('admin.pages.imports.form')
+        @include('admin.pages.exports.form')
     </div>
 
 @stop
@@ -20,7 +20,7 @@
     <style>
         #asset-list td{
             text-align: left;
-            padding: 1;
+            padding: 1px;
             border-top: 1px solid #ddd;
         }
         #asset-list input{
@@ -72,5 +72,5 @@
         CKFinder.setupCKEditor( editor, prefix + '/vendor/ckfinder/') ;
     </script>
 
-    @include('admin.pages.imports.js')
+    @include('admin.pages.exports.js')
 @endsection

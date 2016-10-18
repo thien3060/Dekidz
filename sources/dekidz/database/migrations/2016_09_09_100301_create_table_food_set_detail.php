@@ -17,8 +17,7 @@ class CreateTableFoodSetDetail extends Migration
             $table->integer('food_set_id');
             $table->integer('dish_id');
             $table->integer('quantity');
-            $table->float('price');
-            $table->boolean('from_deposit');
+            $table->double('price', 20, 2);
             $table->timestamps();
         });
     }

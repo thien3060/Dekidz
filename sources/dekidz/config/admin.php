@@ -65,6 +65,10 @@ return [
         'model' => 'App\Models\Import',
         'perpage' => 10
     ],
+    'export' => [
+        'model' => 'App\Models\Export',
+        'perpage' => 10
+    ],
     'page' => [
         'perpage' => 10
     ],

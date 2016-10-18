@@ -3,17 +3,17 @@
 namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
-use App\Repositories\Contracts\ImportRepository;
+use App\Repositories\Contracts\ExportRepository;
 
-class EloquentImportRepository implements ImportRepository
+class EloquentExportRepository implements ExportRepository
 {
     public function perPage()
     {
-        return config('admin.import.perpage');
+        return config('admin.export.perpage');
     }
 
     public function getModel(){
-        $model = config('admin.import.model');
+        $model = config('admin.export.model');
         return new $model();
     }
 
@@ -28,35 +28,35 @@ class EloquentImportRepository implements ImportRepository
 
     public function getAll()
     {
-        return $this->getImport()->paginate($this->perPage());
+        return $this->getExport()->paginate($this->perPage());
     }
 
     public function search($searchQuery)
     {
         $search = "%{$searchQuery}%";
 
-        return $this->getImport()
+        return $this->getExport()
             //->where('name', 'like', $search)
             ->paginate($this->perPage());
     }
 
     public function findById($id)
     {
-        return $this->getImport()->find($id);
+        return $this->getExport()->find($id);
     }
 
     public function findBy($key, $value, $operator = '=')
     {
-        return $this->getImport()->where($key, $operator, $value)->paginate($this->perPage());
+        return $this->getExport()->where($key, $operator, $value)->paginate($this->perPage());
     }
 
     public function delete($id)
     {
-        $import = $this->findById($id);
+        $export = $this->findById($id);
 
-        if (!is_null($import)) {
-            $import->foods()->detach();
-            $import->delete();
+        if (!is_null($export)) {
+            $export->foods()->detach();
+            $export->delete();
 
             return true;
         }
@@ -68,43 +68,39 @@ class EloquentImportRepository implements ImportRepository
     {
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
-        $import = $this->getModel()->create($data);
+        $export = $this->getModel()->create($data);
         for($i = 0; $i < count($data['asset-name']); $i++){
             if($data['asset-name'][$i] != 0){
-                $import->foods()->attach($data['asset-name'][$i], [
-                    'supplier' => $data['asset-supplier'][$i],
-                    'cost' => $data['asset-cost'][$i],
+                $export->foods()->attach($data['asset-name'][$i], [
                     'quantity' => $data['asset-quantity'][$i]
                 ]);
             }
         }
-        return $import;
+        return $export;
     }
 
     public function update(array $data, $id)
     {
-        $import = $this->findById($id);
+        $export = $this->findById($id);
         
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
 
-        $import->update($data);
-        $import->foods()->detach();
+        $export->update($data);
+        $export->foods()->detach();
 
         for($i = 0; $i < count($data['asset-name']); $i++){
             if($data['asset-name'][$i] != 0){
-                $import->foods()->attach($data['asset-name'][$i], [
-                    'supplier' => $data['asset-supplier'][$i],
-                    'cost' => $data['asset-cost'][$i],
+                $export->foods()->attach($data['asset-name'][$i], [
                     'quantity' => $data['asset-quantity'][$i]
                 ]);
             }
         }
 
-        return $import;
+        return $export;
     }
 
-    public function getImport()
+    public function getExport()
     {
         return $this->getModel();
     }

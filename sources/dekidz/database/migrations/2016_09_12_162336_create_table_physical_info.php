@@ -16,7 +16,7 @@ class CreateTablePhysicalInfo extends Migration
             $table->increments('id');
             $table->integer('student_id');
             $table->string('gender');
-            $table->integer('months');
+            $table->integer('age');
             $table->float('height');
             $table->float('weight');
             $table->float('BMI');

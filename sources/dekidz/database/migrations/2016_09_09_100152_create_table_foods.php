@@ -14,12 +14,12 @@ class CreateTableFoods extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('food_group_id');
+            $table->integer('food_group_id');
             $table->string('name');
             $table->boolean('animal_source');
-            $table->string('in_kg', 5);
+            $table->double('quantity', 10, 2);
             $table->string('unit', 15);
-            $table->float('price');
+            $table->double('price', 20, 2);
             $table->float('absorb');
             $table->float('digest');
             $table->float('calo');

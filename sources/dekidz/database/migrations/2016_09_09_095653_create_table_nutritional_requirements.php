@@ -16,9 +16,16 @@ class CreateTableNutritionalRequirements extends Migration
             $table->increments('id');
             $table->integer('age');
             $table->float('calo');
-            $table->float('protein');
-            $table->float('calxi');
+            $table->float('h2o');
+            $table->float('protid');
+            $table->float('lipid');
+            $table->float('glucid');
+            $table->float('cellulose');
+            $table->float('cholesterol');
+            $table->float('calci');
+            $table->float('photpho');
             $table->float('iron');
+            $table->float('vitamin_caroten');
             $table->float('vitamina');
             $table->float('vitaminb1');
             $table->float('vitaminb2');

@@ -16,8 +16,6 @@ class CreateTableAssets extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('quantity');
-            $table->string('supplier');
-            $table->date('import_date');
             $table->string('maintenance_mode');
             $table->string('unit');
             $table->timestamps();
