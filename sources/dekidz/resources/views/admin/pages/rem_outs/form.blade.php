@@ -6,39 +6,39 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('out_reason', 'Reason:') !!}
-            {!! Form::text('out_reason', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('out_reason', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('reason', 'Reason:') !!}
+            {!! Form::text('reason', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('reason', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('out_code', 'Code:') !!}
-            {!! Form::text('out_code', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('out_code', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('code', 'Code:') !!}
+            {!! Form::text('code', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('code', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('out_date', 'Date:') !!}
+            {!! Form::label('date', 'Date:') !!}
             <div class="input-group date">
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                 </div>
-                {!! Form::text('out_date', null, ['class' => 'form-control date-picker']) !!}
+                {!! Form::text('date', null, ['class' => 'form-control date-picker']) !!}
             </div>
-            {!! $errors->first('out_date', '<div class="text-danger">:message</div>') !!}
+            {!! $errors->first('date', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('out_paid', 'Paid:') !!}
-            {!! Form::text('out_paid', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('out_paid', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('paid', 'Paid:') !!}
+            {!! Form::text('paid', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('paid', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('out_debt', 'Debt:') !!}
-            {!! Form::text('out_debt', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('out_debt', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('debt', 'Debt:') !!}
+            {!! Form::text('debt', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('debt', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('out_total', 'Total:') !!}
-            {!! Form::text('out_total', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('out_total', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('total', 'Total:') !!}
+            {!! Form::text('total', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('total', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
 </div>

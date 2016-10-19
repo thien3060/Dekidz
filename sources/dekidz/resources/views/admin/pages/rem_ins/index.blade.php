@@ -17,22 +17,20 @@
         <th>Code</th>
         <th>Date</th>
         <th>Received</th>
-        <th>Dept</th>
+        <th>Debt</th>
         <th>Total</th>
-        <th>Status</th>
         <th class="text-center">Action</th>
         </thead>
         <tbody>
         @foreach ($rem_ins as $rem_in)
             <tr>
                 <td>{!! $no !!}</td>
-                <td>{!! $rem_in->in_reason !!}</td>
-                <td>{!! $rem_in->in_code !!}</td>
-                <td>{!! $rem_in->in_date !!}</td>
-                <td>{!! $rem_in->in_received !!}</td>
-                <td>{!! $rem_in->in_dept !!}</td>
-                <td>{!! $rem_in->in_total !!}</td>
-                <td>{!! $rem_in->in_status !!}</td>
+                <td>{!! $rem_in->reason !!}</td>
+                <td>{!! $rem_in->code !!}</td>
+                <td>{!! $rem_in->date !!}</td>
+                <td>{!! $rem_in->received !!}</td>
+                <td>{!! $rem_in->debt !!}</td>
+                <td>{!! $rem_in->total !!}</td>
                 <td class="text-center">
                     <a href="{!! route('admin.rem_ins.edit', $rem_in->id) !!}">Edit</a>
                     &middot;

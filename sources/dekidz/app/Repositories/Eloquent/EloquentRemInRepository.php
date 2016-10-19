@@ -67,7 +67,7 @@ class EloquentRemInRepository implements RemInRepository
     public function create(array $data)
     {
         //Date convert
-        $data['in_date'] = DateHelper::sqlDateFormat($data['in_date']);
+        $data['date'] = DateHelper::sqlDateFormat($data['date']);
 
         return $this->getModel()->create($data);
     }
@@ -77,7 +77,7 @@ class EloquentRemInRepository implements RemInRepository
         $rem_in = $this->findById($id);
         
         //Date convert
-        $data['in_date'] = DateHelper::sqlDateFormat($data['in_date']);
+        $data['date'] = DateHelper::sqlDateFormat($data['date']);
 
         return $rem_in->update($data);
     }

@@ -9,11 +9,11 @@ class RemOut extends Model
     protected $table = 'rem_out';
 
     protected $fillable = [
-        "out_reason",
-        "out_code",
-        "out_date",
-        "out_paid",
-        "out_debt",
-        "out_total"
+        "reason",
+        "code",
+        "date",
+        "paid",
+        "debt",
+        "total"
     ];
 }

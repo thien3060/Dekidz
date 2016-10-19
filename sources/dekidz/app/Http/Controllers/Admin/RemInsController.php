@@ -94,7 +94,7 @@ class RemInsController extends BaseController
         try {
             $rem_in = $this->repository->findById($id);
 
-            $rem_in->in_date = DateHelper::normalDateFormat($rem_in->in_date);
+            $rem_in->date = DateHelper::normalDateFormat($rem_in->date);
 
             return $this->view('pages.rem_ins.edit', compact('rem_in'));
         } catch (ModelNotFoundException $e) {

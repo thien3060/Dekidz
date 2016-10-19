@@ -67,7 +67,7 @@ class EloquentRemOutRepository implements RemOutRepository
     public function create(array $data)
     {
         //Date convert
-        $data['out_date'] = DateHelper::sqlDateFormat($data['out_date']);
+        $data['date'] = DateHelper::sqlDateFormat($data['date']);
 
         return $this->getModel()->create($data);
     }
@@ -77,7 +77,7 @@ class EloquentRemOutRepository implements RemOutRepository
         $rem_out = $this->findById($id);
         
         //Date convert
-        $data['out_date'] = DateHelper::sqlDateFormat($data['out_date']);
+        $data['date'] = DateHelper::sqlDateFormat($data['date']);
         
         return $rem_out->update($data);
     }

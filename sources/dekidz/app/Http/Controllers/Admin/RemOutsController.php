@@ -94,7 +94,7 @@ class RemOutsController extends BaseController
         try {
             $rem_out = $this->repository->findById($id);
 
-            $rem_out->out_date = DateHelper::normalDateFormat($rem_out->out_date);
+            $rem_out->date = DateHelper::normalDateFormat($rem_out->date);
 
             return $this->view('pages.rem_outs.edit', compact('rem_out'));
         } catch (ModelNotFoundException $e) {
