@@ -3,6 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
+use App\Repositories\Contracts\SalaryRepository;
 use App\Repositories\Contracts\StaffRepository;
 
 class EloquentStaffRepository implements StaffRepository
@@ -69,7 +70,13 @@ class EloquentStaffRepository implements StaffRepository
         $data['dob'] = DateHelper::sqlDateFormat($data['dob']);
         $data['start_day'] = DateHelper::sqlDateFormat($data['start_day']);
 
-        return $this->getModel()->create($data);
+        $staff = $this->getModel()->create($data);
+
+        if(isset($staff)){
+            $staff->salary()->create(['base_salary' => 0, 'wage_index' => 0, 'bonus' => 0, 'minus' => 0, 'salary' => 0]);
+        }
+
+        return $staff;
     }
 
     public function update(array $data, $id)

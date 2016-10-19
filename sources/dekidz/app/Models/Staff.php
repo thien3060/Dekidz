@@ -27,4 +27,8 @@ class Staff extends Model
           "start_day",
           "type_of_contract",
     ];
+    
+    public function salary(){
+        return $this->hasOne('App\Models\Salary');
+    }
 }

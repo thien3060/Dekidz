@@ -57,7 +57,11 @@ return [
 		'staffs' => [
 			'title' => 'Staffs',
 			'all' => 'All Staffs',
-			'create' => 'Add New'
+			'create' => 'Add New',
+			'salaries' => [
+				'title' => 'Salary',
+				'all' => 'Salaries'
+			]
 		],
 		'departments' => [
 			'title' => 'Departments',
