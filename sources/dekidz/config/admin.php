@@ -77,6 +77,10 @@ return [
         'model' => 'App\Models\Export',
         'perpage' => 10
     ],
+    'foodgroup' => [
+        'model' => 'App\Models\FoodGroup',
+        'perpage' => 10
+    ],
     'page' => [
         'perpage' => 10
     ],

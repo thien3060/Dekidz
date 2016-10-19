@@ -28,7 +28,8 @@ class RepositoriesServiceProvider extends ServiceProvider
         'Import',
         'Asset',
         'Supplier',
-        'Export'
+        'Export',
+        'FoodGroup'
     ];
 
     /**
@@ -158,6 +159,14 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\SupplierRepository',
             'App\Repositories\Eloquent\EloquentSupplierRepository'
+        );
+    }
+
+    protected function bindFoodGroupRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\FoodGroupRepository',
+            'App\Repositories\Eloquent\EloquentFoodGroupRepository'
         );
     }
 

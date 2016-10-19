@@ -42,7 +42,8 @@ return [
 			'title' => 'Nutrition',
 			'food' => 'Food',
 			'food_set' => 'Food Set',
-			'dishes' => 'Dishes'
+			'dishes' => 'Dishes',
+			'foodgroup' => 'Food Group',
 		],
 		'education' => [
 			'title' => 'Education',

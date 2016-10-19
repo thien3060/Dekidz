@@ -8,7 +8,6 @@ class Export extends Model
 {
     protected $fillable = [
         'date',
-        'cost',
         'is_food',
         'created_by'
     ];

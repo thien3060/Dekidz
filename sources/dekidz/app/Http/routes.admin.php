@@ -203,6 +203,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('foodgroups', 'FoodGroupsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.foodgroups.index',
+            'create' => 'admin.foodgroups.create',
+            'store' => 'admin.foodgroups.store',
+            'show' => 'admin.foodgroups.show',
+            'update' => 'admin.foodgroups.update',
+            'edit' => 'admin.foodgroups.edit',
+            'destroy' => 'admin.foodgroups.destroy',
+        ],
+    ]);
+
     Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {
         return "time table page";
     }]);
