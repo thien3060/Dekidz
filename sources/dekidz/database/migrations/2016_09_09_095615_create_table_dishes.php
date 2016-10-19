@@ -35,7 +35,6 @@ class CreateTableDishes extends Migration
             $table->float('vitaminb1');
             $table->float('vitaminb2');
             $table->float('vitaminpp');
-            $table->float('vitaminc');;
             $table->float('vitaminc');
             $table->timestamps();
         });
