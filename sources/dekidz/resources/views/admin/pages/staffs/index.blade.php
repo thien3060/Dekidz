@@ -14,7 +14,7 @@
         <thead>
         <th>No</th>
         <th>Name</th>
-        <th>Number</th>
+        <th>Code</th>
         <th>Gender</th>
         <th>Dob</th>
         <th>Address</th>
@@ -29,7 +29,7 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $staff->name !!}</td>
-                <td>{!! $staff->number !!}</td>
+                <td>{!! $staff->code !!}</td>
                 <td>{!! $staff->gender !!}</td>
                 <td>{!! $staff->dob !!}</td>
                 <td>{!! $staff->address !!}</td>

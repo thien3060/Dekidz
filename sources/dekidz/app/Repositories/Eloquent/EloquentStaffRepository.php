@@ -67,7 +67,6 @@ class EloquentStaffRepository implements StaffRepository
     {
         //Date convert
         $data['dob'] = DateHelper::sqlDateFormat($data['dob']);
-        $data['date_range'] = DateHelper::sqlDateFormat($data['date_range']);
         $data['start_day'] = DateHelper::sqlDateFormat($data['start_day']);
 
         return $this->getModel()->create($data);
@@ -79,7 +78,6 @@ class EloquentStaffRepository implements StaffRepository
         
         //Date convert
         $data['dob'] = DateHelper::sqlDateFormat($data['dob']);
-        $data['date_range'] = DateHelper::sqlDateFormat($data['date_range']);
         $data['start_day'] = DateHelper::sqlDateFormat($data['start_day']);
 
         return $student->update($data);

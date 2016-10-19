@@ -13,7 +13,6 @@ class UpdateRequest extends Validator
             'teacher_id' => 'required',
             'room_number' => 'required',
             'grade_id' => 'required',
-            'accountability' => 'required',
         ];
     }
 }

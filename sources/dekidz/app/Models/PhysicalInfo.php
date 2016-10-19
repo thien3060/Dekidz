@@ -11,7 +11,7 @@ class PhysicalInfo extends Model
     protected $fillable = [
         'student_id',
         'gender',
-        'months',
+        'age',
         'height',
         'weight',
         'BMI'

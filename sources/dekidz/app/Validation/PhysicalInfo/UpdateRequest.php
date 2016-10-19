@@ -11,7 +11,7 @@ class UpdateRequest extends Validator
         return [
             'student_id' => 'required|numeric',
             'gender' => 'required',
-            'months' => 'required|numeric',
+            'age' => 'required|numeric',
             'height' => 'required|numeric',
             'weight' => 'required|numeric',
             'BMI' => 'required|numeric',

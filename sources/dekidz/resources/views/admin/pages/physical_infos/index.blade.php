@@ -15,7 +15,7 @@
         <th>No</th>
         <th>Student</th>
         <th>Gender</th>
-        <th>Month</th>
+        <th>Age</th>
         <th>Height</th>
         <th>Weight</th>
         <th>BMI</th>
@@ -27,7 +27,7 @@
                 <td>{!! $no !!}</td>
                 <td>{!! $physical_info->student_id !!}</td>
                 <td>{!! $physical_info->gender !!}</td>
-                <td>{!! $physical_info->months !!}</td>
+                <td>{!! $physical_info->age !!}</td>
                 <td>{!! $physical_info->height !!}</td>
                 <td>{!! $physical_info->weight !!}</td>
                 <td>{!! $physical_info->BMI !!}</td>

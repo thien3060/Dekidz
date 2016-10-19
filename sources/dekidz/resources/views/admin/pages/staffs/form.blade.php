@@ -11,9 +11,9 @@
             {!! $errors->first('name', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('number', 'Number:') !!}
-            {!! Form::text('number', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('number', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('code', 'Number:') !!}
+            {!! Form::text('code', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('code', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
             {!! Form::label('gender', 'Gender:') !!}
@@ -55,16 +55,6 @@
             {!! Form::text('issued_by', null, ['class' => 'form-control']) !!}
             {!! $errors->first('issued_by', '<div class="text-danger">:message</div>') !!}
         </div>
-        <div class="form-group">
-            {!! Form::label('date_range', 'Date Range:') !!}
-            <div class="input-group date">
-                <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                </div>
-                {!! Form::text('date_range', null, ['class' => 'form-control date-picker']) !!}
-            </div>
-            {!! $errors->first('date_range', '<div class="text-danger">:message</div>') !!}
-        </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
@@ -86,16 +76,6 @@
             {!! Form::label('degree', 'Degree:') !!}
             {!! Form::text('degree', null, ['class' => 'form-control']) !!}
             {!! $errors->first('degree', '<div class="text-danger">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('father_name', 'Father`s Name`:') !!}
-            {!! Form::text('father_name', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('father_name', '<div class="text-danger">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('mother_name', 'Mother`s Name:') !!}
-            {!! Form::text('mother_name', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('mother_name', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
             {!! Form::label('is_leaguer', 'Is leaguer:') !!}

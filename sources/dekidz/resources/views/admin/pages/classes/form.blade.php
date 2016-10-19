@@ -32,13 +32,6 @@
             {!! $errors->first('grade_id', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            {!! Form::label('accountability', 'Accountability:') !!}
-            {!! Form::text('accountability', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('accountability', '<div class="text-danger">:message</div>') !!}
-        </div>
-    </div>
 </div>
 <div class="row">
     <div class="col-sm-6">

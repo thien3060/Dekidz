@@ -10,7 +10,7 @@ class Staff extends Model
 
     protected $fillable = [
           "name",
-          "number",
+          "code",
           "gender",
           "dob",
           "identity_card",
@@ -18,13 +18,10 @@ class Staff extends Model
           "address",
           "department_id",
           "issued_by",
-          "date_range",
           "phone",
           "email",
           "position",
           "degree",
-          "father_name",
-          "mother_name",
           "is_leaguer",
           "working_status",
           "start_day",

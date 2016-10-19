@@ -10,13 +10,12 @@ class CreateRequest extends Validator
     {
         return [
             "name" => "required|min:5", 
-            "number" => "required|numeric", 
+            "code" => "required|numeric", 
             "gender" => "required", 
             "dob" => "required|date", 
             "identity_card" => "required|numeric",
             "address" => "required",
             "department_id" => "required|numeric",
-            "date_range" => "required|date",
             "phone" => 'required|regex:/^[\d -]+$/',
             "email" => "required|email",
             "position" => "required",

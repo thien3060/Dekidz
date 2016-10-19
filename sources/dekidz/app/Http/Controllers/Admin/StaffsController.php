@@ -95,7 +95,6 @@ class StaffsController extends BaseController
             $staff = $this->repository->findById($id);
 
             $staff->dob = DateHelper::normalDateFormat($staff->dob);
-            $staff->date_range = DateHelper::normalDateFormat($staff->date_range);
             $staff->start_day = DateHelper::normalDateFormat($staff->start_day);
 
             return $this->view('pages.staffs.edit', compact('staff'));

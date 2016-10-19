@@ -16,9 +16,9 @@
             {!! $errors->first('gender', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('months', 'Month:') !!}
-            {!! Form::text('months', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('months', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('age', 'Age:') !!}
+            {!! Form::text('age', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('age', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
             {!! Form::label('height', 'Height:') !!}

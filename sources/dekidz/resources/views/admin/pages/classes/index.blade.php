@@ -16,7 +16,6 @@
         <th>Teacher name</th>
         <th>Room number</th>
         <th>Grade</th>
-        <th>Accountability</th>
         <th class="text-center">Action</th>
         </thead>
         <tbody>
@@ -27,7 +26,6 @@
                 <td>{!! $class->teacher_id !!}</td>
                 <td>{!! $class->room_number !!}</td>
                 <td>{!! $class->grade_id !!}</td>
-                <td>{!! $class->accountability !!}</td>
                 <td class="text-center">
                     <a href="{!! route('admin.classes.edit', $class->id) !!}">Edit</a>
                     &middot;
