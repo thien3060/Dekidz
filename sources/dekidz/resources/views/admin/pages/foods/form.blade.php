@@ -3,6 +3,7 @@
 @else
     {!! Form::open(['files' => true, 'route' => 'admin.foods.store']) !!}
 @endif
+
 <div class="row">
     <div class="col-sm-3">
         <div class="form-group">
@@ -14,14 +15,22 @@
     <div class="col-sm-3">
         <div class="form-group">
             {!! Form::label('food_group_id', 'Food Group:') !!}
-            {!! Form::text('food_group_id', null, ['class' => 'form-control']) !!}
+            <select class="form-control food-group-id" name="food_group_id">
+                <option value="0">Select group</option>
+                @foreach($foodgroups as $key => $group)
+                    <option value="{{$key}}" @if($key == @$model->food_group_id) selected="selected" @endif>{{$group}}</option>
+                @endforeach
+            </select>
             {!! $errors->first('food_group_id', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
             {!! Form::label('animal_source', 'Animal Source:') !!}
-            {!! Form::text('animal_source', null, ['class' => 'form-control']) !!}
+            <select class="form-control animal-source" name="animal_source">
+                <option value="0">No</option>
+                <option value="1" @if (@$model->animal_source == 1) selected="selected" @endif>Yes</option>
+            </select>
             {!! $errors->first('animal_source', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
