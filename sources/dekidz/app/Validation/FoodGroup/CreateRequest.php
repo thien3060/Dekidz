@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Validation\Supplier;
+namespace App\Validation\FoodGroup;
 
 use App\Validation\Validator;
 
@@ -10,10 +10,7 @@ class CreateRequest extends Validator
     {
         return [
             'name' => 'required|min:1',
-            'type' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'product_type'=> 'required',
+            'code' => 'required',
         ];
     }
 }

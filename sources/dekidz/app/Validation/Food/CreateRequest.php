@@ -12,7 +12,7 @@ class CreateRequest extends Validator
             'food_group_id'=> 'required',
             'name'=> 'required|min:2',
             'animal_source'=> 'required',
-            'in_kg'=> 'numeric',
+            'quantity'=> 'numeric',
             'unit'=> 'required',
             'price'=> 'numeric',
             'absorb'=> 'required',

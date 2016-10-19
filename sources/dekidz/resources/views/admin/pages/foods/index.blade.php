@@ -16,7 +16,7 @@
         <th>Name</th>
         <th>Food Group</th>
         <th>Animal Source</th>
-        <th>In Kilogram</th>
+        <th>Quantity</th>
         <th>Unit</th>
         <th>Price</th>
         <th>Absorb</th>
@@ -47,7 +47,7 @@
                 <td><a href="{!! route('admin.foods.show', $food->id) !!}">{!! $food->name !!}</a></td>
                 <td>{!! $food->food_group_id !!}</td>
                 <td>{!! $food->animal_source !!}</td>
-                <td>{!! $food->in_kg !!}</td>
+                <td>{!! $food->quantity !!}</td>
                 <td>{!! $food->unit !!}</td>
                 <td>{!! $food->price !!}</td>
                 <td>{!! $food->absorb !!}</td>

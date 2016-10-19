@@ -10,7 +10,7 @@ class CreateRequest extends Validator
     {
         return [
             'date' => 'required|date',
-            'cost' => 'required|numeric',
+            'total_cost' => 'required|numeric',
         ];
     }
 }
