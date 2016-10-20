@@ -10,7 +10,6 @@ class CreateRequest extends Validator
     {
         return [
             'name' => 'required|min:1',
-            'code' => 'required',
         ];
     }
 }

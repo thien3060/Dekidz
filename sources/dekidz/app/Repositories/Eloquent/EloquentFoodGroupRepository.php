@@ -65,7 +65,12 @@ class EloquentFoodGroupRepository implements FoodGroupRepository
 
     public function create(array $data)
     {
-        return $this->getModel()->create($data);
+        $food_group = $this->getModel()->create($data);
+        if(isset($food_group)){
+            $food_group->code = config('code.food_groups').sprintf("%04d", $food_group->id);
+            $food_group->save();
+        }
+        return $food_group;
     }
 
     public function update(array $data, $id)

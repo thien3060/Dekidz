@@ -9,7 +9,6 @@ class FoodGroup extends Model
     protected $table = 'food_groups';
 
     protected $fillable = [
-        'code',
         'name'
     ];
 
