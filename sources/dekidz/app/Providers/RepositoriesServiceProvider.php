@@ -17,6 +17,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         'Student',
         'PhysicalInfo',
         'Staff',
+        'Salary',
         'Department',
         'RemIn',
         'RemOut',
@@ -63,6 +64,14 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\StaffRepository',
             'App\Repositories\Eloquent\EloquentStaffRepository'
+        );
+    }
+
+    protected function bindSalaryRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\SalaryRepository',
+            'App\Repositories\Eloquent\EloquentSalaryRepository'
         );
     }
 
