@@ -9,8 +9,8 @@ class FoodSetType extends Model
     protected $table = 'food_set_type';
 
     protected $fillable = [
-        'name',
-        'notes'
+        'code',
+        'name'
     ];
 
 }

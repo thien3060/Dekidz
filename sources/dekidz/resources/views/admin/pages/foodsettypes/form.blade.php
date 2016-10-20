@@ -6,16 +6,16 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('name', 'Name:') !!}
-            {!! Form::text('name', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('name', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('code', 'Code:') !!}
+            {!! Form::text('code', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('code', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('notes', 'Note:') !!}
-            {!! Form::text('notes', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('notes', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('name', 'Name:') !!}
+            {!! Form::text('name', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('name', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
 

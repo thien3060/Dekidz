@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        All foodgroups
+        All food set type
         &middot;
         <small>{!! link_to_route('admin.foodsettypes.create', 'Add New') !!}</small>
     </h1>
@@ -13,15 +13,15 @@
         <thead>
         <th>No</th>
         <th>Code</th>
-        <th>Note</th>
+        <th>Name</th>
         <th class="text-center">Action</th>
         </thead>
         <tbody>
         @foreach ($foodsettypes as $foodsettype)
             <tr>
                 <td>{!! $no !!}</td>
+                <td>{!! $foodsettype->code !!}</td>
                 <td>{!! $foodsettype->name !!}</td>
-                <td>{!! $foodsettype->notes !!}</td>
                 <td class="text-center">
                     <a href="{!! route('admin.foodsettypes.edit', $foodsettype->id) !!}">Edit</a>
                     &middot;

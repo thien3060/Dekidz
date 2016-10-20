@@ -9,8 +9,8 @@ class UpdateRequest extends Validator
     public function rules()
     {
         return [
-            'name' => 'required|min:1',
-            'notes' => 'required',
+            'code' => 'required|min:1',
+            'name' => 'required',
         ];
     }
 }
