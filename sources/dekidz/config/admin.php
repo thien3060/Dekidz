@@ -85,6 +85,10 @@ return [
         'model' => 'App\Models\FoodSetType',
         'perpage' => 10
     ],
+    'dishtype' => [
+        'model' => 'App\Models\DishType',
+        'perpage' => 10
+    ],
     'page' => [
         'perpage' => 10
     ],

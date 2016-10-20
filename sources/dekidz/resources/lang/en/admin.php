@@ -45,6 +45,7 @@ return [
 			'dishes' => 'Dishes',
 			'foodgroup' => 'Food Group',
 			'foodsettype' => 'Food Set Type',
+			'dishtype' => 'Dish Type',
 		],
 		'education' => [
 			'title' => 'Education',

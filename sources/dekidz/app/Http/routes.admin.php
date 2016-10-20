@@ -173,6 +173,18 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('dishtypes', 'DishTypesController', [
+        'names' => [
+            'index' => 'admin.dishtypes.index',
+            'create' => 'admin.dishtypes.create',
+            'store' => 'admin.dishtypes.store',
+            'show' => 'admin.dishtypes.show',
+            'update' => 'admin.dishtypes.update',
+            'edit' => 'admin.dishtypes.edit',
+            'destroy' => 'admin.dishtypes.destroy',
+        ],
+    ]);
+
     Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {
         return "time table page";
     }]);

@@ -18,6 +18,7 @@ class ComposerServiceProvider extends ServiceProvider
         'admin.pages.foods.create' => 'App\Http\Composers\FoodFormComposer',
         'admin.pages.foods.edit' => 'App\Http\Composers\FoodFormComposer',
         'admin.pages.foodsets.edit' => 'App\Http\Composers\FoodSetFormComposer',
+        'admin.pages.dishes.edit' => 'App\Http\Composers\DishFormComposer',
 
     ];
     /**
