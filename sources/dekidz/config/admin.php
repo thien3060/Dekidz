@@ -77,6 +77,10 @@ return [
         'model' => 'App\Models\FoodGroup',
         'perpage' => 10
     ],
+    'foodsettype' => [
+        'model' => 'App\Models\FoodSetType',
+        'perpage' => 10
+    ],
     'page' => [
         'perpage' => 10
     ],
@@ -96,4 +100,5 @@ return [
         'model' => 'Pingpong\Admin\Entities\Category',
         'perpage' => 10
     ],
+
 ];

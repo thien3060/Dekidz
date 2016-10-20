@@ -179,6 +179,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('foodsettypes', 'FoodSetTypesController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.foodsettypes.index',
+            'create' => 'admin.foodsettypes.create',
+            'store' => 'admin.foodsettypes.store',
+            'show' => 'admin.foodsettypes.show',
+            'update' => 'admin.foodsettypes.update',
+            'edit' => 'admin.foodsettypes.edit',
+            'destroy' => 'admin.foodsettypes.destroy',
+        ],
+    ]);
+
     Route::resource('suppliers', 'SuppliersController', [
         'except' => 'show',
         'names' => [
