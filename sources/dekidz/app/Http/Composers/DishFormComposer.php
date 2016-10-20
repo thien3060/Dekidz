@@ -4,7 +4,7 @@ namespace App\Http\Composers;
 
 use App\Models\DishType;
 
-class DishTypeFormComposer
+class DishFormComposer
 {
     public function compose($view)
     {
