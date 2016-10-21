@@ -14,6 +14,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('grades', 'GradesController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.grades.index',
+            'create' => 'admin.grades.create',
+            'store' => 'admin.grades.store',
+            'show' => 'admin.grades.show',
+            'update' => 'admin.grades.update',
+            'edit' => 'admin.grades.edit',
+            'destroy' => 'admin.grades.destroy',
+        ],
+    ]);
+
     Route::resource('physical_infos', 'PhysicalInfosController', [
         'names' => [
             'index' => 'admin.physical_infos.index',
