@@ -244,6 +244,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
     Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {
         return "time table page";
     }]);
+
+    Route::resource('subject_topics', 'SubjectTopicsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.subject_topics.index',
+            'create' => 'admin.subject_topics.create',
+            'store' => 'admin.subject_topics.store',
+            'show' => 'admin.subject_topics.show',
+            'update' => 'admin.subject_topics.update',
+            'edit' => 'admin.subject_topics.edit',
+            'destroy' => 'admin.subject_topics.destroy',
+        ],
+    ]);
 });
 
 Route::get('oauth/google', 'OAuthController@redirectToGoogleProvider')->name('login.google');

@@ -51,6 +51,10 @@ return [
 			'title' => 'Education',
 			'teachers' => 'Teachers',
 			'time_table' => 'Time Table',
+			'subject_topic' => [
+				'title' => 'Subject',
+				'create' => 'Create Subject'
+			]
 		],
 		'articles' => [
 			'title' => 'Articles',

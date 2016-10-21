@@ -57,6 +57,10 @@ return [
         'model' => 'App\Models\DekidzClass',
         'perpage' => 10
     ],
+    'subject_topic' => [
+        'model' => 'App\Models\SubjectTopic',
+        'perpage' => 10
+    ],
     'dish' => [
         'model' => 'App\Models\Dish',
         'perpage' => 10

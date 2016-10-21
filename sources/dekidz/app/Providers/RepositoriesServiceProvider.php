@@ -22,6 +22,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         'RemIn',
         'RemOut',
         'DekidzClass',
+        'SubjectTopic',
         'Dish',
         'Food',
         'FoodSet',
@@ -104,6 +105,13 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\DekidzClassRepository',
             'App\Repositories\Eloquent\EloquentDekidzClassRepository'
+        );
+    }
+
+    protected function bindSubjectTopicRepository() {
+        $this->app->bind(
+            'App\Repositories\Contracts\SubjectTopicRepository',
+            'App\Repositories\Eloquent\EloquentSubjectTopicRepository'
         );
     }
 
