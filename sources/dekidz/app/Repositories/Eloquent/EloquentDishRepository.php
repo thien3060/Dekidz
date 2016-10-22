@@ -55,6 +55,7 @@ class EloquentDishRepository implements DishRepository
         $dish = $this->findById($id);
 
         if (!is_null($dish)) {
+            $dish->foods()->detach();
             $dish->delete();
 
             return true;
@@ -65,13 +66,37 @@ class EloquentDishRepository implements DishRepository
 
     public function create(array $data)
     {
-        return $this->getModel()->create($data);
+        $dish = $this->getModel()->create($data);
+        for($i = 0; $i < count($data['asset-name']); $i++){
+            if($data['asset-name'][$i] != 0){
+                $dish->foods()->attach($data['asset-name'][$i], [
+                    'price' => $data['asset-price'][$i],
+                    'quantity' => $data['asset-quantity'][$i]
+                ]);
+            }
+        }
+        return $dish;
     }
 
     public function update(array $data, $id)
     {
         $dish = $this->findById($id);
-        return $dish->update($data);
+
+        $dish->update($data);
+        $dish->foods()->detach();
+
+        for($i = 0; $i < count($data['asset-name']); $i++){
+            if($data['asset-name'][$i] != 0){
+                if($data['asset-name'][$i] != 0){
+                    $dish->foods()->attach($data['asset-name'][$i], [
+                        'price' => $data['asset-price'][$i],
+                        'quantity' => $data['asset-quantity'][$i]
+                    ]);
+                }
+            }
+        }
+
+        return $dish;
     }
 
     public function getDish()

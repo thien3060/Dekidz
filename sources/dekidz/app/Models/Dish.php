@@ -38,4 +38,8 @@ class Dish extends Model
         'vitaminpp',
         'vitaminc'
     ];
+
+    public function foods(){
+        return $this->belongsToMany('App\Models\Food', 'dish_detail', 'dish_id', 'food_id')->withPivot('quantity', 'price');
+    }
 }

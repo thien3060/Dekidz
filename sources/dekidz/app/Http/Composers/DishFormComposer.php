@@ -3,6 +3,7 @@
 namespace App\Http\Composers;
 
 use App\Models\DishType;
+use App\Models\Food;
 
 class DishFormComposer
 {
@@ -11,5 +12,11 @@ class DishFormComposer
         $dishtypes = DishType::lists('name', 'id');
 
         $view->with(compact('dishtypes'));
+
+        $foods = Food::lists('name', 'id');
+
+        $view->with(compact('foods'));
+
+
     }
 }

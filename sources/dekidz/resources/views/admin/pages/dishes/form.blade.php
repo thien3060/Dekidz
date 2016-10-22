@@ -23,6 +23,93 @@
             {!! $errors->first('type_id', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
+
+
+    <div class="col-sm-12">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Food list</h3>
+                <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">Add</button>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body text-center">
+                <table class="table">
+                    <thead>
+                    <th>#</th>
+                    <th>Food Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Cost</th>
+                    <th class="text-center">Action</th>
+                    </thead>
+                    <tbody id="asset-list">
+                    @if(isset($model))
+                        @foreach($model->foods as $k => $food)
+                            <tr>
+                                <td class="asset-id">{{$key + 1}}</td>
+                                <td>
+                                    <select class="form-control asset-name" name="asset-name[]">
+                                        <option value="0">Select food</option>
+                                        @foreach($foods as $key => $food)
+                                            <option value="{{$key}}" @if($key == $food->id) selected="selected" @endif>{{$food}}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
+                                    <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number"  value="{{$food->pivot->quantity}}">
+                                </td>
+                                <td>
+                                    <input class="form-control asset-price" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number" value="{{$food->pivot->price}}">
+                                </td>
+                                <td>
+                                    <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
+                                </td>
+                                <td style="text-align: center">
+                                    <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
+                    <tr>
+                        <td class="asset-id">1</td>
+                        <td>
+                            <select class="form-control asset-name" name="asset-name[]">
+                                <option value="0" selected="selected">Select asset</option>
+                                @foreach($foods as $key => $food)
+                                    <option value="{{$key}}">{{$food}}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                        <td>
+                            <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number">
+                        </td>
+                        <td>
+                            <input class="form-control asset-price" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number">
+                        </td>
+                        <td>
+                            <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
+                        </td>
+                        <td style="text-align: center">
+                            <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr>
+                        <td colspan="4" class="text-right"><strong>Total: </strong></td>
+                        <td colspan="2" id="total-label" class="text-left">0</td>
+                        <input type="hidden" id="total-cost" name="cost"/>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <div class="col-sm-4">
         <div class="form-group">
             {!! Form::label('chef', 'Chef:') !!}
