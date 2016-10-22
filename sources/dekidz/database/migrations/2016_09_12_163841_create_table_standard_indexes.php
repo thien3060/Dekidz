@@ -19,6 +19,7 @@ class CreateTableStandardIndexes extends Migration
             $table->float('weight');
             $table->float('bmi');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

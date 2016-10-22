@@ -21,6 +21,7 @@ class CreateTablePhysicalInfo extends Migration
             $table->float('weight');
             $table->float('BMI');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

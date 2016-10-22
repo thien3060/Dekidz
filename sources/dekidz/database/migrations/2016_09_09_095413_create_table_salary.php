@@ -21,6 +21,7 @@ class CreateTableSalary extends Migration
             $table->double('minus',20, 2);
             $table->double('salary',20, 2);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

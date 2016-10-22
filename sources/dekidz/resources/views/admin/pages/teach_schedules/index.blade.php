@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        All Students
+        All Teach Schedule
         &middot;
         <small>{!! link_to_route('admin.teach_schedules.create', 'Add New') !!}</small>
     </h1>
@@ -28,11 +28,11 @@
                 <td>{!! $no !!}</td>
                 <td>{!! $teach_schedule->day !!}</td>
                 <td>{!! $teach_schedule->date !!}</td>
-                <td>{!! $teach_schedule->class_id !!}</td>
-                <td>{!! $teach_schedule->morning_lesson_id !!}</td>
-                <td>{!! $teach_schedule->morning_teacher_id !!}</td>
-                <td>{!! $teach_schedule->afternoon_lesson_id !!}</td>
-                <td>{!! $teach_schedule->afternoon_teacher_id !!}</td>
+                <td>{!! $classes[$teach_schedule->class_id] !!}</td>
+                <td>{!! $subjects[$teach_schedule->morning_lesson_id] !!}</td>
+                <td>{!! $teachers[$teach_schedule->morning_teacher_id] !!}</td>
+                <td>{!! $subjects[$teach_schedule->afternoon_lesson_id] !!}</td>
+                <td>{!! $teachers[$teach_schedule->afternoon_teacher_id] !!}</td>
                 <td class="text-center">
                     <a href="{!! route('admin.teach_schedules.edit', $teach_schedule->id) !!}">Edit</a>
                     &middot;

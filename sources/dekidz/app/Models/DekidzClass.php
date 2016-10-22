@@ -23,6 +23,6 @@ class DekidzClass extends Model
     ];
     
     public function teach_schedules(){
-        return $this->hasMany('App\Models\TeachSchedule');
+        return $this->hasMany('App\Models\TeachSchedule', 'class_id');
     }
 }

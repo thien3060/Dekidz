@@ -17,6 +17,7 @@ class CreateTableGrades extends Migration
             $table->string('name');
             $table->text('description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

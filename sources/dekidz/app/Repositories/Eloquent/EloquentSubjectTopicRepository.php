@@ -53,7 +53,7 @@ class EloquentSubjectTopicRepository implements SubjectTopicRepository
     public function delete($id)
     {
         $subject_topic = $this->findById($id);
-
+        
         if (!is_null($subject_topic)) {
             $subject_topic->delete();
 

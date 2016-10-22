@@ -21,6 +21,7 @@ class CreateTableLessons extends Migration
             $table->text('kid_activity');
             $table->string('author');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

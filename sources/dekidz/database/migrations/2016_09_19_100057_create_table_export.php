@@ -18,6 +18,7 @@ class CreateTableExport extends Migration
             $table->boolean('is_food');
             $table->integer('created_by');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

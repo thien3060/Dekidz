@@ -20,6 +20,7 @@ class CreateTableTuitionFee extends Migration
             $table->integer('year');
             $table->integer('month');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

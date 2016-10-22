@@ -18,6 +18,7 @@ class CreateTableDepartments extends Migration
             $table->text('description');
             $table->integer('chief_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

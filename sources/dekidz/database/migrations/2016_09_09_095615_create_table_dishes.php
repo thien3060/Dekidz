@@ -37,6 +37,7 @@ class CreateTableDishes extends Migration
             $table->float('vitaminpp');
             $table->float('vitaminc');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

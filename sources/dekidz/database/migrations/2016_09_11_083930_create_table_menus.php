@@ -19,6 +19,7 @@ class CreateTableMenus extends Migration
             $table->integer('lunch_id');
             $table->integer('mid_afternoon_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

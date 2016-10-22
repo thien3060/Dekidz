@@ -39,6 +39,7 @@ class CreateTableFoods extends Migration
             $table->float('vitaminpp');
             $table->float('vitaminc');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

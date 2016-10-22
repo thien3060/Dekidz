@@ -17,6 +17,7 @@ class CreateTableFoodSetType extends Migration
             $table->string('code', 20);
             $table->string('name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

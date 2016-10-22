@@ -19,6 +19,7 @@ class CreateTableAssets extends Migration
             $table->string('maintenance_mode');
             $table->string('unit');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

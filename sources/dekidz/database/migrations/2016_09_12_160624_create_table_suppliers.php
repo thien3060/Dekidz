@@ -20,6 +20,7 @@ class CreateTableSuppliers extends Migration
             $table->string('phone');
             $table->string('product_type');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
