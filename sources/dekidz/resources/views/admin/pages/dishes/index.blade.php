@@ -14,9 +14,11 @@
         <thead>
         <th>No</th>
         <th>Name</th>
+        <th>Chef</th>
+        <th>Total cost</th>
         <th>Prepare Description</th>
         <th>Cooking Description</th>
-        <th>Chef</th>
+
         {{--<th>Protid DV</th>--}}
         {{--<th>Protid TV</th>--}}
         {{--<th>Lipip DV</th>--}}
@@ -38,10 +40,11 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $dish->name !!}</td>
-                <td>{!! $dish->type_id !!}</td>
+                <td>{!! $dish->chef !!}</td>
+                <td>{!! $dish->total_cost !!}</td>
                 <td>{!! $dish->preparing_description !!}</td>
                 <td>{!! $dish->cooking_description !!}</td>
-                <td>{!! $dish->chef !!}</td>
+
                 {{--<td>{!! $dish->protid_dv !!}</td>--}}
                 {{--<td>{!! $dish->protid_tv !!}</td>--}}
                 {{--<td>{!! $dish->lipid_dv !!}</td>--}}

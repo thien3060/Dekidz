@@ -13,7 +13,6 @@ class UpdateRequest extends Validator
             'type_id' => 'required|min:1',
             'preparing_description' => 'required|min:5',
             'cooking_description' => 'required|min:5',
-            'total_cost' => 'numberic',
             'chef' => 'required',
             'calo'=> 'numeric',
             'h2o'=> 'numeric',

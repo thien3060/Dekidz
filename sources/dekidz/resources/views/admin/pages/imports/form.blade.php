@@ -94,7 +94,7 @@
                             <tr>
                                 <td colspan="5" class="text-right"><strong>Total: </strong></td>
                                 <td colspan="2" id="total-label" class="text-left">0</td>
-                                <input type="hidden" id="total-cost" name="cost"/>
+                                <input type="hidden" id="total-cost" name="total_cost"/>
                             </tr>
                         </tbody>
                     </tbody>

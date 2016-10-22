@@ -25,6 +25,14 @@
     </div>
 
 
+    <div class="col-sm-4">
+        <div class="form-group">
+            {!! Form::label('chef', 'Chef:') !!}
+            {!! Form::text('chef', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('chef', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+
     <div class="col-sm-12">
         <div class="box box-solid">
             <div class="box-header with-border">
@@ -46,12 +54,12 @@
                     @if(isset($model))
                         @foreach($model->foods as $k => $food)
                             <tr>
-                                <td class="asset-id">{{$key + 1}}</td>
+                                <td class="asset-id">{{$k + 1}}</td>
                                 <td>
                                     <select class="form-control asset-name" name="asset-name[]">
                                         <option value="0">Select food</option>
-                                        @foreach($foods as $key => $food)
-                                            <option value="{{$key}}" @if($key == $food->id) selected="selected" @endif>{{$food}}</option>
+                                        @foreach($foods as $key => $name)
+                                            <option value="{{$key}}" @if($key == $food->id) selected="selected" @endif>{{$name}}</option>
                                         @endforeach
                                     </select>
                                 </td>
@@ -59,7 +67,7 @@
                                     <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number"  value="{{$food->pivot->quantity}}">
                                 </td>
                                 <td>
-                                    <input class="form-control asset-price" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number" value="{{$food->pivot->price}}">
+                                    <input class="form-control asset-price" name="asset-price[]" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number" value="{{$food->pivot->price}}">
                                 </td>
                                 <td>
                                     <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
@@ -71,7 +79,7 @@
                         @endforeach
                     @endif
                     <tr>
-                        <td class="asset-id">1</td>
+                        <td class="asset-id">{{$k + 2}}</td>
                         <td>
                             <select class="form-control asset-name" name="asset-name[]">
                                 <option value="0" selected="selected">Select asset</option>
@@ -84,7 +92,7 @@
                             <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number">
                         </td>
                         <td>
-                            <input class="form-control asset-price" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number">
+                            <input class="form-control asset-price" name="asset-price[]" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number">
                         </td>
                         <td>
                             <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
@@ -98,7 +106,7 @@
                     <tr>
                         <td colspan="4" class="text-right"><strong>Total: </strong></td>
                         <td colspan="2" id="total-label" class="text-left">0</td>
-                        <input type="hidden" id="total-cost" name="cost"/>
+                        <input type="hidden" id="total-cost" name="total_cost"/>
                     </tr>
                     </tbody>
                 </table>
@@ -107,16 +115,6 @@
     </div>
 
 
-
-
-
-    <div class="col-sm-4">
-        <div class="form-group">
-            {!! Form::label('chef', 'Chef:') !!}
-            {!! Form::text('chef', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('chef', '<div class="text-danger">:message</div>') !!}
-        </div>
-    </div>
     <div class="col-sm-6">
         <div class="form-group">
             {!! Form::label('preparing_description', 'Preparing description:') !!}
@@ -134,30 +132,30 @@
 
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('protid_dv', 'Protid DV:') !!}
-            {!! Form::text('protid_dv', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('protid_dv', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('calo', 'Calo:') !!}
+            {!! Form::text('calo', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('calo', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('protid_tv', 'Protid TV:') !!}
-            {!! Form::text('protid_tv', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('protid_tv', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('h2o', 'H2O:') !!}
+            {!! Form::text('h2o', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('h2o', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('lipid_dv', 'Lipid DV:') !!}
-            {!! Form::text('lipid_dv', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('lipid_dv', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('protid', 'Protid:') !!}
+            {!! Form::text('protid', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('protid', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('lipid_tv', 'Lipid TV:') !!}
-            {!! Form::text('lipid_tv', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('lipid_tv', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('lipid', 'Lipid:') !!}
+            {!! Form::text('lipid', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('lipid', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
@@ -169,16 +167,23 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('calo', 'Calo:') !!}
-            {!! Form::text('calo', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('calo', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('cellulose', 'Cellulose:') !!}
+            {!! Form::text('cellulose', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('cellulose', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('canxi', 'Canxi:') !!}
-            {!! Form::text('canxi', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('canxi', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('cholesterol', 'Cholesterol:') !!}
+            {!! Form::text('cholesterol', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('cholesterol', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            {!! Form::label('calci', 'Calci:') !!}
+            {!! Form::text('calci', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('calci', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
@@ -195,6 +200,14 @@
             {!! $errors->first('iron', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            {!! Form::label('vitamin_caroten', 'Vitamin Caroten:') !!}
+            {!! Form::text('vitamin_caroten', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('vitamin_caroten', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+
     <div class="col-sm-3">
         <div class="form-group">
             {!! Form::label('vitamina', 'Vitamin A:') !!}
