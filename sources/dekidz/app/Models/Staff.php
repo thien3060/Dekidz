@@ -31,4 +31,12 @@ class Staff extends Model
     public function salary(){
         return $this->hasOne('App\Models\Salary');
     }
+
+    public function morning_lesson(){
+        return $this->hasMany('App\Models\TeachSchedule');
+    }
+
+    public function afternoon_lesson(){
+        return $this->hasMany('App\Models\TeachSchedule');
+    }
 }

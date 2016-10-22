@@ -51,7 +51,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     //Education
     $menu->dropdown(trans('admin.menus.education.title'), function ($sub) {
         $sub->route('admin.teachers.index', trans('admin.menus.education.teachers'), [], 1);
-        $sub->route('admin.education.time_table', trans('admin.menus.education.time_table'), [], 2);
+        $sub->route('admin.teach_schedules.index', trans('admin.menus.education.teach_schedules.title'), [], 2);
         $sub->route('admin.subject_topics.index', trans('admin.menus.education.subject_topic.title'), [], 3);
     }, 6, ['icon' => 'fa fa-book']);
 

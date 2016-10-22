@@ -13,4 +13,12 @@ class SubjectTopic extends Model
         "name",
         "description"
     ];
+
+    public function morning_schedules(){
+        return $this->hasMany('App\Models\TeachSchedule');
+    }
+
+    public function afternoon_schedules(){
+        return $this->hasMany('App\Models\TeachSchedule');
+    }
 }

@@ -59,6 +59,10 @@ return [
 			'subject_topic' => [
 				'title' => 'Subject',
 				'create' => 'Create Subject'
+			],
+			'teach_schedules' => [
+				'title' => 'Teach Schedules',
+				'create' => 'Create Teach Schedule'
 			]
 		],
 		'articles' => [

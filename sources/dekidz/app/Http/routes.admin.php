@@ -254,9 +254,17 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
-    Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {
-        return "time table page";
-    }]);
+    Route::resource('teach_schedules', 'TeachSchedulesController', [
+        'names' => [
+            'index' => 'admin.teach_schedules.index',
+            'create' => 'admin.teach_schedules.create',
+            'store' => 'admin.teach_schedules.store',
+            'show' => 'admin.teach_schedules.show',
+            'update' => 'admin.teach_schedules.update',
+            'edit' => 'admin.teach_schedules.edit',
+            'destroy' => 'admin.teach_schedules.destroy',
+        ],
+    ]);
 
     Route::resource('subject_topics', 'SubjectTopicsController', [
         'except' => 'show',

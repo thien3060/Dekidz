@@ -97,6 +97,10 @@ return [
         'model' => 'App\Models\DishType',
         'perpage' => 10
     ],
+    'teach_schedule' => [
+        'model' => 'App\Models\TeachSchedule',
+        'perpage' => 10
+    ],
     'page' => [
         'perpage' => 10
     ],
