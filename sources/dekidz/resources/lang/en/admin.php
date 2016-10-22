@@ -8,6 +8,11 @@ return [
 			'all' => 'All Students',
 			'create' => 'Create Student'
 		],
+		'grades' => [
+			'title' => 'Grades',
+			'all' => 'All Grades',
+			'create' => 'Create Grade'
+		],
 		'physical_infos' => [
 			'title' => 'Student`s Physical Info',
 			'all' => 'Physical Info',
@@ -51,6 +56,14 @@ return [
 			'title' => 'Education',
 			'teachers' => 'Teachers',
 			'time_table' => 'Time Table',
+			'subject_topic' => [
+				'title' => 'Subject',
+				'create' => 'Create Subject'
+			],
+			'teach_schedules' => [
+				'title' => 'Teach Schedules',
+				'create' => 'Create Teach Schedule'
+			]
 		],
 		'articles' => [
 			'title' => 'Articles',

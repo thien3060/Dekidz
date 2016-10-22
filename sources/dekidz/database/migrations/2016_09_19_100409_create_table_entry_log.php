@@ -17,6 +17,7 @@ class CreateTableEntryLog extends Migration
             $table->string('entry_card',15);
             $table->boolean('is_in');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

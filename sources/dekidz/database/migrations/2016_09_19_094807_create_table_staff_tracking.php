@@ -27,6 +27,7 @@ class CreateTableStaffTracking extends Migration
             $table->date('day');
             $table->text('track');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

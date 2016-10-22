@@ -22,6 +22,7 @@ class CreateTableTeachSchedules extends Migration
             $table->integer('afternoon_lesson_id');
             $table->integer('afternoon_teacher_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

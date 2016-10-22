@@ -21,6 +21,10 @@ return [
         'model' => 'App\Models\Student',
         'perpage' => 10
     ],
+    'grade' => [
+        'model' => 'App\Models\Grade',
+        'perpage' => 10
+    ],
     'physical_info' => [
         'model' => 'App\Models\PhysicalInfo',
         'perpage' => 10
@@ -57,6 +61,10 @@ return [
         'model' => 'App\Models\DekidzClass',
         'perpage' => 10
     ],
+    'subject_topic' => [
+        'model' => 'App\Models\SubjectTopic',
+        'perpage' => 10
+    ],
     'dish' => [
         'model' => 'App\Models\Dish',
         'perpage' => 10
@@ -87,6 +95,10 @@ return [
     ],
     'dishtype' => [
         'model' => 'App\Models\DishType',
+        'perpage' => 10
+    ],
+    'teach_schedule' => [
+        'model' => 'App\Models\TeachSchedule',
         'perpage' => 10
     ],
     'page' => [

@@ -37,6 +37,7 @@ class CreateTableFoodSets extends Migration
             $table->float('vitaminc');
             $table->double('total_cost', 20, 2);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

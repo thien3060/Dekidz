@@ -19,6 +19,7 @@ class CreateTableClasses extends Migration
             $table->string('room_number');
             $table->integer('grade_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

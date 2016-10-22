@@ -15,6 +15,7 @@ class RepositoriesServiceProvider extends ServiceProvider
 
     protected $entities = [
         'Student',
+        'Grade',
         'PhysicalInfo',
         'Staff',
         'Salary',
@@ -22,6 +23,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         'RemIn',
         'RemOut',
         'DekidzClass',
+        'SubjectTopic',
         'Dish',
         'Food',
         'FoodSet',
@@ -31,7 +33,8 @@ class RepositoriesServiceProvider extends ServiceProvider
         'Export',
         'FoodGroup',
         'FoodSetType',
-        'DishType'
+        'DishType',
+        'TeachSchedule'
     ];
 
     /**
@@ -49,6 +52,14 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\StudentRepository',
             'App\Repositories\Eloquent\EloquentStudentRepository'
+        );
+    }
+
+    protected function bindGradeRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\GradeRepository',
+            'App\Repositories\Eloquent\EloquentGradeRepository'
         );
     }
 
@@ -104,6 +115,13 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\DekidzClassRepository',
             'App\Repositories\Eloquent\EloquentDekidzClassRepository'
+        );
+    }
+
+    protected function bindSubjectTopicRepository() {
+        $this->app->bind(
+            'App\Repositories\Contracts\SubjectTopicRepository',
+            'App\Repositories\Eloquent\EloquentSubjectTopicRepository'
         );
     }
 
@@ -185,6 +203,14 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\DishTypeRepository',
             'App\Repositories\Eloquent\EloquentDishTypeRepository'
+        );
+    }
+
+    protected function bindTeachScheduleRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\TeachScheduleRepository',
+            'App\Repositories\Eloquent\EloquentTeachScheduleRepository'
         );
     }
 

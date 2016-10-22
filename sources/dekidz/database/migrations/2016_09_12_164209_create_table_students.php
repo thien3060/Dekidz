@@ -33,6 +33,7 @@ class CreateTableStudents extends Migration
             $table->text('note');
             $table->string('entry_card',15);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -24,6 +24,7 @@ class CreateTableEnergyNeeds extends Migration
             $table->float('daily_glucid');
             $table->float('school_time_glucid');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

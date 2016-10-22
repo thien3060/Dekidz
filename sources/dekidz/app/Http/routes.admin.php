@@ -14,6 +14,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('grades', 'GradesController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.grades.index',
+            'create' => 'admin.grades.create',
+            'store' => 'admin.grades.store',
+            'show' => 'admin.grades.show',
+            'update' => 'admin.grades.update',
+            'edit' => 'admin.grades.edit',
+            'destroy' => 'admin.grades.destroy',
+        ],
+    ]);
+
     Route::resource('physical_infos', 'PhysicalInfosController', [
         'names' => [
             'index' => 'admin.physical_infos.index',
@@ -241,9 +254,30 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
-    Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {
-        return "time table page";
-    }]);
+    Route::resource('teach_schedules', 'TeachSchedulesController', [
+        'names' => [
+            'index' => 'admin.teach_schedules.index',
+            'create' => 'admin.teach_schedules.create',
+            'store' => 'admin.teach_schedules.store',
+            'show' => 'admin.teach_schedules.show',
+            'update' => 'admin.teach_schedules.update',
+            'edit' => 'admin.teach_schedules.edit',
+            'destroy' => 'admin.teach_schedules.destroy',
+        ],
+    ]);
+
+    Route::resource('subject_topics', 'SubjectTopicsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.subject_topics.index',
+            'create' => 'admin.subject_topics.create',
+            'store' => 'admin.subject_topics.store',
+            'show' => 'admin.subject_topics.show',
+            'update' => 'admin.subject_topics.update',
+            'edit' => 'admin.subject_topics.edit',
+            'destroy' => 'admin.subject_topics.destroy',
+        ],
+    ]);
 });
 
 Route::get('oauth/google', 'OAuthController@redirectToGoogleProvider')->name('login.google');

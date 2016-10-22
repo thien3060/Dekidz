@@ -21,6 +21,7 @@ class CreateTableRemOut extends Migration
             $table->double('paid', 20, 2);
             $table->double('debt', 20, 2);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

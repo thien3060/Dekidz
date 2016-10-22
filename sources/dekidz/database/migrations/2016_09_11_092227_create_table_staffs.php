@@ -33,6 +33,7 @@ class CreateTableStaffs extends Migration
             $table->date('start_day');
             $table->string('type_of_contract');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

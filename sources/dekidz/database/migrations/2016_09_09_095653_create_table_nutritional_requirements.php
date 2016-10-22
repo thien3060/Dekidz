@@ -32,6 +32,7 @@ class CreateTableNutritionalRequirements extends Migration
             $table->float('vitaminpp');
             $table->float('vitaminc');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

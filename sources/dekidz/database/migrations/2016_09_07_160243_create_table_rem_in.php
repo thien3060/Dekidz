@@ -22,6 +22,7 @@ class CreateTableRemIn extends Migration
             $table->double('debt', 20, 2);
             $table->text('note');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

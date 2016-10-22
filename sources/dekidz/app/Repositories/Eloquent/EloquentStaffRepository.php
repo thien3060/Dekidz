@@ -81,13 +81,13 @@ class EloquentStaffRepository implements StaffRepository
 
     public function update(array $data, $id)
     {
-        $student = $this->findById($id);
+        $staff = $this->findById($id);
         
         //Date convert
         $data['dob'] = DateHelper::sqlDateFormat($data['dob']);
         $data['start_day'] = DateHelper::sqlDateFormat($data['start_day']);
 
-        return $student->update($data);
+        return $staff->update($data);
     }
 
     public function getStaff()
