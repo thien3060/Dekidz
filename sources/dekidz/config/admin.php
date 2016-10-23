@@ -101,6 +101,10 @@ return [
         'model' => 'App\Models\TeachSchedule',
         'perpage' => 10
     ],
+    'energy_need' => [
+        'model' => 'App\Models\EnergyNeed',
+        'perpage' => 10
+    ],
     'page' => [
         'perpage' => 10
     ],

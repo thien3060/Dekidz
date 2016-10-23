@@ -51,6 +51,7 @@ return [
 			'foodgroup' => 'Food Group',
 			'foodsettype' => 'Food Set Type',
 			'dishtype' => 'Dish Type',
+			'energy_need' => 'Energy Need',
 		],
 		'education' => [
 			'title' => 'Education',

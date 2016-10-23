@@ -162,6 +162,20 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+
+    Route::resource('energy_needs', 'EnergyNeedsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.energy_needs.index',
+            'create' => 'admin.energy_needs.create',
+            'store' => 'admin.energy_needs.store',
+            'show' => 'admin.energy_needs.show',
+            'update' => 'admin.energy_needs.update',
+            'edit' => 'admin.energy_needs.edit',
+            'destroy' => 'admin.energy_needs.destroy',
+        ],
+    ]);
+
     Route::resource('rem_ins', 'RemInsController', [
         'names' => [
             'index' => 'admin.rem_ins.index',
