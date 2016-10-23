@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Validation\Asset\CreateRequest;
-use App\Validation\Asset\UpdateRequest;
+use App\Validation\Lesson\CreateRequest;
+use App\Validation\Lesson\UpdateRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -12,9 +12,9 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
-class AssetsController extends BaseController
+class LessonsController extends BaseController
 {
-    protected $assets;
+    protected $lessons;
 
     public function __construct()
     {
@@ -28,7 +28,7 @@ class AssetsController extends BaseController
      */
     public function getRepository()
     {
-        $repository = 'App\Repositories\Contracts\AssetRepository';
+        $repository = 'App\Repositories\Contracts\LessonRepository';
         return app($repository);
     }
 
@@ -39,11 +39,11 @@ class AssetsController extends BaseController
      */
     public function index()
     {
-        $assets = $this->repository->allOrSearch(Input::get('q'));
+        $lessons = $this->repository->allOrSearch(Input::get('q'));
 
-        $no = $assets->firstItem();
+        $no = $lessons->firstItem();
 
-        return $this->view('pages.assets.index', compact('assets', 'no'));
+        return $this->view('pages.lessons.index', compact('lessons', 'no'));
     }
 
     /**
@@ -53,7 +53,7 @@ class AssetsController extends BaseController
      */
     public function create()
     {
-        return view('admin.pages.assets.create');
+        return view('admin.pages.lessons.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class AssetsController extends BaseController
 
         $this->repository->create($data);
 
-        return $this->redirect('assets.index');
+        return $this->redirect('lessons.index');
     }
 
     /**
@@ -91,9 +91,9 @@ class AssetsController extends BaseController
     public function edit($id)
     {
         try {
-            $asset = $this->repository->findById($id);
+            $lesson = $this->repository->findById($id);
 
-            return $this->view('pages.assets.edit', compact('asset'));
+            return $this->view('pages.lessons.edit', compact('lesson'));
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -113,7 +113,7 @@ class AssetsController extends BaseController
 
             $this->repository->update($data, $id);
 
-            return $this->redirect('assets.index');
+            return $this->redirect('lessons.index');
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -130,7 +130,7 @@ class AssetsController extends BaseController
         try {
             $this->repository->delete($id);
 
-            return $this->redirect('assets.index');
+            return $this->redirect('lessons.index');
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -143,8 +143,8 @@ class AssetsController extends BaseController
      */
     protected function redirectNotFound()
     {
-        return $this->redirect('assets.index')
-            ->withFlashMessage('Asset not found!')
+        return $this->redirect('lessons.index')
+            ->withFlashMessage('Lesson not found!')
             ->withFlashType('danger');
     }
 }

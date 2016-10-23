@@ -4,14 +4,14 @@
     <h1>
         Edit
         &middot;
-        <small>{!! link_to_route('admin.foods.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.lessons.index', 'Back') !!}</small>
     </h1>
 @stop
 
 @section('content')
 
     <div>
-        @include('admin.pages.foods.form', array('model' => $food))
+        @include('admin.pages.lessons.form', array('model' => $lesson))
     </div>
 
 @stop

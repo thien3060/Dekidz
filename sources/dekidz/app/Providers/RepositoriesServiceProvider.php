@@ -35,7 +35,8 @@ class RepositoriesServiceProvider extends ServiceProvider
         'FoodSetType',
         'DishType',
         'TeachSchedule',
-        'EnergyNeed'
+        'EnergyNeed',
+        'Lesson'
     ];
 
     /**
@@ -180,6 +181,14 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Contracts\SupplierRepository',
             'App\Repositories\Eloquent\EloquentSupplierRepository'
+        );
+    }
+
+    protected function bindLessonRepository()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\LessonRepository',
+            'App\Repositories\Eloquent\EloquentLessonRepository'
         );
     }
 

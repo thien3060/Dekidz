@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        Add New Subject
+        Add New Subject Topic
         &middot;
         <small>{!! link_to_route('admin.subject_topics.index', 'Back') !!}</small>
     </h1>

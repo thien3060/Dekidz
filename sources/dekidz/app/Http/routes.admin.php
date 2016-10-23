@@ -162,6 +162,18 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('lessons', 'LessonsController', [
+        'names' => [
+            'index' => 'admin.lessons.index',
+            'create' => 'admin.lessons.create',
+            'store' => 'admin.lessons.store',
+            'show' => 'admin.lessons.show',
+            'update' => 'admin.lessons.update',
+            'edit' => 'admin.lessons.edit',
+            'destroy' => 'admin.lessons.destroy',
+        ],
+    ]);
+
 
     Route::resource('energy_needs', 'EnergyNeedsController', [
         'except' => 'show',

@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        All Students
+        All Subject topics
         &middot;
         <small>{!! link_to_route('admin.subject_topics.create', 'Add New') !!}</small>
     </h1>

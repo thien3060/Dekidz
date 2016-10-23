@@ -2,14 +2,14 @@
 
 namespace App\Http\Composers;
 
-use App\Models\FoodGroup;
+use App\Models\SubjectTopic;
 
-class FoodFormComposer
+class LessonFormComposer
 {
     public function compose($view)
     {
-        $foodgroups = FoodGroup::lists('name', 'id');
+        $subject_topics = SubjectTopic::lists('name', 'id');
 
-        $view->with(compact('foodgroups'));
+        $view->with(compact('subject_topics'));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Validation\Asset;
+namespace App\Validation\Lesson;
 
 use App\Validation\Validator;
 
@@ -9,9 +9,12 @@ class UpdateRequest extends Validator
     public function rules()
     {
         return [
-            'name' => 'required|min:1',
-            'quantity' => 'required',
-            'unit'=> 'required',
+            'subject_topic_id' => 'required',
+            'lesson_name'=> 'required',
+            'lesson_goal'=> 'required',
+            'teach_activity'=> 'required',
+            'kid_activity'=> 'required',
+            'author'=> 'required',
         ];
     }
 }

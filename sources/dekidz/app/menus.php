@@ -46,7 +46,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.foodgroups.index', trans('admin.menus.nutrition.foodgroup'), [], 4);
         $sub->route('admin.foodsettypes.index', trans('admin.menus.nutrition.foodsettype'), [], 5);
         $sub->route('admin.dishtypes.index', trans('admin.menus.nutrition.dishtype'), [], 6);
-        $sub->route('admin.energy_needs.index', trans('admin.menus.nutrition.energy_need'), [], 6);
+        $sub->route('admin.energy_needs.index', trans('admin.menus.nutrition.energy_need'), [], 7);
     }, 5, ['icon' => 'fa fa-heartbeat']);
 
     //Education
@@ -54,6 +54,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.teachers.index', trans('admin.menus.education.teachers'), [], 1);
         $sub->route('admin.teach_schedules.index', trans('admin.menus.education.teach_schedules.title'), [], 2);
         $sub->route('admin.subject_topics.index', trans('admin.menus.education.subject_topic.title'), [], 3);
+        $sub->route('admin.lessons.index', trans('admin.menus.education.lesson'), [], 4);
     }, 6, ['icon' => 'fa fa-book']);
 
     //Article

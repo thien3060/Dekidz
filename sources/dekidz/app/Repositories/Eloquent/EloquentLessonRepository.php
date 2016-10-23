@@ -3,17 +3,17 @@
 namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
-use App\Repositories\Contracts\FoodRepository;
+use App\Repositories\Contracts\LessonRepository;
 
-class EloquentFoodRepository implements FoodRepository
+class EloquentLessonRepository implements LessonRepository
 {
     public function perPage()
     {
-        return config('admin.food.perpage');
+        return config('admin.lesson.perpage');
     }
 
     public function getModel(){
-        $model = config('admin.food.model');
+        $model = config('admin.lesson.model');
         return new $model();
     }
 
@@ -28,34 +28,34 @@ class EloquentFoodRepository implements FoodRepository
 
     public function getAll()
     {
-        return $this->getFood()->paginate($this->perPage());
+        return $this->getLesson()->paginate($this->perPage());
     }
 
     public function search($searchQuery)
     {
         $search = "%{$searchQuery}%";
 
-        return $this->getFood()
+        return $this->getLesson()
             ->where('name', 'like', $search)
             ->paginate($this->perPage());
     }
 
     public function findById($id)
     {
-        return $this->getFood()->find($id);
+        return $this->getLesson()->find($id);
     }
 
     public function findBy($key, $value, $operator = '=')
     {
-        return $this->getFood()->where($key, $operator, $value)->paginate($this->perPage());
+        return $this->getLesson()->where($key, $operator, $value)->paginate($this->perPage());
     }
 
     public function delete($id)
     {
-        $food = $this->findById($id);
+        $lesson = $this->findById($id);
 
-        if (!is_null($food)) {
-            $food->delete();
+        if (!is_null($lesson)) {
+            $lesson->delete();
 
             return true;
         }
@@ -70,11 +70,11 @@ class EloquentFoodRepository implements FoodRepository
 
     public function update(array $data, $id)
     {
-        $food = $this->findById($id);
-        return $food->update($data);
+        $lesson = $this->findById($id);
+        return $lesson->update($data);
     }
 
-    public function getFood()
+    public function getLesson()
     {
         return $this->getModel();
     }

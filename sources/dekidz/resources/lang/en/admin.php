@@ -57,14 +57,16 @@ return [
 			'title' => 'Education',
 			'teachers' => 'Teachers',
 			'time_table' => 'Time Table',
+			'lesson' => 'Lesson',
 			'subject_topic' => [
-				'title' => 'Subject',
-				'create' => 'Create Subject'
+				'title' => 'Subject Topic',
+				'create' => 'Create Subject Topic'
 			],
 			'teach_schedules' => [
 				'title' => 'Teach Schedules',
 				'create' => 'Create Teach Schedule'
-			]
+			],
+
 		],
 		'articles' => [
 			'title' => 'Articles',

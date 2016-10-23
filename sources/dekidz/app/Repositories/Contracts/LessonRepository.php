@@ -4,7 +4,7 @@ namespace App\Repositories\Contracts;
 
 use App\Repositories\Repository;
 
-interface FoodRepository extends Repository
+interface LessonRepository extends Repository
 {
-    public function getFood();
+    public function getLesson();
 }

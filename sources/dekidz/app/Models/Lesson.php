@@ -4,42 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Food extends Model
+class Lesson extends Model
 {
+    protected $table = 'lessons';
     protected $fillable = [
-        'food_group_id',
-        'name',
-        'animal_source',
-        'quantity',
-        'unit',
-        'price',
-        'absorb',
-        'digest',
-        'calo',
-        'h2o',
-        'protid',
-        'lipid',
-        'glucid',
-        'cellulose',
-        'cholesterol',
-        'calci',
-        'photpho',
-        'iron',
-        'vitamin_caroten',
-        'vitamina',
-        'vitaminb1',
-        'vitaminb2',
-        'vitaminpp',
-        'vitaminc'
+        'subject_topic_id',
+        'lesson_name',
+        'lesson_goal',
+        'teach_activity',
+        'kid_activity',
+        'author'
     ];
-    
-    public function imports(){
-        return $this->belongsToMany('App\Models\Import', 'import_detail', 'good_id', 'import_id')->withPivot('supplier', 'quantity', 'cost');
-    }
-
-    public function exports(){
-        return $this->belongsToMany('App\Models\Export', 'export_detail', 'good_id', 'export_id')->withPivot('quantity');
-    }
-
 
 }

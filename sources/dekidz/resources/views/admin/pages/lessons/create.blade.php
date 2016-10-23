@@ -2,16 +2,16 @@
 
 @section('content-header')
     <h1>
-        Add New Food
+        Add New Lesson
         &middot;
-        <small>{!! link_to_route('admin.foods.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.lessons.index', 'Back') !!}</small>
     </h1>
 @stop
 
 @section('content')
 
     <div>
-        @include('admin.pages.foods.form')
+        @include('admin.pages.lessons.form')
     </div>
 
 @stop
