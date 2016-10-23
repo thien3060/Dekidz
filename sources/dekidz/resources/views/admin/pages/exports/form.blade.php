@@ -28,8 +28,6 @@
                     <th>#</th>
                     <th>Asset Name</th>
                     <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Cost</th>
                     <th class="text-center">Action</th>
                     </thead>
                     <tbody id="asset-list">
@@ -46,16 +44,7 @@
                                         </select>
                                     </td>
                                     <td>
-                                        <input class="form-control asset-supplier" placeholder="Asset's supplier" name="asset-supplier[]" type="text"  value="{{$food->pivot->supplier}}">
-                                    </td>
-                                    <td>
                                         <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number"  value="{{$food->pivot->quantity}}">
-                                    </td>
-                                    <td>
-                                        <input class="form-control asset-price" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number" value="{{$food->pivot->cost}}">
-                                    </td>
-                                    <td>
-                                        <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
                                     </td>
                                     <td style="text-align: center">
                                         <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -74,28 +63,12 @@
                                 </select>
                             </td>
                             <td>
-                                <input class="form-control asset-supplier" placeholder="Asset's supplier" name="asset-supplier[]" type="text">
-                            </td>
-                            <td>
                                 <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number">
-                            </td>
-                            <td>
-                                <input class="form-control asset-price" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number">
-                            </td>
-                            <td>
-                                <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
                             </td>
                             <td style="text-align: center">
                                 <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                             </td>
                         </tr>
-                        <tbody>
-                            <tr>
-                                <td colspan="5" class="text-right"><strong>Total: </strong></td>
-                                <td colspan="2" id="total-label" class="text-left">0</td>
-                                <input type="hidden" id="total-cost" name="cost"/>
-                            </tr>
-                        </tbody>
                     </tbody>
                 </table>
             </div>

@@ -14,7 +14,6 @@
         <thead>
         <th>No</th>
         <th>Export Date</th>
-        <th>Cost</th>
         <th>Created By</th>
         <th>Created At</th>
         <th>Updated At</th>
@@ -25,7 +24,6 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $export->date !!}</td>
-                <td>{!! $export->cost !!}</td>
                 <td>{!! $export->created_by !!}</td>
                 <td>{!! $export->created_at !!}</td>
                 <td>{!! $export->updated_at !!}</td>

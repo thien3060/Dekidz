@@ -20,4 +20,12 @@ class Asset extends Model
         'maintenance_mode',
         'unit'
     ];
+
+    public function imports(){
+        return $this->belongsToMany('App\Models\Import', 'import_detail', 'good_id', 'import_id')->withPivot('supplier', 'quantity', 'cost');
+    }
+
+    public function exports(){
+        return $this->belongsToMany('App\Models\Export', 'export_detail', 'good_id', 'export_id')->withPivot('quantity');
+    }
 }
