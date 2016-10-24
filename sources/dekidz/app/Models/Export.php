@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Export extends Model
 {
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
     protected $fillable = [
         'date',
         'is_food',

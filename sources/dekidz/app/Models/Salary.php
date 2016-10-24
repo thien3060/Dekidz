@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Salary extends Model
 {
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
     protected $table = 'salary';
 
     protected $fillable = [

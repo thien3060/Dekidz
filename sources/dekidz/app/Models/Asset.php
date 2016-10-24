@@ -13,6 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Asset extends Model
 {
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
     protected $table = 'assets';
     protected $fillable = [
         'name',

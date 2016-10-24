@@ -26,8 +26,7 @@
         @foreach ($lessons as $lesson)
             <tr>
                 <td>{!! $no !!}</td>
-                {{--<td><a href="{!! route('admin.lessons.show', $lesson->id) !!}">{!! $lesson->name !!}</a></td>--}}
-                <td>{!! $lesson->subject_topic_id !!}</td>
+                <td>{!! $subject_topics[$lesson->subject_topic_id] !!}</td>
                 <td>{!! $lesson->lesson_name !!}</td>
                 <td>{!! $lesson->lesson_goal !!}</td>
                 <td>{!! $lesson->teach_activity !!}</td>

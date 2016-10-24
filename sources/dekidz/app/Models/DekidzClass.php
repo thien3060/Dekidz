@@ -13,6 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class DekidzClass extends Model
 {
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
     protected $table = 'classes';
     protected $fillable = [
         'name',

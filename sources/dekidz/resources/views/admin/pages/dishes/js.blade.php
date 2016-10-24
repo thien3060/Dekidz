@@ -71,5 +71,70 @@
         }
         row.find('.asset-cost').val(cost);
         updateTotalCost();
+        calculateNutrition();
     }
+
+    function selectFood(item) {
+        item = $(item);
+        var id = item.val();
+        var row = item.parent().parent();
+        var food = foodList[id];
+        if (food) {
+            row.find('.asset-price').val(food['price']);
+        } else {
+            row.find('.asset-price').val(0);
+        }
+        updateCost(item);
+    }
+
+    function calculateNutrition() {
+        var nutritionList = {
+            'calo': 0,
+            'h2o': 0,
+            'protid': 0,
+            'lipid': 0,
+            'glucid': 0,
+            'cellulose': 0,
+            'cholesterol': 0,
+            'calci': 0,
+            'photpho': 0,
+            'iron': 0,
+            'vitamin_caroten': 0,
+            'vitamina': 0,
+            'vitaminb1': 0,
+            'vitaminb2': 0,
+            'vitaminpp': 0,
+            'vitaminc': 0,
+        };
+        $('#asset-list').find('tr').each(function(index, item) {
+            item = $(item);
+            var foodId = item.find('.asset-name').val();
+            if (foodId == 0) {
+                return;
+            }
+            var quantity = item.find('.asset-quantity').val();
+            if (quantity != '') {
+                quantity = parseFloat(quantity);
+            } else {
+                quantity = 0;
+            }
+
+            $.each(nutritionList, function(key, value) {
+                nutritionList[key] = value + calculateEachNutrition(foodId, key, quantity);
+            });
+        });
+
+        console.log(nutritionList);
+        $.each(nutritionList, function(key, value) {
+            $('#' + key).val(value);
+        });
+    }
+
+    function calculateEachNutrition(foodId, nutrition, quantity) {
+        if (foodList[foodId][nutrition]) {
+            return foodList[foodId][nutrition] * quantity / foodList[foodId].quantity;
+        }
+        return 0;
+    }
+
 </script>

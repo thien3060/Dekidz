@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class EnergyNeed extends Model
 {
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
     protected $table = 'energy_needs';
     protected $fillable = [
         'age',

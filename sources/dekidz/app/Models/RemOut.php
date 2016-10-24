@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class RemOut extends Model
 {
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
     protected $table = 'rem_out';
 
     protected $fillable = [

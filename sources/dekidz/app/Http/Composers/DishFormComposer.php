@@ -13,7 +13,13 @@ class DishFormComposer
 
         $view->with(compact('dishtypes'));
 
-        $foods = Food::lists('name', 'id');
+        $foodList = Food::all()->toArray();
+        $foods = array();
+        foreach ($foodList as $food) {
+            $foods[$food['id']] = $food;
+        }
+
+        //$foods =Food::lists('name', 'id');
 
         $view->with(compact('foods'));
 
