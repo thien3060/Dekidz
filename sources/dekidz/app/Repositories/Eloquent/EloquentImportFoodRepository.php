@@ -3,9 +3,9 @@
 namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
-use App\Repositories\Contracts\ImportRepository;
+use App\Repositories\Contracts\ImportFoodRepository;
 
-class EloquentImportRepository implements ImportRepository
+class EloquentImportFoodRepository implements ImportFoodRepository
 {
     public function perPage()
     {

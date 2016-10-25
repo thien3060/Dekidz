@@ -40,7 +40,10 @@ return [
 				'all' => 'All Suppliers',
 				'create' => 'Create Supplier',
 			],
-			'import' => 'Import',
+			'import' => [
+				'food' => 'Food Import',
+				'asset'=> 'Asset Import'
+			],
 			'export' => 'Export'
 		],
 		'nutrition' => [

@@ -4,7 +4,7 @@ namespace App\Repositories\Contracts;
 
 use App\Repositories\Repository;
 
-interface ImportRepository extends Repository
+interface ImportAssetRepository extends Repository
 {
     public function getImport();
 }

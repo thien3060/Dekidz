@@ -28,14 +28,13 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.rem_outs.index', trans('admin.menus.finances.rem_out'), [], 2);
     }, 3, ['icon' => 'fa fa-usd']);
 
-    //Assets
+    //Repository
     $menu->dropdown(trans('admin.menus.repository.title'), function ($sub) {
-        $sub->route('admin.assets.index', trans('admin.menus.repository.assets.all'), [], 1);
-        $sub->route('admin.assets.create', trans('admin.menus.repository.assets.create'), [], 2);
-        $sub->route('admin.suppliers.index', trans('admin.menus.repository.suppliers.all'), [], 3);
-        $sub->route('admin.suppliers.create', trans('admin.menus.repository.suppliers.create'), [], 4);
-        $sub->route('admin.imports.index', trans('admin.menus.repository.import'), [], 5);
-        $sub->route('admin.exports.index', trans('admin.menus.repository.export'), [], 6);
+        $sub->route('admin.assets.index', trans('admin.menus.repository.assets.title'), [], 1);
+        $sub->route('admin.suppliers.index', trans('admin.menus.repository.suppliers.title'), [], 2);
+        $sub->route('admin.import_food.index', trans('admin.menus.repository.import.food'), [], 3);
+        $sub->route('admin.import_asset.index', trans('admin.menus.repository.import.asset'), [], 4);
+        $sub->route('admin.exports.index', trans('admin.menus.repository.export'), [], 5);
     }, 4, ['icon' => 'fa fa-usd']);
 
     //Nutrition

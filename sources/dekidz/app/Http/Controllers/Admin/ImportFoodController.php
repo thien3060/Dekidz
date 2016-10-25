@@ -11,7 +11,7 @@ use App\Http\Requests;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
 
-class ImportsController extends BaseController
+class ImportFoodController extends BaseController
 {
     protected $imports;
 
@@ -27,7 +27,7 @@ class ImportsController extends BaseController
      */
     public function getRepository()
     {
-        $repository = 'App\Repositories\Contracts\ImportRepository';
+        $repository = 'App\Repositories\Contracts\ImportFoodRepository';
         return app($repository);
     }
 

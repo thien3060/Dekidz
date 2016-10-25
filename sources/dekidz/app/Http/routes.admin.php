@@ -136,16 +136,29 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
-    Route::resource('imports', 'ImportsController', [
+    Route::resource('import_food', 'ImportFoodController', [
         'except' => 'show',
         'names' => [
-            'index' => 'admin.imports.index',
-            'create' => 'admin.imports.create',
-            'store' => 'admin.imports.store',
-            'show' => 'admin.imports.show',
-            'update' => 'admin.imports.update',
-            'edit' => 'admin.imports.edit',
-            'destroy' => 'admin.imports.destroy',
+            'index' => 'admin.import_food.index',
+            'create' => 'admin.import_food.create',
+            'store' => 'admin.import_food.store',
+            'show' => 'admin.import_food.show',
+            'update' => 'admin.import_food.update',
+            'edit' => 'admin.import_food.edit',
+            'destroy' => 'admin.import_food.destroy',
+        ],
+    ]);
+
+    Route::resource('import_asset', 'ImportAssetController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.import_asset.index',
+            'create' => 'admin.import_asset.create',
+            'store' => 'admin.import_asset.store',
+            'show' => 'admin.import_asset.show',
+            'update' => 'admin.import_asset.update',
+            'edit' => 'admin.import_asset.edit',
+            'destroy' => 'admin.import_asset.destroy',
         ],
     ]);
 
