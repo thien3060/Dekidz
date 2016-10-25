@@ -35,6 +35,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.import_food.index', trans('admin.menus.repository.import.food'), [], 3);
         $sub->route('admin.import_asset.index', trans('admin.menus.repository.import.asset'), [], 4);
         $sub->route('admin.exports.index', trans('admin.menus.repository.export'), [], 5);
+        $sub->route('admin.export_assets.index', trans('admin.menus.repository.export_asset'), [], 6);
     }, 4, ['icon' => 'fa fa-usd']);
 
     //Nutrition

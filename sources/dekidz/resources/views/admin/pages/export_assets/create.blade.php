@@ -2,16 +2,16 @@
 
 @section('content-header')
     <h1>
-        Add Asset Import
+        Add Asset Export
         &middot;
-        <small>{!! link_to_route('admin.import_asset.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.export_assets.index', 'Back') !!}</small>
     </h1>
 @stop
 
 @section('content')
 
     <div>
-        @include('admin.pages.import_asset.form')
+        @include('admin.pages.export_assets.form')
     </div>
 
 @stop
@@ -72,5 +72,5 @@
         CKFinder.setupCKEditor( editor, prefix + '/vendor/ckfinder/') ;
     </script>
 
-    @include('admin.pages.imports.js')
+    @include('admin.pages.export_assets.js')
 @endsection

@@ -85,6 +85,10 @@ return [
         'model' => 'App\Models\Export',
         'perpage' => 10
     ],
+    'export_asset' => [
+        'model' => 'App\Models\ExportAsset',
+        'perpage' => 10
+    ],
     'foodgroup' => [
         'model' => 'App\Models\FoodGroup',
         'perpage' => 10

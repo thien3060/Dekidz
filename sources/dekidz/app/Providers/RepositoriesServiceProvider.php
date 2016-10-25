@@ -32,6 +32,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         'Asset',
         'Supplier',
         'Export',
+        'ExportAsset',
         'FoodGroup',
         'FoodSetType',
         'DishType',

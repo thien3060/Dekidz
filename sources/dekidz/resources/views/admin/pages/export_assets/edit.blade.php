@@ -2,52 +2,19 @@
 
 @section('content-header')
     <h1>
-        Add Asset Import
+        Edit
         &middot;
-        <small>{!! link_to_route('admin.import_asset.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.export_assets.index', 'Back') !!}</small>
     </h1>
 @stop
 
 @section('content')
 
     <div>
-        @include('admin.pages.import_asset.form')
+        @include('admin.pages.export_assets.form', array('model' => $export_asset))
     </div>
 
 @stop
-
-@section('style')
-    <style>
-        #asset-list td{
-            text-align: left;
-            padding: 1px;
-            border-top: 1px solid #ddd;
-        }
-        #asset-list input{
-            border: none;
-            padding-left: 0;
-        }
-        .asset-select{
-            padding:0;
-            margin: 0;
-            border: solid 1px #ddd;
-            list-style-type: none;
-            display: block;
-            position: fixed;
-            background-color: white;
-            max-height: 200px;
-            width: 280px;
-            overflow: auto;
-            z-index: 9999;
-        }
-        .asset-select li{
-            padding: 5px;
-        }
-        .asset-select li:hover{
-            background-color: #ddd;
-        }
-    </style>
-@endsection
 
 @section('script')
     {!! script('vendor/ckeditor/ckeditor.js') !!}
@@ -72,5 +39,5 @@
         CKFinder.setupCKEditor( editor, prefix + '/vendor/ckfinder/') ;
     </script>
 
-    @include('admin.pages.imports.js')
+    @include('admin.pages.export_assets.js')
 @endsection

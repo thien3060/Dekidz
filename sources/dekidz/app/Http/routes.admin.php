@@ -162,6 +162,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('export_assets', 'ExportAssetController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.export_assets.index',
+            'create' => 'admin.export_assets.create',
+            'store' => 'admin.export_assets.store',
+            'show' => 'admin.export_assets.show',
+            'update' => 'admin.export_assets.update',
+            'edit' => 'admin.export_assets.edit',
+            'destroy' => 'admin.export_assets.destroy',
+        ],
+    ]);
+
     Route::resource('exports', 'ExportsController', [
         'except' => 'show',
         'names' => [
