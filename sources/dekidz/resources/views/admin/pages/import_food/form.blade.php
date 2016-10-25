@@ -1,7 +1,7 @@
 @if(isset($model))
-    {!! Form::model($model, ['method' => 'PUT', 'files' => true, 'route' => ['admin.imports.update', $model->id]]) !!}
+    {!! Form::model($model, ['method' => 'PUT', 'files' => true, 'route' => ['admin.import_food.update', $model->id]]) !!}
 @else
-    {!! Form::open(['files' => true, 'route' => 'admin.imports.store']) !!}
+    {!! Form::open(['files' => true, 'route' => 'admin.import_food.store']) !!}
 @endif
 <div class="row">
     <div class="col-sm-12">

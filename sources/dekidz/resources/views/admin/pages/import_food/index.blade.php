@@ -4,7 +4,7 @@
     <h1>
         All Imports
         &middot;
-        <small>{!! link_to_route('admin.imports.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.import_food.create', 'Add New') !!}</small>
     </h1>
 @stop
 
@@ -30,9 +30,9 @@
                 <td>{!! $import->created_at !!}</td>
                 <td>{!! $import->updated_at !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.imports.edit', $import->id) !!}">Edit</a>
+                    <a href="{!! route('admin.import_food.edit', $import->id) !!}">Edit</a>
                     &middot;
-                    @include('admin::partials.modal', ['data' => $import, 'name' => 'imports'])
+                    @include('admin::partials.modal', ['data' => $import, 'name' => 'import_food'])
                 </td>
             </tr>
             <?php $no++ ;?>

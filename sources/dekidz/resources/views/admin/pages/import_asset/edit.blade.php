@@ -4,14 +4,14 @@
     <h1>
         Edit
         &middot;
-        <small>{!! link_to_route('admin.imports.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.import_asset.index', 'Back') !!}</small>
     </h1>
 @stop
 
 @section('content')
 
     <div>
-        @include('admin.pages.imports.form', array('model' => $import))
+        @include('admin.pages.import_asset.form', array('model' => $import))
     </div>
 
 @stop
