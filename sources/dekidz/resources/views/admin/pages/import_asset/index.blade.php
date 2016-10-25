@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        All Imports
+        All Asset Imports
         &middot;
         <small>{!! link_to_route('admin.import_asset.create', 'Add New') !!}</small>
     </h1>
@@ -25,8 +25,8 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $import->date !!}</td>
-                <td>{!! $import->cost !!}</td>
-                <td>{!! $import->created_by !!}</td>
+                <td>{!! $import->total_cost !!}</td>
+                <td>{!! $users[$import->created_by] !!}</td>
                 <td>{!! $import->created_at !!}</td>
                 <td>{!! $import->updated_at !!}</td>
                 <td class="text-center">

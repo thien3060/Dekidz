@@ -55,7 +55,7 @@ class EloquentImportAssetRepository implements ImportAssetRepository
         $import = $this->findById($id);
 
         if (!is_null($import)) {
-            $import->foods()->detach();
+            $import->assets()->detach();
             $import->delete();
 
             return true;
@@ -68,12 +68,12 @@ class EloquentImportAssetRepository implements ImportAssetRepository
     {
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
+        $data['is_food'] = 0;
         $import = $this->getModel()->create($data);
         for($i = 0; $i < count($data['asset-name']); $i++){
             if($data['asset-name'][$i] != 0){
-                $import->foods()->attach($data['asset-name'][$i], [
-                    'supplier' => $data['asset-supplier'][$i],
-                    'cost' => $data['asset-cost'][$i],
+                $import->assets()->attach($data['asset-name'][$i], [
+                    'price' => $data['asset-price'][$i],
                     'quantity' => $data['asset-quantity'][$i]
                 ]);
             }
@@ -87,15 +87,15 @@ class EloquentImportAssetRepository implements ImportAssetRepository
         
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
+        $data['is_food'] = 0;
 
         $import->update($data);
-        $import->foods()->detach();
+        $import->assets()->detach();
 
         for($i = 0; $i < count($data['asset-name']); $i++){
             if($data['asset-name'][$i] != 0){
-                $import->foods()->attach($data['asset-name'][$i], [
-                    'supplier' => $data['asset-supplier'][$i],
-                    'cost' => $data['asset-cost'][$i],
+                $import->assets()->attach($data['asset-name'][$i], [
+                    'price' => $data['asset-price'][$i],
                     'quantity' => $data['asset-quantity'][$i]
                 ]);
             }
@@ -106,7 +106,7 @@ class EloquentImportAssetRepository implements ImportAssetRepository
 
     public function getImport()
     {
-        return $this->getModel();
+        return $this->getModel()->where('is_food', '=', 0);
     }
 
 }

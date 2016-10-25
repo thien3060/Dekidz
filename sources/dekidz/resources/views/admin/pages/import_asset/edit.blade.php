@@ -39,5 +39,5 @@
         CKFinder.setupCKEditor( editor, prefix + '/vendor/ckfinder/') ;
     </script>
 
-    @include('admin.pages.imports.js')
+    @include('admin.pages.import_asset.js')
 @endsection

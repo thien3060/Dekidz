@@ -9,8 +9,8 @@ class ComposerServiceProvider extends ServiceProvider
 {
     protected $composers = [
         'admin.pages.*' => 'App\Http\Composers\LayoutComposer',
-        'admin.pages.imports.create' => 'App\Http\Composers\ImportFormComposer',
-        'admin.pages.imports.edit' => 'App\Http\Composers\ImportFormComposer',
+        'admin.pages.import_food.*' => 'App\Http\Composers\ImportFormComposer',
+        'admin.pages.import_asset.*' => 'App\Http\Composers\ImportFormComposer',
         'admin.pages.foodsets.create' => 'App\Http\Composers\FoodSetFormComposer',
         'admin.pages.foodsets.edit' => 'App\Http\Composers\FoodSetFormComposer',
         'admin.pages.exports.*' => 'App\Http\Composers\ExportFormComposer',

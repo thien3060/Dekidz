@@ -12,7 +12,7 @@ class Import extends Model
     protected $dates = ['deleted_at'];
     protected $fillable = [
         'date',
-        'cost',
+        'total_cost',
         'is_food',
         'created_by'
     ];
@@ -20,8 +20,10 @@ class Import extends Model
     protected $table = 'import';
 
     public function foods(){
-        return $this->belongsToMany('App\Models\Food', 'import_detail', 'import_id', 'good_id')->withPivot('supplier', 'quantity', 'cost');
+        return $this->belongsToMany('App\Models\Food', 'import_detail', 'import_id', 'good_id')->withPivot('quantity', 'price');
     }
 
-
+    public function assets(){
+        return $this->belongsToMany('App\Models\Asset', 'import_detail', 'import_id', 'good_id')->withPivot('quantity', 'price');
+    }
 }

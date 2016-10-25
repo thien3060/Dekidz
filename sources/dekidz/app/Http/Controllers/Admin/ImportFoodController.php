@@ -42,7 +42,7 @@ class ImportFoodController extends BaseController
 
         $no = $imports->firstItem();
 
-        return $this->view('pages.imports.index', compact('imports', 'no'));
+        return $this->view('pages.import_food.index', compact('imports', 'no'));
     }
 
     /**
@@ -52,7 +52,7 @@ class ImportFoodController extends BaseController
      */
     public function create()
     {
-        return view('admin.pages.imports.create');
+        return view('admin.pages.import_food.create');
     }
 
     /**
@@ -69,7 +69,7 @@ class ImportFoodController extends BaseController
         
         $this->repository->create($data);
 
-        return $this->redirect('imports.index');
+        return $this->redirect('import_food.index');
     }
 
     /**
@@ -97,7 +97,7 @@ class ImportFoodController extends BaseController
             //Date convert
             $import->date = DateHelper::normalDateFormat($import->date);
 
-            return $this->view('pages.imports.edit', compact('import'));
+            return $this->view('pages.import_food.edit', compact('import'));
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -117,7 +117,7 @@ class ImportFoodController extends BaseController
 
             $this->repository->update($data, $id);
 
-            return $this->redirect('imports.index');
+            return $this->redirect('import_food.index');
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -134,7 +134,7 @@ class ImportFoodController extends BaseController
         try {
             $this->repository->delete($id);
 
-            return $this->redirect('imports.index');
+            return $this->redirect('import_food.index');
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
@@ -147,7 +147,7 @@ class ImportFoodController extends BaseController
      */
     protected function redirectNotFound()
     {
-        return $this->redirect('imports.index')
+        return $this->redirect('import_food.index')
             ->withFlashMessage('Import not found!')
             ->withFlashType('danger');
     }
