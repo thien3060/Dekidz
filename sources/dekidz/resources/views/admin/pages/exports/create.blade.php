@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        Add Export
+        Add Food Export
         &middot;
         <small>{!! link_to_route('admin.exports.index', 'Back') !!}</small>
     </h1>

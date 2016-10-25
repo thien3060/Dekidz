@@ -26,7 +26,7 @@
                 <table class="table">
                     <thead>
                     <th>#</th>
-                    <th>Asset Name</th>
+                    <th>Name</th>
                     <th>Quantity</th>
                     <th class="text-center">Action</th>
                     </thead>

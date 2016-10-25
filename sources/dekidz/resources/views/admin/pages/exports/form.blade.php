@@ -18,7 +18,7 @@
         
         <div class="box box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title">Asset list</h3>
+                <h3 class="box-title">Food list</h3>
                 <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">Add</button>
             </div>
             <!-- /.box-header -->
@@ -26,7 +26,7 @@
                 <table class="table">
                     <thead>
                     <th>#</th>
-                    <th>Asset Name</th>
+                    <th>Name</th>
                     <th>Quantity</th>
                     <th class="text-center">Action</th>
                     </thead>
@@ -37,14 +37,14 @@
                                     <td class="asset-id">0</td>
                                     <td>
                                         <select class="form-control asset-name" name="asset-name[]">
-                                            <option value="0">Select asset</option>
+                                            <option value="0">Select food</option>
                                             @foreach($assets as $key => $asset)
                                                 <option value="{{$key}}" @if($key == $food->id) selected="selected" @endif>{{$asset}}</option>
                                             @endforeach
                                         </select>
                                     </td>
                                     <td>
-                                        <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number"  value="{{$food->pivot->quantity}}">
+                                        <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Food's quantity" name="asset-quantity[]" type="number"  value="{{$food->pivot->quantity}}">
                                     </td>
                                     <td style="text-align: center">
                                         <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -56,14 +56,14 @@
                             <td class="asset-id">0</td>
                             <td>
                                 <select class="form-control asset-name" name="asset-name[]">
-                                    <option value="0" selected="selected">Select asset</option>
+                                    <option value="0" selected="selected">Select food</option>
                                     @foreach($assets as $key => $asset)
                                         <option value="{{$key}}">{{$asset}}</option>
                                     @endforeach
                                 </select>
                             </td>
                             <td>
-                                <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number">
+                                <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Food's quantity" name="asset-quantity[]" type="number">
                             </td>
                             <td style="text-align: center">
                                 <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
