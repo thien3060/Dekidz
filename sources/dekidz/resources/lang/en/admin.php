@@ -44,8 +44,8 @@ return [
 				'food' => 'Food Import',
 				'asset'=> 'Asset Import'
 			],
-			'export' => 'Export',
-			'export_asset' => 'Export Asset'
+			'export' => 'Food Export',
+			'export_asset' => 'Asset Export'
 		],
 		'nutrition' => [
 			'title' => 'Nutrition',
