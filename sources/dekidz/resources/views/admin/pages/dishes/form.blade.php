@@ -68,13 +68,13 @@
                                     </select>
                                 </td>
                                 <td>
-                                    <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number"  value="{{$food->pivot->quantity}}">
+                                    <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Food's quantity" name="asset-quantity[]" type="number"  value="{{$food->pivot->quantity}}">
                                 </td>
                                 <td>
-                                    <input class="form-control asset-price" name="asset-price[]" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number" value="{{$food->pivot->price}}">
+                                    <input class="form-control asset-price" name="asset-price[]" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Food's price" type="number" value="{{$food->pivot->price}}">
                                 </td>
                                 <td>
-                                    <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
+                                    <input readonly class="form-control asset-cost" placeholder="Food's cost" value="0" name="asset-cost[]" type="number">
                                 </td>
                                 <td style="text-align: center">
                                     <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -86,20 +86,20 @@
                         <td class="asset-id">{{$k + 2}}</td>
                         <td>
                             <select onchange="selectFood(this);" class="form-control asset-name" name="asset-name[]">
-                                <option value="0" selected="selected">Select asset</option>
+                                <option value="0" selected="selected">Select food</option>
                                 @foreach($foods as $key => $food)
                                     <option value="{{$key}}">{{$food['name']}}</option>
                                 @endforeach
                             </select>
                         </td>
                         <td>
-                            <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number">
+                            <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Food's quantity" name="asset-quantity[]" type="number">
                         </td>
                         <td>
-                            <input class="form-control asset-price" name="asset-price[]" readonly onchange="updateCost(this);" placeholder="Asset's price" type="number">
+                            <input class="form-control asset-price" name="asset-price[]" readonly onchange="updateCost(this);" placeholder="Food's price" type="number">
                         </td>
                         <td>
-                            <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
+                            <input readonly class="form-control asset-cost" placeholder="Food's cost" value="0" name="asset-cost[]" type="number">
                         </td>
                         <td style="text-align: center">
                             <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>

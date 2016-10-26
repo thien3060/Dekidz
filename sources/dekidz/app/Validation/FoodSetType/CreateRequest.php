@@ -9,7 +9,6 @@ class CreateRequest extends Validator
     public function rules()
     {
         return [
-            'code' => 'required|min:1',
             'name' => 'required',
         ];
     }

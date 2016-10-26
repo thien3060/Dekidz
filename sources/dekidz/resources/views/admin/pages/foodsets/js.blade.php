@@ -30,10 +30,9 @@
         }
     }
     
-    function addRow(name, supplier, quantity, price, cost) {
+    function addRow(name, quantity, price, cost) {
         var row = $('#asset-list tr').first().clone();
         row.find('.asset-name').val(name);
-        row.find('.asset-supplier').val(supplier);
         row.find('.asset-quantity').val(quantity);
         row.find('.asset-price').val(price);
         row.find('.asset-cost').val(0);
