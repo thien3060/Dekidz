@@ -5,6 +5,7 @@
 @endif
 <div class="row">
     <div class="col-sm-12">
+        <input type="hidden" id="is_food" value="1" name="is_food"/>
         <div class="form-group">
             {!! Form::label('date', 'Export Date:') !!}
             <div class="input-group date">
