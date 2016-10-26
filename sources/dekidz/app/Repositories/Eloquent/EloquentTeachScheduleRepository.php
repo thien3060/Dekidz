@@ -136,4 +136,11 @@ class EloquentTeachScheduleRepository implements TeachScheduleRepository
         return $this->getModel();
     }
 
+    public function getTeachScheduleDetail($id, $semester)
+    {
+        return $this->getModel()
+            ->leftJoin('teach_schedules_detail', 'teach_schedules.id', '=', 'teach_schedules_detail.teach_schedule_id')
+            ->select('day', 'period', 'lesson', 'teacher')
+            ->get();
+    }
 }

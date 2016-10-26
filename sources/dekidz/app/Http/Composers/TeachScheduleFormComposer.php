@@ -13,7 +13,8 @@ class TeachScheduleFormComposer
         $classes = DekidzClass::lists('name', 'id');
         $subjects = SubjectTopic::withTrashed()->lists('name', 'id');
         $teachers = Staff::where('position', '=', 'teacher')->lists('name', 'id');
+        $semesters = [1,2];
 
-        $view->with(compact('classes', 'subjects', 'teachers'));
+        $view->with(compact('classes', 'subjects', 'teachers', 'semesters'));
     }
 }

@@ -1,82 +1,26 @@
-<table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+<table id="time-table" class="table table-bordered table-striped dataTable">
     <thead>
         <tr role="row">
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 295px;">Day/Period</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 361px;">Mon</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 321px;">Tue</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 255px;">Wed</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 190px;">Thu</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 190px;">Fri</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 5%;">Day/Period</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Mon</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Tue</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Wed</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Thu</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Fri</th>
         </tr>
     </thead>
     <tbody>
-        <tr role="row" class="odd">
-            <td>1</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr role="row" class="even">
-            <td>2</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr role="row" class="odd">
-            <td>3</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr role="row" class="even">
-            <td>4</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr role="row" class="odd">
-            <td>5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr role="row" class="even">
-            <td>6</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr role="row" class="odd">
-            <td>7</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr role="row" class="even">
-            <td>8</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr role="row" class="odd">
-            <td>9</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        @for($p = 1; $p <= 9; $p++)
+            <tr>
+                <td>{{$p}}</td>
+                @for($d = 2; $d <= 6; $d++)
+                    @foreach($schedules as $schedule)
+                        @if($schedule->day == $d & $schedule->period == $p)
+                            <td class="schedule" data-day="{{$d}}" data-period="{{$p}}">Teacher: {{$schedule->teacher}} <br> Lesson: {{$schedule->lesson}}</td>
+                        @endif
+                    @endforeach
+                @endfor
+            </tr>
+        @endfor
     </tbody>
 </table>

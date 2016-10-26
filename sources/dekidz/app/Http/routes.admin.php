@@ -88,19 +88,6 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
-    Route::resource('teachers', 'TeachersController', [
-        'except' => 'show',
-        'names' => [
-            'index' => 'admin.teachers.index',
-            'create' => 'admin.teachers.create',
-            'store' => 'admin.teachers.store',
-            'show' => 'admin.teachers.show',
-            'update' => 'admin.teachers.update',
-            'edit' => 'admin.teachers.edit',
-            'destroy' => 'admin.teachers.destroy',
-        ],
-    ]);
-
     Route::resource('staffs', 'StaffsController', [
         'names' => [
             'index' => 'admin.staffs.index',

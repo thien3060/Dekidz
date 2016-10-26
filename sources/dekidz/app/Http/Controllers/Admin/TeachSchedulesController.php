@@ -41,10 +41,11 @@ class TeachSchedulesController extends BaseController
     public function index()
     {
         $teach_schedules = $this->repository->allOrSearch(Input::get('q'));
+        $schedules = $this->repository->getTeachScheduleDetail(1, 1);
 
         $no = $teach_schedules->firstItem();
 
-        return $this->view('pages.teach_schedules.index', compact('teach_schedules', 'no'));
+        return $this->view('pages.teach_schedules.index', compact('teach_schedules', 'no', 'schedules'));
     }
 
     /**
@@ -80,7 +81,8 @@ class TeachSchedulesController extends BaseController
      */
     public function show($id)
     {
-        //
+        $schedules = $this->repository->getTeachScheduleDetail($id, 1);
+        return $schedules;
     }
 
     /**
