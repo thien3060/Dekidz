@@ -105,6 +105,10 @@ return [
         'model' => 'App\Models\TeachSchedule',
         'perpage' => 10
     ],
+    'tuition_fee' => [
+        'model' => 'App\Models\TuitionFee',
+        'perpage' => 10
+    ],
     'energy_need' => [
         'model' => 'App\Models\EnergyNeed',
         'perpage' => 10

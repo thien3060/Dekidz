@@ -3,6 +3,9 @@
 @else
     {!! Form::open(['files' => true, 'route' => 'admin.foodsets.store']) !!}
 @endif
+<script>
+    var assetsList = <?php echo json_encode($assets); ?>;
+</script>
 <div class="row">
     <div class="col-sm-3">
         <div class="form-group">
@@ -66,12 +69,12 @@
                         @if(isset($model))
                             @foreach($model->dishes as $k => $dish)
                                 <tr>
-                                    <td class="asset-id">{{$key + 1}}</td>
+                                    <td class="asset-id">{{$k + 1}}</td>
                                     <td>
-                                        <select class="form-control asset-name" name="asset-name[]">
+                                        <select onchange="selectAsset(this);" class="form-control asset-name" name="asset-name[]">
                                             <option value="0">Select dish</option>
                                             @foreach($assets as $key => $asset)
-                                                <option value="{{$key}}" @if($key == $dish->id) selected="selected" @endif>{{$asset}}</option>
+                                                <option value="{{$key}}" @if($asset == $dish->id) selected="selected" @endif>{{$asset['name']}}</option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -79,7 +82,7 @@
                                         <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number"  value="{{$dish->pivot->quantity}}">
                                     </td>
                                     <td>
-                                        <input class="form-control asset-price" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number" value="{{$dish->pivot->price}}">
+                                        <input class="form-control asset-price" name="asset-price[]" readonly onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number" value="{{$dish->pivot->price}}">
                                     </td>
                                     <td>
                                         <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
@@ -91,12 +94,13 @@
                             @endforeach
                         @endif
                         <tr>
-                            <td class="asset-id">1</td>
+                            {{--<td class="asset-id">1</td>--}}
+                            <td class="asset-id">{{$k + 2}}</td>
                             <td>
-                                <select class="form-control asset-name" name="asset-name[]">
+                                <select onchange="selectAsset(this);" class="form-control asset-name" name="asset-name[]">
                                     <option value="0" selected="selected">Select asset</option>
                                     @foreach($assets as $key => $asset)
-                                        <option value="{{$key}}">{{$asset}}</option>
+                                        <option value="{{$key}}">{{$asset['name']}}</option>
                                     @endforeach
                                 </select>
                             </td>
@@ -104,7 +108,7 @@
                                 <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's quantity" name="asset-quantity[]" type="number">
                             </td>
                             <td>
-                                <input class="form-control asset-price" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number">
+                                <input class="form-control asset-price" name="asset-price[]" readonly onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Asset's price" type="number">
                             </td>
                             <td>
                                 <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
@@ -118,7 +122,7 @@
                         <tr>
                             <td colspan="4" class="text-right"><strong>Total: </strong></td>
                             <td colspan="2" id="total-label" class="text-left">0</td>
-                            <input type="hidden" id="total-cost" name="cost"/>
+                            <input type="hidden" id="total-cost" name="total_cost"/>
                         </tr>
                     </tbody>
                 </table>
@@ -237,13 +241,6 @@
             {!! Form::label('vitaminc', 'Vitamin C:') !!}
             {!! Form::text('vitaminc', null, ['class' => 'form-control', 'readonly' => 'true']) !!}
             {!! $errors->first('vitaminc', '<div class="text-danger">:message</div>') !!}
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            {!! Form::label('total_cost', 'Total cost:') !!}
-            {!! Form::text('total_cost', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('total_cost', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
 </div>

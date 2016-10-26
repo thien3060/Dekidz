@@ -38,6 +38,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         'DishType',
         'TeachSchedule',
         'EnergyNeed',
+        'TuitionFee',
         'Lesson'
     ];
 

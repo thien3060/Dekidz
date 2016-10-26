@@ -9,7 +9,12 @@ class FoodSetFormComposer
 {
     public function compose($view)
     {
-        $assets = Dish::lists('name', 'id');
+        $list = Dish::all()->toArray();
+        $assets = array();
+        foreach ($list as $item) {
+            $assets[$item['id']] = $item;
+        }
+        //$assets = Dish::lists('name', 'id');
 
         $view->with(compact('assets'));
 

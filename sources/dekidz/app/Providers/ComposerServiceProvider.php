@@ -21,6 +21,7 @@ class ComposerServiceProvider extends ServiceProvider
         'admin.pages.dishes.edit' => 'App\Http\Composers\DishFormComposer',
         'admin.pages.lessons.*' => 'App\Http\Composers\LessonFormComposer',
         'admin.pages.teach_schedules.*' => 'App\Http\Composers\TeachScheduleFormComposer',
+        'admin.pages.tuition_fees.*' => 'App\Http\Composers\TuitionFeeFormComposer',
     ];
     /**
      * Bootstrap the application services.
