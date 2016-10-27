@@ -9,13 +9,12 @@ class UpdateRequest extends Validator
     public function rules()
     {
         return [
-            'day' => 'required',
-            'date' => 'required|date',
-            'class' => 'required|numeric',
-            'morning_lesson' => 'required|numeric',
-            'morning_teacher' => 'required|numeric',
-            'afternoon_lesson' => 'required|numeric',
-            'afternoon_teacher' => 'required|numeric',
+            'schedule.class_id' => 'required',
+            'schedule.semester' => 'required',
+            'schedule_detail.period' => 'required',
+            'schedule_detail.day' => 'required',
+            'schedule_detail.teacher' => 'required',
+            'schedule_detail.lesson' => 'required',
         ];
     }
 }

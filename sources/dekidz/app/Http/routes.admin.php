@@ -292,18 +292,10 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'destroy' => 'admin.foodgroups.destroy',
         ],
     ]);
-
-    Route::resource('teach_schedules', 'TeachSchedulesController', [
-        'names' => [
-            'index' => 'admin.teach_schedules.index',
-            'create' => 'admin.teach_schedules.create',
-            'store' => 'admin.teach_schedules.store',
-            'show' => 'admin.teach_schedules.show',
-            'update' => 'admin.teach_schedules.update',
-            'edit' => 'admin.teach_schedules.edit',
-            'destroy' => 'admin.teach_schedules.destroy',
-        ],
-    ]);
+    
+    Route::get('teach_schedules', 'TeachSchedulesController@index')->name('admin.teach_schedules.index');
+    Route::post('teach_schedules/detail', 'TeachSchedulesController@detail')->name('admin.teach_schedules.detail');
+    Route::post('teach_schedules/update', 'TeachSchedulesController@update')->name('admin.teach_schedules.update');
 
     Route::resource('subject_topics', 'SubjectTopicsController', [
         'except' => 'show',

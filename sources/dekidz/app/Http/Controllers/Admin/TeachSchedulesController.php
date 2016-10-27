@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Validator;
 class TeachSchedulesController extends BaseController
 {
     protected $teach_schedule;
+    protected $repository;
 
     public function __construct()
     {
@@ -47,100 +48,36 @@ class TeachSchedulesController extends BaseController
 
         return $this->view('pages.teach_schedules.index', compact('teach_schedules', 'no', 'schedules'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('admin.pages.teach_schedules.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(CreateRequest $request)
-    {
-        $data = $request->all();
-
-        $this->repository->create($data);
-
-        return $this->redirect('teach_schedules.index');
-    }
-
+    
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Request $request
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function detail(Request $request)
     {
-        $schedules = $this->repository->getTeachScheduleDetail($id, 1);
+        $id = $request->input('id');
+        $semester = $request->input('semester');
+        $schedules = $this->repository->getTeachScheduleDetail($id, $semester);
         return $schedules;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        try {
-            $teach_schedule = $this->repository->findById($id);
-
-            $teach_schedule->start_day = DateHelper::normalDateFormat($teach_schedule->start_day);
-
-            return $this->view('pages.teach_schedules.edit', compact('teach_schedule'));
-        } catch (ModelNotFoundException $e) {
-            return $this->redirectNotFound();
-        }
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, $id)
+    public function update(UpdateRequest $request)
     {
         try {
-            $data = $request->all();
-
-            $this->repository->update($data, $id);
-
-            return $this->redirect('teach_schedules.index');
+            return $this->repository->updateTeachSchedule($request->all());
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        try {
-            $this->repository->delete($id);
-
-            return $this->redirect('teach_schedules.index');
-        } catch (ModelNotFoundException $e) {
-            return $this->redirectNotFound();
-        }
-    }
-
+    
     /**
      * Redirect not found.
      *

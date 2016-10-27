@@ -14,11 +14,7 @@
             <tr>
                 <td>{{$p}}</td>
                 @for($d = 2; $d <= 6; $d++)
-                    @foreach($schedules as $schedule)
-                        @if($schedule->day == $d & $schedule->period == $p)
-                            <td class="schedule" data-day="{{$d}}" data-period="{{$p}}">Teacher: {{$schedule->teacher}} <br> Lesson: {{$schedule->lesson}}</td>
-                        @endif
-                    @endforeach
+                    <td class="schedule" data-day="{{$d}}" data-period="{{$p}}"></td>
                 @endfor
             </tr>
         @endfor

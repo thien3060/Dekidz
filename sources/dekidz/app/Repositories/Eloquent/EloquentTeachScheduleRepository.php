@@ -9,6 +9,8 @@ use App\Models\SubjectTopic;
 use App\Repositories\Contracts\SalaryRepository;
 use App\Repositories\Contracts\StaffRepository;
 use App\Repositories\Contracts\TeachScheduleRepository;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class EloquentTeachScheduleRepository implements TeachScheduleRepository
 {
@@ -70,65 +72,53 @@ class EloquentTeachScheduleRepository implements TeachScheduleRepository
 
     public function create(array $data)
     {
-        //Date convert
-        $data['date'] = DateHelper::sqlDateFormat($data['date']);
-
-        $teach_schedule = $this->getModel()->create($data);
-        $class = DekidzClass::find($data['class']);
-        $morning_lesson = SubjectTopic::find($data['morning_lesson']);
-        $afternoon_lesson = SubjectTopic::find($data['afternoon_lesson']);
-        $morning_teacher = Staff::find($data['morning_teacher']);
-        $afternoon_teacher = Staff::find($data['afternoon_teacher']);
-
-        if($class){
-            $teach_schedule->dekidz_class()->associate($class);
-        }
-        if($morning_lesson){
-            $teach_schedule->morning_lesson()->associate($morning_lesson);
-        }
-        if($afternoon_lesson){
-            $teach_schedule->afternoon_lesson()->associate($afternoon_lesson);
-        }
-        if($morning_teacher){
-            $teach_schedule->morning_teacher()->associate($morning_teacher);
-        }
-        if($afternoon_teacher){
-            $teach_schedule->afternoon_teacher()->associate($afternoon_teacher);
-        }
-
-        return $teach_schedule->save();
+        //
     }
 
     public function update(array $data, $id)
     {
-        $teach_schedule = $this->findById($id);
-        
-        //Date convert
-        $data['date'] = DateHelper::sqlDateFormat($data['date']);
+        //
+    }
 
-        $class = DekidzClass::find($data['class']);
-        $morning_lesson = SubjectTopic::find($data['morning_lesson']);
-        $afternoon_lesson = SubjectTopic::find($data['afternoon_lesson']);
-        $morning_teacher = Staff::find($data['morning_teacher']);
-        $afternoon_teacher = Staff::find($data['afternoon_teacher']);
+    public function updateTeachSchedule($data)
+    {
+        $class_id = $data['schedule']['class_id'];
+        $semester =$data['schedule']['semester'];
+        $day = $data['schedule_detail']['day'];
+        $period = $data['schedule_detail']['period'];
+        $teacher = $data['schedule_detail']['teacher'];
+        $lesson = $data['schedule_detail']['lesson'];
 
-        if($class){
-            $teach_schedule->dekidz_class()->associate($class);
+        $schedule = $this->getModel()
+            ->where('class_id', '=', $class_id)
+            ->where('semester', '=', $semester)
+            ->first();
+        if(empty($schedule)){
+            throw new \Exception("Schedule not found");
         }
-        if($morning_lesson){
-            $teach_schedule->morning_lesson()->associate($morning_lesson);
+        else{
+            $detail = DB::table('teach_schedules_detail')
+                ->where('teach_schedule_id', '=', $schedule->id)
+                ->where('day', '=', $day)
+                ->where('period', '=', $period);
+            if(empty($detail->get())){
+                $detail->insert([
+                    'teach_schedule_id' =>$schedule->id,
+                    'day' => $day,
+                    'period' => $period,
+                    'lesson' => $lesson,
+                    'teacher' => $teacher,
+                    'created_at' =>  Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                ]);
+            }
+            else{
+                $detail->update([
+                    'teacher' => $teacher,
+                    'lesson' => $lesson
+                ]);
+            }
         }
-        if($afternoon_lesson){
-            $teach_schedule->afternoon_lesson()->associate($afternoon_lesson);
-        }
-        if($morning_teacher){
-            $teach_schedule->morning_teacher()->associate($morning_teacher);
-        }
-        if($afternoon_teacher){
-            $teach_schedule->afternoon_teacher()->associate($afternoon_teacher);
-        }
-
-        return $teach_schedule->update($data);
     }
 
     public function getTeachSchedule()
@@ -139,6 +129,8 @@ class EloquentTeachScheduleRepository implements TeachScheduleRepository
     public function getTeachScheduleDetail($id, $semester)
     {
         return $this->getModel()
+            ->where('class_id', '=', $id)
+            ->where('semester', '=', $semester)
             ->leftJoin('teach_schedules_detail', 'teach_schedules.id', '=', 'teach_schedules_detail.teach_schedule_id')
             ->select('day', 'period', 'lesson', 'teacher')
             ->get();
