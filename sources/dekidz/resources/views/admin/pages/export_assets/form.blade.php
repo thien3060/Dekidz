@@ -15,7 +15,7 @@
             </div>
             {!! $errors->first('date', '<div class="text-danger">:message</div>') !!}
         </div>
-
+        <input type="hidden" id="is_food" value="0" name="is_food"/>
         <div class="box box-solid">
             <div class="box-header with-border">
                 <h3 class="box-title">Asset list</h3>

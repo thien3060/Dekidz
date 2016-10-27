@@ -65,7 +65,12 @@ class EloquentFoodSetTypeRepository implements FoodSetTypeRepository
 
     public function create(array $data)
     {
-        return $this->getModel()->create($data);
+        $foodsettype = $this->getModel()->create($data);
+        if(isset($foodsettype)){
+            $foodsettype->code = config('code.food_set_type').sprintf("%04d", $foodsettype->id);
+            $foodsettype->save();
+        }
+        return $foodsettype;
     }
 
     public function update(array $data, $id)

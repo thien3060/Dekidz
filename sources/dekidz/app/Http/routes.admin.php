@@ -136,8 +136,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('tuition_fees', 'TuitionFeeController', [
+        'names' => [
+            'index' => 'admin.tuition_fees.index',
+            'create' => 'admin.tuition_fees.create',
+            'store' => 'admin.tuition_fees.store',
+            'show' => 'admin.tuition_fees.show',
+            'update' => 'admin.tuition_fees.update',
+            'edit' => 'admin.tuition_fees.edit',
+            'destroy' => 'admin.tuition_fees.destroy',
+        ],
+    ]);
+
     Route::resource('import_asset', 'ImportAssetController', [
-        'except' => 'show',
         'names' => [
             'index' => 'admin.import_asset.index',
             'create' => 'admin.import_asset.create',
@@ -163,7 +174,6 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
     ]);
 
     Route::resource('exports', 'ExportsController', [
-        'except' => 'show',
         'names' => [
             'index' => 'admin.exports.index',
             'create' => 'admin.exports.create',

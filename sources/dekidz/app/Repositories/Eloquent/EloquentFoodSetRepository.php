@@ -81,9 +81,6 @@ class EloquentFoodSetRepository implements FoodSetRepository
     public function update(array $data, $id)
     {
         $foodset = $this->findById($id);
-        
-        //Date convert
-        $data['date'] = DateHelper::sqlDateFormat($data['date']);
 
         $foodset->update($data);
         $foodset->dishes()->detach();

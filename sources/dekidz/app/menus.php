@@ -14,6 +14,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.students.create', trans('admin.menus.students.create'), [], 2);
         $sub->route('admin.grades.index', trans('admin.menus.grades.all'), [], 3);
         $sub->route('admin.physical_infos.index', trans('admin.menus.physical_infos.all'), [], 4);
+        $sub->route('admin.tuition_fees.index', trans('admin.menus.students.tuition_fee'), [], 5);
     }, 1, ['icon' => 'fa fa-smile-o']);
 
     //Classes

@@ -6,13 +6,15 @@ return [
 		'students' => [
 			'title' => 'Students',
 			'all' => 'All Students',
-			'create' => 'Create Student'
+			'create' => 'Create Student',
+			'tuition_fee' => 'Tuition Fee',
 		],
 		'grades' => [
 			'title' => 'Grades',
 			'all' => 'All Grades',
 			'create' => 'Create Grade'
 		],
+
 		'physical_infos' => [
 			'title' => 'Student`s Physical Info',
 			'all' => 'Physical Info',

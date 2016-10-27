@@ -10,6 +10,7 @@ class FoodSet extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
+    protected $table = 'food_sets';
     protected $fillable = [
         'type_id',
         'age',
