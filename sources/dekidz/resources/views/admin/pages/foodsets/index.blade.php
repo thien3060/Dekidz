@@ -45,7 +45,7 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $foodset->name !!}</td>
-                <td>{!! $foodset->type_id !!}</td>
+                <td>{!! $foodsettypes[$foodset->type_id] !!}</td>
                 <td>{!! $foodset->age !!}</td>
                 <td>{!! $foodset->quantity !!}</td>
                 <td>{!! $foodset->description !!}</td>
