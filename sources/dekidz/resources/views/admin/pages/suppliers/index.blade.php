@@ -14,6 +14,8 @@
         <th>No</th>
         <th>Name</th>
         <th>Type</th>
+        <th>Email</th>
+        <th>Phone</th>
         <th>Product Type</th>
         <th class="text-center">Action</th>
         </thead>
@@ -23,6 +25,8 @@
                 <td>{!! $no !!}</td>
                 <td>{!! $supplier->name !!}</td>
                 <td>{!! $supplier->type !!}</td>
+                <td>{!! $supplier->email !!}</td>
+                <td>{!! $supplier->phone !!}</td>
                 <td>{!! $supplier->product_type !!}</td>
                 <td class="text-center">
                     <a href="{!! route('admin.suppliers.edit', $supplier->id) !!}">Edit</a>

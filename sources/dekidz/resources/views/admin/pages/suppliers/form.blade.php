@@ -20,6 +20,20 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
+            {!! Form::label('email', 'Email:') !!}
+            {!! Form::text('email', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('email', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            {!! Form::label('phone', 'Phone:') !!}
+            {!! Form::text('phone', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('phone', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
             {!! Form::label('product_type', 'Product type:') !!}
             {!! Form::text('product_type', null, ['class' => 'form-control']) !!}
             {!! $errors->first('product_type', '<div class="text-danger">:message</div>') !!}
