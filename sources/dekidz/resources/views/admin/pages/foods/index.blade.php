@@ -27,7 +27,7 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td><a href="{!! route('admin.foods.show', $food->id) !!}">{!! $food->name !!}</a></td>
-                <td>{!! $food->food_group_id !!}</td>
+                <td>{!! $foodgroups[$food->food_group_id] !!}</td>
                 <td>{!! $food->animal_source !!}</td>
                 <td>{!! $food->quantity !!}</td>
                 <td>{!! $food->unit !!}</td>
