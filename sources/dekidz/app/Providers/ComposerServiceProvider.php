@@ -20,6 +20,7 @@ class ComposerServiceProvider extends ServiceProvider
         'admin.pages.dishes.create' => 'App\Http\Composers\DishFormComposer',
         'admin.pages.dishes.edit' => 'App\Http\Composers\DishFormComposer',
         'admin.pages.lessons.*' => 'App\Http\Composers\LessonFormComposer',
+        'admin.pages.physical_infos.*' => 'App\Http\Composers\PhysicalInfoFormComposer',
         'admin.pages.teach_schedules.*' => 'App\Http\Composers\TeachScheduleFormComposer',
         'admin.pages.tuition_fees.*' => 'App\Http\Composers\TuitionFeeFormComposer',
     ];
