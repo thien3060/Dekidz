@@ -10,7 +10,6 @@ class CreateRequest extends Validator
     {
         return [
             'name' => 'required|min:2',
-            'type_id' => 'required|min:1',
             'preparing_description' => 'required|min:5',
             'cooking_description' => 'required|min:5',
             'chef' => 'required',

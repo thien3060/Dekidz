@@ -14,6 +14,7 @@
         <thead>
         <th>No</th>
         <th>Name</th>
+        <th>Dish type</th>
         <th>Chef</th>
         <th>Total cost</th>
         <th>Prepare Description</th>
@@ -40,6 +41,7 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $dish->name !!}</td>
+                <td>{!! $dishtypes[$dish->type_id] !!}</td>
                 <td>{!! $dish->chef !!}</td>
                 <td>{!! $dish->total_cost !!}</td>
                 <td>{!! $dish->preparing_description !!}</td>
