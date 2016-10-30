@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Students
+        All Grades
         &middot;
-        <small>{!! link_to_route('admin.subject_topics.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.grades.create', 'Add New') !!}</small>
     </h1>
 @stop
 
@@ -13,7 +13,6 @@
     <table class="table">
         <thead>
         <th>No</th>
-        <th>Code</th>
         <th>Name</th>
         <th>Description</th>
         <th class="text-center">Action</th>
@@ -22,7 +21,6 @@
         @foreach ($grades as $grade)
             <tr>
                 <td>{!! $no !!}</td>
-                <td>{!! $grade->code !!}</td>
                 <td>{!! $grade->name !!}</td>
                 <td>{!! $grade->description !!}</td>
                 <td class="text-center">
