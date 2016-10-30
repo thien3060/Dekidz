@@ -25,7 +25,7 @@
         @foreach ($tuition_fees as $tuition_fee)
             <tr>
                 <td>{!! $no !!}</td>
-                <td>{!! $tuition_fee->student_id !!}</td>
+                <td>{!! $students[$tuition_fee->student_id] !!}</td>
                 <td>{!! $tuition_fee->debt !!}</td>
                 <td>{!! $tuition_fee->paid !!}</td>
                 <td>{!! $tuition_fee->year !!}</td>
