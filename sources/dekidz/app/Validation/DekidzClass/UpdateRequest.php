@@ -9,10 +9,11 @@ class UpdateRequest extends Validator
     public function rules()
     {
         return [
-            'name' => 'required|min:5',
+            'name' => 'required|min:1',
             'teacher_id' => 'required',
             'room_number' => 'required',
             'grade_id' => 'required',
+            'school_year' => 'required',
         ];
     }
 }

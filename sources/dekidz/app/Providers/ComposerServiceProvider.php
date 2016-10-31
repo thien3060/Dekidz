@@ -13,6 +13,7 @@ class ComposerServiceProvider extends ServiceProvider
         'admin.pages.import_asset.*' => 'App\Http\Composers\ImportFormComposer',
         'admin.pages.foodsets.*' => 'App\Http\Composers\FoodSetFormComposer',
         'admin.pages.exports.*' => 'App\Http\Composers\ExportFormComposer',
+        'admin.pages.classes.*' => 'App\Http\Composers\ClassFormComposer',
         'admin.pages.export_assets.*' => 'App\Http\Composers\ExportAssetFormComposer',
         'admin.pages.foods.*' => 'App\Http\Composers\FoodFormComposer',
         'admin.pages.dishes.*' => 'App\Http\Composers\DishFormComposer',

@@ -23,7 +23,7 @@ class DekidzClass extends Model
         'teacher_id',
         'room_number',
         'grade_id',
-        'accountability'
+        'school_year'
     ];
     
     public function teach_schedules(){

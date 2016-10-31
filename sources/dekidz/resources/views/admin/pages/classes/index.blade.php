@@ -13,9 +13,10 @@
         <thead>
         <th>No</th>
         <th>Name</th>
+        <th>Grade</th>
         <th>Teacher name</th>
         <th>Room number</th>
-        <th>Grade</th>
+        <th>School Year</th>
         <th class="text-center">Action</th>
         </thead>
         <tbody>
@@ -23,9 +24,10 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $class->name !!}</td>
-                <td>{!! $class->teacher_id !!}</td>
+                <td>{!! $grades[$class->grade_id] !!}</td>
+                <td>{!! $staffs[$class->teacher_id] !!}</td>
                 <td>{!! $class->room_number !!}</td>
-                <td>{!! $class->grade_id !!}</td>
+                <td>{!! $class->school_year !!}</td>
                 <td class="text-center">
                     <a href="{!! route('admin.classes.edit', $class->id) !!}">Edit</a>
                     &middot;
