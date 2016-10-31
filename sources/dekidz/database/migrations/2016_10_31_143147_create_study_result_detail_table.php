@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableTuitionFee extends Migration
+class CreateStudyResultDetailTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,12 @@ class CreateTableTuitionFee extends Migration
      */
     public function up()
     {
-        Schema::create('tuition_fee', function (Blueprint $table) {
+        Schema::create('study_result_detail', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('study_result_id');
             $table->integer('student_id');
-            $table->double('debt', 18, 2);
-            $table->double('paid', 18, 2);
-            $table->integer('year');
-            $table->integer('month');
+            $table->integer('point');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -31,6 +28,6 @@ class CreateTableTuitionFee extends Migration
      */
     public function down()
     {
-        Schema::drop('tuition_fee');
+        Schema::drop('study_result_detail');
     }
 }

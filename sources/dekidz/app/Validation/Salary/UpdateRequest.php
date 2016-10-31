@@ -10,11 +10,11 @@ class UpdateRequest extends Validator
     {
         return [
             "staff_id" => "required|numeric",
-            "base_salary" => 'required|regex:/^[1-9]\d*(\.\d+)?$/',
-            "wage_index" => 'required|regex:/^[1-9]\d*(\.\d+)?$/',
-            "bonus" => 'required|regex:/^[1-9]\d*(\.\d+)?$/',
-            "minus" => 'required|regex:/^[1-9]\d*(\.\d+)?$/',
-            "salary" => 'required|regex:/^[1-9]\d*(\.\d+)?$/'
+            "base_salary" => 'required|regex:/^[0-9]\d*(\.\d+)?$/',
+            "wage_index" => 'required|regex:/^[0-9]\d*(\.\d+)?$/',
+            "bonus" => 'required|regex:/^[0-9]\d*(\.\d+)?$/',
+            "minus" => 'required|regex:/^[0-9]\d*(\.\d+)?$/',
+            "salary" => 'required|regex:/^[0-9]\d*(\.\d+)?$/'
         ];
     }
 }
