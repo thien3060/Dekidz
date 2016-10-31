@@ -94,7 +94,8 @@ class EloquentTeachScheduleRepository implements TeachScheduleRepository
             ->where('semester', '=', $semester)
             ->first();
         if(empty($schedule)){
-            throw new \Exception("Schedule not found");
+//            throw new \Exception("Schedule not found");
+            $schedule = $this->getModel()->create(['class_id' => $class_id, 'semester' => $semester]);
         }
         else{
             $detail = DB::table('teach_schedules_detail')
