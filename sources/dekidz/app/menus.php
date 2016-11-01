@@ -10,11 +10,10 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
 
     //Students
     $menu->dropdown(trans('admin.menus.students.title'), function ($sub) {
-        $sub->route('admin.students.index', trans('admin.menus.students.all'), [], 1);
-        $sub->route('admin.students.create', trans('admin.menus.students.create'), [], 2);
-        $sub->route('admin.grades.index', trans('admin.menus.grades.all'), [], 3);
-        $sub->route('admin.physical_infos.index', trans('admin.menus.physical_infos.all'), [], 4);
-        $sub->route('admin.tuition_fees.index', trans('admin.menus.students.tuition_fee'), [], 5);
+        $sub->route('admin.students.index', trans('admin.menus.students.title'), [], 1);
+        $sub->route('admin.grades.index', trans('admin.menus.grades.title'), [], 2);
+        $sub->route('admin.physical_infos.index', trans('admin.menus.physical_infos.all'), [], 3);
+        $sub->route('admin.tuition_fees.index', trans('admin.menus.students.tuition_fee'), [], 4);
     }, 1, ['icon' => 'fa fa-smile-o']);
 
     //Classes
@@ -67,10 +66,9 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
 
     //Staff
     $menu->dropdown(trans('admin.menus.staffs.title'), function ($sub) {
-        $sub->route('admin.staffs.index', trans('admin.menus.staffs.all'), [], 1);
-        $sub->route('admin.staffs.create', trans('admin.menus.staffs.create'), [], 2);
-        $sub->route('admin.departments.create', trans('admin.menus.departments.title'), [], 3);
-        $sub->route('admin.salaries.index', trans('admin.menus.staffs.salaries.all'), [], 4);
+        $sub->route('admin.staffs.index', trans('admin.menus.staffs.title'), [], 1);
+        $sub->route('admin.departments.index', trans('admin.menus.departments.title'), [], 2);
+        $sub->route('admin.salaries.index', trans('admin.menus.staffs.salaries.all'), [], 3);
     }, 8, ['icon' => 'fa fa-book']);
 
     //Users

@@ -11,7 +11,6 @@ class CreateRequest extends Validator
         return [
             'name' => "required|min:5",
             'chief_id' => "required|numeric",
-            'wage_index' => "required|numeric",
         ];
     }
 }
