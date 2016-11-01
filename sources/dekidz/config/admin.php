@@ -33,6 +33,10 @@ return [
         'model' => 'App\Models\Staff',
         'perpage' => 10
     ],
+    'staff_type' => [
+        'model' => 'App\Models\StaffType',
+        'perpage' => 10
+    ],
     'salary' => [
         'model' => 'App\Models\Salary',
         'perpage' => 10

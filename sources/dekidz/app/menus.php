@@ -67,8 +67,9 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     //Staff
     $menu->dropdown(trans('admin.menus.staffs.title'), function ($sub) {
         $sub->route('admin.staffs.index', trans('admin.menus.staffs.title'), [], 1);
-        $sub->route('admin.departments.index', trans('admin.menus.departments.title'), [], 2);
-        $sub->route('admin.salaries.index', trans('admin.menus.staffs.salaries.all'), [], 3);
+        $sub->route('admin.staff_types.index', trans('admin.menus.staffs.staff_types.title'), [], 2);
+        $sub->route('admin.departments.index', trans('admin.menus.departments.title'), [], 3);
+        $sub->route('admin.salaries.index', trans('admin.menus.staffs.salaries.all'), [], 4);
     }, 8, ['icon' => 'fa fa-book']);
 
     //Users

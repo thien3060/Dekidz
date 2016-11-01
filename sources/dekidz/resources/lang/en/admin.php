@@ -86,6 +86,10 @@ return [
 			'salaries' => [
 				'title' => 'Salary',
 				'all' => 'Salaries'
+			],
+			'staff_types' => [
+				'title' => 'Positions',
+				'all' => 'All Positions'
 			]
 		],
 		'departments' => [

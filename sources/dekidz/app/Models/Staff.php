@@ -37,11 +37,7 @@ class Staff extends Model
         return $this->hasOne('App\Models\Salary');
     }
 
-    public function morning_lesson(){
-        return $this->hasMany('App\Models\TeachSchedule', 'morning_teacher_id');
-    }
-
-    public function afternoon_lesson(){
-        return $this->hasMany('App\Models\TeachSchedule', 'afternoon_teacher_id');
+    public function type(){
+        return $this->belongsTo('App\Models\StaffType', 'position');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
+use App\Models\TeachSchedule;
 use App\Repositories\Contracts\DekidzClassRepository;
 
 class EloquentDekidzClassRepository implements DekidzClassRepository
@@ -65,7 +66,11 @@ class EloquentDekidzClassRepository implements DekidzClassRepository
 
     public function create(array $data)
     {
-        return $this->getModel()->create($data);
+        $class = $this->getModel()->create($data);
+        if(!empty($class)){
+            TeachSchedule::create(['class_id' => $class->id, 'semester' => 1], ['class_id' => $class->id, 'semester' => 2]);
+        }
+        return $class;
     }
 
     public function update(array $data, $id)
