@@ -33,6 +33,10 @@ return [
         'model' => 'App\Models\Staff',
         'perpage' => 10
     ],
+    'maintenance_ballot' => [
+        'model' => 'App\Models\MaintenanceBallot',
+        'perpage' => 10
+    ],
     'salary' => [
         'model' => 'App\Models\Salary',
         'perpage' => 10

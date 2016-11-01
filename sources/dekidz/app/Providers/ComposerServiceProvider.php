@@ -16,6 +16,7 @@ class ComposerServiceProvider extends ServiceProvider
         'admin.pages.staffs.*' => 'App\Http\Composers\StaffFormComposer',
         'admin.pages.classes.*' => 'App\Http\Composers\ClassFormComposer',
         'admin.pages.export_assets.*' => 'App\Http\Composers\ExportAssetFormComposer',
+        'admin.pages.maintenance_ballots.*' => 'App\Http\Composers\MaintenanceBallotFormComposer',
         'admin.pages.foods.*' => 'App\Http\Composers\FoodFormComposer',
         'admin.pages.dishes.*' => 'App\Http\Composers\DishFormComposer',
         'admin.pages.lessons.*' => 'App\Http\Composers\LessonFormComposer',

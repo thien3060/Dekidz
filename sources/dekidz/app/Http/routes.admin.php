@@ -148,6 +148,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('maintenance_ballots', 'MaintenanceBallotController', [
+        'names' => [
+            'index' => 'admin.maintenance_ballots.index',
+            'create' => 'admin.maintenance_ballots.create',
+            'store' => 'admin.maintenance_ballots.store',
+            'show' => 'admin.maintenance_ballots.show',
+            'update' => 'admin.maintenance_ballots.update',
+            'edit' => 'admin.maintenance_ballots.edit',
+            'destroy' => 'admin.maintenance_ballots.destroy',
+        ],
+    ]);
+
+
     Route::resource('import_asset', 'ImportAssetController', [
         'names' => [
             'index' => 'admin.import_asset.index',

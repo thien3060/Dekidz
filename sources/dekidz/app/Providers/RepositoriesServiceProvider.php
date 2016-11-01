@@ -39,7 +39,8 @@ class RepositoriesServiceProvider extends ServiceProvider
         'TeachSchedule',
         'EnergyNeed',
         'TuitionFee',
-        'Lesson'
+        'Lesson',
+        'MaintenanceBallot'
     ];
 
     /**
