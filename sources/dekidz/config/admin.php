@@ -57,6 +57,10 @@ return [
         'model' => 'App\Models\RemOut',
         'perpage' => 10
     ],
+    'study_result' => [
+        'model' => 'App\Models\StudyResult',
+        'perpage' => 10
+    ],
     'asset' => [
         'model' => 'App\Models\Asset',
         'perpage' => 10

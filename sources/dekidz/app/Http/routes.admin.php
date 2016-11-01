@@ -148,6 +148,19 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('study_results', 'StudyResultController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'admin.study_results.index',
+            'create' => 'admin.study_results.create',
+            'store' => 'admin.study_results.store',
+            'show' => 'admin.study_results.show',
+            'update' => 'admin.study_results.update',
+            'edit' => 'admin.study_results.edit',
+            'destroy' => 'admin.study_results.destroy',
+        ],
+    ]);
+
     Route::resource('tuition_fees', 'TuitionFeeController', [
         'names' => [
             'index' => 'admin.tuition_fees.index',

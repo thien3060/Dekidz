@@ -41,7 +41,8 @@ class RepositoriesServiceProvider extends ServiceProvider
         'EnergyNeed',
         'TuitionFee',
         'Lesson',
-        'MaintenanceBallot'
+        'MaintenanceBallot',
+        'StudyResult'
     ];
 
     /**

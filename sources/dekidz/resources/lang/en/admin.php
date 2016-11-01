@@ -23,7 +23,8 @@ return [
 		'classes' => [
 			'title' => 'Classes',
 			'all' => 'All Classes',
-			'create' => 'Create Class'
+			'create' => 'Create Class',
+			'study_result' => 'Study Result'
 		],
 		'finances' => [
 			'title' => 'Finances',
