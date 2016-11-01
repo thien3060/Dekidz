@@ -100,6 +100,18 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('staff_types', 'StaffTypesController', [
+        'names' => [
+            'index' => 'admin.staff_types.index',
+            'create' => 'admin.staff_types.create',
+            'store' => 'admin.staff_types.store',
+            'show' => 'admin.staff_types.show',
+            'update' => 'admin.staff_types.update',
+            'edit' => 'admin.staff_types.edit',
+            'destroy' => 'admin.staff_types.destroy',
+        ],
+    ]);
+
     Route::resource('salaries', 'SalariesController', [
         'except' => ['show', 'create'],
         'names' => [

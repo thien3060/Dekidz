@@ -18,6 +18,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         'Grade',
         'PhysicalInfo',
         'Staff',
+        'StaffType',
         'Salary',
         'Department',
         'RemIn',

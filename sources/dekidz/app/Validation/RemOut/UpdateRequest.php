@@ -10,7 +10,6 @@ class UpdateRequest extends Validator
     {
         return [
             "reason" => "required|min:5",
-            "code" => "required|numeric",
             "date" => "required|date",
             "paid" => "required|numeric",
             "debt" => "required|numeric",

@@ -11,11 +11,6 @@
             {!! $errors->first('reason', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('code', 'Code:') !!}
-            {!! Form::text('code', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('code', '<div class="text-danger">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {!! Form::label('date', 'Date:') !!}
             <div class="input-group date">
                 <div class="input-group-addon">

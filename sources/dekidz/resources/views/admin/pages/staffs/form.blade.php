@@ -75,6 +75,18 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group">
+            {!! Form::label('position', 'Position:') !!}
+            <select class="form-control" name="position">
+                <option value="0">Select position</option>
+                @foreach($positions as $key => $position)
+                    <option value="{{$key}}" @if($key == @$model->position) selected="selected" @endif>{{$position}}</option>
+                @endforeach
+            </select>
+            {!! $errors->first('department_id', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
             {!! Form::label('issued_by', 'Issued By:') !!}
             {!! Form::text('issued_by', null, ['class' => 'form-control']) !!}
             {!! $errors->first('issued_by', '<div class="text-danger">:message</div>') !!}
@@ -92,13 +104,6 @@
             {!! Form::label('email', 'Email:') !!}
             {!! Form::text('email', null, ['class' => 'form-control']) !!}
             {!! $errors->first('email', '<div class="text-danger">:message</div>') !!}
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="form-group">
-            {!! Form::label('position', 'Position:') !!}
-            {!! Form::text('position', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('position', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">

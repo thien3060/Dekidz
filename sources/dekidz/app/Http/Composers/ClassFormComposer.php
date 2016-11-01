@@ -10,13 +10,8 @@ class ClassFormComposer
     public function compose($view)
     {
         $staffs = Staff::lists('name', 'id');
-
-        $view->with(compact('staffs'));
-
         $grades = Grade::lists('name', 'id');
-
-        $view->with(compact('grades'));
-
-
+        
+        $view->with(compact('grades', 'staffs'));
     }
 }
