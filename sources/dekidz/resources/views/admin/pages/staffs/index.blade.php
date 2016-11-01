@@ -30,11 +30,11 @@
                 <td>{!! $no !!}</td>
                 <td>{!! $staff->name !!}</td>
                 <td>{!! $staff->code !!}</td>
-                <td>{!! $staff->gender !!}</td>
+                <td>{!! $gender[$staff->gender] !!}</td>
                 <td>{!! $staff->dob !!}</td>
                 <td>{!! $staff->address !!}</td>
                 <td>{!! $staff->identity_card !!}</td>
-                <td>{!! $staff->department_id !!}</td>
+                <td>{!! $departments[$staff->department_id] !!}</td>
                 <td>{!! $staff->phone !!}</td>
                 <td>{!! $staff->email !!}</td>
                 <td class="text-center">

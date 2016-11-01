@@ -68,8 +68,13 @@ class EloquentRemOutRepository implements RemOutRepository
     {
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
+        $rem_out = $this->getModel()->create($data);
+        if(isset($rem_out)){
+            $rem_out->code = config('code.rem_out').sprintf("%04d", $rem_out->id);
+            $rem_out->save();
+        }
 
-        return $this->getModel()->create($data);
+        return $rem_out;
     }
 
     public function update(array $data, $id)

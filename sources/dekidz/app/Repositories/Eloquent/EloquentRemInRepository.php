@@ -68,8 +68,13 @@ class EloquentRemInRepository implements RemInRepository
     {
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
+        $rem_in = $this->getModel()->create($data);
+        if(isset($rem_in)){
+            $rem_in->code = config('code.rem_in').sprintf("%04d", $rem_in->id);
+            $rem_in->save();
+        }
 
-        return $this->getModel()->create($data);
+        return $rem_in;
     }
 
     public function update(array $data, $id)
