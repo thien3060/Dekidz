@@ -33,13 +33,12 @@ return [
         'model' => 'App\Models\Staff',
         'perpage' => 10
     ],
-<<<<<<< HEAD
     'maintenance_ballot' => [
         'model' => 'App\Models\MaintenanceBallot',
-=======
+        'perpage' => 10
+    ],
     'staff_type' => [
         'model' => 'App\Models\StaffType',
->>>>>>> f53eb2763359f7cedb4d0043f3ea50a01e33135d
         'perpage' => 10
     ],
     'salary' => [
