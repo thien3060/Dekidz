@@ -38,4 +38,6 @@
         var editor = CKEDITOR.replace( 'ckeditor' );
         CKFinder.setupCKEditor( editor, prefix + '/vendor/ckfinder/') ;
     </script>
+
+    @include('admin.pages.classes.js')
 @endsection

@@ -56,6 +56,7 @@ class EloquentDekidzClassRepository implements DekidzClassRepository
         $dekidzClass = $this->findById($id);
 
         if (!is_null($dekidzClass)) {
+            $dekidzClass->foods()->detach();
             $dekidzClass->delete();
 
             return true;
@@ -67,6 +68,11 @@ class EloquentDekidzClassRepository implements DekidzClassRepository
     public function create(array $data)
     {
         $class = $this->getModel()->create($data);
+        for($i = 0; $i < count($data['asset-name']); $i++){
+            if($data['asset-name'][$i] != 0){
+                $class->foods()->attach($data['asset-name'][$i]);
+            }
+        }
         if(!empty($class)){
             TeachSchedule::create(['class_id' => $class->id, 'semester' => 1], ['class_id' => $class->id, 'semester' => 2]);
         }
@@ -77,6 +83,14 @@ class EloquentDekidzClassRepository implements DekidzClassRepository
     {
         $dekidzClass = $this->findById($id);
         return $dekidzClass->update($data);
+        $dekidzClass->foods()->detach();
+
+        for($i = 0; $i < count($data['asset-name']); $i++){
+            if($data['asset-name'][$i] != 0){
+                $dekidzClass->foods()->attach($data['asset-name'][$i]);
+            }
+        }
+        return $dekidzClass;
     }
 
     public function getDekidzClass()

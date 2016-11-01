@@ -29,4 +29,8 @@ class DekidzClass extends Model
     public function teach_schedules(){
         return $this->hasMany('App\Models\TeachSchedule', 'class_id');
     }
+
+    public function foods(){
+        return $this->belongsToMany('App\Models\Student', 'class_id', 'class_id', 'student_id');
+    }
 }
