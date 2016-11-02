@@ -73,12 +73,20 @@ class EloquentMenuRepository implements MenuRepository
 
     public function create(array $data)
     {
-        //
+        //Date convert
+        $data['date'] = DateHelper::sqlDateFormat($data['date']);
+
+        return $this->getModel()->create($data);
     }
 
     public function update(array $data, $id)
     {
-        //
+        $menu = $this->findById($id);
+
+        //Date convert
+        $data['date'] = DateHelper::sqlDateFormat($data['date']);
+
+        return $menu->update($data);
     }
 
     public function getMenu()

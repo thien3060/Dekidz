@@ -11,7 +11,7 @@
 @section('content')
 
     <div>
-        @include('admin.pages.menus.form', array('model' => $menus))
+        @include('admin.pages.menus.form', array('model' => $menu))
     </div>
 
 @stop

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Validation\Food\CreateRequest;
-use App\Validation\Food\UpdateRequest;
+use App\Helpers\DateHelper;
+use App\Validation\Menu\CreateRequest;
+use App\Validation\Menu\UpdateRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -98,6 +99,7 @@ class MenusController extends BaseController
     {
         try {
             $menu = $this->repository->findById($id);
+            $menu->date = DateHelper::normalDateFormat($menu->date);
 
             return $this->view('pages.menus.edit', compact('menu'));
         } catch (ModelNotFoundException $e) {

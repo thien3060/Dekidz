@@ -15,5 +15,9 @@ class FoodSetType extends Model
     protected $fillable = [
         'name'
     ];
+    
+    public function foodsets(){
+        return $this->hasMany('App\Models\FoodSet', 'type_id');
+    }
 
 }

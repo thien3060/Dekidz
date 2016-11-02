@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        All Foods
+        All Menus
         &middot;
         <small>{!! link_to_route('admin.menus.create', 'Add New') !!}</small>
     </h1>
@@ -25,9 +25,9 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $menu->date !!}</td>
-                <td>{!! $menu->breakfast_id !!}</td>
-                <td>{!! $menu->lunch_id !!}</td>
-                <td>{!! $menu->mid_afternoon_id !!}</td>
+                <td>{!! $breakfast[$menu->breakfast_id]['name'] !!}</td>
+                <td>{!! $lunch[$menu->lunch_id]['name'] !!}</td>
+                <td>{!! $mid_afternoon[$menu->mid_afternoon_id]['name'] !!}</td>
                 <td>{!! $menu->created_at !!}</td>
                 <td class="text-center">
                     <a href="{!! route('admin.menus.edit', $menu->id) !!}">Edit</a>
