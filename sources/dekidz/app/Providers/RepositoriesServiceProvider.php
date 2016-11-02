@@ -28,6 +28,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         'Dish',
         'Food',
         'FoodSet',
+        'Menu',
         'ImportFood',
         'ImportAsset',
         'Asset',

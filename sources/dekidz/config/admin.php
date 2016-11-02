@@ -89,6 +89,10 @@ return [
         'model' => 'App\Models\FoodSet',
         'perpage' => 10
     ],
+    'menu' => [
+        'model' => 'App\Models\Menu',
+        'perpage' => 10
+    ],
     'import' => [
         'model' => 'App\Models\Import',
         'perpage' => 10

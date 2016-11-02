@@ -88,6 +88,18 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
         ],
     ]);
 
+    Route::resource('menus', 'MenusController', [
+        'names' => [
+            'index' => 'admin.menus.index',
+            'create' => 'admin.menus.create',
+            'store' => 'admin.menus.store',
+            'show' => 'admin.menus.show',
+            'update' => 'admin.menus.update',
+            'edit' => 'admin.menus.edit',
+            'destroy' => 'admin.menus.destroy',
+        ],
+    ]);
+
     Route::resource('staffs', 'StaffsController', [
         'names' => [
             'index' => 'admin.staffs.index',
@@ -284,10 +296,6 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'destroy' => 'admin.dishtypes.destroy',
         ],
     ]);
-
-    Route::get('time_table', ['as' => 'admin.education.time_table', 'uses' => function() {
-        return "time table page";
-    }]);
 
     Route::resource('assets', 'AssetsController', [
         'except' => 'show',

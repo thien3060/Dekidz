@@ -40,4 +40,8 @@ class FoodSet extends Model
         return $this->belongsToMany('App\Models\Dish', 'food_set_detail', 'food_set_id', 'dish_id')->withPivot('quantity', 'price');
     }
 
+    public function type(){
+        return $this->belongsTo('App\Models\FoodSetType', 'type_id');
+    }
+
 }

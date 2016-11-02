@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class FoodSetType extends Model
+class Menu extends Model
 {
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $table = 'food_set_type';
+
+    protected $table = 'menus';
 
     protected $fillable = [
-        'name'
+        'date',
+        'breakfast_id',
+        'lunch_id',
+        'mid_afternoon_id'
     ];
-    
-    public function foodsets(){
-        return $this->hasMany('App\Models\FoodSet', 'type_id');
-    }
-
 }
