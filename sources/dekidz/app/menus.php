@@ -49,6 +49,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.foodsettypes.index', trans('admin.menus.nutrition.foodsettype'), [], 5);
         $sub->route('admin.dishtypes.index', trans('admin.menus.nutrition.dishtype'), [], 6);
         $sub->route('admin.energy_needs.index', trans('admin.menus.nutrition.energy_need'), [], 7);
+        $sub->route('admin.menus.index', trans('admin.menus.nutrition.menu'), [], 8);
     }, 5, ['icon' => 'fa fa-heartbeat']);
 
     //Education
