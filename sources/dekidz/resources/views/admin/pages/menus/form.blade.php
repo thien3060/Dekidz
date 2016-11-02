@@ -41,56 +41,56 @@
                         <tr>
                             <td>Breakfast</td>
                             <td>
-                                <select class="form-control" name="breakfast_id">
+                                <select class="form-control food-set-select" name="breakfast_id">
                                     <option value="0">Select food set</option>
                                     @foreach($breakfast as $key => $item)
                                         <option value="{{$key}}" @if($key == @$model->breakfast_id) selected="selected" @endif>{{$item['name']}}</option>
                                     @endforeach
                                 </select>
-                            <td>
-                            <td class="calo"></td>
-                            <td class="h2o"></td>
-                            <td class="protid"></td>
-                            <td class="lipid"></td>
-                            <td class="glucid"></td>
-                            <td class="cellulose"></td>
-                            <td class="cholesterol"></td>
+                            </td>
+                            <td class="calo">0</td>
+                            <td class="h2o">0</td>
+                            <td class="protid">0</td>
+                            <td class="lipid">0</td>
+                            <td class="glucid">0</td>
+                            <td class="cellulose">0</td>
+                            <td class="cholesterol">0</td>
                         </tr>
                         <tr>
                             <td>Lunch</td>
                             <td>
-                                <select class="form-control" name="lunch_id">
+                                <select class="form-control food-set-select" name="lunch_id">
                                     <option value="0">Select food set</option>
                                     @foreach($lunch as $key => $item)
                                         <option value="{{$key}}" @if($key == @$model->lunch_id) selected="selected" @endif>{{$item['name']}}</option>
                                     @endforeach
                                 </select>
-                            <td>
-                            <td class="calo"></td>
-                            <td class="h2o"></td>
-                            <td class="protid"></td>
-                            <td class="lipid"></td>
-                            <td class="glucid"></td>
-                            <td class="cellulose"></td>
-                            <td class="cholesterol"></td>
+                            </td>
+                            <td class="calo">0</td>
+                            <td class="h2o">0</td>
+                            <td class="protid">0</td>
+                            <td class="lipid">0</td>
+                            <td class="glucid">0</td>
+                            <td class="cellulose">0</td>
+                            <td class="cholesterol">0</td>
                         </tr>
                         <tr>
                             <td>Mid Afternoon</td>
                             <td>
-                                <select class="form-control" name="mid_afternoon_id">
+                                <select class="form-control food-set-select" name="mid_afternoon_id">
                                     <option value="0">Select food set</option>
                                     @foreach($mid_afternoon as $key => $item)
                                         <option value="{{$key}}" @if($key == @$model->mid_afternoon_id) selected="selected" @endif>{{$item['name']}}</option>
                                     @endforeach
                                 </select>
-                            <td>
-                            <td class="calo"></td>
-                            <td class="h2o"></td>
-                            <td class="protid"></td>
-                            <td class="lipid"></td>
-                            <td class="glucid"></td>
-                            <td class="cellulose"></td>
-                            <td class="cholesterol"></td>
+                            </td>
+                            <td class="calo">0</td>
+                            <td class="h2o">0</td>
+                            <td class="protid">0</td>
+                            <td class="lipid">0</td>
+                            <td class="glucid">0</td>
+                            <td class="cellulose">0</td>
+                            <td class="cholesterol">0</td>
                         </tr>
                     </tbody>
                 </table>
@@ -116,23 +116,23 @@
                     <tbody id="food-set-list">
                     <tr>
                         <td>Total</td>
-                        <td class="total-calo"></td>
-                        <td class="total-h2o"></td>
-                        <td class="total-protid"></td>
-                        <td class="total-lipid"></td>
-                        <td class="total-glucid"></td>
-                        <td class="total-cellulose"></td>
-                        <td class="total-cholesterol"></td>
+                        <td class="total-calo">0</td>
+                        <td class="total-h2o">0</td>
+                        <td class="total-protid">0</td>
+                        <td class="total-lipid">0</td>
+                        <td class="total-glucid">0</td>
+                        <td class="total-cellulose">0</td>
+                        <td class="total-cholesterol">0</td>
                     </tr>
                     <tr>
                         <td>Needed</td>
-                        <td class="total-calo"></td>
-                        <td class="total-h2o"></td>
-                        <td class="total-protid"></td>
-                        <td class="total-lipid"></td>
-                        <td class="total-glucid"></td>
-                        <td class="total-cellulose"></td>
-                        <td class="total-cholesterol"></td>
+                        <td class="needed-calo"></td>
+                        <td class="needed-h2o"></td>
+                        <td class="needed-protid"></td>
+                        <td class="needed-lipid"></td>
+                        <td class="needed-glucid"></td>
+                        <td class="needed-cellulose"></td>
+                        <td class="needed-cholesterol"></td>
                     </tr>
                     </tbody>
                 </table>

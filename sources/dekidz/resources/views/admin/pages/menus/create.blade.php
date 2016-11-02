@@ -22,4 +22,6 @@
             autoclose: true
         });
     </script>
+
+    @include('admin.pages.menus.js')
 @endsection
