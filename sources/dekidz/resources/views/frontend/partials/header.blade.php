@@ -24,7 +24,7 @@
             </button>
 
             <a class="navbar-brand" href="/">
-                <h1><img src="images/logo.png" alt="logo"></h1>
+                <h1><img src="/images/logo.png" alt="logo"></h1>
             </a>
 
         </div>

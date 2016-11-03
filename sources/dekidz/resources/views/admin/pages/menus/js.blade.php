@@ -67,7 +67,7 @@
                 selected_mid_afternoon = null;
             }
             nutrition.forEach(function (item) {
-                selected.parent().parent().closest('.'+item).html(0);
+                selected.parent().parent().find('.'+item).html(0);
             });
         }
     }

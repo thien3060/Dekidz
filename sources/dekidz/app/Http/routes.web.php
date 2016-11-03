@@ -4,9 +4,9 @@ Route::get('/', function () {
     return view('frontend.pages.index');
 });
 
-Route::get('/blogone', function () {
-    return view('frontend.pages.blogone');
-});
+Route::get('/blogone', 'ArticlesController@blogone');
+Route::get('/blog', 'ArticlesController@index');
+Route::get('/article/{id}', 'ArticlesController@show')->name('frontend.articles.show');
 
 Route::get('/aboutus', function () {
     return view('frontend.pages.about');
@@ -18,10 +18,6 @@ Route::get('/aboutus2', function () {
 
 Route::get('/service', function () {
     return view('frontend.pages.service');
-});
-
-Route::get('/blog', function () {
-    return view('frontend.pages.blog');
 });
 
 Route::get('/pricing', function () {

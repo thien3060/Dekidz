@@ -13,14 +13,22 @@
         <thead>
         <th>No</th>
         <th>Age</th>
-        <th>Daily Cal</th>
-        <th>School Time Cal</th>
-        <th>Daily Protid</th>
-        <th>School Time Protid</th>
-        <th>Daily Lipid</th>
-        <th>School Time Lipid</th>
-        <th>Daily Glucid</th>
-        <th>School Time Glucid</th>
+        <th>Calo</th>
+        <th>Nước</th>
+        <th>Protid</th>
+        <th>Lipid</th>
+        <th>Glucid</th>
+        <th>Cellulose</th>
+        <th>Cholesterol</th>
+        <th>Canxi</th>
+        <th>Photpho</th>
+        <th>Iron</th>
+        <th>Vitamin Caroten</th>
+        <th>Vitamin A</th>
+        <th>Vitamin B1</th>
+        <th>Vitamin B2</th>
+        <th>Vitamin PP</th>
+        <th>Vitamin C</th>
         <th class="text-center">Action</th>
         </thead>
         <tbody>
@@ -28,14 +36,22 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $energy_need->age !!}</td>
-                <td>{!! $energy_need->daily_cal !!}</td>
-                <td>{!! $energy_need->school_time_cal !!}</td>
-                <td>{!! $energy_need->daily_protid !!}</td>
-                <td>{!! $energy_need->school_time_protid !!}</td>
-                <td>{!! $energy_need->daily_lipid !!}</td>
-                <td>{!! $energy_need->school_time_lipid !!}</td>
-                <td>{!! $energy_need->daily_glucid !!}</td>
-                <td>{!! $energy_need->school_time_glucid !!}</td>
+                <td>{!! $energy_need->calo !!}</td>
+                <td>{!! $energy_need->h2o !!}</td>
+                <td>{!! $energy_need->protid !!}</td>
+                <td>{!! $energy_need->lipid !!}</td>
+                <td>{!! $energy_need->glucid !!}</td>
+                <td>{!! $energy_need->cellulose !!}</td>
+                <td>{!! $energy_need->cholesterol !!}</td>
+                <td>{!! $energy_need->calci !!}</td>
+                <td>{!! $energy_need->photpho !!}</td>
+                <td>{!! $energy_need->iron !!}</td>
+                <td>{!! $energy_need->vitamin_caroten !!}</td>
+                <td>{!! $energy_need->vitamina !!}</td>
+                <td>{!! $energy_need->vitaminb1 !!}</td>
+                <td>{!! $energy_need->vitaminb2 !!}</td>
+                <td>{!! $energy_need->vitaminpp !!}</td>
+                <td>{!! $energy_need->vitaminc !!}</td>
                 <td class="text-center">
                     <a href="{!! route('admin.energy_needs.edit', $energy_need->id) !!}">Edit</a>
                     &middot;

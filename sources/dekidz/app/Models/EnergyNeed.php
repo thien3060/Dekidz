@@ -10,16 +10,24 @@ class EnergyNeed extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $table = 'energy_needs';
+    protected $table = 'nutritional_requirements';
     protected $fillable = [
         'age',
-        'daily_cal',
-        'school_time_cal',
-        'daily_protid',
-        'school_time_protid',
-        'daily_lipid',
-        'school_time_lipid',
-        'daily_glucid',
-        'school_time_glucid',
+        'calo',
+        'h2o',
+        'protid',
+        'lipid',
+        'glucid',
+        'cellulose',
+        'cholesterol',
+        'calci',
+        'photpho',
+        'iron',
+        'vitamin_caroten',
+        'vitamina',
+        'vitaminb1',
+        'vitaminb2',
+        'vitaminpp',
+        'vitaminc'
     ];
 }

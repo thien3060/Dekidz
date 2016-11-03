@@ -10,14 +10,22 @@ class CreateRequest extends Validator
     {
         return [
             'age'=> 'required',
-            'daily_cal'=> 'required',
-            'school_time_cal'=> 'required',
-            'daily_protid'=> 'required',
-            'school_time_protid'=> 'required',
-            'daily_lipid'=> 'required',
-            'school_time_lipid'=> 'required',
-            'daily_glucid'=> 'required',
-            'school_time_glucid'=> 'required',
+            'calo'=> 'numeric',
+            'h2o'=> 'numeric',
+            'protid'=> 'numeric',
+            'lipid'=> 'numeric',
+            'glucid'=> 'numeric',
+            'cellulose'=> 'numeric',
+            'cholesterol'=> 'numeric',
+            'calci'=> 'numeric',
+            'photpho'=> 'numeric',
+            'iron'=> 'numeric',
+            'vitamin_caroten'=> 'numeric',
+            'vitamina'=> 'numeric',
+            'vitaminb1'=> 'numeric',
+            'vitaminb2'=> 'numeric',
+            'vitaminpp'=> 'numeric',
+            'vitaminc'=> 'numeric',
         ];
     }
 }

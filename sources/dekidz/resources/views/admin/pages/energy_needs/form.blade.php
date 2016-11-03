@@ -13,58 +13,115 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('daily_cal', 'Daily Calo:') !!}
-            {!! Form::text('daily_cal', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('daily_cal', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('calo', 'Calo:') !!}
+            {!! Form::text('calo', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('calo', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('school_time_cal', 'School Time Calo:') !!}
-            {!! Form::text('school_time_cal', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('school_time_cal', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('h2o', 'H2O:') !!}
+            {!! Form::text('h2o', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('h2o', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('daily_protid', 'Daily Protid:') !!}
-            {!! Form::text('daily_protid', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('daily_protid', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('protid', 'Protid:') !!}
+            {!! Form::text('protid', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('protid', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('school_time_protid', 'School Time Protid:') !!}
-            {!! Form::text('school_time_protid', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('school_time_protid', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('lipid', 'Lipid:') !!}
+            {!! Form::text('lipid', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('lipid', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('daily_lipid', 'Daily Lipid:') !!}
-            {!! Form::text('daily_lipid', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('daily_lipid', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('glucid', 'Glucid:') !!}
+            {!! Form::text('glucid', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('glucid', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('school_time_lipid', 'School Time Lipid:') !!}
-            {!! Form::text('school_time_lipid', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('school_time_lipid', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('cellulose', 'Cellulose:') !!}
+            {!! Form::text('cellulose', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('cellulose', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('daily_glucid', 'Daily Glucid:') !!}
-            {!! Form::text('daily_glucid', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('daily_glucid', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('cholesterol', 'Cholesterol:') !!}
+            {!! Form::text('cholesterol', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('cholesterol', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('school_time_glucid', 'School Time Glucid:') !!}
-            {!! Form::text('school_time_glucid', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('school_time_glucid', '<div class="text-danger">:message</div>') !!}
+            {!! Form::label('calci', 'Calci:') !!}
+            {!! Form::text('calci', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('calci', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            {!! Form::label('photpho', 'Photpho:') !!}
+            {!! Form::text('photpho', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('photpho', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            {!! Form::label('iron', 'Iron:') !!}
+            {!! Form::text('iron', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('iron', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            {!! Form::label('vitamin_caroten', 'Vitamin Caroten:') !!}
+            {!! Form::text('vitamin_caroten', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('vitamin_caroten', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="form-group">
+            {!! Form::label('vitamina', 'Vitamin A:') !!}
+            {!! Form::text('vitamina', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('vitamina', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            {!! Form::label('vitaminb1', 'Vitamin B1:') !!}
+            {!! Form::text('vitaminb1', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('vitaminb1', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            {!! Form::label('vitaminb2', 'Vitamin B2:') !!}
+            {!! Form::text('vitaminb2', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('vitaminb2', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            {!! Form::label('vitaminpp', 'Vitamin PP:') !!}
+            {!! Form::text('vitaminpp', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('vitaminpp', '<div class="text-danger">:message</div>') !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            {!! Form::label('vitaminc', 'Vitamin C:') !!}
+            {!! Form::text('vitaminc', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('vitaminc', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
 
