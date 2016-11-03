@@ -10,23 +10,46 @@
 
     var nutrition = ['calo', 'h2o', 'protid', 'lipid', 'glucid', 'cellulose', 'cholesterol'];
 
-    updateTotalNutrition();
-
     $('.food-set-select').change(function () {
-        var selected = $(this);
+        updateFoodSetList($(this));
+        updateTotalNutrition();
+        compareRequirements();
+    }).each(function () {
+        updateFoodSetList($(this));
+    });
+
+    updateTotalNutrition();
+    compareRequirements();
+
+    $('#age').keyup(function () {
+        var requirements = nutritional_requirements[$(this).val()];
+        if(requirements != null){
+            nutrition.forEach(function (item) {
+                $('.needed-'+item).html(requirements[item]);
+            });
+        }
+        else {
+            nutrition.forEach(function (item) {
+                $('.needed-'+item).html('0');
+            });
+        }
+        compareRequirements();
+    });
+
+    function updateFoodSetList(selected) {
         var name = selected.attr('name');
-        if($(this).val() != 0){
+        if(selected.val() != 0){
             var temp = null;
             if(name == 'breakfast_id'){
-                selected_breakfast = breakfast[$(this).val()];
+                selected_breakfast = breakfast[selected.val()];
                 temp = selected_breakfast;
             }
             if(name == 'lunch_id'){
-                selected_lunch = lunch[$(this).val()];
+                selected_lunch = lunch[selected.val()];
                 temp = selected_lunch;
             }
             if(name == 'mid_afternoon_id'){
-                selected_mid_afternoon = mid_afternoon[$(this).val()];
+                selected_mid_afternoon = mid_afternoon[selected.val()];
                 temp = selected_mid_afternoon;
             }
             nutrition.forEach(function (item) {
@@ -44,25 +67,10 @@
                 selected_mid_afternoon = null;
             }
             nutrition.forEach(function (item) {
-                $(this).parent().parent().closest('.'+item).html(0);
-        });
-        }
-        updateTotalNutrition();
-    });
-
-    $('#age').keyup(function () {
-        var requirements = nutritional_requirements[$(this).val()];
-        if(requirements != null){
-            nutrition.forEach(function (item) {
-                $('.needed-'+item).html(requirements[item]);
+                selected.parent().parent().closest('.'+item).html(0);
             });
         }
-        else {
-            nutrition.forEach(function (item) {
-                $('.needed-'+item).html('0');
-            });
-        }
-    });
+    }
 
     function updateTotalNutrition() {
         nutrition.forEach(function (item) {
@@ -71,6 +79,19 @@
             total += selected_lunch != null ? selected_lunch[item] : 0;
             total += selected_mid_afternoon != null ? selected_mid_afternoon[item] : 0;
             $('.total-'+item).html(total);
+        });
+    }
+    
+    function compareRequirements() {
+        nutrition.forEach(function (item) {
+            var total = parseFloat($('.total-'+item).html());
+            var require = parseFloat($('.needed-'+item).html());
+            if(total < require){
+                $('.total-'+item).css('color', '#f00');
+            }
+            else {
+                $('.total-'+item).css('color', '#0f0');
+            }
         });
     }
 </script>
