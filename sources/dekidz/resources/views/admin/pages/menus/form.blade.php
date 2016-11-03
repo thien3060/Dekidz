@@ -99,7 +99,7 @@
 
         <div class="box box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title">Nutrition Needed</h3>
+                <h3 class="box-title">Nutrition Requirements</h3>
             </div>
             <div class="box-body">
                 <table class="table">
@@ -126,13 +126,13 @@
                     </tr>
                     <tr>
                         <td>Needed</td>
-                        <td class="needed-calo"></td>
-                        <td class="needed-h2o"></td>
-                        <td class="needed-protid"></td>
-                        <td class="needed-lipid"></td>
-                        <td class="needed-glucid"></td>
-                        <td class="needed-cellulose"></td>
-                        <td class="needed-cholesterol"></td>
+                        <td class="needed-calo">0</td>
+                        <td class="needed-h2o">0</td>
+                        <td class="needed-protid">0</td>
+                        <td class="needed-lipid">0</td>
+                        <td class="needed-glucid">0</td>
+                        <td class="needed-cellulose">0</td>
+                        <td class="needed-cholesterol">0</td>
                     </tr>
                     </tbody>
                 </table>

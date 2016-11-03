@@ -2,6 +2,7 @@
     var breakfast = {!! json_encode(@$breakfast) !!};
     var lunch = {!! json_encode(@$lunch) !!};
     var mid_afternoon = {!! json_encode(@$mid_afternoon) !!};
+    var nutritional_requirements = {!! json_encode(@$nutritional_requirements) !!};
 
     var selected_breakfast = null;
     var selected_lunch = null;
@@ -47,6 +48,20 @@
         });
         }
         updateTotalNutrition();
+    });
+
+    $('#age').keyup(function () {
+        var requirements = nutritional_requirements[$(this).val()];
+        if(requirements != null){
+            nutrition.forEach(function (item) {
+                $('.needed-'+item).html(requirements[item]);
+            });
+        }
+        else {
+            nutrition.forEach(function (item) {
+                $('.needed-'+item).html('0');
+            });
+        }
     });
 
     function updateTotalNutrition() {

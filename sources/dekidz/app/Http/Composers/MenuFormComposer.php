@@ -7,6 +7,7 @@ use App\Models\FoodSet;
 use App\Models\Lesson;
 use App\Models\Staff;
 use App\Models\SubjectTopic;
+use Illuminate\Support\Facades\DB;
 
 class MenuFormComposer
 {
@@ -24,7 +25,10 @@ class MenuFormComposer
             $query->where('name', '=', 'mid_afternoon');
         })->get()->getDictionary();
 
+        $nutritional_requirements = collect(DB::table('nutritional_requirements')
+            ->get())
+            ->keyBy('age');
 
-        $view->with(compact('breakfast', 'lunch', 'mid_afternoon'));
+        $view->with(compact('breakfast', 'lunch', 'mid_afternoon', 'nutritional_requirements'));
     }
 }
