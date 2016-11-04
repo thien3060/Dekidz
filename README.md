@@ -14,3 +14,7 @@ Web app for managing kindergarten
 # User Guide
 - Link to admin local.dekidz.com/admin
 - Admin account: admin@mail.com pass: admin123
+
+# heroku deployment
+
+git subtree push --prefix sources/dekidz/ heroku master
