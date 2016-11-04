@@ -40,10 +40,24 @@ class StudyResultController extends BaseController
     public function index()
     {
         $study_results = $this->repository->allOrSearch(Input::get('q'));
+        
+        $result_detail = [];
 
-        $no = $study_results->firstItem();
+        return $this->view('pages.study_results.index', compact('study_results', 'result_detail'));
+    }
 
-        return $this->view('pages.study_results.index', compact('study_results', 'no'));
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function detail(Request $request)
+    {
+        $data = $request->all();
+
+        $result_detail = $this>$this->repository
+
+        return $this->view('pages.study_results.list', compact('result_detail'));
     }
 
     /**
@@ -53,7 +67,7 @@ class StudyResultController extends BaseController
      */
     public function create()
     {
-        return view('admin.pages.study_results.create');
+
     }
 
     /**
@@ -90,13 +104,7 @@ class StudyResultController extends BaseController
      */
     public function edit($id)
     {
-        try {
-            $study_result = $this->repository->findById($id);
 
-            return $this->view('pages.study_results.edit', compact('study_result'));
-        } catch (ModelNotFoundException $e) {
-            return $this->redirectNotFound();
-        }
     }
 
     /**
@@ -108,15 +116,7 @@ class StudyResultController extends BaseController
      */
     public function update(UpdateRequest $request, $id)
     {
-        try {
-            $data = $request->all();
 
-            $this->repository->update($data, $id);
-
-            return $this->redirect('study_results.index');
-        } catch (ModelNotFoundException $e) {
-            return $this->redirectNotFound();
-        }
     }
 
     /**

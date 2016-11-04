@@ -5,16 +5,13 @@ namespace App\Http\Composers;
 use App\Models\DekidzClass;
 use App\Models\Lesson;
 
-class LessonFormComposer
+class StudyResultFormComposer
 {
     public function compose($view)
     {
         $classes = DekidzClass::lists('name', 'id');
+        $lessons = Lesson::lists('lesson_name', 'id');
 
-        $view->with(compact('classes'));
-
-        $lessons = Lesson::lists('name', 'id');
-
-        $view->with(compact('lessons'));
+        $view->with(compact('classes', 'lessons'));
     }
 }

@@ -11,4 +11,6 @@ interface TeachScheduleRepository extends Repository
     public function getTeachScheduleDetail($id, $semester);
     
     public function updateTeachSchedule($data);
+    
+    public function getLesson($class_id);
 }

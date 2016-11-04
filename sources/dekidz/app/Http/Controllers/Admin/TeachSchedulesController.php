@@ -78,6 +78,11 @@ class TeachSchedulesController extends BaseController
         }
     }
     
+    public function getLesson(Request $request){
+        $data = $request->all();
+        return $this->repository->getLesson($data);
+    }
+    
     /**
      * Redirect not found.
      *

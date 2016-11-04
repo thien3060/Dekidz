@@ -17,8 +17,4 @@ class StudyResult extends Model
     ];
     
     protected $table = 'study_result';
-
-//    public function foods(){
-//        return $this->belongsToMany('App\Models\Asset', 'export_detail', 'export_id', 'good_id')->withPivot('quantity');
-//    }
 }

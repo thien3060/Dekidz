@@ -159,19 +159,10 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'destroy' => 'admin.import_food.destroy',
         ],
     ]);
+    
+    Route::get('study_results', 'StudyResultController@index')->name('admin.study_results.index');
+    Route::post('study_results/detail', 'TeachSchedulesController@detail')->name('admin.study_results.detail');
 
-    Route::resource('study_results', 'StudyResultController', [
-        'except' => 'show',
-        'names' => [
-            'index' => 'admin.study_results.index',
-            'create' => 'admin.study_results.create',
-            'store' => 'admin.study_results.store',
-            'show' => 'admin.study_results.show',
-            'update' => 'admin.study_results.update',
-            'edit' => 'admin.study_results.edit',
-            'destroy' => 'admin.study_results.destroy',
-        ],
-    ]);
 
     Route::resource('tuition_fees', 'TuitionFeeController', [
         'names' => [
@@ -352,6 +343,7 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
     Route::get('teach_schedules', 'TeachSchedulesController@index')->name('admin.teach_schedules.index');
     Route::post('teach_schedules/detail', 'TeachSchedulesController@detail')->name('admin.teach_schedules.detail');
     Route::post('teach_schedules/update', 'TeachSchedulesController@update')->name('admin.teach_schedules.update');
+    Route::post('teach_schedules/lesson', 'TeachSchedulesController@getLesson')->name('admin.teach_schedules.lesson');
 
     Route::resource('subject_topics', 'SubjectTopicsController', [
         'except' => 'show',
