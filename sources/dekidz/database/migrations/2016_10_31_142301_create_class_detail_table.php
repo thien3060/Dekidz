@@ -12,7 +12,7 @@ class CreateClassDetailTable extends Migration
      */
     public function up()
     {
-        Schema::create('class_id', function (Blueprint $table) {
+        Schema::create('class_detail', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('class_id');
             $table->integer('student_id');
@@ -27,6 +27,6 @@ class CreateClassDetailTable extends Migration
      */
     public function down()
     {
-        Schema::drop('class_id');
+        Schema::drop('class_detail');
     }
 }
