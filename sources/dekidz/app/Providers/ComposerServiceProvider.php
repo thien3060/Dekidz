@@ -23,7 +23,8 @@ class ComposerServiceProvider extends ServiceProvider
         'admin.pages.physical_infos.*' => 'App\Http\Composers\PhysicalInfoFormComposer',
         'admin.pages.teach_schedules.*' => 'App\Http\Composers\TeachScheduleFormComposer',
         'admin.pages.tuition_fees.*' => 'App\Http\Composers\TuitionFeeFormComposer',
-        'admin.pages.study_results.*' => 'App\Http\Composers\StudyResultFormComposer',
+        'admin.pages.study_results.index' => 'App\Http\Composers\StudyResultFormComposer',
+        'admin.pages.study_results.list' => 'App\Http\Composers\StudentListComposer',
         'admin.pages.menus.*' => 'App\Http\Composers\MenuFormComposer',
     ];
     /**

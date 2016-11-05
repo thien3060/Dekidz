@@ -6,14 +6,12 @@ use App\Models\DekidzClass;
 use App\Models\Lesson;
 use App\Models\Student;
 
-class StudyResultFormComposer
+class StudentListComposer
 {
     public function compose($view)
     {
-        $classes = DekidzClass::lists('name', 'id');
-        $lessons = Lesson::lists('lesson_name', 'id');
         $students = Student::lists('name', 'id');
 
-        $view->with(compact('classes', 'lessons', 'students'));
+        $view->with(compact('students'));
     }
 }

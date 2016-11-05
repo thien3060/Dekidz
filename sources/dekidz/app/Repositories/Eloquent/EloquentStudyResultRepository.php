@@ -3,6 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
+use App\Models\DekidzClass;
 use App\Repositories\Contracts\StudentRepository;
 use App\Repositories\Contracts\StudyResultRepository;
 use Illuminate\Support\Facades\DB;
@@ -63,16 +64,16 @@ class EloquentStudyResultRepository implements StudyResultRepository
             $study_result = $this->getModel()->create($data);
         }
 
-        $result = DB::table('study_result_detail')->where('study_result_id', '=', $study_result->id)->get();
-
-        if(isEmpty($result)){
-
-        }
-
-        return DB::table('study_result_detail')
-            ->where('study_result_id', '=', $study_result->id)
-            ->select('student_id', 'point')
+        $result = DB::table('class_detail')
+            ->where('class_id', '=', $study_result->class_id)
+            ->leftJoin('study_result_detail', function ($query) use ($study_result){
+                $query->on('study_result_detail.student_id', '=', 'class_detail.student_id')
+                    ->where('study_result_detail.study_result_id', '=', $study_result->id);
+            })
+            ->select('class_detail.student_id', 'study_result_detail.point')
             ->get();
+
+        return $result;
     }
 
     public function delete($id)

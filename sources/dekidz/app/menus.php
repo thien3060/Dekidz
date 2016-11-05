@@ -20,7 +20,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     $menu->dropdown(trans('admin.menus.classes.title'), function ($sub) {
         $sub->route('admin.classes.index', trans('admin.menus.classes.all'), [], 1);
         $sub->route('admin.classes.create', trans('admin.menus.classes.create'), [], 2);
-        $sub->route('admin.study_results.create', trans('admin.menus.classes.study_result'), [], 3);
+        $sub->route('admin.study_results.index', trans('admin.menus.classes.study_result'), [], 3);
     }, 2, ['icon' => 'fa fa-graduation-cap']);
 
     //Finances

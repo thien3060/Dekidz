@@ -55,7 +55,7 @@ class StudyResultController extends BaseController
     {
         $data = $request->all();
 
-        $result_detail = $this>$this->repository
+        $result_detail = $this->repository->getDetail($data);
 
         return $this->view('pages.study_results.list', compact('result_detail'));
     }

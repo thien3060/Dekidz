@@ -5,11 +5,12 @@
     <th>Points</th>
     </thead>
     <tbody>
+    <?php $no = 1 ?>
     @foreach($result_detail as $detail)
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{ $no++ }}</td>
+        <td>{{ @$students[$detail->student_id] }}</td>
+        <td>{{ $detail->point }}</td>
     </tr>
     @endforeach
     @if(empty($result_detail))

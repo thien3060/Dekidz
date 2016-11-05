@@ -5,7 +5,7 @@
     });
 
     $('#lesson').change(function () {
-
+        getStudentList();
     });
 
     function getLesson() {
@@ -25,13 +25,18 @@
     
     function getStudentList() {
         var data = {
+            _token: '{{ csrf_token() }}',
             class_id: $('#class').val(),
             semester: $('#semester').val(),
             lesson_id: $('#lesson').val()
         };
 
-        if(data.lesson != 0){
-            $.post('')
+        if(data.lesson_id != 0){
+            $.post('/admin/study_results/detail', data, function (result) {
+                if(result != null){
+                    $('#student-list').html(result);
+                }
+            })
         }
     }
 </script>
