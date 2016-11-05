@@ -39,11 +39,9 @@ class StudyResultController extends BaseController
      */
     public function index()
     {
-        $study_results = $this->repository->allOrSearch(Input::get('q'));
-        
         $result_detail = [];
 
-        return $this->view('pages.study_results.index', compact('study_results', 'result_detail'));
+        return $this->view('pages.study_results.index', compact('result_detail'));
     }
 
     /**
@@ -111,12 +109,17 @@ class StudyResultController extends BaseController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, $id)
+    public function update(Request $request)
     {
+        $data = $request->all();
+        
+        $this->getRepository()->updateDetail($data);
 
+        return $this->redirect('study_results.index')
+            ->withFlashMessage('Saved!')
+            ->withFlashType('success');;
     }
 
     /**

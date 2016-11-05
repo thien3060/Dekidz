@@ -55,11 +55,7 @@ class EloquentStudyResultRepository implements StudyResultRepository
 
     function getDetail($data)
     {
-        $study_result = $this->getModel()
-            ->where('class_id', '=', $data['class_id'])
-            ->where('semester', '=', $data['semester'])
-            ->where('lesson_id', '=', $data['lesson_id'])
-            ->first();
+        $study_result = $this->findDetail($data);
         if(is_null($study_result)){
             $study_result = $this->getModel()->create($data);
         }
@@ -74,6 +70,21 @@ class EloquentStudyResultRepository implements StudyResultRepository
             ->get();
 
         return $result;
+    }
+
+    function updateDetail($data){
+        $study_result = $this->findDetail($data);
+        $insert = [];
+        foreach ($data['student_id'] as $key => $value){
+            $insert[] = ['study_result_id' => $study_result->id, 'student_id' => $value, 'point' => $data['point'][$key]];
+        }
+
+        if(!is_null($study_result)){
+            DB::table('study_result_detail')->where('study_result_id', '=', $study_result->id)->delete();
+            DB::table('study_result_detail')->insert($insert);
+        }
+
+        return $data;
     }
 
     public function delete($id)
@@ -106,4 +117,11 @@ class EloquentStudyResultRepository implements StudyResultRepository
         return $this->getModel();
     }
 
+    public function findDetail($data){
+        return $this->getModel()
+            ->where('class_id', '=', $data['class_id'])
+            ->where('semester', '=', $data['semester'])
+            ->where('lesson_id', '=', $data['lesson_id'])
+            ->first();
+    }
 }

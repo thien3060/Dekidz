@@ -7,14 +7,15 @@
 @stop
 
 @section('content')
+    {!! Form::open(['route' => 'admin.study_results.update', 'id' => 'study-result-form']) !!}
     <div class="row">
         <div class="col-sm-4">
             <div class="form-group">
                 {!! Form::label('class_id', 'Class:') !!}
                 <select class="form-control gender" name="class_id" id="class">
-                    <option value="0" selected="selected">Select class</option>
+                    <option value="0">Select class</option>
                     @foreach($classes as $id => $name)
-                        <option value="{{ $id }}">{{ $name }}</option>
+                        <option value="{{ $id }}" @if(@$model['class_id'] == $id)  selected="selected" @endif>{{ $name }}</option>
                     @endforeach
                 </select>
                 {!! $errors->first('class_id', '<div class="text-danger">:message</div>') !!}
@@ -24,8 +25,8 @@
             <div class="form-group">
                 {!! Form::label('semester', 'Semester:') !!}
                 <select class="form-control gender" name="semester" id="semester">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                    <option value="1" @if(@$model['semester'] == 1)  selected="selected" @endif>1</option>
+                    <option value="2" @if(@$model['semester'] == 2)  selected="selected" @endif>2</option>
                 </select>
                 {!! $errors->first('semester', '<div class="text-danger">:message</div>') !!}
             </div>
@@ -57,6 +58,7 @@
     <div class="form-group">
         {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     </div>
+    {!! Form::close() !!}
 @stop
 
 @section('script')

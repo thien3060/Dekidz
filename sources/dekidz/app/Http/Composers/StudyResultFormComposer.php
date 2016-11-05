@@ -12,7 +12,6 @@ class StudyResultFormComposer
     {
         $classes = DekidzClass::lists('name', 'id');
         $lessons = Lesson::lists('lesson_name', 'id');
-        $students = Student::lists('name', 'id');
 
         $view->with(compact('classes', 'lessons', 'students'));
     }

@@ -162,6 +162,7 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
     
     Route::get('study_results', 'StudyResultController@index')->name('admin.study_results.index');
     Route::post('study_results/detail', 'StudyResultController@detail')->name('admin.study_results.detail');
+    Route::post('study_results/update', 'StudyResultController@update')->name('admin.study_results.update');
 
 
     Route::resource('tuition_fees', 'TuitionFeeController', [

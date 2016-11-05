@@ -9,8 +9,8 @@
     @foreach($result_detail as $detail)
     <tr>
         <td>{{ $no++ }}</td>
-        <td>{{ @$students[$detail->student_id] }}</td>
-        <td>{{ $detail->point }}</td>
+        <td>{{ @$students[$detail->student_id] }} {!! Form::hidden('student_id[]', $detail->student_id) !!} </td>
+        <td>{!! Form::text('point[]', $detail->point, ['class' => 'form-control input-number']) !!}</td>
     </tr>
     @endforeach
     @if(empty($result_detail))
