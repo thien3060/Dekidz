@@ -72,14 +72,14 @@
             </thead>
             <tbody id="asset-list">
             @if(isset($model))
-                @foreach($model->foods as $food)
+                @foreach($model->students as $student)
                     <tr>
                         <td class="asset-id">0</td>
                         <td>
                             <select class="form-control asset-name" name="asset-name[]">
                                 <option value="0">Select student</option>
                                 @foreach($students as $key => $asset)
-                                    <option value="{{$key}}" @if($key == $food->id) selected="selected" @endif>{{$asset}}</option>
+                                    <option value="{{$key}}" @if($key == $student->id) selected="selected" @endif>{{$asset}}</option>
                                 @endforeach
                             </select>
                         </td>

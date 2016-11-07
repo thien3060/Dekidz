@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        All dish types
+        All positions
         &middot;
         <small>{!! link_to_route('admin.staff_types.create', 'Add New') !!}</small>
     </h1>
