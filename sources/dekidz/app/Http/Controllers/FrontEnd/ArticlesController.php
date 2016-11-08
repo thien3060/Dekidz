@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
+use Pingpong\Admin\Entities\Article;
 use Pingpong\Admin\Uploader\ImageUploader;
 use Pingpong\Admin\Validation\Article\Create;
 use Pingpong\Admin\Validation\Article\Update;
@@ -64,11 +65,10 @@ class ArticlesController extends BaseController
      */
     public function index()
     {
-        $articles = $this->repository->allOrSearch(Input::get('q'));
-
-        $no = $articles->firstItem();
-
-        return $this->view('frontend.pages.articles.index', compact('articles', 'no'));
+        $articles = Article::whereHas('category', function ($query){
+            $query->where('name', '=', 'kid_parent');
+        })->get();
+        return $this->view('frontend.pages.articles.index', compact('articles'));
     }
 
 
@@ -79,10 +79,10 @@ class ArticlesController extends BaseController
      */
     public function blogone()
     {
-        $articles = $this->repository->allOrSearch(Input::get('q'));
-        $no = $articles->firstItem();
-
-        return $this->view('frontend.pages.articles.index', compact('articles', 'no'));
+        $articles = Article::whereHas('category', function ($query){
+            $query->where('name', '=', 'kid');
+        })->get();
+        return $this->view('frontend.pages.articles.index', compact('articles'));
     }
 
 

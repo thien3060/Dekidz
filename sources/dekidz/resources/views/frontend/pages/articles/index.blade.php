@@ -17,20 +17,21 @@
     </section>
     <!--/#action-->
 
-    <section id="blog" class="padding-top">
+    <section id="blog">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-7">
                     <div class="row">
                         @foreach($articles as $article)
-                            <div class="col-md-12 col-sm-12 blog-padding-right">
-                                <div class="single-blog two-column">
-                                    <div class="post-thumb">
+                            <div class="col-md-12">
+                                <div class="single-blog row">
+                                    <div class="post-thumb col-md-5">
                                         <a href="/article/{{ $article->id }}"><img src="images/articles/{{ $article->image }}" class="img-responsive" alt=""></a>
                                     </div>
-                                    <div class="post-content overflow">
+                                    <div class="post-content overflow col-md-7">
                                         <h2 class="post-title bold"><a href="/article/{{ $article->id }}">{{ $article->title }}</a></h2>
                                         <h3 class="post-author"><a href="#">{{ $article->updated_at}}</a></h3>
+                                        <p class="post-description">{{$article->description}}</p>
                                         {{--{!! $article->body !!}--}}
                                         <a href="/article/{{ $article->id }}" class="read-more">Xem thêm</a>
                                     </div>
@@ -60,7 +61,12 @@
                             <h3>Tin mới nhất</h3>
                             <ul class="gallery">
                                 @foreach($articles as $article)
-                                    <a href="/article/{{ $article->id }}"><img src="images/articles/{{ $article->image }}" class="img-responsive" alt=""></a>
+                                    <li>
+                                        <a href="#">
+                                            <img src="images/articles/{{ $article->image }}" class="img-responsive" alt="">
+                                            <h5>{{$article->title}}</h5>
+                                        </a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>

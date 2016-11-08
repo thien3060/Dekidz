@@ -23,6 +23,7 @@
 			<th>No</th>
 			<th>Title</th>
 			<th>Author</th>
+			<th>Description</th>
 			@if( ! isOnPages())
 			<th>Category</th>
 			@endif
@@ -35,6 +36,7 @@
 				<td>{!! $no !!}</td>
 				<td>{!! $article->title !!}</td>
 				<td>{!! $article->user->name !!}</td>
+				<td>{!! $article->description !!}</td>
 				@if( ! isOnPages())
 				<td>{!! $article->category ? $article->category->name : null !!}</td>
 				@endif

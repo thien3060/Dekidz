@@ -14,10 +14,10 @@ class CreateTableImportDetail extends Migration
     {
         Schema::create('import_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('import_id');
-            $table->integer('good_id');
-            $table->double('price', 18, 2);
-            $table->double('quantity', 10, 2);
+            $table->integer('import_id')->nullable();
+            $table->integer('good_id')->nullable();
+            $table->double('price', 18, 2)->nullable();
+            $table->double('quantity', 10, 2)->nullable();
             $table->timestamps();
         });
     }

@@ -14,9 +14,9 @@ class CreateTableExport extends Migration
     {
         Schema::create('export', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
-            $table->boolean('is_food');
-            $table->integer('created_by');
+            $table->date('date')->nullable();
+            $table->boolean('is_food')->nullable();
+            $table->integer('created_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

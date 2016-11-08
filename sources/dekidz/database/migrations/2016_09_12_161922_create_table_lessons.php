@@ -14,12 +14,12 @@ class CreateTableLessons extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('subject_topic_id');
-            $table->string('lesson_name');
-            $table->text('lesson_goal');
-            $table->text('teach_activity');
-            $table->text('kid_activity');
-            $table->string('author');
+            $table->integer('subject_topic_id')->nullable();
+            $table->string('lesson_name')->nullable();
+            $table->text('lesson_goal')->nullable();
+            $table->text('teach_activity')->nullable();
+            $table->text('kid_activity')->nullable();
+            $table->string('author')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

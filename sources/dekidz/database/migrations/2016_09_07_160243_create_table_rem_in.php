@@ -15,12 +15,12 @@ class CreateTableRemIn extends Migration
         Schema::create('rem_in', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code',10);
-            $table->date('date');
-            $table->text('reason');
-            $table->double('total', 20, 2);
-            $table->double('received', 20, 2);
-            $table->double('debt', 20, 2);
-            $table->text('note');
+            $table->date('date')->nullable();
+            $table->text('reason')->nullable();
+            $table->double('total', 20, 2)->nullable();
+            $table->double('received', 20, 2)->nullable();
+            $table->double('debt', 20, 2)->nullable();
+            $table->text('note')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

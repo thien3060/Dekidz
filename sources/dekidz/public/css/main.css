@@ -1370,8 +1370,6 @@ Portfolio with right sidebar
 
 .popular ul.gallery li {
   display: block;
-  width: 33.33%;
-  float: left;
   padding: 8px;
 }
 
@@ -1386,7 +1384,7 @@ Portfolio with right sidebar
 }
 
 .popular ul.gallery li a img:hover {
-  border-radius: 60px;
+  border-radius: 20px;
 }
 
 
@@ -1593,7 +1591,7 @@ Blog Default
 }
 
 .post-content{
-  padding: 20px 0;
+  padding: 0;
 }
 
 .timeline-date .btn-common{
@@ -1675,7 +1673,7 @@ Blog with right sidebar
 *****************************/
 
 .single-blog{
-  padding-bottom: 30px;
+  padding: 15px 0;
 }
 
 .single-blog .post-bottom{
@@ -1828,7 +1826,7 @@ Blog Details
 }
 
 .single-blog.blog-details .post-content{
-  padding-top: 30px;
+  /*padding-top: 30px;*/
 }
 
 .single-blog.blog-details .post-bottom{

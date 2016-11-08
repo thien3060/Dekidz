@@ -14,11 +14,11 @@ class CreateTableTeachSchedulesDetail extends Migration
     {
         Schema::create('teach_schedules_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('teach_schedule_id');
-            $table->integer('day');
-            $table->integer('period');
-            $table->integer('lesson');
-            $table->integer('teacher');
+            $table->integer('teach_schedule_id')->nullable();
+            $table->integer('day')->nullable();
+            $table->integer('period')->nullable();
+            $table->integer('lesson')->nullable();
+            $table->integer('teacher')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

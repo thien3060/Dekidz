@@ -14,8 +14,8 @@ class CreateClassDetailTable extends Migration
     {
         Schema::create('class_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('class_id');
-            $table->integer('student_id');
+            $table->integer('class_id')->nullable();
+            $table->integer('student_id')->nullable();
             $table->timestamps();
         });
     }

@@ -14,8 +14,8 @@ class CreateTableTeachSchedules extends Migration
     {
         Schema::create('teach_schedules', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('class_id');
-            $table->integer('semester');
+            $table->integer('class_id')->nullable();
+            $table->integer('semester')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

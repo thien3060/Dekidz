@@ -14,12 +14,12 @@ class CreateTablePhysicalInfo extends Migration
     {
         Schema::create('physical_info', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('student_id');
-            $table->string('gender');
-            $table->integer('age');
-            $table->float('height');
-            $table->float('weight');
-            $table->float('BMI');
+            $table->integer('student_id')->nullable();
+            $table->string('gender')->nullable();
+            $table->integer('age')->nullable();
+            $table->float('height')->nullable();
+            $table->float('weight')->nullable();
+            $table->float('BMI')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,7 +15,7 @@ class CreateTableDishType extends Migration
         Schema::create('dish_type', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code', 20);
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

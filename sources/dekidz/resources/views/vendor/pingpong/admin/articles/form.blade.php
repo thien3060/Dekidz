@@ -31,6 +31,11 @@
 	{!! Form::hidden('type', 'page') !!}
 	@endif
 	<div class="form-group">
+		{!! Form::label('description', 'Description:') !!}
+		{!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+		{!! $errors->first('description', '<div class="text-danger">:message</div>') !!}
+	</div>
+	<div class="form-group">
 		{!! Form::label('body', 'Body:') !!}
 		{!! Form::textarea('body', null, ['class' => 'form-control', 'id' => 'ckeditor']) !!}
 		{!! $errors->first('body', '<div class="text-danger">:message</div>') !!}

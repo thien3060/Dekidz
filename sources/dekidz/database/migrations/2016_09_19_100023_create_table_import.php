@@ -14,11 +14,11 @@ class CreateTableImport extends Migration
     {
         Schema::create('import', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
-            $table->integer('supplier');
-            $table->double('total_cost', 18, 2);
-            $table->boolean('is_food');
-            $table->integer('created_by');
+            $table->date('date')->nullable();
+            $table->integer('supplier')->nullable();
+            $table->double('total_cost', 18, 2)->nullable();
+            $table->boolean('is_food')->nullable();
+            $table->integer('created_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

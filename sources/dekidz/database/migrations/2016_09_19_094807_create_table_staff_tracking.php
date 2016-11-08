@@ -14,18 +14,18 @@ class CreateTableStaffTracking extends Migration
     {
         Schema::create('staff_tracking', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('staff_id');
-            $table->boolean('month_off');
-            $table->boolean('is_sat');
-            $table->boolean('is_sun');
-            $table->integer('work_day');
-            $table->integer('off_day');
-            $table->integer('total_sat_work');
-            $table->integer('total_sat_off');
-            $table->integer('total_sun_work');
-            $table->integer('total_sun_off');
-            $table->date('day');
-            $table->text('track');
+            $table->integer('staff_id')->nullable();
+            $table->boolean('month_off')->nullable();
+            $table->boolean('is_sat')->nullable();
+            $table->boolean('is_sun')->nullable();
+            $table->integer('work_day')->nullable();
+            $table->integer('off_day')->nullable();
+            $table->integer('total_sat_work')->nullable();
+            $table->integer('total_sat_off')->nullable();
+            $table->integer('total_sun_work')->nullable();
+            $table->integer('total_sun_off')->nullable();
+            $table->date('day')->nullable();
+            $table->text('track')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

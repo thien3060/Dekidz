@@ -14,11 +14,11 @@ class CreateTableTuitionFee extends Migration
     {
         Schema::create('tuition_fee', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('student_id');
-            $table->double('debt', 18, 2);
-            $table->double('paid', 18, 2);
-            $table->integer('year');
-            $table->integer('month');
+            $table->integer('student_id')->nullable();
+            $table->double('debt', 18, 2)->nullable();
+            $table->double('paid', 18, 2)->nullable();
+            $table->integer('year')->nullable();
+            $table->integer('month')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

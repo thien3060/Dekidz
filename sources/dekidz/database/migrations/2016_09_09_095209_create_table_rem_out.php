@@ -15,11 +15,11 @@ class CreateTableRemOut extends Migration
         Schema::create('rem_out', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code', 10);
-            $table->date('date');
-            $table->text('reason');
-            $table->double('total', 20, 2);
-            $table->double('paid', 20, 2);
-            $table->double('debt', 20, 2);
+            $table->date('date')->nullable();
+            $table->text('reason')->nullable();
+            $table->double('total', 20, 2)->nullable();
+            $table->double('paid', 20, 2)->nullable();
+            $table->double('debt', 20, 2)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

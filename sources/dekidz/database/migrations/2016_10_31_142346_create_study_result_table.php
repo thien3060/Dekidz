@@ -14,9 +14,9 @@ class CreateStudyResultTable extends Migration
     {
         Schema::create('study_result', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('class_id');
-            $table->integer('semester');
-            $table->integer('lesson_id');
+            $table->integer('class_id')->nullable();
+            $table->integer('semester')->nullable();
+            $table->integer('lesson_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
