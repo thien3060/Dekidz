@@ -54,11 +54,12 @@
                             <li><a href="#">right</a></li>
                         </ul>
                     </div>
+
                 </div>
                 <div class="col-md-3 col-sm-5">
 
                         <div class="sidebar-item popular">
-                            <h3>Tin mới nhất</h3>
+                            <h3>BÀI VIẾT NỔI BẬT</h3>
                             <ul class="gallery">
                                 @foreach($articles as $article)
                                     <li>
@@ -74,6 +75,7 @@
             </div>
         </div>
         </div>
+
     </section>
     <!--/#blog-->
 @endsection

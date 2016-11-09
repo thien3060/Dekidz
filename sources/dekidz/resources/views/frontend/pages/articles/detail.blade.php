@@ -24,7 +24,7 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="single-blog blog-details two-column">
                                 <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="#">{{ $article->title }}</a></h2>
+                                    {{--<h2 class="post-title bold"><a href="#">{{ $article->title }}</a></h2>--}}
                                     <h3 class="post-author"><a href="#">{{ $article->updated_at }}</a></h3>
                                     <div>
                                         {!! $article->body !!}

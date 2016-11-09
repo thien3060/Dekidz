@@ -8,7 +8,7 @@
                     <div class="slide-text">
                         <h1>Hệ thống nhà trẻ Dekidz</h1>
                         <p>Nơi bắt đầu cho một tương lai tương sáng</p>
-                        <a href="#" class="btn btn-common">ĐĂNG KÝ</a>
+                        <a href="https://docs.google.com/forms/d/1yQrY0q0IoohBWyne_FJXJPssLXKOsXfHD3PVSRvxTgg/edit?usp=sharing" class="btn btn-common">ĐĂNG KÝ</a>
                     </div>
                     <img src="{{ asset('images/home/slider/hill.png') }}" class="slider-hill" alt="slider image">
                     <img src="{{ asset('images/home/slider/house.png') }}" class="slider-house" alt="slider image">
@@ -65,11 +65,11 @@
                     <div class="action take-tour">
                         <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                             <h1 class="title">Hệ thống nhà trẻ Dekidz</h1>
-                            <p>A responsive, retina-ready &amp; wide multipurpose template.</p>
+                            <p>Nơi bắt đầu cho một tương lai tương sáng.</p>
                         </div>
                         <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                             <div class="tour-button">
-                                <a href="#" class="btn btn-common">ĐĂNG KÝ</a>
+                                <a href="https://docs.google.com/forms/d/1yQrY0q0IoohBWyne_FJXJPssLXKOsXfHD3PVSRvxTgg/edit?usp=sharing" class="btn btn-common">ĐĂNG KÝ</a>
                             </div>
                         </div>
                     </div>
@@ -83,50 +83,50 @@
         <div class="container">
             <div class="row">
                 <div class="single-features">
-                    <div class="col-sm-10 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                         <img src="{{ asset('images/home/image1.png') }}" class="img-responsive" alt="">
                     </div>
-                    <div class="col-sm-2 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <h2>Khối lớp bột</h2>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h1>Khối lớp bột</h1>
                         <P>Độ tuổi từ 1-2</P>
                     </div>
                 </div>
     
                 <div class="single-features">
-                    <div class="col-sm-10 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                         <img src="{{ asset('images/home/image2.png') }}" class="img-responsive" alt="">
                     </div>
-                    <div class="col-sm-2 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <h2>Khối lớp cơm</h2>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h1>Khối lớp cơm</h1>
                         <P>Độ tuổi từ 2-3</P>
                     </div>
                 </div>
                 <div class="single-features">
-                    <div class="col-sm-10 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                         <img src="{{ asset('images/home/image3.png') }}" class="img-responsive" alt="">
                     </div>
-                    <div class="col-sm-2 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <h2>Khối lớp mầm</h2>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h1>Khối lớp mầm</h1>
                         <P>Độ tuổi từ 3-4</P>
                     </div>
                 </div>
     
                 <div class="single-features">
-                    <div class="col-sm-10 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                         <img src="{{ asset('images/home/image4.png') }}" class="img-responsive" alt="">
                     </div>
-                    <div class="col-sm-2 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <h2>Khối lớp chồi</h2>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h1>Khối lớp chồi</h1>
                         <P>Độ tuổi từ 4-5</P>
                     </div>
                 </div>
     
                 <div class="single-features">
-                    <div class="col-sm-10 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                         <img src="{{ asset('images/home/image5.png') }}" class="img-responsive" alt="">
                     </div>
-                    <div class="col-sm-2 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <h2>Khối lớp lá</h2>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h1>Khối lớp lá</h1>
                         <P>Độ tuổi từ 5-6</P>
                     </div>
                 </div>
