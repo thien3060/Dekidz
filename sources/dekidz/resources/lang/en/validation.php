@@ -88,6 +88,8 @@ return [
     |
     */
 
+    'selected' => 'Please select this field',
+
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
