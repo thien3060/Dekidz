@@ -10,9 +10,9 @@ class CreateRequest extends Validator
     {
         return [
             'name' => 'required|min:1',
-            'teacher_id' => 'required',
+            'teacher_id' => 'required|selected',
             'room_number' => 'required',
-            'grade_id' => 'required',
+            'grade_id' => 'required|selected',
             'school_year' => 'required',
         ];
     }

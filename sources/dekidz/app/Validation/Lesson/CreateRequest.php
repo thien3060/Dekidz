@@ -9,7 +9,7 @@ class CreateRequest extends Validator
     public function rules()
     {
         return [
-            'subject_topic_id' => 'required',
+            'subject_topic_id' => 'required|selected',
             'lesson_name'=> 'required',
             'lesson_goal'=> 'required',
             'teach_activity'=> 'required',

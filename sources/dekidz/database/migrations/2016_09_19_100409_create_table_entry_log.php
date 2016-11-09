@@ -14,8 +14,8 @@ class CreateTableEntryLog extends Migration
     {
         Schema::create('entry_log', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('entry_card',15)->nullable();
-            $table->boolean('is_in')->nullable();
+            $table->string('entry_card',15);
+            $table->boolean('is_in');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -14,10 +14,10 @@ class CreateTableFoodSets extends Migration
     {
         Schema::create('food_sets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type_id')->nullable();
-            $table->integer('age')->nullable();
-            $table->integer('quantity')->nullable();
-            $table->string('name')->nullable();
+            $table->integer('type_id');
+            $table->integer('age');
+            $table->integer('quantity');
+            $table->string('name');
             $table->text('description')->nullable();
             $table->float('calo')->nullable();
             $table->float('h2o')->nullable();
@@ -35,7 +35,7 @@ class CreateTableFoodSets extends Migration
             $table->float('vitaminb2')->nullable();
             $table->float('vitaminpp')->nullable();
             $table->float('vitaminc')->nullable();
-            $table->double('total_cost', 20, 2)->nullable();
+            $table->double('total_cost', 20, 2);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -14,7 +14,7 @@ class CreateTableStaffTracking extends Migration
     {
         Schema::create('staff_tracking', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('staff_id')->nullable();
+            $table->integer('staff_id');
             $table->boolean('month_off')->nullable();
             $table->boolean('is_sat')->nullable();
             $table->boolean('is_sun')->nullable();

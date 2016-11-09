@@ -14,8 +14,8 @@ class CreateOppositeFoodTable extends Migration
     {
         Schema::create('opposite_food', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('food1')->nullable();
-            $table->integer('food2')->nullable();
+            $table->integer('food1');
+            $table->integer('food2');
             $table->text('affect')->nullable();
             $table->timestamps();
             $table->softDeletes();

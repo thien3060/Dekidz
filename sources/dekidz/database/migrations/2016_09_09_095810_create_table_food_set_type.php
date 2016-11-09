@@ -15,7 +15,7 @@ class CreateTableFoodSetType extends Migration
         Schema::create('food_set_type', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code', 20);
-            $table->string('name')->nullable();
+            $table->string('name');
             $table->timestamps();
             $table->softDeletes();
         });

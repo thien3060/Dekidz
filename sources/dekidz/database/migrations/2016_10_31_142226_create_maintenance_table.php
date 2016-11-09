@@ -14,8 +14,8 @@ class CreateMaintenanceTable extends Migration
     {
         Schema::create('maintenance', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('created_by')->nullable();
-            $table->date('date')->nullable();
+            $table->integer('created_by');
+            $table->date('date');
             $table->timestamps();
             $table->softDeletes();
         });

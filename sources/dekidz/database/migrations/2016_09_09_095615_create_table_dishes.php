@@ -14,12 +14,12 @@ class CreateTableDishes extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type_id')->nullable();
+            $table->integer('type_id');
             $table->string('name');
-            $table->double('total_cost', 20, 2)->nullable();
+            $table->double('total_cost', 20, 2);
             $table->text('preparing_description')->nullable();
             $table->text('cooking_description')->nullable();
-            $table->string('chef')->nullable();
+            $table->string('chef');
             $table->float('calo')->nullable();
             $table->float('h2o')->nullable();
             $table->float('protid')->nullable();

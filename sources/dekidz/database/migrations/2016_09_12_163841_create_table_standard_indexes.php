@@ -14,10 +14,10 @@ class CreateTableStandardIndexes extends Migration
     {
         Schema::create('standard_indexes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('age')->nullable();
-            $table->float('height')->nullable();
-            $table->float('weight')->nullable();
-            $table->float('bmi')->nullable();
+            $table->integer('age');
+            $table->float('height');
+            $table->float('weight');
+            $table->float('bmi');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -14,9 +14,9 @@ class CreateTableExportDetail extends Migration
     {
         Schema::create('export_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('export_id')->nullable();
-            $table->integer('good_id')->nullable();
-            $table->double('quantity', 10, 2)->nullable();
+            $table->integer('export_id');
+            $table->integer('good_id');
+            $table->double('quantity', 10, 2);
             $table->timestamps();
         });
     }

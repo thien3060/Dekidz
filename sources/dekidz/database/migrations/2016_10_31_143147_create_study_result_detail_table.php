@@ -14,9 +14,9 @@ class CreateStudyResultDetailTable extends Migration
     {
         Schema::create('study_result_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('study_result_id')->nullable();
-            $table->integer('student_id')->nullable();
-            $table->integer('point')->nullable();
+            $table->integer('study_result_id');
+            $table->integer('student_id');
+            $table->integer('point');
             $table->timestamps();
         });
     }

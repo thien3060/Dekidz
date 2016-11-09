@@ -14,10 +14,10 @@ class CreateTableMenus extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date')->nullable();
-            $table->integer('breakfast_id')->nullable();
-            $table->integer('lunch_id')->nullable();
-            $table->integer('mid_afternoon_id')->nullable();
+            $table->date('date');
+            $table->integer('breakfast_id');
+            $table->integer('lunch_id');
+            $table->integer('mid_afternoon_id');
             $table->timestamps();
             $table->softDeletes();
         });

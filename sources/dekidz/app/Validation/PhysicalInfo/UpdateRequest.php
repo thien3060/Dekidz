@@ -9,7 +9,7 @@ class UpdateRequest extends Validator
     public function rules()
     {
         return [
-            'student_id' => 'required|numeric',
+            'student_id' => 'required|numeric|selected',
             'gender' => 'required',
             'age' => 'required|numeric',
             'height' => 'required|numeric',

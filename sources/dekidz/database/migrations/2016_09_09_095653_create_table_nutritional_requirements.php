@@ -14,7 +14,7 @@ class CreateTableNutritionalRequirements extends Migration
     {
         Schema::create('nutritional_requirements', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('age')->nullable();
+            $table->integer('age');
             $table->float('calo')->nullable();
             $table->float('h2o')->nullable();
             $table->float('protid')->nullable();

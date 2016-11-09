@@ -10,6 +10,7 @@ class UpdateRequest extends Validator
     {
         return [
             'name' => 'required|min:2',
+            'type_id' => 'selected',
             'preparing_description' => 'required|min:5',
             'cooking_description' => 'required|min:5',
             'chef' => 'required',

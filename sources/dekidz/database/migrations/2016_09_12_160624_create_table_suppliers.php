@@ -14,11 +14,11 @@ class CreateTableSuppliers extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable();
-            $table->string('type')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('product_type')->nullable();
+            $table->string('name');
+            $table->string('type');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('product_type');
             $table->timestamps();
             $table->softDeletes();
         });

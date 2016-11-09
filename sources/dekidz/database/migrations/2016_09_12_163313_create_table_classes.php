@@ -14,11 +14,11 @@ class CreateTableClasses extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable();
-            $table->integer('teacher_id')->nullable();
-            $table->string('room_number')->nullable();
-            $table->integer('grade_id')->nullable();
-            $table->integer('school_year')->nullable();
+            $table->string('name');
+            $table->integer('teacher_id');
+            $table->string('room_number');
+            $table->integer('grade_id');
+            $table->integer('school_year');
             $table->timestamps();
             $table->softDeletes();
         });

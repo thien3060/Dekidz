@@ -14,10 +14,10 @@ class CreateTableFoodSetDetail extends Migration
     {
         Schema::create('food_set_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('food_set_id')->nullable();
-            $table->integer('dish_id')->nullable();
-            $table->integer('quantity')->nullable();
-            $table->double('price', 20, 2)->nullable();
+            $table->integer('food_set_id');
+            $table->integer('dish_id');
+            $table->integer('quantity');
+            $table->double('price', 20, 2);
             $table->timestamps();
         });
     }

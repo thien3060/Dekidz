@@ -17,13 +17,13 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('type')->default('post'); // post, page
             $table->integer('user_id');
-            $table->integer('category_id')->default(0)->nullable();
+            $table->integer('category_id');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('slug')->nullable();
+            $table->string('slug');
             $table->text('body');
-            $table->string('image')->nullable();
-            $table->string('published_at')->nullable();
+            $table->string('image');
+            $table->string('published_at');
             $table->timestamps();
         });
     }

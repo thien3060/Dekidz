@@ -14,10 +14,10 @@ class CreateMaintenanceDetailTable extends Migration
     {
         Schema::create('maintenance_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('maintenance_id')->nullable();
-            $table->integer('asset_id')->nullable();
-            $table->integer('quantity')->nullable();
-            $table->text('status')->nullable();
+            $table->integer('maintenance_id');
+            $table->integer('asset_id');
+            $table->integer('quantity');
+            $table->text('status');
             $table->timestamps();
         });
     }
