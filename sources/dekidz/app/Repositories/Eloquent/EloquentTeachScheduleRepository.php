@@ -94,31 +94,29 @@ class EloquentTeachScheduleRepository implements TeachScheduleRepository
             ->where('semester', '=', $semester)
             ->first();
         if(empty($schedule)){
-//            throw new \Exception("Schedule not found");
             $schedule = $this->getModel()->create(['class_id' => $class_id, 'semester' => $semester]);
         }
+
+        $detail = DB::table('teach_schedules_detail')
+            ->where('teach_schedule_id', '=', $schedule->id)
+            ->where('day', '=', $day)
+            ->where('period', '=', $period);
+        if(empty($detail->get())){
+            $detail->insert([
+                'teach_schedule_id' =>$schedule->id,
+                'day' => $day,
+                'period' => $period,
+                'lesson' => $lesson,
+                'teacher' => $teacher,
+                'created_at' =>  Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
         else{
-            $detail = DB::table('teach_schedules_detail')
-                ->where('teach_schedule_id', '=', $schedule->id)
-                ->where('day', '=', $day)
-                ->where('period', '=', $period);
-            if(empty($detail->get())){
-                $detail->insert([
-                    'teach_schedule_id' =>$schedule->id,
-                    'day' => $day,
-                    'period' => $period,
-                    'lesson' => $lesson,
-                    'teacher' => $teacher,
-                    'created_at' =>  Carbon::now(),
-                    'updated_at' => Carbon::now(),
-                ]);
-            }
-            else{
-                $detail->update([
-                    'teacher' => $teacher,
-                    'lesson' => $lesson
-                ]);
-            }
+            $detail->update([
+                'teacher' => $teacher,
+                'lesson' => $lesson
+            ]);
         }
     }
 

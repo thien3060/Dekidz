@@ -75,8 +75,10 @@ class EloquentStudyResultRepository implements StudyResultRepository
     function updateDetail($data){
         $study_result = $this->findDetail($data);
         $insert = [];
-        foreach ($data['student_id'] as $key => $value){
-            $insert[] = ['study_result_id' => $study_result->id, 'student_id' => $value, 'point' => $data['point'][$key]];
+        if(!is_null($data['student_id'])){
+            foreach ($data['student_id'] as $key => $value){
+                $insert[] = ['study_result_id' => $study_result->id, 'student_id' => $value, 'point' => $data['point'][$key]];
+            }
         }
 
         if(!is_null($study_result)){

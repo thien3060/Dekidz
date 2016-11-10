@@ -15,7 +15,7 @@ class TeachSchedule extends Model
 
     protected $fillable = [
         'class_id',
-        's'
+        'semester'
     ];
     
     public function dekidz_class(){
