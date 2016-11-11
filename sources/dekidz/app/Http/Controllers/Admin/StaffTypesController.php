@@ -92,9 +92,9 @@ class StaffTypesController extends BaseController
     public function edit($id)
     {
         try {
-            $staff_types = $this->repository->findById($id);
+            $staff_type = $this->repository->findById($id);
 
-            return $this->view('pages.staff_types.edit', compact('staff_types'));
+            return $this->view('pages.staff_types.edit', compact('staff_type'));
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }
