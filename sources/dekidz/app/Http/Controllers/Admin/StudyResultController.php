@@ -77,6 +77,7 @@ class StudyResultController extends BaseController
     public function store(CreateRequest $request)
     {
         $data = $request->all();
+        dd($data);
 
         $this->repository->create($data);
 
@@ -111,7 +112,7 @@ class StudyResultController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(UpdateRequest $request)
     {
         $data = $request->all();
         
@@ -119,7 +120,7 @@ class StudyResultController extends BaseController
 
         return $this->redirect('study_results.index')
             ->withFlashMessage('Saved!')
-            ->withFlashType('success');;
+            ->withFlashType('success');
     }
 
     /**

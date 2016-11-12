@@ -9,9 +9,9 @@ class UpdateRequest extends Validator
     public function rules()
     {
         return [
-            'class_id' => 'required',
-            'semester'=> 'required',
-            'lesson_id'=> 'required',
+            'class_id' => 'required|selected',
+            'semester'=> 'required|selected',
+            'lesson_id'=> 'required|selected',
         ];
     }
 }
