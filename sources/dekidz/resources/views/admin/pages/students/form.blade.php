@@ -152,6 +152,13 @@
             {!! Form::file('picture', ['class' => 'form-control']) !!}
             {!! $errors->first('picture', '<div class="text-danger">:message</div>') !!}
         </div>
+        @if(isset($model))
+            <div class="form-group">
+                @if($model->picture)
+                    <img class="img-responsive" src="{!! asset('images/students/' . $model->picture) !!}">
+                @endif
+            </div>
+        @endif
         <div class="form-group">
             {!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
         </div>

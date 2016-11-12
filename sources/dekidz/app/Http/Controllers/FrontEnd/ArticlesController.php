@@ -67,8 +67,21 @@ class ArticlesController extends BaseController
     {
         $articles = Article::whereHas('category', function ($query){
             $query->where('name', '=', 'kid_parent');
-        })->get();
+        })->paginate(10);
         return $this->view('frontend.pages.articles.index', compact('articles'));
+    }
+
+    /**
+     * Display a listing of articles.
+     *
+     * @return Response
+     */
+    public function frontPage()
+    {
+        $articles = Article::whereHas('category', function ($query){
+            $query->where('name', '=', 'kid');
+        })->orderBy('created_at', 'desc')->limit(10)->get();
+        return $this->view('frontend.pages.index', compact('articles'));
     }
 
 
@@ -81,7 +94,7 @@ class ArticlesController extends BaseController
     {
         $articles = Article::whereHas('category', function ($query){
             $query->where('name', '=', 'kid');
-        })->get();
+        })->paginate(10);
         return $this->view('frontend.pages.articles.index', compact('articles'));
     }
 
@@ -98,7 +111,11 @@ class ArticlesController extends BaseController
         try {
             $article = $this->repository->findById($id);
 
-            return $this->view('frontend.pages.articles.detail', compact('article'));
+            $new_articles = Article::whereHas('category', function ($query){
+                $query->where('name', '=', 'kid');
+            })->orderBy('created_at', 'desc')->limit(10)->get();
+
+            return $this->view('frontend.pages.articles.detail', compact('article', 'new_articles'));
         } catch (ModelNotFoundException $e) {
             return $this->redirectNotFound();
         }

@@ -10,7 +10,6 @@ class UpdateRequest extends Validator
     {
         return [
             'name' => "required|min:5",
-            'chief_id' => "required|numeric",
         ];
     }
 }

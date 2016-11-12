@@ -14,8 +14,6 @@
         <thead>
         <th>No</th>
         <th>Name</th>
-        <th>Chief</th>
-        <th>Wage Index</th>
         <th>Description</th>
         <th>Created At</th>
         <th>Updated At</th>
@@ -26,8 +24,6 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $department->name !!}</td>
-                <td>{!! $department->chief_id !!}</td>
-                <td>{!! $department->wage_index !!}</td>
                 <td>{!! $department->description !!}</td>
                 <td>{!! $department->created_at !!}</td>
                 <td>{!! $department->updated_at !!}</td>

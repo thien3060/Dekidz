@@ -144,79 +144,14 @@
                         <h1 class="title">Hoạt động nổi bật</h1>
                     </div>
                     <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        @foreach($articles as $article)
                         <div class="col-xs-3 col-sm-2">
                             <a href="#">
-                                <img src="{{ asset('images/home/client1.png') }}" class="img-responsive" alt="">
-                                <h3>Vui hội trăng rằm</h3>
+                                <img src="{{ asset('images/articles/'.$article->image) }}" class="img-responsive" alt="">
+                                <h3><a href="/article/{{ $article->id }}">{{ $article->title }}</a></h3>
                             </a>
                         </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client2.png') }}" class="img-responsive" alt="">
-                                <h3>Khai giảng năm học mới</h3>
-                            </a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client3.png') }}" class="img-responsive" alt="">
-                                <h3>Cooking show cho các bé Dekidz</h3>
-                            </a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client4.png') }}" class="img-responsive" alt="">
-                                <h3>Bé kể chuyển cổ tích</h3>
-                            </a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client5.png') }}" class="img-responsive" alt="">
-                                <h3>Lễ hội trái cây mùa hè</h3>
-                            </a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client6.png') }}" class="img-responsive" alt="">
-                                <h3>Những nghệ nhân với tác phẩm hoa sen</h3>
-                            </a>
-                        </div>
-    
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client1.png') }}" class="img-responsive" alt="">
-                                <h3>Vui hội trăng rằm</h3>
-                            </a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client2.png') }}" class="img-responsive" alt="">
-                                <h3>Khai giảng năm học mới</h3>
-                            </a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client3.png') }}" class="img-responsive" alt="">
-                                <h3>Cooking show cho các bé Dekidz</h3>
-                            </a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client4.png') }}" class="img-responsive" alt="">
-                                <h3>Bé kể chuyển cổ tích</h3>
-                            </a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client5.png') }}" class="img-responsive" alt="">
-                                <h3>Lễ hội trái cây mùa hè</h3>
-                            </a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#">
-                                <img src="{{ asset('images/home/client6.png') }}" class="img-responsive" alt="">
-                                <h3>Những nghệ nhân với tác phẩm hoa sen</h3>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

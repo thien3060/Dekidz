@@ -10,14 +10,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
+use Pingpong\Admin\Uploader\ImageUploader;
 use Illuminate\Support\Facades\Validator;
 
 class StudentsController extends BaseController
 {
     protected $students;
 
-    public function __construct()
+    /**
+     * @var ImageUploader
+     */
+    protected $uploader;
+
+    public function __construct(ImageUploader $uploader)
     {
+        $this->uploader = $uploader;
+
         $this->repository = $this->getRepository();
     }
 
@@ -66,16 +74,15 @@ class StudentsController extends BaseController
     {
         $data = $request->all();
 
-        /*unset($data['image']);
+        unset($data['picture']);
 
-        if (\Input::hasFile('image')) {
+        if (\Input::hasFile('picture')) {
             // upload image
-            $this->uploader->upload('image')->save('images/articles');
+            $this->uploader->upload('picture')->save('images/students');
 
-            $data['image'] = $this->uploader->getFilename();
+            $data['picture'] = $this->uploader->getFilename();
         }
 
-        $data['user_id'] = \Auth::id();*/
         $this->repository->create($data);
 
         return $this->redirect('students.index');
@@ -120,6 +127,13 @@ class StudentsController extends BaseController
     {
         try {
             $data = $request->all();
+
+            unset($data['picture']);
+            if (\Input::hasFile('picture')) {
+                $this->uploader->upload('picture')->save('images/students');
+
+                $data['picture'] = $this->uploader->getFilename();
+            }
 
             $this->repository->update($data, $id);
 

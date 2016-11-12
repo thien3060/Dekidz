@@ -40,13 +40,14 @@
                     <div class="sidebar-item popular">
                         <h3>Tin mới nhất</h3>
                         <ul class="gallery">
-                            <!-- Foreach here -->
-                            <li>
-                                <a href="#">
-                                    <img src="/images/articles/eea7d8f123dc3588020e8cad7dba9e8db5eda316.png" class="img-responsive" alt="">
-                                    <h5>sdfghjkldfghjkl</h5>
-                                </a>
-                            </li>
+                            @foreach($new_articles as $article)
+                                <li>
+                                    <a href="/article/{{ $article->id }}">
+                                        <img src="{{ asset('images/articles/'.$article->image) }}" class="img-responsive" alt="">
+                                        <h5>{{ $article->title }}</h5>
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

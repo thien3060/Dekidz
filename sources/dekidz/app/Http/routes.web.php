@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('frontend.pages.index');
-});
+Route::get('/', 'ArticlesController@frontPage');
 
 Route::get('/blogone', 'ArticlesController@blogone');
 Route::get('/blog', 'ArticlesController@index');

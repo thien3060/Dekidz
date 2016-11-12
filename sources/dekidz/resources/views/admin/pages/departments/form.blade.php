@@ -11,11 +11,6 @@
             {!! $errors->first('name', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('chief_id', 'Chief ID:') !!}
-            {!! Form::text('chief_id', null, ['class' => 'form-control']) !!}
-            {!! $errors->first('chief_id', '<div class="text-danger">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {!! Form::label('description', 'Description:') !!}
             {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'ckeditor']) !!}
             {!! $errors->first('description', '<div class="text-danger">:message</div>') !!}

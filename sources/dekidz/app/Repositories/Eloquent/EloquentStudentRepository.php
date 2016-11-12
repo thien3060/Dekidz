@@ -78,7 +78,12 @@ class EloquentStudentRepository implements StudentRepository
     public function update(array $data, $id)
     {
         $student = $this->findById($id);
-        
+
+        $file = public_path('images/students/'.$student->picture);
+        if (file_exists($file)) {
+            @unlink($file);
+        }
+
         //Date convert
         $data['dob'] = DateHelper::sqlDateFormat($data['dob']);
         $data['admission_date'] = DateHelper::sqlDateFormat($data['admission_date']);

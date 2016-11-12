@@ -66,6 +66,7 @@ class EloquentDepartmentRepository implements DepartmentRepository
 
     public function create(array $data)
     {
+        $data['chief_id'] = 0;
         return $this->getModel()->create($data);
     }
 
