@@ -45,6 +45,7 @@
                                             @endforeach
                                         </select>
                                     </td>
+
                                     <td>
                                         <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Food's quantity" name="asset-quantity[]" type="number"  value="{{$item->pivot->quantity}}">
                                     </td>
