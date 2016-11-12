@@ -22,4 +22,5 @@
             autoclose: true
         });
     </script>
+    @include('admin.pages.physical_infos.script.js')
 @endsection

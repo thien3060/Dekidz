@@ -26,7 +26,7 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $student_ids[$physical_info->student_id] !!}</td>
-                <td>{!! $physical_info->gender !!}</td>
+                <td><?php echo ($physical_info->gender == 0) ? 'Nữ' : 'Nam'; ?></td>
                 <td>{!! $physical_info->age !!}</td>
                 <td>{!! $physical_info->height !!}</td>
                 <td>{!! $physical_info->weight !!}</td>

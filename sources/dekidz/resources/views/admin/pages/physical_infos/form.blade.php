@@ -19,7 +19,10 @@
     <div class="col-sm-4">
             <div class="form-group">
                 {!! Form::label('gender', 'Gender:') !!}
-                {!! Form::text('gender', null, ['class' => 'form-control']) !!}
+                <select class="form-control gender" name="gender">
+                    <option value="0">Nữ</option>
+                    <option value="1" @if (@$model->gender == 1) selected="selected" @endif>Nam</option>
+                </select>
                 {!! $errors->first('gender', '<div class="text-danger">:message</div>') !!}
             </div>
     </div>
@@ -47,7 +50,7 @@
     <div class="col-sm-4">
         <div class="form-group">
             {!! Form::label('BMI', 'BMI:') !!}
-            {!! Form::text('BMI', null, ['class' => 'form-control']) !!}
+            {!! Form::text('BMI', null, ['class' => 'form-control', 'readonly' => 'true']) !!}
             {!! $errors->first('BMI', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
