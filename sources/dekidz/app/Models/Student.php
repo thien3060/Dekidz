@@ -30,4 +30,8 @@ class Student extends Model
         'note',
         'entry_card'
     ];
+
+    public function students(){
+        return DB::table('students')->count();
+    }
 }
