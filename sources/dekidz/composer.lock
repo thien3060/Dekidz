@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "983fcfaa66350cb920c85975022ebf7b",
-    "content-hash": "b6a2d2a8caac903248d43501b5f4b655",
+    "hash": "4e765f7fd7baed67819df4c59aa45e1e",
+    "content-hash": "93e74ca6031418c56aff660fbde77d1c",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -981,6 +981,53 @@
             "time": "2016-02-18 20:57:20"
         },
         {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "abandoned": "laravelcollective/html",
+            "time": "2015-01-01 16:31:18"
+        },
+        {
             "name": "intervention/image",
             "version": "2.3.8",
             "source": {
@@ -1296,6 +1343,61 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "kandy-io/kandy-laravel",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kandy-IO/kandy-laravel.git",
+                "reference": "11f278b3988782b7a7d4d3398133a1a4460c299d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kandy-IO/kandy-laravel/zipball/11f278b3988782b7a7d4d3398133a1a4460c299d",
+                "reference": "11f278b3988782b7a7d4d3398133a1a4460c299d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/database/migrations",
+                    "src/Models",
+                    "src/controllers"
+                ],
+                "psr-4": {
+                    "Kodeplus\\Kandylaravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kodeplus",
+                    "email": "kodeplusdev@gmail.com",
+                    "homepage": "http://kandy.io"
+                }
+            ],
+            "description": "This Laravel package encapsulates all of Kandy’s JS SDK and Restful APIs. Kandy is a product by GENBAND (www.genband.com) that utilizes WebRTC to enable peer to peer audio and video calls and chat. SMS and PSTN calling support will be added to this package in the near future.",
+            "homepage": "https://github.com/Kandy-IO/kandy-laravel",
+            "keywords": [
+                "WebRTC",
+                "audio",
+                "chat",
+                "collaboration",
+                "kandy",
+                "laravel webrtc",
+                "peer-to-peer video",
+                "streaming",
+                "video",
+                "video streaming"
+            ],
+            "time": "2016-06-20 09:16:25"
         },
         {
             "name": "laravel/framework",

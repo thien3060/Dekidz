@@ -136,6 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -154,6 +155,7 @@ return [
         Jenssegers\Agent\AgentServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        Kodeplus\Kandylaravel\KandylaravelServiceProvider::class,
 
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
@@ -218,6 +220,18 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
+        'Html'      => Illuminate\Html\HtmlFacade::class,
+
+        'KandyLaravel'      => Kodeplus\Kandylaravel\Facades\KandyLaravel::class,
+        'KandyVideo'        => Kodeplus\Kandylaravel\Facades\Video::class,
+        'KandyButton'       => Kodeplus\Kandylaravel\Facades\Button::class,
+        'KandyStatus'       => Kodeplus\Kandylaravel\Facades\Status::class,
+        'KandyAddressBook'  => Kodeplus\Kandylaravel\Facades\AddressBook::class,
+        'KandyChat'         => Kodeplus\Kandylaravel\Facades\Chat::class,
+        'KandyLiveChat'     => Kodeplus\Kandylaravel\Facades\LiveChat::class,
+        'KandyCoBrowsing'   => Kodeplus\Kandylaravel\Facades\CoBrowsing::class,
+        'KandySms'          => Kodeplus\Kandylaravel\Facades\Sms::class,
 
         'DateHelper' => App\Helpers\DateHelper::class,
     ],
