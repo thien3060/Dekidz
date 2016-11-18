@@ -2724,3 +2724,16 @@ span.stButton_gradient,
   border-radius: 100%;
   margin: 10px 0;
 }
+
+/*==== Customize ====*/
+#login-modal .input-group {
+  margin-top: 10px;
+  border-color: #4fcccd;
+}
+
+#login-modal .input-group-addon {
+  min-width: 140px;
+  background-color: #4fcccd;
+  color: #fff;
+  text-align: left;
+}

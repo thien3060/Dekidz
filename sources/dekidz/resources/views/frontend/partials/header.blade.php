@@ -62,6 +62,9 @@
                 <li {{ (Request::is('contact') ? 'class=active' : '') }}>
                     <a href="/contact">Liên hệ</a>
                 </li>
+                <li data-toggle="modal" data-target="#login-modal">
+                    <a href="#">Đăng nhập</a>
+                </li>
             </ul>
         </div>
         <div class="search">
