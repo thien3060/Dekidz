@@ -61,9 +61,108 @@
                         </div>
                 </div>
             </div>
-        </div>
+            {!!
+            KandyButton::videoCall(array(
+                "id"      => "kandyVideoAnswerButton",
+                "class"   => "myButtonStyle",
+                "options" => array(
+                    "callOut"      => array(
+                        "id"       => "callOut",
+                        "label"    => "User to call",
+                        "btnLabel" => "Call"
+                    ),
+                    "calling"      => array(
+                        "id"       => "calling",
+                        "label"    => "Calling...",
+                        "btnLabel" => "End Call"
+                    ),
+                    "incomingCall" => array(
+                        "id"       => "incomingCall",
+                        "label"    => "Incoming Call",
+                        "btnLabel" => "Answer"
+                    ),
+                    "onCall"       => array(
+                        "id"       => "onCall",
+                        "label"    => "You're connected!",
+                        "btnLabel" => "End Call"
+                    ),
+                    "onScreenSharing"  => array(
+                        "id"       => "onScreenSharing",
+                        "label"    => "You're sharing screen!",
+                        "btnLabel" => "End sharing screen"
+                    ),
+                )
+            ))
+            !!}
+
+            {!!
+                KandyVideo::show(
+                    array(
+                        "title"       => "Them",
+                        "id"          => "theirVideo",
+                        "class"       => "myVideoStyle",
+                        "htmlOptions" => array( // Example how to use inline stylesheet
+                            "style" => array(
+                                "width" => "340px",
+                                "height" => "250px",
+                                "background-color" => "darkslategray"
+                            )
+                        )
+                    )
+                )
+             !!}
+
+            {!!
+                KandyVideo::show(
+                    array(
+                        "title"       => "Me",
+                        "id"          => "myVideo",
+                        "class"       => "myStyle",
+                        "htmlOptions" => array( // Example how to use inline stylesheet
+                            "style" => array(
+                                "width" => "340px",
+                                "height" => "250px",
+                                "background-color" => "darkslategray"
+                            )
+                        )
+                    )
+                )
+             !!}
         </div>
 
     </section>
     <!--/#blog-->
+@endsection
+
+@section('inline-script')
+    <script src="https://kandy-portal.s3.amazonaws.com/public/javascript/kandy/2.7.0/kandy.js"></script>
+    <script>
+        // Configure Kandy for calls.
+        kandy.setup({
+            // Designate HTML elements to be our stream containers.
+            remoteVideoContainer: document.getElementById('remote-stream'),
+            localVideoContainer: document.getElementById('local-stream'),
+
+            // Register listeners to call events.
+            listeners: {
+                // Media support event.
+                media: onMedia,
+                // Call events.
+                callinitiated: onCallInitiated,
+                callinitiatefailed: onCallInitiateFail,
+                callrejected: onCallRejected,
+                callrejectfailed: onCallRejectFailed,
+                callignored: onCallIgnored,
+                callignorefailed: onCallIgnoreFailed,
+                callincoming: onCallIncoming,
+                callanswered: onCallAnswered,
+                callansweredFailed: onCallAnsweredFailed,
+                oncall: onCall,
+                callended: onCallEnded,
+                callendedfailed: onCallEndedFailed
+            }
+        });
+
+        {!! KandyLaravel::init(2) !!}
+    </script>
 @endsection

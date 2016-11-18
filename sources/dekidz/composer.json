@@ -20,7 +20,9 @@
         "spatie/laravel-backup": "^3.10",
         "dingo/api": "1.0.x@dev",
         "rap2hpoutre/laravel-log-viewer": "^0.7.0",
-        "yajra/laravel-datatables-oracle": "~6.0"
+        "yajra/laravel-datatables-oracle": "~6.0",
+        "kandy-io/kandy-laravel": "^2.5",
+        "illuminate/html": "^5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

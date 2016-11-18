@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
+use Kodeplus\Kandylaravel\Facades\KandyLaravel;
 use Pingpong\Admin\Entities\Article;
 use Pingpong\Admin\Uploader\ImageUploader;
 use Pingpong\Admin\Validation\Article\Create;
@@ -65,6 +66,7 @@ class ArticlesController extends BaseController
      */
     public function index()
     {
+        //KandyLaravel::syncUsers();
         $articles = Article::whereHas('category', function ($query){
             $query->where('name', '=', 'kid_parent');
         })->paginate(10);
