@@ -55,8 +55,17 @@
                         </li>
                     </ul>
                 </li>
-                <li {{ (Request::is('blog') ? 'class=active' : '') }}>
-                    <a href="/blog">Góc phụ huynh</a>
+
+                <li class="dropdown"><a href="#">Góc phụ huynh<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                        <li {{ (Request::is('aboutus') ? 'class=active' : '') }}>
+                            <a href="/blog">Hoạt động của trường</a>
+                        </li>
+                        <li {{ (Request::is('aboutus2') ? 'class=active' : '') }}>
+                            <a href="/meeting">Họp phụ huynh</a>
+                        </li>
+
+                    </ul>
                 </li>
                 <li><a href="/coming-soon">Tuyển sinh</a></li>
                 <li {{ (Request::is('contact') ? 'class=active' : '') }}>

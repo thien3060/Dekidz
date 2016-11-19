@@ -23,7 +23,7 @@ class CreateKandyLiveChatTable extends Migration {
                 $table->string('customer_email');
                 $table->integer('begin_at')->default(0)->unsigned();// begin chat time
                 $table->integer('end_at')->default(0)->unsigned();// end chat time
-                $table->index(array('customer_email', 'agent_user_id'));
+                //$table->index(array('customer_email', 'agent_user_id'));
             }
         );
 	}

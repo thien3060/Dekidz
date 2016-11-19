@@ -14,31 +14,34 @@
 <body>
     <div id="login-modal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Đăng nhập hệ thống</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-user"></i> Tên đăng nhập:
-                        </span>
-                        <input type="text" class="form-control" />
+            <form action="frontend/login" method="POST">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Đăng nhập hệ thống</h4>
                     </div>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-lock"></i> Mật khẩu:
-                        </span>
-                        <input type="password" class="form-control" />
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-user"></i> Tên đăng nhập:
+                            </span>
+                            <input type="text" name="username" class="form-control" />
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-lock"></i> Mật khẩu:
+                            </span>
+                            <input type="password" name="password" class="form-control" />
+                        </div>
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Đăng nhập</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success">Đăng nhập</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
-                </div>
-            </div>
+            </form>
 
         </div>
     </div>

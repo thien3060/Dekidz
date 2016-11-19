@@ -26,6 +26,7 @@ Route::get('/contact', function () {
     return view('frontend.pages.contact');
 });
 
+Route::get('/meeting', 'MeetingController@meeting');
 
 Route::get('/coming-soon', function () {
     return view('frontend.pages.coming-soon');
@@ -34,5 +35,7 @@ Route::get('/coming-soon', function () {
 Route::get('/404', function () {
     return view('frontend.pages.404');
 });
+
+Route::post('frontend/login', 'LoginController@login')->name('admin.frontend.login');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
