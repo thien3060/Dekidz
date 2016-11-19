@@ -1714,7 +1714,8 @@ var heartBeat = function(interval){
 
 
 // ======================JQUERY READY =======================
-$(document).ready(function () {
+$(document).ready(function ($) {
+    var baseUrl = document.location.origin;
     $.noConflict();
     setup();
     if (typeof login == 'function') {
