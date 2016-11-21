@@ -53,6 +53,65 @@
 
             Local video: <div id="local-container"></div>
 
+            {{--{!!--}}
+                {{--KandyButton::videoCall(array(--}}
+                    {{--"id"      => "kandyVideoAnswerButton",--}}
+                    {{--"class"   => "myButtonStyle",--}}
+                    {{--"options" => array(--}}
+                        {{--"callOut"      => array(--}}
+                            {{--"id"       => "callOut",--}}
+                            {{--"label"    => "User to call",--}}
+                            {{--"btnLabel" => "Call"--}}
+                        {{--),--}}
+                        {{--"calling"      => array(--}}
+                            {{--"id"       => "calling",--}}
+                            {{--"label"    => "Calling...",--}}
+                            {{--"btnLabel" => "End Call"--}}
+                        {{--),--}}
+                        {{--"incomingCall" => array(--}}
+                            {{--"id"       => "incomingCall",--}}
+                            {{--"label"    => "Incoming Call",--}}
+                            {{--"btnLabel" => "Answer"--}}
+                        {{--),--}}
+                        {{--"onCall"       => array(--}}
+                            {{--"id"       => "onCall",--}}
+                            {{--"label"    => "You're connected!",--}}
+                            {{--"btnLabel" => "End Call"--}}
+                        {{--),--}}
+                    {{--)--}}
+                {{--))--}}
+             {{--!!}--}}
+
+            {{--{!!--}}
+                {{--KandyVideo::show(--}}
+                    {{--array(--}}
+                        {{--"title"       => "Them",--}}
+                        {{--"id"          => "theirVideo",--}}
+                        {{--"class"       => "myVideoStyle",--}}
+                        {{--"htmlOptions" => array( // Example how to use inline stylesheet--}}
+                            {{--"style" => "width: 340px;--}}
+                            {{--height: 250px;--}}
+                            {{--background-color: darkslategray"--}}
+                        {{--)--}}
+                    {{--)--}}
+                {{--)--}}
+             {{--!!}--}}
+
+            {{--{!!--}}
+                {{--KandyVideo::show(--}}
+                    {{--array(--}}
+                        {{--"title"       => "Me",--}}
+                        {{--"id"          => "myVideo",--}}
+                        {{--"class"       => "myStyle",--}}
+                        {{--"htmlOptions" => array( // Example how to use inline stylesheet--}}
+                            {{--"style" => "width: 340px;--}}
+                            {{--height: 250px;--}}
+                            {{--background-color: darkslategray"--}}
+                        {{--)--}}
+                    {{--)--}}
+                {{--)--}}
+             {{--!!}--}}
+
         </div>
 
     </section>
@@ -60,9 +119,16 @@
 @endsection
 
 @section('inline-script')
-    {!! KandyLaravel::init(Auth::id()) !!}
+    {{--{!! KandyLaravel::init(Auth::id()) !!}--}}
+
+    <script src="https://kandy-portal.s3.amazonaws.com/public/javascript/kandy/2.7.0/kandy.js"></script>
 
     <script>
+        // Variables for logging in.
+        var projectAPIKey = "DAK256bd630aee745c79e027af293f52087";
+        var username = "{{ $kandyUser->user_id }}";
+        var password = "{{ $kandyUser->password }}";
+
         // Setup Kandy to make and receive calls.
         kandy.setup({
             // Designate HTML elements to be our stream containers.
@@ -77,6 +143,9 @@
                 callended: onCallEnded
             }
         });
+
+        // Login automatically as the application starts.
+        kandy.login(projectAPIKey, username, password, kandy_login_success_callback, kandy_login_failed_callback);
 
         // What to do on a successful login.
         function kandy_login_success_callback() {

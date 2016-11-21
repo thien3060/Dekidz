@@ -4,6 +4,7 @@ namespace App\Http\Controllers\FrontEnd;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
 use Kodeplus\Kandylaravel\Facades\KandyLaravel;
@@ -22,6 +23,7 @@ class MeetingController extends BaseController
      */
     public function meeting()
     {
-        return view('frontend.pages.meeting');
+        $kandyUser = KandyLaravel::getUser(Auth::id());
+        return view('frontend.pages.meeting', compact("kandyUser"));
     }
 }
