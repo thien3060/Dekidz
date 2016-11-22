@@ -53,65 +53,6 @@
 
             Local video: <div id="local-container"></div>
 
-            {{--{!!--}}
-                {{--KandyButton::videoCall(array(--}}
-                    {{--"id"      => "kandyVideoAnswerButton",--}}
-                    {{--"class"   => "myButtonStyle",--}}
-                    {{--"options" => array(--}}
-                        {{--"callOut"      => array(--}}
-                            {{--"id"       => "callOut",--}}
-                            {{--"label"    => "User to call",--}}
-                            {{--"btnLabel" => "Call"--}}
-                        {{--),--}}
-                        {{--"calling"      => array(--}}
-                            {{--"id"       => "calling",--}}
-                            {{--"label"    => "Calling...",--}}
-                            {{--"btnLabel" => "End Call"--}}
-                        {{--),--}}
-                        {{--"incomingCall" => array(--}}
-                            {{--"id"       => "incomingCall",--}}
-                            {{--"label"    => "Incoming Call",--}}
-                            {{--"btnLabel" => "Answer"--}}
-                        {{--),--}}
-                        {{--"onCall"       => array(--}}
-                            {{--"id"       => "onCall",--}}
-                            {{--"label"    => "You're connected!",--}}
-                            {{--"btnLabel" => "End Call"--}}
-                        {{--),--}}
-                    {{--)--}}
-                {{--))--}}
-             {{--!!}--}}
-
-            {{--{!!--}}
-                {{--KandyVideo::show(--}}
-                    {{--array(--}}
-                        {{--"title"       => "Them",--}}
-                        {{--"id"          => "theirVideo",--}}
-                        {{--"class"       => "myVideoStyle",--}}
-                        {{--"htmlOptions" => array( // Example how to use inline stylesheet--}}
-                            {{--"style" => "width: 340px;--}}
-                            {{--height: 250px;--}}
-                            {{--background-color: darkslategray"--}}
-                        {{--)--}}
-                    {{--)--}}
-                {{--)--}}
-             {{--!!}--}}
-
-            {{--{!!--}}
-                {{--KandyVideo::show(--}}
-                    {{--array(--}}
-                        {{--"title"       => "Me",--}}
-                        {{--"id"          => "myVideo",--}}
-                        {{--"class"       => "myStyle",--}}
-                        {{--"htmlOptions" => array( // Example how to use inline stylesheet--}}
-                            {{--"style" => "width: 340px;--}}
-                            {{--height: 250px;--}}
-                            {{--background-color: darkslategray"--}}
-                        {{--)--}}
-                    {{--)--}}
-                {{--)--}}
-             {{--!!}--}}
-
         </div>
 
     </section>
@@ -128,6 +69,32 @@
         var projectAPIKey = "DAK256bd630aee745c79e027af293f52087";
         var username = "{{ $kandyUser->user_id }}";
         var password = "{{ $kandyUser->password }}";
+
+        var $audioRingIn = jQuery('<audio>', { loop: 'loop', id: 'ring-in' });
+        var $audioRingOut = jQuery('<audio>', { loop: 'loop', id: 'ring-out' });
+        var bindedCloseChatEvent = false;
+
+        // Load audio source to DOM to indicate call events
+        var audioSource = {
+            ringIn: [
+                { src: 'https://kandy-portal.s3.amazonaws.com/public/sounds/ringin.mp3', type: 'audio/mp3' },
+                { src: 'https://kandy-portal.s3.amazonaws.com/public/sounds/ringin.ogg', type: 'audio/ogg' }
+            ],
+            ringOut: [
+                { src: 'https://kandy-portal.s3.amazonaws.com/public/sounds/ringout.mp3', type: 'audio/mp3' },
+                { src: 'https://kandy-portal.s3.amazonaws.com/public/sounds/ringout.ogg', type: 'audio/ogg' }
+            ]
+        };
+
+        audioSource.ringIn.forEach(function (entry) {
+            var $source = jQuery('<source>').attr('src', entry.src);
+            $audioRingIn.append($source);
+        });
+
+        audioSource.ringOut.forEach(function (entry) {
+            var $source = jQuery('<source>').attr('src', entry.src);
+            $audioRingOut.append($source);
+        });
 
         // Setup Kandy to make and receive calls.
         kandy.setup({
@@ -183,6 +150,9 @@
             // Store the call id, so the caller has access to it.
             callId = call.getId();
 
+            $audioRingIn[0].pause();
+            $audioRingOut[0].play();
+
             // Handle UI changes. A call is in progress.
             document.getElementById("make-call").disabled = true;
             document.getElementById("end-call").disabled = false;
@@ -195,6 +165,8 @@
             // Store the call id, so the callee has access to it.
             callId = call.getId();
 
+            $audioRingIn[0].play();
+
             // Handle UI changes. A call is incoming.
             document.getElementById("accept-call").disabled = false;
             document.getElementById("decline-call").disabled = false;
@@ -205,6 +177,9 @@
             // Tell Kandy to answer the call.
             kandy.call.answerCall(callId, showVideo);
             // Second parameter is false because we are only doing voice calls, no video.
+
+            $audioRingOut[0].pause();
+            $audioRingIn[0].pause();
 
             log("Call answered.");
             // Handle UI changes. Call no longer incoming.
@@ -238,6 +213,9 @@
         function endCall() {
             // Tell Kandy to end the call.
             kandy.call.endCall(callId);
+
+            $audioRingOut[0].play();
+            $audioRingIn[0].pause();
         }
 
         // Variable to keep track of mute status.
@@ -254,6 +232,8 @@
                 log("Muting call.");
                 isMuted = true;
             }
+            $audioRingIn[0].pause();
+            $audioRingOut[0].pause();
         }
 
         // Variable to keep track of hold status.
@@ -270,6 +250,8 @@
                 log("Holding call.");
                 isHeld = true;
             }
+            $audioRingIn[0].pause();
+            $audioRingOut[0].pause();
         }
 
         // What to do when a call is ended.
@@ -285,6 +267,9 @@
             // Call no longer active, reset mute and hold statuses.
             isMuted = false;
             isHeld = false;
+
+            $audioRingIn[0].pause();
+            $audioRingOut[0].pause();
         }
 
         // Show or hide video, depending on current status.

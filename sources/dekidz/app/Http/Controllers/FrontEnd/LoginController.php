@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontEnd;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Kodeplus\Kandylaravel\Facades\KandyLaravel;
 use Pingpong\Admin\Entities\Article;
@@ -16,7 +17,7 @@ class LoginController extends BaseController
 {
 
     /**
-     * Get repository instance.
+     * Login user
      *
      * @return mixed
      */
@@ -27,7 +28,7 @@ class LoginController extends BaseController
         if (\Auth::attempt($credentials)) {
             $_SESSION['user'] = \Auth::id();
 
-            return $this->redirect('/')->withFlashMessage('Login Success!');
+            return $this->redirect('home')->withFlashMessage('Login Success!');
         }
 
         if (getenv('PINGPONG_ADMIN_TESTING')) {
@@ -35,5 +36,19 @@ class LoginController extends BaseController
         }
 
         return \Redirect::back()->withFlashMessage('Login failed!')->withFlashType('danger');
+    }
+
+    /**
+     * Logout.
+     *
+     * @return \Response
+     */
+    public function logout()
+    {
+        \Auth::logout();
+
+        Session::forget('admin');
+
+        return $this->redirect('home');
     }
 }

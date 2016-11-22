@@ -26,7 +26,7 @@
                             <span class="input-group-addon">
                                 <i class="fa fa-user"></i> Tên đăng nhập:
                             </span>
-                            <input type="text" name="username" class="form-control" />
+                            <input type="email" name="email" class="form-control" />
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon">

@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'ArticlesController@frontPage');
+Route::get('/', 'ArticlesController@frontPage')->name('home');
 
 Route::get('/blogone', 'ArticlesController@blogone');
 Route::get('/blog', 'ArticlesController@index');
@@ -36,6 +36,7 @@ Route::get('/404', function () {
     return view('frontend.pages.404');
 });
 
-Route::post('frontend/login', 'LoginController@login')->name('admin.frontend.login');
+Route::post('frontend/login', 'LoginController@login')->name('frontend.login');
+Route::get('frontend/logout', 'LoginController@logout')->name('frontend.logout');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
