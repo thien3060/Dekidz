@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Kodeplus\Kandylaravel\Facades\KandyLaravel;
 use Pingpong\Admin\Entities\Article;
@@ -25,5 +26,18 @@ class MeetingController extends BaseController
     {
         $kandyUser = KandyLaravel::getUser(Auth::id());
         return view('frontend.pages.meeting', compact("kandyUser"));
+    }
+
+    public function sendContact()
+    {
+        $data = Input::all();
+        Mail::send('frontend.partials.email', $data, function($message)
+        {
+            $message->from('12520424@gm.uit.edu.vn', 'admin');
+
+            $message->to('thien3060@gmail.com');
+            $message->subject('Contact admin');
+        });
+        return \Redirect::back();
     }
 }

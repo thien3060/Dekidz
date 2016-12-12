@@ -47,7 +47,7 @@
         <div class="col-md-4 col-sm-12">
             <div class="contact-form bottom">
                 <h2>Gửi tin nhắn</h2>
-                <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+                {!! Form::open(['route' => 'frontend.contract.email']) !!}
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" required="required" placeholder="Tên">
                     </div>
@@ -55,12 +55,12 @@
                         <input type="email" name="email" class="form-control" required="required" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Tin nhắn của bạn"></textarea>
+                        <textarea name="message_contact" id="message_contact" required="required" class="form-control" rows="8" placeholder="Tin nhắn của bạn"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="submit" name="submit" class="btn btn-submit" value="Gửi">
                     </div>
-                </form>
+                {!! Form::close() !!}
             </div>
         </div>
         <div class="col-sm-12">
