@@ -24,7 +24,7 @@ class StudentsController extends BaseController
 
     public function __construct(ImageUploader $uploader)
     {
-        $this->middleware('permission:manage_students');
+        //$this->middleware('permission:manage_students');
 
         $this->uploader = $uploader;
 
