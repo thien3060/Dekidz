@@ -277,9 +277,9 @@ class MenuBuilder implements Countable
      *
      * @return $this
      */
-    public function dropdown($title, \Closure $callback, $order = null, array $attributes = array())
+    public function dropdown($title, \Closure $callback, $order = null, array $attributes = array(), $permission = '')
     {
-        $properties = compact('title', 'order', 'attributes');
+        $properties = compact('title', 'order', 'attributes', 'permission');
 
         if (func_num_args() == 3) {
             $arguments = func_get_args();
@@ -309,7 +309,7 @@ class MenuBuilder implements Countable
      *
      * @return static
      */
-    public function route($route, $title, $parameters = array(), $order = null, $attributes = array())
+    public function route($route, $title, $parameters = array(), $order = null, $attributes = array(), $permission = '')
     {
         if (func_num_args() == 4) {
             $arguments = func_get_args();
@@ -317,14 +317,15 @@ class MenuBuilder implements Countable
             return $this->add([
                 'route' => [array_get($arguments, 0), array_get($arguments, 2)],
                 'title' => array_get($arguments, 1),
-                'attributes' => array_get($arguments, 3)
+                'attributes' => array_get($arguments, 3),
+                'permission' => array_get($arguments, 4)
             ]);
         }
 
         $route = array($route, $parameters);
 
         $item = MenuItem::make(
-            compact('route', 'title', 'parameters', 'attributes', 'order')
+            compact('route', 'title', 'parameters', 'attributes', 'order', 'permission')
         );
 
         $this->items[] = $item;
@@ -564,6 +565,9 @@ class MenuBuilder implements Countable
         $menu = $presenter->getOpenTagWrapper();
         
         foreach ($this->getOrderedItems() as $item) {
+            if($item->permission && !Auth::user()->can($item->permission)){
+                continue;
+            }
             if ($item->hidden()) {
                 continue;
             }

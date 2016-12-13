@@ -38,7 +38,8 @@ class MenuItem implements ArrayableContract
         'attributes',
         'active',
         'order',
-        'hideWhen'
+        'hideWhen',
+        'permission'
     );
 
     /**

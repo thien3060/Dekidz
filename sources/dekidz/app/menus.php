@@ -6,7 +6,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     $menu->enableOrdering();
     $menu->setPresenter('Pingpong\Admin\Presenters\SidebarMenuPresenter');
     //Dashboard
-    $menu->route('admin.home', trans('admin.menus.dashboard'), [], 0, ['icon' => 'fa fa-dashboard']);
+    $menu->route('admin.home', trans('admin.menus.dashboard'), [], 0, ['icon' => 'fa fa-dashboard'], 'access_dashboard');
 
     //Students
     $menu->dropdown(trans('admin.menus.students.title'), function ($sub) {
@@ -14,7 +14,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.grades.index', trans('admin.menus.grades.title'), [], 2);
         $sub->route('admin.physical_infos.index', trans('admin.menus.physical_infos.all'), [], 3);
         $sub->route('admin.tuition_fees.index', trans('admin.menus.students.tuition_fee'), [], 4);
-    }, 1, ['icon' => 'fa fa-smile-o']);
+    }, 1, ['icon' => 'fa fa-smile-o'], 'manage_students');
 
     //Classes
     $menu->dropdown(trans('admin.menus.classes.title'), function ($sub) {
