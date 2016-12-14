@@ -16,8 +16,8 @@ class OnlyAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->user()->is('admin')) {
-            return redirect()->route('admin.login.index');
+        if (!$request->user()->can('access_admin')) {
+            return redirect()->route('home');
         }
 
         return $next($request);
