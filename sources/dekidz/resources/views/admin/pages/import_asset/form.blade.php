@@ -33,10 +33,11 @@
                     <th class="text-center">Action</th>
                     </thead>
                     <tbody id="asset-list">
+                    <?php $k = -1;?>
                         @if(isset($model))
-                            @foreach($model->assets as $item)
+                            @foreach($model->assets as $k => $item)
                                 <tr>
-                                    <td class="asset-id">1</td>
+                                    <td class="asset-id">{{$k + 1}}</td>
                                     <td>
                                         <select class="form-control asset-name" name="asset-name[]">
                                             <option value="0">Select asset</option>
@@ -61,7 +62,7 @@
                             @endforeach
                         @endif
                         <tr>
-                            <td class="asset-id">1</td>
+                            <td class="asset-id">{{$k + 2}}</td>
                             <td>
                                 <select class="form-control asset-name" name="asset-name[]">
                                     <option value="0" selected="selected">Select asset</option>
