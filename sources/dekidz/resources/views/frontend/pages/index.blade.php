@@ -143,11 +143,11 @@
                         <p><img src="{{ asset('images/home/clients.png') }}" class="img-responsive" alt=""></p>
                         <h1 class="title">Hoạt động nổi bật</h1>
                     </div>
-                    <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="row clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
                         @foreach($articles as $article)
-                        <div class="col-xs-3 col-sm-2">
+                        <div class="col-sm-4">
                             <a href="#">
-                                <img src="{{ asset('images/articles/'.$article->image) }}" class="img-responsive" alt="">
+                                <img style="height: 200px; width: 100%;" src="{{ asset('images/articles/'.$article->image) }}" class="img-responsive" alt="">
                                 <h3><a href="/article/{{ $article->id }}">{{ $article->title }}</a></h3>
                             </a>
                         </div>
