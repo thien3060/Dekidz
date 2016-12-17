@@ -19,6 +19,8 @@ class GradesController extends BaseController
 
     public function __construct()
     {
+        //$this->middleware('permission:manage_students');
+        
         $this->repository = $this->getRepository();
     }
 

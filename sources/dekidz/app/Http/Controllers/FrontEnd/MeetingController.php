@@ -40,4 +40,9 @@ class MeetingController extends BaseController
         });
         return \Redirect::back();
     }
+    
+    public function streamVideos()
+    {
+        return view('frontend.pages.stream_videos');
+    }
 }

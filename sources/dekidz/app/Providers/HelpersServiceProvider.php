@@ -22,5 +22,10 @@ class HelpersServiceProvider extends ServiceProvider
         {
             return new \App\Helpers\DateHelper;
         });
+
+        $this->app->bind('permissionHelper', function()
+        {
+            return new \App\Helpers\PermissionHelper;
+        });
     }
 }

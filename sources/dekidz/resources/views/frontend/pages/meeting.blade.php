@@ -166,6 +166,7 @@
             callId = call.getId();
 
             $audioRingIn[0].play();
+			$audioRingOut[0].pause();
 
             // Handle UI changes. A call is incoming.
             document.getElementById("accept-call").disabled = false;
@@ -191,6 +192,9 @@
         function declineCall() {
             // Tell Kandy to reject the call.
             kandy.call.rejectCall(callId);
+			
+			$audioRingIn[0].pause();
+            $audioRingOut[0].pause();
 
             log("Call rejected.");
             // Handle UI changes. Call no longer incoming.
@@ -201,6 +205,9 @@
         // What to do when call is established.
         function onCallEstablished(call) {
             log("Call established.");
+			
+			$audioRingIn[0].pause();
+            $audioRingOut[0].pause();
 
             // Handle UI changes. Call in progress.
             document.getElementById("make-call").disabled = true;
@@ -213,9 +220,6 @@
         function endCall() {
             // Tell Kandy to end the call.
             kandy.call.endCall(callId);
-
-            $audioRingOut[0].play();
-            $audioRingIn[0].pause();
         }
 
         // Variable to keep track of mute status.
@@ -232,8 +236,6 @@
                 log("Muting call.");
                 isMuted = true;
             }
-            $audioRingIn[0].pause();
-            $audioRingOut[0].pause();
         }
 
         // Variable to keep track of hold status.
@@ -250,8 +252,6 @@
                 log("Holding call.");
                 isHeld = true;
             }
-            $audioRingIn[0].pause();
-            $audioRingOut[0].pause();
         }
 
         // What to do when a call is ended.

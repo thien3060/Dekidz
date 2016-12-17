@@ -28,6 +28,8 @@ Route::get('/contact', function () {
 
 Route::get('/meeting', 'MeetingController@meeting');
 
+Route::get('/stream_videos', 'MeetingController@streamVideos');
+
 Route::post('/send_contact', 'MeetingController@sendContact')->name('frontend.contract.email');
 
 Route::get('/coming-soon', function () {
