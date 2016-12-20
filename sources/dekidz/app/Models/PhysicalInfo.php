@@ -20,4 +20,8 @@ class PhysicalInfo extends Model
         'weight',
         'BMI'
     ];
+
+    public function student(){
+        return $this->belongsTo('App/Model/Student', 'student_id');
+    }
 }
