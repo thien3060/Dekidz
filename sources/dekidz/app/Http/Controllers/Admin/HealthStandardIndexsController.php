@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Student;
 use App\Validation\PhysicalInfo\CreateRequest;
 use App\Validation\PhysicalInfo\UpdateRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -14,7 +15,8 @@ use Illuminate\Support\Facades\Input;
 class HealthStandardIndexsController extends BaseController
 {
     public function index(Request $request){
-        return $this->view('pages.health_standard_index.index');
+        $students = Student::all();
+        return $this->view('pages.health_standard_index.index', compact('students'));
     }
     
     public function getHealthIndex(Request $request){
