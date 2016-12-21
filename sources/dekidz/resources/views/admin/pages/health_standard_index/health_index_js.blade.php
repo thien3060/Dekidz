@@ -1,6 +1,6 @@
 <script>
 $(function() {
-    var height_chart = new Morris.Line({
+    var height_chart = new Morris.Bar({
         element: 'height-chart',
         resize: true,
         data: {!! json_encode($height_data) !!},
@@ -11,7 +11,7 @@ $(function() {
         hideHover: 'auto'
     });
 
-    var height_chart = new Morris.Line({
+    var height_chart = new Morris.Bar({
         element: 'weight-chart',
         resize: true,
         data: {!! json_encode($weight_data) !!},
