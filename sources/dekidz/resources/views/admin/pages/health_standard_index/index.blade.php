@@ -85,7 +85,6 @@
             <div class="tab-content no-padding">
                 <!-- Morris chart - Sales -->
                 <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
             </div>
         </div>
 
@@ -103,7 +102,6 @@
             <div class="tab-content no-padding">
                 <!-- Morris chart - Sales -->
                 <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
             </div>
         </div>
 
@@ -114,6 +112,5 @@
 @section('script')
     <script src="{!! admin_asset('components/raphael/raphael-min.js') !!}"></script>
     <script src="{!! admin_asset('adminlte/js/plugins/morris/morris.min.js') !!}"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{!! admin_asset('adminlte/js/AdminLTE/dashboard.js') !!}" type="text/javascript"></script>
+    @include('admin.pages.health_standard_index.health_index_js')
 @stop
