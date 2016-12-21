@@ -17,22 +17,33 @@ class HealthStandardIndexsController extends BaseController
 {
     public function index(Request $request){
         $students = Student::all();
-        $height_data = [];
-        $weight_data = [];
-        $current_student = $students->first();
-        $health_index = HealthStandardIndex::all();
-        foreach ($current_student->physical_info as $info){
-            $index = $health_index->filter(function($item) use($info){
-                return $item->month == $info->age && $item->gender == 1;
-            })->first();
-            array_push($height_data,['y' => 'Thang '.$info->age, 'item1' => $info->height, 'item2' => $index->height]);
-            array_push($weight_data,['y' => 'Thang '.$info->age, 'item1' => $info->weight, 'item2' => $index->weight]);
-        }
 
-        return $this->view('pages.health_standard_index.index', compact('students', 'height_data', 'weight_data', 'health_index', 'current_student'));
+
+        return $this->view('pages.health_standard_index.index', compact('students'));
     }
     
     public function getHealthIndex(Request $request){
-        return "hello";
+        $info_table = '';
+        $height_data = $weight_data = [];
+        $genders = ["Nu" => 0, "Nam" => 1];
+        $health_index = HealthStandardIndex::all();
+
+        $current_student = Student::find($request->input('student_id'));
+        if($current_student != null){
+            $info_table = (String)view('admin.pages.health_standard_index.info_table', compact('current_student', 'health_index'));
+            if(count($current_student->physical_info)){
+                foreach ($current_student->physical_info as $info){
+                    $index = $health_index->filter(function($item) use($info, $genders){
+                        return $item->month == $info->age && $item->gender == $genders[$info->gender];
+                    })->first();
+                    array_push($height_data,['y' => 'Thang '.$info->age, 'item1' => $info->height, 'item2' => $index->height]);
+                    array_push($weight_data,['y' => 'Thang '.$info->age, 'item1' => $info->weight, 'item2' => $index->weight]);
+                }
+            }
+        }
+        return ['info-table' => $info_table,
+            'height_data' => $height_data,
+            'weight_data' => $weight_data
+        ];
     }
 }
