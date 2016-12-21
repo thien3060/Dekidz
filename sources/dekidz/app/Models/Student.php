@@ -35,7 +35,7 @@ class Student extends Model
         return DB::table('students')->count();
     }
     
-    public function health_standard_indexs(){
+    public function physical_info(){
         return $this->hasMany('App\Models\PhysicalInfo', 'student_id');
     }
 }

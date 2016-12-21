@@ -19,37 +19,48 @@
                 </select>
             </div>
         </div>
+    </div>
 
-        <div class="col-sm-3">
-            <div class="form-group">
-                {!! Form::label('position', 'Position:') !!}
-                <select class="form-control" name="position">
-                    <option value="0">Date</option>
-                    {{--@foreach($positions as $key => $position)--}}
-                    {{--<option value="{{$key}}" @if($key == @$model->position) selected="selected" @endif>{{$position}}</option>--}}
-                    {{--@endforeach--}}
-                </select>
+    <section class="col-lg-12 connectedSortable">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs pull-right">
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Height chart</li>
+            </ul>
+            <div class="tab-content no-padding">
+                <div class="chart tab-pane active" id="height-chart" style="position: relative; height: 300px;"></div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="col-lg-12 connectedSortable">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs pull-right">
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Weight chart</li>
+            </ul>
+            <div class="tab-content no-padding">
+                <div class="chart tab-pane active" id="weight-chart" style="position: relative; height: 300px;"></div>
+            </div>
+        </div>
+    </section>
 
     <h4>Student's physical info</h4>
     <table class="table">
         <thead>
             <tr>
                 <th>Gender</th>
-                <th>Age</th>
+                <th>Month</th>
                 <th>Height</th>
                 <th>Weight</th>
             </tr>
         </thead>
         <tbody>
+        @foreach($current_student->physical_info as $info)
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ $info->gender }}</td>
+                <td>{{ $info->age }}</td>
+                <td>{{ $info->height }}</td>
+                <td>{{ $info->weight }}</td>
             </tr>
+        @endforeach
         </tbody>
     </table>
 
@@ -58,55 +69,22 @@
         <thead>
         <tr>
             <th>Gender</th>
-            <th>Age</th>
+            <th>Month</th>
             <th>Height</th>
             <th>Weight</th>
         </tr>
         </thead>
         <tbody>
+        @foreach($health_index as $index)
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{ $index->gender }}</td>
+            <td>{{ $index->month }}</td>
+            <td>{{ $index->height }}</td>
+            <td>{{ $index->weight }}</td>
         </tr>
+        @endforeach
         </tbody>
     </table>
-
-    <section class="col-lg-7 connectedSortable">
-
-
-        <!-- Custom tabs (Charts with tabs)-->
-        <div class="nav-tabs-custom">
-            <!-- Tabs within a box -->
-            <ul class="nav nav-tabs pull-right">
-                <li class="pull-left header"><i class="fa fa-inbox"></i> Height chart</li>
-            </ul>
-            <div class="tab-content no-padding">
-                <!-- Morris chart - Sales -->
-                <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-            </div>
-        </div>
-
-        <!-- /.box (chat box) -->
-    </section>
-    <section class="col-lg-7 connectedSortable">
-
-
-        <!-- Custom tabs (Charts with tabs)-->
-        <div class="nav-tabs-custom">
-            <!-- Tabs within a box -->
-            <ul class="nav nav-tabs pull-right">
-                <li class="pull-left header"><i class="fa fa-inbox"></i> Weight chart</li>
-            </ul>
-            <div class="tab-content no-padding">
-                <!-- Morris chart - Sales -->
-                <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-            </div>
-        </div>
-
-        <!-- /.box (chat box) -->
-    </section>
 @stop
 
 @section('script')
