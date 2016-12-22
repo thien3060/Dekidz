@@ -63,12 +63,14 @@ class HealthStandardIndexsController extends BaseController
                     $data['health_index'][$key]['standard_height'] = $index->height;
                     $data['health_index'][$key]['standard_weight'] = $index->weight;
                 }
-                Mail::send('admin.pages.health_standard_index.email_template', $data, function($message)
-                {
-                    $message->from('12520424@gm.uit.edu.vn', 'admin');
-                    $message->to('thien3060@gmail.com');
-                    $message->subject('Student\'s health info');
-                });
+                if($student->email != null){
+                    Mail::send('admin.pages.health_standard_index.email_template', $data, function($message) use($student)
+                    {
+                        $message->from('12520424@gm.uit.edu.vn', 'admin');
+                        $message->to($student->email);
+                        $message->subject('Student\'s health info');
+                    });
+                }
             }
         }
         return "Success";
