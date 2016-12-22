@@ -17,8 +17,10 @@
                     <option value="{{$student->id}}">{{$student->name}}</option>
                     @endforeach
                 </select>
+                
             </div>
         </div>
+        <button type="button" id="send-email" class="btn btn-sm btn-primary" style="float: right;">Send email</button>
     </div>
 
     <section class="col-lg-12 connectedSortable" id="height-chart-wrapper">

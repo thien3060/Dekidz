@@ -9,6 +9,15 @@ $(function() {
             get_info(student_id);
         }
     });
+
+    $('#send-email').click(function () {
+        var data = {
+            _token: '{{ csrf_token() }}'
+        };
+        $.post('/admin/send_health_index', data, function (result) {
+            console.log(result);
+        })
+    });
 });
 
 function get_info(student_id) {

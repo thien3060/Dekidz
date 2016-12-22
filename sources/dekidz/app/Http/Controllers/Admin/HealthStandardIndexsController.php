@@ -12,6 +12,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 
 class HealthStandardIndexsController extends BaseController
 {
@@ -44,5 +45,32 @@ class HealthStandardIndexsController extends BaseController
             'height_data' => $height_data,
             'weight_data' => $weight_data
         ];
+    }
+
+    public function sendHealthInfo(){
+        $students = Student::all();
+        $health_index = HealthStandardIndex::all();
+        foreach ($students as $student){
+            $data = [];
+            $data['health_index'] = [];
+            $data['student'] = $student;
+            if(count($student->physical_info)) {
+                $data['health_index'] = $student->physical_info->toArray();
+                foreach ($data['health_index'] as $key => $info) {
+                    $index = $health_index->filter(function ($item) use ($info, $student) {
+                        return $item->month == $info['age'] && $item->gender == $student->gender;
+                    })->first();
+                    $data['health_index'][$key]['standard_height'] = $index->height;
+                    $data['health_index'][$key]['standard_weight'] = $index->weight;
+                }
+                Mail::send('admin.pages.health_standard_index.email_template', $data, function($message)
+                {
+                    $message->from('12520424@gm.uit.edu.vn', 'admin');
+                    $message->to('thien3060@gmail.com');
+                    $message->subject('Student\'s health info');
+                });
+            }
+        }
+        return "Success";
     }
 }
