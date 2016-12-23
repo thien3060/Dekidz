@@ -8,6 +8,7 @@ return [
 			'all' => 'All Students',
 			'create' => 'Create Student',
 			'tuition_fee' => 'Tuition Fee',
+			'health_index' => 'Health Index'
 		],
 		'grades' => [
 			'title' => 'Grades',

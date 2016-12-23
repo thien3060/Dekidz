@@ -18,16 +18,6 @@
     </div>
     <div class="col-sm-4">
             <div class="form-group">
-                {!! Form::label('gender', 'Gender:') !!}
-                <select class="form-control gender" name="gender">
-                    <option value="0">Nữ</option>
-                    <option value="1" @if (@$model->gender == 1) selected="selected" @endif>Nam</option>
-                </select>
-                {!! $errors->first('gender', '<div class="text-danger">:message</div>') !!}
-            </div>
-    </div>
-    <div class="col-sm-4">
-            <div class="form-group">
                 {!! Form::label('age', 'Age:') !!}
                 {!! Form::text('age', null, ['class' => 'form-control']) !!}
                 {!! $errors->first('age', '<div class="text-danger">:message</div>') !!}

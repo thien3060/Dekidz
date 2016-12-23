@@ -358,6 +358,10 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
             'destroy' => 'admin.subject_topics.destroy',
         ],
     ]);
+
+    Route::get('health_index', 'HealthStandardIndexsController@index')->name('admin.health_index');
+    Route::post('get_health_index', 'HealthStandardIndexsController@getHealthIndex')->name('admin.get_health_index');
+    Route::post('send_health_index', 'HealthStandardIndexsController@sendHealthInfo')->name('admin.send_health_index');
 });
 
 Route::get('oauth/google', 'OAuthController@redirectToGoogleProvider')->name('login.google');

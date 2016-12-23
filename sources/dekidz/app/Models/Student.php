@@ -12,6 +12,7 @@ class Student extends Model
     protected $dates = ['deleted_at'];
     protected $fillable = [
         'name',
+        'gender',
         'dob',
         'address',
         'nation',
@@ -33,5 +34,9 @@ class Student extends Model
 
     public function students(){
         return DB::table('students')->count();
+    }
+    
+    public function physical_info(){
+        return $this->hasMany('App\Models\PhysicalInfo', 'student_id');
     }
 }
