@@ -13,6 +13,13 @@
         </div>
         <div class="col-sm-3">
             <div class="form-group">
+                {!! Form::label('email', 'Email:') !!}
+                {!! Form::text('email', null, ['class' => 'form-control']) !!}
+                {!! $errors->first('email', '<div class="text-danger">:message</div>') !!}
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
                 {!! Form::label('gender', 'Gender:') !!}
                 <select class="form-control gender" name="gender">
                     <option value="0">Nữ</option>
