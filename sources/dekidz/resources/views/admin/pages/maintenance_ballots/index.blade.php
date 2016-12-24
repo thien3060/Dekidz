@@ -14,7 +14,7 @@
         <thead>
         <th>No</th>
         <th>Maintenance Date</th>
-        <th>Created By</th>
+        {{--<th>Created By</th>--}}
         <th class="text-center">Action</th>
         </thead>
         <tbody>
@@ -22,7 +22,7 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $maintenance_ballot->date !!}</td>
-                <td>{!! $maintenance_ballot->created_by !!}</td>
+                {{--<td>{!! $maintenance_ballot->created_by !!}</td>--}}
                 <td class="text-center">
                     <a href="{!! route('admin.maintenance_ballots.edit', $maintenance_ballot->id) !!}">Edit</a>
                     &middot;

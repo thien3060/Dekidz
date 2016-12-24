@@ -14,9 +14,9 @@
         <thead>
         <th>No</th>
         <th>Export Date</th>
-        <th>Created By</th>
-        <th>Created At</th>
-        <th>Updated At</th>
+        {{--<th>Created By</th>--}}
+        {{--<th>Created At</th>--}}
+        {{--<th>Updated At</th>--}}
         <th class="text-center">Action</th>
         </thead>
         <tbody>
@@ -24,9 +24,10 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $export->date !!}</td>
-                <td>{!! $export->created_by !!}</td>
-                <td>{!! $export->created_at !!}</td>
-                <td>{!! $export->updated_at !!}</td>
+                {{--<td>{!! $users[$export->created_by] !!}</td>--}}
+                {{--<td>{!! $export->created_by !!}</td>--}}
+                {{--<td>{!! $export->created_at !!}</td>--}}
+                {{--<td>{!! $export->updated_at !!}</td>--}}
                 <td class="text-center">
                     <a href="{!! route('admin.exports.edit', $export->id) !!}">Edit</a>
                     &middot;

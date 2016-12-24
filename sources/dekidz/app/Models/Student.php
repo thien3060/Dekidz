@@ -12,6 +12,7 @@ class Student extends Model
     protected $dates = ['deleted_at'];
     protected $fillable = [
         'name',
+        'email',
         'gender',
         'dob',
         'address',

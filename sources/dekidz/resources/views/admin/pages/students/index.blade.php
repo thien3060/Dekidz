@@ -14,6 +14,7 @@
         <thead>
         <th>No</th>
         <th>Name</th>
+        <th>Email</th>
         <th>DOB</th>
         <th>Address</th>
         <th>Father's Phone</th>
@@ -27,6 +28,7 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $student->name !!}</td>
+                <td>{!! $student->email !!}</td>
                 <td>{!! $student->dob !!}</td>
                 <td>{!! $student->address !!}</td>
                 <td>{!! $student->father_phone !!}</td>
