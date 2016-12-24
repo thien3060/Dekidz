@@ -14,7 +14,7 @@
         <thead>
         <th>No</th>
         <th>Export Date</th>
-        <th>Created By</th>
+        {{--<th>Created By</th>--}}
         <th class="text-center">Action</th>
         </thead>
         <tbody>
@@ -22,7 +22,7 @@
             <tr>
                 <td>{!! $no !!}</td>
                 <td>{!! $export_asset->date !!}</td>
-                <td>{!! $export_asset->created_by !!}</td>
+                {{--<td>{!! $users[$export_asset->created_by] !!}</td>--}}
                 <td class="text-center">
                     <a href="{!! route('admin.export_assets.edit', $export_asset->id) !!}">Edit</a>
                     &middot;

@@ -16,8 +16,8 @@
         <th>Import Date</th>
         <th>Cost</th>
         <th>Created By</th>
-        <th>Created At</th>
-        <th>Updated At</th>
+        {{--<th>Created At</th>--}}
+        {{--<th>Updated At</th>--}}
         <th class="text-center">Action</th>
         </thead>
         <tbody>
@@ -27,8 +27,8 @@
                 <td>{!! $import->date !!}</td>
                 <td>{!! $import->total_cost !!}</td>
                 <td>{!! $users[$import->created_by] !!}</td>
-                <td>{!! $import->created_at !!}</td>
-                <td>{!! $import->updated_at !!}</td>
+                {{--<td>{!! $import->created_at !!}</td>--}}
+                {{--<td>{!! $import->updated_at !!}</td>--}}
                 <td class="text-center">
                     <a href="{!! route('admin.import_food.edit', $import->id) !!}">Edit</a>
                     &middot;
