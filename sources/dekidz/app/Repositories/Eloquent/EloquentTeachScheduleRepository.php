@@ -126,7 +126,7 @@ class EloquentTeachScheduleRepository implements TeachScheduleRepository
             ->where('teach_schedules.semester', '=', $data['semester'])
             ->where('teach_schedules.class_id', '=', $data['class_id'])
             ->leftJoin('teach_schedules_detail', 'teach_schedules.id', '=', 'teach_schedules_detail.teach_schedule_id')
-            ->select('teach_schedules_detail.lesson')->lists('lesson');
+            ->select('teach_schedules_detail.lesson')->distinct()->lists('lesson');
     }
 
     public function getTeachSchedule()
