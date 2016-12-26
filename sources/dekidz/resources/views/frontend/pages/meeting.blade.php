@@ -18,7 +18,7 @@
 
     <section id="blog">
         <div class="container">
-
+            @if(Auth::check())
             <fieldset>
                 <legend>Call Management</legend>
 
@@ -52,6 +52,9 @@
             Remote video: <div id="remote-container"></div>
 
             Local video: <div id="local-container"></div>
+            @else
+                <h3>Please Login</h3>
+            @endif
 
         </div>
 

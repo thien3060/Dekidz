@@ -1,8 +1,12 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+
     <section id="home-slider">
         <div class="container">
+            @if (Session::has('flash_message'))
+                <div class="alert alert-danger">{{ Session::get('flash_message') }}</div>
+            @endif
             <div class="row">
                 <div class="main-slider">
                     <div class="slide-text">
@@ -21,7 +25,6 @@
         <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
     </section>
     <!--/#home-slider-->
-    
     <section id="services">
         <div class="container">
             <div class="row">
