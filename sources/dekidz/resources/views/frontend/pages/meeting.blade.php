@@ -63,15 +63,14 @@
 @endsection
 
 @section('inline-script')
-    {{--{!! KandyLaravel::init(Auth::id()) !!}--}}
-
     <script src="https://kandy-portal.s3.amazonaws.com/public/javascript/kandy/2.7.0/kandy.js"></script>
 
+    @if(Auth::check())
     <script>
         // Variables for logging in.
         var projectAPIKey = "DAK256bd630aee745c79e027af293f52087";
-        var username = "{{ $kandyUser->user_id }}";
-        var password = "{{ $kandyUser->password }}";
+        var username = "{{ @$kandyUser->user_id }}";
+        var password = "{{ @$kandyUser->password }}";
 
         var $audioRingIn = jQuery('<audio>', { loop: 'loop', id: 'ring-in' });
         var $audioRingOut = jQuery('<audio>', { loop: 'loop', id: 'ring-out' });
@@ -288,4 +287,5 @@
             }
         }
     </script>
+    @endif
 @endsection

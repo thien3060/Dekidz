@@ -54,6 +54,11 @@
         <section id="content-header">
             @yield('content-header')
         </section>
+        <div class="container">
+            @if (Session::has('flash_message'))
+                <div class="alert alert-danger">{{ Session::get('flash_message') }}</div>
+            @endif
+        </div>
         @yield('content')
         <section id="content-footer">
             @yield('content-footer')

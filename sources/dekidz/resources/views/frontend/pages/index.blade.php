@@ -4,9 +4,6 @@
 
     <section id="home-slider">
         <div class="container">
-            @if (Session::has('flash_message'))
-                <div class="alert alert-danger">{{ Session::get('flash_message') }}</div>
-            @endif
             <div class="row">
                 <div class="main-slider">
                     <div class="slide-text">
