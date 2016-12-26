@@ -16,7 +16,7 @@
     });
 
     $('#asset-list').on('change', '.asset-name', function () {
-        $(this).parent().parent().find('.asset-id').html($(this).val());
+        //$(this).parent().parent().find('.asset-id').html($(this).val());
     });
 
     function confirmDelete(item) {
