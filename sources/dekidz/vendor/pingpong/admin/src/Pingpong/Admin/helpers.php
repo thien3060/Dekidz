@@ -86,9 +86,9 @@ if (!function_exists('admin_asset')) {
      *
      * @return string
      */
-    function admin_asset($url, $secure = tr)
+    function admin_asset($url, $secure = true)
     {
-        return asset('packages/pingpong/admin/'.$url, $secure);
+        return asset('packages/pingpong/admin/'.$url);
     }
 }
 
