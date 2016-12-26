@@ -100,7 +100,7 @@ if (!function_exists('script')) {
      *
      * @return mixed
      */
-    function script($url, $attributes = array(), $secure = false)
+    function script($url, $attributes = array(), $secure = true)
     {
         return HTML::script('packages/pingpong/admin/'.$url, $attributes, $secure);
     }
