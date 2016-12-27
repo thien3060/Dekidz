@@ -74,6 +74,7 @@ class EloquentExportRepository implements ExportRepository
                 $export->foods()->attach($data['asset-name'][$i], [
                     'quantity' => $data['asset-quantity'][$i]
                 ]);
+                DB::table('foods')->where('id', $data['asset-name'][$i])->decrement('quantity', $data['asset-quantity'][$i]);
             }
         }
         return $export;

@@ -3,7 +3,9 @@
 namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
+use App\Models\Asset;
 use App\Repositories\Contracts\ImportAssetRepository;
+use Illuminate\Support\Facades\DB;
 
 class EloquentImportAssetRepository implements ImportAssetRepository
 {
@@ -76,6 +78,7 @@ class EloquentImportAssetRepository implements ImportAssetRepository
                     'price' => $data['asset-price'][$i],
                     'quantity' => $data['asset-quantity'][$i]
                 ]);
+                DB::table('assets')->where('id', $data['asset-name'][$i])->increment('quantity', $data['asset-quantity'][$i]);
             }
         }
         return $import;

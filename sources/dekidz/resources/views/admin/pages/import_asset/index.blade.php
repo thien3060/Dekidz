@@ -27,11 +27,7 @@
                 <td>{!! $import->date !!}</td>
                 <td>{!! $import->total_cost !!}</td>
                 <td>{!! $users[$import->created_by] !!}</td>
-                {{--<td>{!! $import->created_at !!}</td>--}}
-                {{--<td>{!! $import->updated_at !!}</td>--}}
                 <td class="text-center">
-                    <a href="{!! route('admin.import_asset.edit', $import->id) !!}">Edit</a>
-                    &middot;
                     @include('admin::partials.modal', ['data' => $import, 'name' => 'import_asset'])
                 </td>
             </tr>

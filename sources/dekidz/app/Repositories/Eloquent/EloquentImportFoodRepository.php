@@ -76,6 +76,7 @@ class EloquentImportFoodRepository implements ImportFoodRepository
                     'price' => $data['asset-cost'][$i],
                     'quantity' => $data['asset-quantity'][$i]
                 ]);
+                DB::table('foods')->where('id', $data['asset-name'][$i])->increment('quantity', $data['asset-quantity'][$i]);
             }
         }
         return $import;

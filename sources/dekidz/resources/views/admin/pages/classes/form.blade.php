@@ -71,10 +71,11 @@
             <th class="text-center">Action</th>
             </thead>
             <tbody id="asset-list">
+            <?php $no = 1?>
             @if(isset($model))
                 @foreach($model->students as $student)
                     <tr>
-                        <td class="asset-id">1</td>
+                        <td class="asset-id">{{ $no++ }}</td>
                         <td>
                             <select class="form-control asset-name" name="asset-name[]">
                                 <option value="0">Select student</option>
@@ -91,7 +92,7 @@
                 @endforeach
             @endif
             <tr>
-                <td class="asset-id">1</td>
+                <td class="asset-id">{{ $no }}</td>
                 <td>
                     <select class="form-control asset-name" name="asset-name[]">
                         <option value="0" selected="selected">Select student</option>

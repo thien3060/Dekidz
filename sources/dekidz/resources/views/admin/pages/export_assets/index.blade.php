@@ -24,8 +24,6 @@
                 <td>{!! $export_asset->date !!}</td>
                 {{--<td>{!! $users[$export_asset->created_by] !!}</td>--}}
                 <td class="text-center">
-                    <a href="{!! route('admin.export_assets.edit', $export_asset->id) !!}">Edit</a>
-                    &middot;
                     @include('admin::partials.modal', ['data' => $export_asset, 'name' => 'export_assets'])
                 </td>
             </tr>

@@ -29,8 +29,6 @@
                 {{--<td>{!! $export->created_at !!}</td>--}}
                 {{--<td>{!! $export->updated_at !!}</td>--}}
                 <td class="text-center">
-                    <a href="{!! route('admin.exports.edit', $export->id) !!}">Edit</a>
-                    &middot;
                     @include('admin::partials.modal', ['data' => $export, 'name' => 'exports'])
                 </td>
             </tr>
