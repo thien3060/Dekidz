@@ -67,12 +67,7 @@ class ImportFoodController extends BaseController
 
         $data['created_by'] = \Auth::id();
         
-        $result = $this->repository->create($data);
-        if(!$result){
-            return $this->redirect('import_food.index')
-                ->withFlashMessage('Not enough quantity')
-                ->withFlashType('danger');
-        }
+        $this->repository->create($data);
 
         return $this->redirect('import_food.index');
     }

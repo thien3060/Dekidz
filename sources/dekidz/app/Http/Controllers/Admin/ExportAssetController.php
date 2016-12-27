@@ -67,7 +67,12 @@ class ExportAssetController extends BaseController
 
         $data['created_by'] = \Auth::id();
         
-        $this->repository->create($data);
+        $result = $this->repository->create($data);
+        if(!$result){
+            return $this->redirect('export_assets.index')
+                ->withFlashMessage('Not enough quantity')
+                ->withFlashType('danger');
+        }
 
         return $this->redirect('export_assets.index');
     }

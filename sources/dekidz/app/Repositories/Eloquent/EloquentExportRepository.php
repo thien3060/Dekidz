@@ -3,6 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
+use App\Models\Food;
 use App\Repositories\Contracts\ExportRepository;
 use Illuminate\Support\Facades\DB;
 
@@ -67,6 +68,16 @@ class EloquentExportRepository implements ExportRepository
 
     public function create(array $data)
     {
+        //Check quantity
+        $quantity = Food::all()->lists('quantity', 'id');
+        for($i = 0; $i < count($data['asset-name']); $i++){
+            if($data['asset-name'][$i] != 0){
+                if($quantity[$data['asset-name'][$i]] - $data['asset-quantity'][$i] < 0){
+                    return false;
+                }
+            }
+        }
+        
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
         $export = $this->getModel()->create($data);
