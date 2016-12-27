@@ -4,6 +4,7 @@ namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
 use App\Repositories\Contracts\ExportAssetRepository;
+use Illuminate\Support\Facades\DB;
 
 class EloquentExportAssetRepository implements ExportAssetRepository
 {

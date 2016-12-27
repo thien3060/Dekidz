@@ -8,7 +8,7 @@ class ExportAssetFormComposer
 {
     public function compose($view)
     {
-        $assets = Asset::lists('name', 'id');
+        $assets = Asset::where('quantity', '>', 0)->lists('name', 'id');
 
         $view->with(compact('assets'));
     }

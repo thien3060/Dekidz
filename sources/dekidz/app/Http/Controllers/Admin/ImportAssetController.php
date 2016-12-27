@@ -66,8 +66,13 @@ class ImportAssetController extends BaseController
         $data = $request->all();
 
         $data['created_by'] = \Auth::id();
-        
-        $this->repository->create($data);
+
+        $result = $this->repository->create($data);
+        if(!$result){
+            return $this->redirect('import_asset.index')
+                ->withFlashMessage('Not enough quantity')
+                ->withFlashType('danger');
+        }
 
         return $this->redirect('import_asset.index');
     }
