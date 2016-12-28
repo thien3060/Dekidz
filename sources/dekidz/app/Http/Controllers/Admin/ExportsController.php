@@ -66,8 +66,13 @@ class ExportsController extends BaseController
         $data = $request->all();
 
         $data['created_by'] = \Auth::id();
-        
-        $this->repository->create($data);
+
+        $result = $this->repository->create($data);
+        if(!$result){
+            return $this->redirect('import_food.index')
+                ->withFlashMessage('Not enough quantity')
+                ->withFlashType('danger');
+        }
 
         return $this->redirect('exports.index');
     }

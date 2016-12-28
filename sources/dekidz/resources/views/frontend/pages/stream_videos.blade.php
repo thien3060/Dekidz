@@ -18,13 +18,17 @@
 
     <section id="blog">
         <div class="container">
-            @foreach(config('custom.embedded_videos') as $video)
-                <h3>{{ $video["title"] }}</h3>
-                <div class="video-container">
-                    <iframe  src="{{ $video["url"] }}" class="video">
-                    </iframe>
-                </div>
-            @endforeach
+            @if(Auth::check())
+                @foreach(config('custom.embedded_videos') as $video)
+                    <h3>{{ $video["title"] }}</h3>
+                    <div class="video-container">
+                        <iframe  src="{{ $video["url"] }}" class="video">
+                        </iframe>
+                    </div>
+                @endforeach
+            @else
+                <h3>Please Login</h3>
+            @endif
         </div>
     </section>
     <!--/#blog-->

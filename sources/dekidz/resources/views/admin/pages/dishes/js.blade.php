@@ -67,7 +67,7 @@
         var quantity = row.find('.asset-quantity').val();
         var cost = 0;
         if (quantity != '' && price != '') {
-            cost =(parseFloat(price) * parseFloat(quantity) / 100).toFixed(2);
+            cost =(parseFloat(price) * parseFloat(quantity)).toFixed(2);
         }
         row.find('.asset-cost').val(cost);
         updateTotalCost();

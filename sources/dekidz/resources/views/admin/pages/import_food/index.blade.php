@@ -30,8 +30,6 @@
                 {{--<td>{!! $import->created_at !!}</td>--}}
                 {{--<td>{!! $import->updated_at !!}</td>--}}
                 <td class="text-center">
-                    <a href="{!! route('admin.import_food.edit', $import->id) !!}">Edit</a>
-                    &middot;
                     @include('admin::partials.modal', ['data' => $import, 'name' => 'import_food'])
                 </td>
             </tr>

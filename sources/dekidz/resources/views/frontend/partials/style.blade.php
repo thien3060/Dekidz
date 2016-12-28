@@ -4,6 +4,8 @@
 <link href="{{ asset('css/lightbox.css') }}" rel="stylesheet">
 <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+<link href="{{ asset('fonts/Lato/latofonts.css') }}" rel="stylesheet">
+<link href="{{ asset('fonts/Lato/latostyles.css') }}" rel="stylesheet">
 
 <link rel="shortcut icon" href="{{ asset('images/ico/favicon.ico') }}">
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('images/ico/apple-touch-icon-144-precomposed.png') }}">

@@ -1,6 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+
     <section id="home-slider">
         <div class="container">
             <div class="row">
@@ -21,7 +22,6 @@
         <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
     </section>
     <!--/#home-slider-->
-    
     <section id="services">
         <div class="container">
             <div class="row">

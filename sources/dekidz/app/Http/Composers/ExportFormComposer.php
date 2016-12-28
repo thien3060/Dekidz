@@ -8,7 +8,7 @@ class ExportFormComposer
 {
     public function compose($view)
     {
-        $assets = Food::lists('name', 'id');
+        $assets = Food::where('quantity', '>', 0)->lists('name', 'id');
 
         $view->with(compact('assets'));
     }

@@ -3,7 +3,9 @@
 namespace App\Repositories\Eloquent;
 
 use App\Helpers\DateHelper;
+use App\Models\Food;
 use App\Repositories\Contracts\ImportFoodRepository;
+use Illuminate\Support\Facades\DB;
 
 class EloquentImportFoodRepository implements ImportFoodRepository
 {
@@ -69,6 +71,7 @@ class EloquentImportFoodRepository implements ImportFoodRepository
         //Date convert
         $data['date'] = DateHelper::sqlDateFormat($data['date']);
         $data['is_food'] = 1;
+
         $import = $this->getModel()->create($data);
         for($i = 0; $i < count($data['asset-name']); $i++){
             if($data['asset-name'][$i] != 0){
@@ -76,6 +79,7 @@ class EloquentImportFoodRepository implements ImportFoodRepository
                     'price' => $data['asset-cost'][$i],
                     'quantity' => $data['asset-quantity'][$i]
                 ]);
+                DB::table('foods')->where('id', $data['asset-name'][$i])->increment('quantity', $data['asset-quantity'][$i]);
             }
         }
         return $import;

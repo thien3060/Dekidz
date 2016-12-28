@@ -86,9 +86,9 @@ if (!function_exists('admin_asset')) {
      *
      * @return string
      */
-    function admin_asset($url, $secure = false)
+    function admin_asset($url, $secure = true)
     {
-        return asset('packages/pingpong/admin/'.$url, $secure);
+        return asset('packages/pingpong/admin/'.$url);
     }
 }
 
@@ -100,7 +100,7 @@ if (!function_exists('script')) {
      *
      * @return mixed
      */
-    function script($url, $attributes = array(), $secure = false)
+    function script($url, $attributes = array(), $secure = true)
     {
         return HTML::script('packages/pingpong/admin/'.$url, $attributes, $secure);
     }

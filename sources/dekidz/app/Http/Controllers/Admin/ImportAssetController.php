@@ -66,7 +66,7 @@ class ImportAssetController extends BaseController
         $data = $request->all();
 
         $data['created_by'] = \Auth::id();
-        
+
         $this->repository->create($data);
 
         return $this->redirect('import_asset.index');
