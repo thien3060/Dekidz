@@ -28,14 +28,14 @@ class LoginController extends BaseController
         if (\Auth::attempt($credentials)) {
             $_SESSION['user'] = \Auth::id();
 
-            return $this->redirect('home')->withFlashMessage('Login Success!');
+            return $this->redirect('home')->withFlashMessage('Đăng nhập thành công!')->withFlashType('success');
         }
 
         if (getenv('PINGPONG_ADMIN_TESTING')) {
-            return \Redirect::to('admin/login')->withFlashMessage('Login failed!')->withFlashType('danger');
+            return \Redirect::to('admin/login')->withFlashMessage('Đăng nhập thất bại!')->withFlashType('danger');
         }
 
-        return \Redirect::back()->withFlashMessage('Login failed!')->withFlashType('danger');
+        return \Redirect::back()->withFlashMessage('Đăng nhập thất bại!')->withFlashType('danger');
     }
 
     /**

@@ -109,14 +109,13 @@ return [
 		'users' => [
 			'title' => 'Users',
 			'all' => 'All Users',
-			'create' => 'Add New',
-			'config' => 'Video links'
+			'create' => 'Add New'
 		],
 		'roles' => 'Roles',
 		'permissions' => 'Permissions',
 		'categories' => 'Categories'
 	],
 	'student' => [
-		'no' => 'No'
+		'no' => 'STT'
 	]
 ];

@@ -83,5 +83,6 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->divider(3);
         $sub->route('admin.roles.index', trans('admin.menus.roles'), [], 4);
         $sub->route('admin.permissions.index', trans('admin.menus.permissions'), [], 5);
+        $sub->route('admin.video_links', trans('admin.menus.users.config'), [], 6);
     }, 9, ['icon' => 'fa fa-users'], 'manage_users');
 });

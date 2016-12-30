@@ -12,7 +12,7 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
+        <th>{{ trans('admin.student.no') }}</th>
         <th>Name</th>
         <th>Email</th>
         <th>DOB</th>

@@ -8,13 +8,13 @@
 
 return [
     'embedded_videos' => [
-        'camera_1' =>  [
+        '0' =>  [
             'title' => 'Camera 1',
             'url' => 'https://www.youtube.com/embed/BvTBuHDLYVY'
         ],
-        'camera_2' => [
+        '1' =>  [
             'title' => 'Camera 2',
-            'url' => 'https://www.youtube.com/embed/uaqKS1QNTNc'
+            'url' => 'https://www.youtube.com/embed/BvTBuHDLYVY'
         ]
     ]
 ];

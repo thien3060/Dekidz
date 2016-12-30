@@ -20,40 +20,40 @@
         <div class="container">
             @if(Auth::check())
             <fieldset>
-                <legend>Call Management</legend>
+                <legend>Thiết lập cuộc gọi</legend>
 
                 <!-- User input: Callee field. -->
-                Callee: <input type="text" id="callee"/>
+                Người gọi: <input type="text" id="callee"/>
 
                 <!-- User input: Handle call buttons. -->
-                <input type="button" value="Make Call" id="make-call" onclick="startCall();"/>
+                <input type="button" value="Gọi" id="make-call" onclick="startCall();"/>
 
-                <input type="button" value="Mute/Unmute Call" id="mute-call" onclick="toggleMute();" disabled/>
+                <input type="button" value="Tiếng/Tắt tiếng" id="mute-call" onclick="toggleMute();" disabled/>
 
-                <input type="button" value="Hold/Unhold Call" id="hold-call" onclick="toggleHold();" disabled/>
+                <input type="button" value="Giữ/Không giữ" id="hold-call" onclick="toggleHold();" disabled/>
 
-                <input type="button" value="Show/Hide Video" id="show-video" onclick="toggleVideo();"/>
+                <input type="button" value="Hiện/Ẩn video" id="show-video" onclick="toggleVideo();"/>
 
-                <input type="button" value="End Call" id="end-call" onclick="endCall();" disabled/>
+                <input type="button" value="Kết thúc" id="end-call" onclick="endCall();" disabled/>
 
-                <input type="button" value="Accept Call" id="accept-call" onclick="acceptCall();" disabled/>
+                <input type="button" value="Chấp nhận" id="accept-call" onclick="acceptCall();" disabled/>
 
-                <input type="button" value="Decline Call" id="decline-call" onclick="declineCall();" disabled/>
+                <input type="button" value="Từ chối" id="decline-call" onclick="declineCall();" disabled/>
             </fieldset>
 
             <fieldset>
-                <legend>Messages</legend>
+                <legend>Thông báo</legend>
 
                 <!-- Message output container. -->
                 <div id="messages"> </div>
             </fieldset>
 
             <!-- Media containers. -->
-            Remote video: <div id="remote-container"></div>
+            Video từ xa: <div id="remote-container"></div>
 
-            Local video: <div id="local-container"></div>
+            Video cá nhân: <div id="local-container"></div>
             @else
-                <h3>Please Login</h3>
+                <h3>Xin vui lòng đăng nhập</h3>
             @endif
 
         </div>
@@ -118,12 +118,12 @@
 
         // What to do on a successful login.
         function kandy_login_success_callback() {
-            log("Login was successful.");
+            log("Đăng nhập thành công");
         }
 
         // What to do on a failed login.
         function kandy_login_failed_callback() {
-            log("Login failed. Make sure you input the user's credentials!");
+            log("Đăng nhập thất bại. Xin vui lòng đăng nhập lại");
         }
 
         // Utility function for appending messages to the message div.
@@ -147,7 +147,7 @@
 
         // What to do when a call is initiated.
         function onCallInitiated(call, callee) {
-            log("Call initiated with " + callee + ". Ringing...");
+            log("Cuộc gọi đã được thiết lập với " + callee + ". Đang gọi...");
 
             // Store the call id, so the caller has access to it.
             callId = call.getId();
@@ -162,7 +162,7 @@
 
         // What to do for an incoming call.
         function onCallIncoming(call) {
-            log("Incoming call from " + call.callerNumber);
+            log("Cuộc gọi đến từ " + call.callerNumber);
 
             // Store the call id, so the callee has access to it.
             callId = call.getId();
@@ -184,7 +184,7 @@
             $audioRingOut[0].pause();
             $audioRingIn[0].pause();
 
-            log("Call answered.");
+            log("Đã chấp nhận cuộc gọi.");
             // Handle UI changes. Call no longer incoming.
             document.getElementById("accept-call").disabled = true;
             document.getElementById("decline-call").disabled = true;
@@ -198,7 +198,7 @@
 			$audioRingIn[0].pause();
             $audioRingOut[0].pause();
 
-            log("Call rejected.");
+            log("Đã từ chối cuộc gọi.");
             // Handle UI changes. Call no longer incoming.
             document.getElementById("accept-call").disabled = true;
             document.getElementById("decline-call").disabled = true;
@@ -206,7 +206,7 @@
 
         // What to do when call is established.
         function onCallEstablished(call) {
-            log("Call established.");
+            log("Cuộc gọi được thiết lập.");
 			
 			$audioRingIn[0].pause();
             $audioRingOut[0].pause();
@@ -231,11 +231,11 @@
         function toggleMute() {
             if(isMuted) {
                 kandy.call.unMuteCall(callId);
-                log("Unmuting call.");
+                log("Mở tiếng.");
                 isMuted = false;
             } else {
                 kandy.call.muteCall(callId);
-                log("Muting call.");
+                log("Tắt tiếng.");
                 isMuted = true;
             }
         }
@@ -247,18 +247,18 @@
         function toggleHold() {
             if(isHeld) {
                 kandy.call.unHoldCall(callId);
-                log("Unholding call.");
+                log("Bỏ giữ.");
                 isHeld = false;
             } else {
                 kandy.call.holdCall(callId);
-                log("Holding call.");
+                log("Đang giữ.");
                 isHeld = true;
             }
         }
 
         // What to do when a call is ended.
         function onCallEnded(call) {
-            log("Call ended.");
+            log("Kết thúc cuộc gọi.");
 
             // Handle UI changes. No current call.
             document.getElementById("make-call").disabled = false;
@@ -278,11 +278,11 @@
         function toggleVideo() {
             if(showVideo) {
                 kandy.call.stopCallVideo(callId);
-                log("Stopping send of video.");
+                log("Ngừng chia sẻ video.");
                 showVideo = false;
             } else {
                 kandy.call.startCallVideo(callId);
-                log("Starting send of video.");
+                log("Bắt đầu chia sẽ video.");
                 showVideo = true;
             }
         }

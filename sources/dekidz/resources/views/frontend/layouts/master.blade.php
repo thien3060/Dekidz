@@ -56,7 +56,7 @@
         </section>
         <div class="container">
             @if (Session::has('flash_message'))
-                <div class="alert alert-danger">{{ Session::get('flash_message') }}</div>
+                <div class="alert alert-{{ Session::get('flash_type') }}">{{ Session::get('flash_message') }}</div>
             @endif
         </div>
         @yield('content')

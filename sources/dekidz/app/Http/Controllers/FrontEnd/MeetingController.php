@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Kodeplus\Kandylaravel\Facades\KandyLaravel;
 use Pingpong\Admin\Entities\Article;
+use Pingpong\Admin\Entities\Option;
 use Pingpong\Admin\Uploader\ImageUploader;
 use Pingpong\Admin\Validation\Article\Create;
 use Pingpong\Admin\Validation\Article\Update;
@@ -43,6 +44,12 @@ class MeetingController extends BaseController
     
     public function streamVideos()
     {
-        return view('frontend.pages.stream_videos');
+        $links = [];
+        foreach(Option::lists('value', 'key') as $key => $option){
+            if (strpos($key, 'video_link') !== false) {
+                $links[$key] = $option;
+            }
+        }
+        return view('frontend.pages.stream_videos', compact('links'));
     }
 }
