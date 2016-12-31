@@ -19,17 +19,27 @@
     <section id="blog">
         <div class="container">
             @if(Auth::check())
-                @foreach($links as $key => $video)
-                    <h3>{{ $key }}</h3>
-                    <div class="video-container">
-                        <iframe  src="{{ $video }}" class="video">
-                        </iframe>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <label for="cameras">Select Camera:</label>
+                        {!! Form::select('camera', $cameras, null, ['id' => 'cameras', 'class' => "form-control"]) !!}
                     </div>
-                @endforeach
+                </div>
+                <div class="row" id="camera-container">
+                    <div class="col-sm-12">
+                        <h3 id="camera-name"></h3>
+                        <div class="video-container">
+                            <iframe id="camera-frame" src="" class="video">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
             @else
                 <h3>Please Login</h3>
             @endif
         </div>
+        <br>
+        <br>
     </section>
     <!--/#blog-->
 @endsection
@@ -53,5 +63,29 @@
 @endsection
 
 @section('inline-script')
+    <script>
+        $('#camera-container').hide();
 
+        $('#cameras').change(function () {
+            if($(this).val() != 0){
+                var data = {
+                    _token: '{{ csrf_token() }}',
+                    id: $(this).val()
+                };
+                $.post( "/get_camera", data, function( result ) {
+                    set_camera(result.name, result.url);
+                });
+            }
+            else {
+                $('#camera-container').hide();
+                set_camera('', '');
+            }
+        });
+
+        function set_camera(name, url) {
+            $('#camera-container').show();
+            $('#camera-name').html(name);
+            $('#camera-frame').attr('src', url);
+        }
+    </script>
 @endsection

@@ -152,5 +152,8 @@ return [
         'model' => 'Pingpong\Admin\Entities\Category',
         'perpage' => 10
     ],
-
+    'camera' => [
+        'model' => 'App\Models\Camera',
+        'perpage' => 10
+    ],
 ];

@@ -39,7 +39,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.exports.index', trans('admin.menus.repository.export'), [], 5);
         $sub->route('admin.export_assets.index', trans('admin.menus.repository.export_asset'), [], 6);
         $sub->route('admin.maintenance_ballots.index', trans('admin.menus.repository.maintenance_ballot'), [], 7);
-    }, 4, ['icon' => 'fa fa-usd'], 'manage_repository');
+    }, 4, ['icon' => 'fa fa-archive'], 'manage_repository');
 
     //Nutrition
     $menu->dropdown(trans('admin.menus.nutrition.title'), function ($sub) {
@@ -66,7 +66,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.articles.create', trans('admin.menus.articles.create'), [], 2);
         $sub->divider(3);
         $sub->route('admin.categories.index', trans('admin.menus.categories'), [], 4);
-    }, 7, ['icon' => 'fa fa-book'], 'manage_articles');
+    }, 7, ['icon' => 'fa fa-file-text-o'], 'manage_articles');
 
     //Staff
     $menu->dropdown(trans('admin.menus.staffs.title'), function ($sub) {
@@ -74,7 +74,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.staff_types.index', trans('admin.menus.staffs.staff_types.title'), [], 2);
         $sub->route('admin.departments.index', trans('admin.menus.departments.title'), [], 3);
         $sub->route('admin.salaries.index', trans('admin.menus.staffs.salaries.all'), [], 4);
-    }, 8, ['icon' => 'fa fa-book'], 'manage_staffs');
+    }, 8, ['icon' => 'fa fa-users'], 'manage_staffs');
 
     //Users
     $menu->dropdown(trans('admin.menus.users.title'), function ($sub) {
@@ -83,6 +83,10 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->divider(3);
         $sub->route('admin.roles.index', trans('admin.menus.roles'), [], 4);
         $sub->route('admin.permissions.index', trans('admin.menus.permissions'), [], 5);
-        $sub->route('admin.video_links', trans('admin.menus.users.config'), [], 6);
-    }, 9, ['icon' => 'fa fa-users'], 'manage_users');
+    }, 9, ['icon' => 'fa fa-user'], 'manage_users');
+
+    //System
+    $menu->dropdown(trans('admin.menus.cameras.title'), function ($sub) {
+        $sub->route('admin.cameras.index', trans('admin.menus.cameras.all'), [], 1);
+    }, 10, ['icon' => 'fa fa-gear'], 'manage_users');
 });

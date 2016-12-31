@@ -30,6 +30,8 @@ Route::get('/meeting', 'MeetingController@meeting');
 
 Route::get('/stream_videos', 'MeetingController@streamVideos');
 
+Route::post('/get_camera', 'MeetingController@getCamera');
+
 Route::post('/send_contact', 'MeetingController@sendContact')->name('frontend.contract.email');
 
 Route::get('/coming-soon', function () {
