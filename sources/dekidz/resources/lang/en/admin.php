@@ -114,7 +114,12 @@ return [
 		],
 		'roles' => 'Roles',
 		'permissions' => 'Permissions',
-		'categories' => 'Categories'
+		'categories' => 'Categories',
+		'cameras' => [
+			'title' => 'System',
+			'all' => 'Cameras',
+			'create' => 'Add New'
+		],
 	],
 	'student' => [
 		'no' => 'No'

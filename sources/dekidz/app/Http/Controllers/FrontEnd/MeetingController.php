@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\Models\Camera;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -44,12 +45,16 @@ class MeetingController extends BaseController
     
     public function streamVideos()
     {
-        $links = [];
-        foreach(Option::lists('value', 'key') as $key => $option){
-            if (strpos($key, 'video_link') !== false) {
-                $links[$key] = $option;
-            }
-        }
-        return view('frontend.pages.stream_videos', compact('links'));
+        $cameras = Camera::lists('name', 'id');
+        $cameras->prepend('Select Camera', 0);
+
+        return view('frontend.pages.stream_videos', compact('cameras'));
+    }
+    
+    public function getCamera()
+    {
+        $camera = Camera::find(Input::get('id'));
+
+        return $camera;
     }
 }
