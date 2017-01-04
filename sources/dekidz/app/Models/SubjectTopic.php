@@ -14,9 +14,9 @@ class SubjectTopic extends Model
     protected $table = 'subject_topics';
 
     protected $fillable = [
-        "code",
-        "name",
-        "description"
+        'code',
+        'name',
+        'description'
     ];
 
     public function morning_schedules(){

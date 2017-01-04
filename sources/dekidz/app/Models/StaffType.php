@@ -14,8 +14,8 @@ class StaffType extends Model
     protected $table = 'staff_types';
 
     protected $fillable = [
-        "name",
-        "description"
+        'name',
+        'description'
     ];
     
     public function staffs(){

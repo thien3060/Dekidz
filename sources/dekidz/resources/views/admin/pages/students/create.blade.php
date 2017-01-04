@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        Add New Student
+        {{ trans('admin.puclic.title_add') }}
         &middot;
         <small>{!! link_to_route('admin.students.index', 'Back') !!}</small>
     </h1>
