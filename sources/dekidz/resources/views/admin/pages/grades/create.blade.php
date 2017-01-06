@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Add New Grade
+        {{trans('admin.public.add')}}
         &middot;
-        <small>{!! link_to_route('admin.grades.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.grades.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

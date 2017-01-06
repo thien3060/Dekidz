@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        {{ trans('admin.puclic.title_add') }}
+        {{ trans('admin.public.add') }}
         &middot;
-        <small>{!! link_to_route('admin.students.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.students.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

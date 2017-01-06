@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All FoodSets
+        {{trans('admin.public.all')}}
         &middot;
-        <small>{!! link_to_route('admin.foodsets.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.foodsets.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -38,7 +38,7 @@
         {{--<th>Lipid TV</th>--}}
         <th>Total cost</th>
 
-        <th class="text-center">Action</th>
+        <th class="text-center">{{trans('admin.public.action')}}</th>
         </thead>
         <tbody>
         @foreach ($foodsets as $foodset)
@@ -70,7 +70,7 @@
                 {{--<td>{!! $foodset->lipid_tv !!}</td>--}}
                 <td>{!! $foodset->total_cost !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.foodsets.edit', $foodset->id) !!}">Edit</a>
+                    <a href="{!! route('admin.foodsets.edit', $foodset->id) !!}">{{trans('admin.public.edit')}}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $foodset, 'name' => 'foodsets'])
                 </td>

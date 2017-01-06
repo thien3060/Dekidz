@@ -2,197 +2,207 @@
 
 return [
 	'menus' => [
-		'dashboard' => 'Dashboard',
+		'dashboard' => 'Trang Chủ',
 		'students' => [
-			'title' => 'Students',
-			'all' => 'All Students',
-			'create' => 'Create Student',
-			'tuition_fee' => 'Tuition Fee',
-			'health_index' => 'Health Index'
+			'title' => 'Trẻ',
+			'all' => 'Trẻ',
+			'create' => 'Tạo',
+			'tuition_fee' => 'Học Phí',
+			'health_index' => 'Chỉ Số Sức Khỏe'
 		],
 		'grades' => [
-			'title' => 'Grades',
-			'all' => 'All Grades',
-			'create' => 'Create Grade'
+			'title' => 'Khối',
+			'all' => 'Khối',
+			'create' => 'Tạo'
 		],
 
 		'physical_infos' => [
-			'title' => 'Student`s Physical Info',
-			'all' => 'Physical Info',
-			'create' => 'Create Physical Info'
+			'title' => 'Thông Tin Thể Chất Của Trẻ',
+			'all' => 'Thông Tin Thể Chất',
+			'create' => 'Tạo'
 		],
 		'classes' => [
-			'title' => 'Classes',
-			'all' => 'All Classes',
-			'create' => 'Create Class',
-			'study_result' => 'Study Result'
+			'title' => 'Lớp',
+			'all' => 'Lớp',
+			'create' => 'Tạo',
+			'study_result' => 'Kết Quả Học Tập'
 		],
 		'finances' => [
-			'title' => 'Finances',
-			'rem_in' => 'Rem In',
-			'rem_out' => 'Rem Out',
+			'title' => 'Tài Chính',
+			'rem_in' => 'Phiếu Thu',
+			'rem_out' => 'Phiếu Chi',
 		],
 		'repository' => [
-			'title' => 'Repository',
+			'title' => 'Kho',
 			'assets' => [
-				'title' => 'CSVCs',
-				'all' => 'All CSVCs',
-				'create' => 'Create CSVC',
+				'title' => 'Cơ Sở Vật Chất',
+				'all' => 'Cơ Sở Vật Chất',
+				'create' => 'Tạo',
 			],
 			'suppliers' => [
-				'title' => 'Supplier',
-				'all' => 'All Suppliers',
-				'create' => 'Create Supplier',
+				'title' => 'Nhà Cung Cấp',
+				'all' => 'Nhà Cung Cấp',
+				'create' => 'Tạo',
 			],
 			'import' => [
-				'food' => 'Thực Phẩm Nhập',
-				'asset'=> 'CSVC Nhập'
+				'food' => 'Phiếu Nhập Thực Phẩm',
+				'asset'=> 'Phiếu Nhập CSVC'
 			],
-			'export' => 'Thực Phẩm Export',
-			'export_asset' => 'CSVC Export',
-			'maintenance_ballot' => 'Maintenance Ballot'
+			'export' => 'Phiếu Xuất Thực Phẩm',
+			'export_asset' => 'Phiếu Xuất CSVC',
+			'maintenance_ballot' => 'Phiếu Bảo Hành'
 		],
 		'nutrition' => [
-			'title' => 'Nutrition',
+			'title' => 'Dinh Dưỡng',
 			'food' => 'Thực Phẩm',
-			'food_set' => 'Thực Phẩm Set',
-			'dishes' => 'Dishes',
-			'foodgroup' => 'Thực Phẩm Group',
-			'foodsettype' => 'Thực Phẩm Set Type',
-			'dishtype' => 'Dish Type',
-			'energy_need' => 'Energy Need',
-			'menu' => 'Menus'
+			'food_set' => 'Suất Ăn',
+			'dishes' => 'Món Ăn',
+			'foodgroup' => 'Nhóm Thực Phẩm',
+			'foodsettype' => 'Loại Suất Ăn',
+			'dishtype' => 'Loại Món Ăn',
+			'energy_need' => 'Nhu Cầu Năng Lượng',
+			'menu' => 'Thực Đơn'
 		],
 		'education' => [
-			'title' => 'Education',
-			'teachers' => 'Teachers',
-			'time_table' => 'Time Table',
-			'lesson' => 'Lesson',
+			'title' => 'Giảng Dạy',
+			'teachers' => 'Giáo Viên',
+			'time_table' => 'Thời Khóa Biểu',
+			'lesson' => 'Bài Giảng',
 			'subject_topic' => [
-				'title' => 'Subject Topic',
-				'create' => 'Create Subject Topic'
+				'title' => 'Chủ Đề Môn Học',
+				'create' => 'Tạo'
 			],
 			'teach_schedules' => [
-				'title' => 'Teach Schedules',
-				'create' => 'Create Teach Schedule'
+				'title' => 'Thời Khóa Biểu',
+				'create' => 'Tạo'
 			],
 
 		],
 		'articles' => [
-			'title' => 'Articles',
-			'all' => 'All Articles',
-			'create' => 'Add New'
+			'title' => 'Bài Viết',
+			'all' => 'Bài Viết',
+			'create' => 'Tạo'
 		],
 		'staffs' => [
-			'title' => 'Staffs',
-			'all' => 'All Staffs',
-			'create' => 'Add New',
+			'title' => 'Nhân Viên',
+			'all' => 'Nhân Viên',
+			'create' => 'Tạo',
 			'salaries' => [
-				'title' => 'Salary',
-				'all' => 'Salaries'
+				'title' => 'Lương',
+				'all' => 'Lương'
 			],
 			'staff_types' => [
-				'title' => 'Positions',
-				'all' => 'All Positions'
+				'title' => 'Chức Vụ',
+				'all' => 'Chức Vụ'
 			]
 		],
 		'departments' => [
-			'title' => 'Departments',
-			'all' => 'All Departments',
-			'create' => 'Add New'
+			'title' => 'Phòng Ban',
+			'all' => 'Phòng Ban',
+			'create' => 'Tạo'
 		],
 		'pages' => [
-			'title' => 'Pages',
-			'all' => 'All Pages',
-			'create' => 'Add New'
+			'title' => 'Trang',
+			'all' => 'Trang',
+			'create' => 'Tạo'
 		],
 		'users' => [
-			'title' => 'Users',
-			'all' => 'All Users',
-			'create' => 'Add New',
-			'config' => 'Video links'
+			'title' => 'Người Dùng',
+			'all' => 'Người Dùng',
+			'create' => 'Tạo',
+			'config' => 'Video Link'
 		],
-		'roles' => 'Roles',
-		'permissions' => 'Permissions',
-		'categories' => 'Categories',
+		'roles' => 'Vai Trò',
+		'permissions' => 'Quyền',
+		'categories' => 'Loại',
 		'cameras' => [
-			'title' => 'System',
-			'all' => 'Cameras',
-			'create' => 'Add New'
+			'title' => 'Hệ Thống',
+			'all' => 'Camera',
+			'create' => 'Tạo'
 		],
 	],
 	'public' => [
-		'title_add'=> 'Add',
-		'title_edit' => 'Edit',
-		'title_all' => 'All',
-		'title_Update' => 'Update',
-		'title_Save' => 'Save',
-		'title_Delete' => 'Delete',
+		'add'=> 'Thêm mới',
+		'edit' => 'Sửa',
+		'all' => 'Tất cả',
+		'update' => 'Cập Nhật',
+		'save' => 'Lưu',
+		'delete' => 'Xóa',
+		'action' => 'Hành Động',
+		'back' => 'Trở Lại',
+		'select' => 'Chọn',
+		'yes' => 'Có',
+		'no' => 'Không',
+		'confirm_delete' => 'Bạn Có Muốn Xóa ?',
 	],
 	'student' => [
 		'no' => 'STT',
 		'name' => 'Tên',
 		'email' => 'Email',
-		'gender' => 'Gender',
-		'dob' => 'DOB',
-		'address' => 'Address',
-		'nation'=> 'Nation',
-		'religion' => 'Religion',
-		'father_name' => 'Father Name',
-		'father_dob' => 'Father DOB',
-		'father_job'  => 'Father Job',
-		'mother_name'  => 'Mother Name',
-		'mother_dob' => 'Mother DOB',
-		'mother_job' => 'Mother Job',
-		'father_phone' => 'Father Phone',
-		'mother_phone'  => 'Mother Phone',
-		'picture' => 'Picture',
-		'admission_date'=> 'Admission Date',
-		'completion_date'=> 'Completion Date',
-		'note' => 'Note',
-		'entry_card'=> 'Entry Card'
+		'gender' => 'Giới Tính',
+		'dob' => 'Ngày Sinh',
+		'address' => 'Địa Chỉ',
+		'nation'=> 'Quốc Tịch',
+		'religion' => 'Tôn Giáo',
+		'father_name' => 'Tên Cha',
+		'father_dob' => 'Ngày Sinh Cha',
+		'father_job'  => 'Nghề Nghiệp Cha',
+		'mother_name'  => 'Tên Mẹ',
+		'mother_dob' => 'Ngày Sinh Mẹ',
+		'mother_job' => 'Nghề Nghiệp Mẹ',
+		'father_phone' => 'SDT Cha',
+		'mother_phone'  => 'SDT Mẹ',
+		'picture' => 'Hình Ảnh',
+		'admission_date'=> 'Ngày Nhập Học',
+		'completion_date'=> 'Ngày Hoàn Thành',
+		'note' => 'Lưu Ý',
+		'entry_card'=> 'Số Thẻ Vào',
+		'man' => 'Nam',
+		'woman' => 'Nữ',
 	],
 	'asset' => [
 		'no' => 'STT',
 		'name' => 'Tên',
-		'quantity'=> 'Quantity',
-		'maintenance_mode'=> 'Maintenance Mode',
-		'unit'=> 'Unit'
+		'quantity'=> 'Số Lượng',
+		'maintenance_mode'=> 'Trạng Thái Bảo Hành',
+		'unit'=> 'Đơn Vị'
 	],
 
 	'camera' => [
 		'no' => 'STT',
 		'name' => 'Tên',
 		'url'=> 'URL',
-		'description'=> 'Description'
+		'description'=> 'Mô Tả'
 
 	],
 
-	'dekid_class' => [
+	'class' => [
 		'no' => 'STT',
 		'name'=> 'Tên',
-		'teacher_id' => 'Teacher',
-		'room_number' => 'Room Number',
-		'grade_id'=> 'Grade',
-		'school_year' => 'School Year'
+		'teacher_id' => 'Giáo Viên',
+		'room_number' => 'Số Phòng',
+		'grade_id'=> 'Khối',
+		'school_year' => 'Năm Học',
+		'student_list' => 'Danh Sach Trẻ',
 	],
 
 	'department' => [
 		'no' => 'STT',
 		'name' => 'Tên',
-		'wage_index' => 'Wage Index',
-		'chief_id' => 'Cheif',
-		'description' => 'Description'
+		'wage_index' => 'Hệ Số Lương',
+		'chief_id' => 'Trưởng Phòng',
+		'description' => 'Mô Tả',
+
 	],
 
 	'dish' => [
 		'no' => 'STT',
-		'type_id' => 'Type',
+		'type_id' => 'Loại Món Ăn',
 		'name' => 'Tên',
-		'total_cost' => 'Total Cost',
-		'preparing_description' => 'Preparing Description',
-		'cooking_description' => 'Cooking Description',
-		'chef' => 'Chef',
+		'total_cost' => 'Tổng Giá',
+		'preparing_description' => 'Chuẩn Bị',
+		'cooking_description' => 'Cách Nấu',
+		'chef' => 'Đầu Bếp',
 		'calo'=> 'Calo',
 		'h2o'=> 'H2O',
 		'protid' => 'Protid',
@@ -208,18 +218,24 @@ return [
 		'vitaminb1'=> 'Vitamin B1',
 		'vitaminb2'=> 'Vitamin B2',
 		'vitaminpp' => 'Vitamin PP',
-		'vitaminc'=> 'Vitamin C'
+		'vitaminc'=> 'Vitamin C',
+		'cost' => 'Giá',
+		'food_name' => 'Tên Thực Phẩm',
+		'quantity' => 'Số Lượng',
+		'price' => 'Đơn Giá',
+		'list_food' => 'Danh Sách Thực Phẩm',
 
 	],
 
 	'dish_type' => [
 		'no' => 'STT',
 		'name' => 'Tên',
+		'code' => 'Mã',
 	],
 
 	'energy_need' => [
 		'no' => 'STT',
-		'age' => 'Age',
+		'age' => 'Tuổi',
 		'calo'=> 'Calo',
 		'h2o'=> 'H2O',
 		'protid' => 'Protid',
@@ -241,26 +257,32 @@ return [
 
 	'export' => [
 		'no' => 'STT',
-		'date'=> 'Date',
-		'is_food' => 'Is Thực Phẩm',
-		'created_by' => 'Created By'
+		'date'=> 'Ngày',
+		'name' => 'Tên',
+		'is_food' => 'Là Thực Phẩm',
+		'created_by' => 'Tạo Bởi',
+		'list_food' => 'Danh Sách Thực Phẩm',
+		'quantity' => 'Số Lượng',
 	],
 
 	'export_asset' => [
 		'no' => 'STT',
-		'date' => 'Date',
-		'is_food' => 'Is Thực Phẩm',
-		'created_by' => 'Created By'
+		'date' => 'Ngày',
+		'name' => 'Tên',
+		'is_food' => 'Là Thực Phẩm',
+		'created_by' => 'Tạo Bởi',
+		'list_asset' => 'Danh Sách CSVC',
+		'quantity' => 'Số Lượng',
 	],
 
 	'food' => [
 		'no' => 'STT',
-		'food_group_id' => 'Thực Phẩm Group',
+		'food_group_id' => 'Nhóm Thực Phẩm',
 		'name' => 'Tên',
-		'animal_source' => 'Animal Source',
-		'quantity' => 'Quantity',
-		'unit' => 'Unit',
-		'price' => 'Price',
+		'animal_source' => 'Nguồn ĐV',
+		'quantity' => 'Số Lượng',
+		'unit' => 'Đơn Vị',
+		'price' => 'Giá',
 		'absorb' => 'Absorb',
 		'digest'=> 'Digest',
 		'calo'=> 'Calo',
@@ -283,16 +305,17 @@ return [
 
 	'food_group' => [
 		'no' => 'STT',
-		'name' => 'Name'
+		'name' => 'Tên',
+		'code' => 'Mã',
 	],
 
 	'food_set' => [
 		'no' => 'STT',
-		'type_id' => 'Type',
-		'age'=> 'Age',
-		'quantity' => 'Quantity',
+		'type_id' => 'Loại',
+		'age'=> 'Tuổi',
+		'quantity' => 'Số Lượng',
 		'name' => 'Tên',
-		'description' => 'Description',
+		'description' => 'Mô Tả',
 		'calo'=> 'Calo',
 		'h2o'=> 'H2O',
 		'protid' => 'Protid',
@@ -309,165 +332,165 @@ return [
 		'vitaminb2'=> 'Vitamin B2',
 		'vitaminpp' => 'Vitamin PP',
 		'vitaminc'=> 'Vitamin C',
-		'total_cost'
+		'total_cost' => 'Tổng Giá'
 	],
 
 	'food_set_type' => [
 		'no' => 'STT',
-		'name' => 'Name'
+		'name' => 'Tên'
 	],
 
 	'grade' => [
 		'no' => 'STT',
-		'code' => 'Code',
+		'code' => 'Mã',
 		'name' => 'Tên',
-		'description' => 'Description'
+		'description' => 'Mô Tả'
 	],
 
 	'health_stadard_index' => [
 		'no' => 'STT',
-		'height' => 'Height',
-		'weight' => 'Weight',
-		'gender' => 'Gender',
-		'month' => 'Month'
+		'height' => 'Chiều Cao',
+		'weight' => 'Cân Nặng',
+		'gender' => 'Giới Tính',
+		'month' => 'Tháng Tuổi'
 	],
 
 	'import' => [
 		'no' => 'STT',
-		'date' => 'Date',
-		'total_cost' => 'Total Cost',
-		'is_food' => 'Is Thực Phẩm',
-		'created_by' => 'Created By'
+		'date' => 'Ngày',
+		'total_cost' => 'Tổng Giá Trị',
+		'is_food' => 'Là Thực Phẩm',
+		'created_by' => 'Tạo Bởi'
 	],
 
 	'lesson' => [
 		'no' => 'STT',
-		'subject_topic_id' => 'Subject Topic',
-		'lesson_name' => 'Lesson Name',
-		'lesson_goal' => 'Lesson Goal',
-		'teach_activity' => 'Teach Activity',
-		'kid_activity' => 'Kid Activity',
-		'author' => 'Author'
+		'subject_topic_id' => 'Chủ Đề Môn Học',
+		'lesson_name' => 'Tên Bài Học',
+		'lesson_goal' => 'Mục Tiêu Bài Học',
+		'teach_activity' => 'Hoạt Động Giảng Dạy',
+		'kid_activity' => 'Hoạt Động Của Trẻ',
+		'author' => 'Tác Giả'
 	],
 
 	'maintenance_ballot' => [
 		'no' => 'STT',
-		'created_by'=> 'Created By',
-		'date'=> 'Date'
+		'created_by'=> 'Tạo Bởi',
+		'date'=> 'Ngày'
 	],
 
 	'menu' => [
 		'no' => 'STT',
-		'date' => 'Date',
-		'breakfast_id' => 'Breakfast',
-		'lunch_id'=> 'Lunch',
-		'mid_afternoon_id' => 'Mid Afternoon'
+		'date' => 'Ngày',
+		'breakfast_id' => 'Bữa Sáng',
+		'lunch_id'=> 'Bữa Trưa',
+		'mid_afternoon_id' => 'Bữa Xế'
 	],
 
 	'physical_info' => [
 		'no' => 'STT',
-		'student_id' => 'Student',
-		'gender' => 'Gender',
-		'age' => 'Age',
-		'height' => 'Height',
-		'weight' => 'Weight',
+		'student_id' => 'Trẻ',
+		'gender' => 'Giới Tính',
+		'age' => 'Tuổi',
+		'height' => 'Chiều Cao',
+		'weight' => 'Cân Nặng',
 		'BMI' => 'BMI'
 	],
 
 	'rem_in' => [
 		'no' => 'STT',
-		"reason" => 'Reason',
-		"code" => 'Code',
-		"date" => 'Date',
-		"received" => 'Received',
-		"debt" => 'Debt',
-		"total" => 'Total',
-		"note" => 'Note'
+		"reason" => 'Lý Do',
+		"code" => 'Mã',
+		"date" => 'Ngày Lập',
+		"received" => 'Số Tiền Nhận Được',
+		"debt" => 'Số Tiền Nợ',
+		"total" => 'Tổng Giá Trị',
+		"note" => 'Lưu Ý'
 	],
 
 	'rem_out' => [
 		'no' => 'STT',
-		"reason" => 'Reason',
-		"code" => 'Code',
-		"date" => 'Date',
-		"paid" => 'Paid',
-		"debt" => 'Debt',
-		"total" => 'Total'
+		"reason" => 'Lý Do',
+		"code" => 'Mã',
+		"date" => 'Ngày Lập',
+		"paid" => 'Số Tiền TRả',
+		"debt" => 'Số Tiền Nợ',
+		"total" => 'Tổng Giá Trị'
 	],
 
 	'salary' => [
 		'no' => 'STT',
-		"staff_id" => 'Staff',
-		"base_salary" => 'Base Salary',
-		"wage_index" => 'Wage Index',
-		"bonus"=> 'Bonus',
-		"minus" => 'Minus',
-		"salary" => 'Salary'
+		"staff_id" => 'Nhân Viên',
+		"base_salary" => 'Lương Cơ Bản',
+		"wage_index" => 'Hệ Số Lương',
+		"bonus"=> 'Thưởng',
+		"minus" => 'Phạt',
+		"salary" => 'Lương'
 	],
 
 	'staff' => [
 		'no' => 'STT',
-		"name" => 'Name',
-		"code" => 'Code',
-		"gender" => 'Gender',
-		"dob" => 'DOB',
-		"identity_card" => 'Indentity Card',
-		"religion" => 'Religion',
-		"address" => 'Address',
-		"department_id" => 'Departement',
-		"issued_by" => 'Issued By',
-		"phone" => 'Phone',
+		"name" => 'Tên',
+		"code" => 'Mã',
+		"gender" => 'Giới Tính',
+		"dob" => 'Ngày Sinh',
+		"identity_card" => 'CMND',
+		"religion" => 'Tôn Giáo',
+		"address" => 'Địa Chỉ',
+		"department_id" => 'Phòng Ban',
+		"issued_by" => 'Giới Thiệu Bởi',
+		"phone" => 'SDT',
 		"email" => 'Email',
-		"position" => 'Positition',
-		"degree" => 'Degree',
-		"is_leaguer" => 'Is Leaguer',
-		"working_status" => 'Working Status',
-		"start_day" => 'Start Day',
-		"type_of_contract" => 'Type Of Contract',
+		"position" => 'Vị Trí',
+		"degree" => 'Bằng Cấp',
+		"is_leaguer" => 'Là Đảng Viên',
+		"working_status" => 'Tình Trạng Làm Việc',
+		"start_day" => 'Ngày Vào Làm',
+		"type_of_contract" => 'Loại Hợp Đồng',
 	],
 
 	'staff_type' => [
 		'no' => 'STT',
 		'name' => 'Tên',
-		'description' => 'Description'
+		'description' => 'Mô Tả'
 	],
 
 	'study_result' => [
 		'no' => 'STT',
-		'class_id' => 'Class',
-		'semester' => 'Semester',
-		'lesson_id' => 'Lesson'
+		'class_id' => 'Lớp',
+		'semester' => 'Học Kì',
+		'lesson_id' => 'Môn Học'
 	],
 
 	'subject_topic' => [
 		'no' => 'STT',
-		'code' => 'Code',
+		'code' => 'Mã',
 		'name' => 'Tên',
-		'description' => 'Description'
+		'description' => 'Mô Tả'
 	],
 
 	'supplier' => [
 		'no' => 'STT',
 		'name' => 'Tên',
-		'type' => 'Type',
+		'type' => 'Loại',
 		'email' => 'Email',
-		'phone'=> 'Phone',
-		'product_type' => 'Product Type'
+		'phone'=> 'SDT',
+		'product_type' => 'Loại Sản Phẩm'
 	],
 
 	'teach_schedule' => [
 		'no' => 'STT',
-		'class_id' => 'Class',
-		'semester' => 'Semester'
+		'class_id' => 'Lớp',
+		'semester' => 'Học Kì'
 	],
 
 	'tuition_fee' => [
 		'no' => 'STT',
-		'student_id' => 'Student',
-		'debt' => 'Debt',
-		'paid' => 'Paid',
-		'year' => 'Year',
-		'month' => 'Month'
+		'student_id' => 'Trẻ',
+		'debt' => 'Nợ',
+		'paid' => 'Trả',
+		'year' => 'Năm',
+		'month' => 'Tháng'
 	],
 
 ];

@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Add New Department
+        {{trans('admin.public.add')}}
         &middot;
-        <small>{!! link_to_route('admin.departments.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.departments.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

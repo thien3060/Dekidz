@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Exports
+       {{trans('admin.public.all')}}
         &middot;
-        <small>{!! link_to_route('admin.exports.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.exports.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,12 +12,12 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Export Date</th>
+        <th>{{trans('admin.export.no')}}</th>
+        <th>{{trans('admin.export.date')}}</th>
         {{--<th>Created By</th>--}}
         {{--<th>Created At</th>--}}
         {{--<th>Updated At</th>--}}
-        <th class="text-center">Action</th>
+        <th class="text-center">{{trans('admin.public.action')}}</th>
         </thead>
         <tbody>
         @foreach ($exports as $export)

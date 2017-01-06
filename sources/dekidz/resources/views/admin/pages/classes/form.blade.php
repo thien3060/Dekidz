@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('name', 'Name:') !!}
+            {!! Form::label('name', trans('admin.class.name')) !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
             {!! $errors->first('name', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -14,7 +14,7 @@
 
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('school_year', 'School year:') !!}
+            {!! Form::label('school_year', trans('admin.class.school_year')) !!}
             {!! Form::text('school_year', null, ['class' => 'form-control']) !!}
             {!! $errors->first('school_year', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -22,7 +22,7 @@
 
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('room_number', 'Room number:') !!}
+            {!! Form::label('room_number', trans('admin.class.room_number')) !!}
             {!! Form::text('room_number', null, ['class' => 'form-control']) !!}
             {!! $errors->first('room_number', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -30,9 +30,9 @@
 
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('teacher_id', 'Teacher:') !!}
+            {!! Form::label('teacher_id', trans('admin.class.teacher_id')) !!}
             <select class="form-control teacher-id" name="teacher_id">
-                <option value="0">Select teacher</option>
+                <option value="0">{{trans('admin.public.select')}}</option>
                 @foreach($staffs as $key => $name)
                     <option value="{{$key}}" @if($key == @$model->teacher_id) selected="selected" @endif>{{$name}}</option>
                 @endforeach
@@ -44,9 +44,9 @@
 
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('grade_id', 'Grade:') !!}
+            {!! Form::label('grade_id', trans('admin.class.grade_id')) !!}
             <select class="form-control grade-id" name="grade_id">
-                <option value="0">Select grade</option>
+                <option value="0">{{trans('admin.public.select')}}</option>
                 @foreach($grades as $key => $name)
                     <option value="{{$key}}" @if($key == @$model->grade_id) selected="selected" @endif>{{$name}}</option>
                 @endforeach
@@ -58,17 +58,17 @@
 
 <div class="box box-solid">
     <div class="box-header with-border">
-        <h3 class="box-title">Student list</h3>
-        <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">Add</button>
+        <h3 class="box-title">{{trans('admin.class.student_list')}}</h3>
+        <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">{{trans('admin.public.add')}}</button>
     </div>
     <!-- /.box-header -->
     <div class="box-body text-center">
         <table class="table">
             <thead>
             <th>#</th>
-            <th>Name</th>
+            <th>{{trans('admin.class.name')}}</th>
             {{--<th>Quantity</th>--}}
-            <th class="text-center">Action</th>
+            <th class="text-center">{{trans('admin.public.action')}}</th>
             </thead>
             <tbody id="asset-list">
             <?php $no = 1?>
@@ -78,7 +78,7 @@
                         <td class="asset-id">{{ $no++ }}</td>
                         <td>
                             <select class="form-control asset-name" name="asset-name[]">
-                                <option value="0">Select student</option>
+                                <option value="0">{{trans('admin.public.select')}}</option>
                                 @foreach($students as $key => $asset)
                                     <option value="{{$key}}" @if($key == $student->id) selected="selected" @endif>{{$asset}}</option>
                                 @endforeach
@@ -95,7 +95,7 @@
                 <td class="asset-id">{{ $no }}</td>
                 <td>
                     <select class="form-control asset-name" name="asset-name[]">
-                        <option value="0" selected="selected">Select student</option>
+                        <option value="0" selected="selected">{{trans('admin.public.select')}}</option>
                         @foreach($students as $key => $asset)
                             <option value="{{$key}}">{{$asset}}</option>
                         @endforeach
@@ -114,7 +114,7 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit(isset($model) ? trans('admin.public.update') : trans('admin.public.save'), ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
 </div>
@@ -124,12 +124,12 @@
         <div class="modal-content">
             <div class="modal-body">
                 <p>
-                    Are you sure want to delete this student?
+                    {{trans('admin.public.confirm_delete')}}
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="deleteCurrentItem()">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" onclick="deleteCurrentItem()">{{trans('admin.public.yes')}}</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('admin.public.no')}}</button>
             </div>
         </div>
     </div>

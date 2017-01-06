@@ -2,34 +2,34 @@
 
 @section('content-header')
     <h1>
-        All Energy Needs
+        {{trans('admin.public.all')}}
         &middot;
-        <small>{!! link_to_route('admin.energy_needs.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.energy_needs.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
 @section('content')
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Age</th>
-        <th>Calo</th>
-        <th>Nước</th>
-        <th>Protid</th>
-        <th>Lipid</th>
-        <th>Glucid</th>
-        <th>Cellulose</th>
-        <th>Cholesterol</th>
-        <th>Canxi</th>
-        <th>Photpho</th>
-        <th>Iron</th>
-        <th>Vitamin Caroten</th>
-        <th>Vitamin A</th>
-        <th>Vitamin B1</th>
-        <th>Vitamin B2</th>
-        <th>Vitamin PP</th>
-        <th>Vitamin C</th>
-        <th class="text-center">Action</th>
+        <th>{{trans('admin.energy_need.no')}}</th>
+        <th>{{trans('admin.energy_need.age')}}</th>
+        <th>{{trans('admin.energy_need.calo')}}</th>
+        <th>{{trans('admin.energy_need.h2o')}}</th>
+        <th>{{trans('admin.energy_need.protid')}}</th>
+        <th>{{trans('admin.energy_need.lipid')}}</th>
+        <th>{{trans('admin.energy_need.glucid')}}</th>
+        <th>{{trans('admin.energy_need.cellulose')}}</th>
+        <th>{{trans('admin.energy_need.cholesterol')}}</th>
+        <th>{{trans('admin.energy_need.calci')}}</th>
+        <th>{{trans('admin.energy_need.photpho')}}</th>
+        <th>{{trans('admin.energy_need.iron')}}</th>
+        <th>{{trans('admin.energy_need.vitamin_caroten')}}</th>
+        <th>{{trans('admin.energy_need.vitamina')}}</th>
+        <th>{{trans('admin.energy_need.vitaminb1')}}</th>
+        <th>{{trans('admin.energy_need.vitaminb2')}}</th>
+        <th>{{trans('admin.energy_need.vitaminpp')}}</th>
+        <th>{{trans('admin.energy_need.vitaminc')}}</th>
+        <th class="text-center">{{trans('admin.public.action')}}</th>
         </thead>
         <tbody>
         @foreach ($energy_needs as $energy_need)
@@ -53,7 +53,7 @@
                 <td>{!! $energy_need->vitaminpp !!}</td>
                 <td>{!! $energy_need->vitaminc !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.energy_needs.edit', $energy_need->id) !!}">Edit</a>
+                    <a href="{!! route('admin.energy_needs.edit', $energy_need->id) !!}">{{trans('admin.public.edit')}}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $energy_need, 'name' => 'energy_needs'])
                 </td>

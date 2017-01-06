@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Grades
+       {{trans('admin.public.all')}}
         &middot;
-        <small>{!! link_to_route('admin.grades.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.grades.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,10 +12,10 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th class="text-center">Action</th>
+        <th>{{trans('admin.grade.no')}}</th>
+        <th>{{trans('admin.grade.name')}}</th>
+        <th>{{trans('admin.grade.description')}}</th>
+        <th class="text-center">{{trans('admin.public.action')}}</th>
         </thead>
         <tbody>
         @foreach ($grades as $grade)
@@ -24,7 +24,7 @@
                 <td>{!! $grade->name !!}</td>
                 <td>{!! $grade->description !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.grades.edit', $grade->id) !!}">Edit</a>
+                    <a href="{!! route('admin.grades.edit', $grade->id) !!}">{{trans('admin.public.edit')}}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $grade, 'name' => 'grades'])
                 </td>

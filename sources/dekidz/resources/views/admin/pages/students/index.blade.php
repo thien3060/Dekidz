@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        {{ trans('admin.puclic.title_all') }}
+        {{ trans('admin.public.all') }}
         &middot;
-        <small>{!! link_to_route('admin.students.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.students.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -21,7 +21,7 @@
         <th>{{ trans('admin.student.mother_phone') }}</th>
         <th>{{ trans('admin.student.admission_date') }}</th>
         <th>{{ trans('admin.student.entry_card') }}</th>
-        <th class="text-center">Action</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($students as $student)
@@ -36,7 +36,7 @@
                 <td>{!! $student->admission_date !!}</td>
                 <td>{!! $student->entry_card !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.students.edit', $student->id) !!}">{{ trans('admin.public.title_edit') }}</a>
+                    <a href="{!! route('admin.students.edit', $student->id) !!}">{{ trans('admin.public.edit') }}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $student, 'name' => 'students'])
                 </td>

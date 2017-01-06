@@ -9,16 +9,16 @@
 <div class="row">
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('name', 'Name:') !!}
+            {!! Form::label('name', trans('admin.dish.name')) !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
             {!! $errors->first('name', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('type_id', 'Dish type:') !!}
+            {!! Form::label('type_id', trans('admin.dish.type_id')) !!}
             <select class="form-control type-id" name="type_id">
-                <option value="0">Select group</option>
+                <option value="0">{{trans('admin.public.select')}}</option>
                 @foreach($dishtypes as $key => $name)
                     <option value="{{$key}}" @if($key == @$model->type_id) selected="selected" @endif>{{$name}}</option>
                 @endforeach
@@ -30,7 +30,7 @@
 
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('chef', 'Chef:') !!}
+            {!! Form::label('chef', trans('admin.dish.chef')) !!}
             {!! Form::text('chef', null, ['class' => 'form-control']) !!}
             {!! $errors->first('chef', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -39,19 +39,19 @@
     <div class="col-sm-12">
         <div class="box box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title">Food list</h3>
-                <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">Add</button>
+                <h3 class="box-title">{{trans('admin.dish.list_food')}}</h3>
+                <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">{{trans('admin.public.add')}}</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body text-center">
                 <table class="table">
                     <thead>
                     <th>#</th>
-                    <th>Food Name</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Cost</th>
-                    <th class="text-center">Action</th>
+                    <th>{{trans('admin.dish.food_name')}}</th>
+                    <th>{{trans('admin.dish.quantity')}}</th>
+                    <th>{{trans('admin.dish.price')}}</th>
+                    <th>{{trans('admin.dish.cost')}}</th>
+                    <th class="text-center">{{trans('admin.public.action')}}</th>
                     </thead>
                     <tbody id="asset-list">
                     <?php $k = -1;?>
@@ -86,7 +86,7 @@
                         <td class="asset-id">{{$k + 2}}</td>
                         <td>
                             <select onchange="selectFood(this);" class="form-control asset-name" name="asset-name[]">
-                                <option value="0" selected="selected">Select food</option>
+                                <option value="0" selected="selected">{{trans('admin.public.select')}}</option>
                                 @foreach($foods as $key => $food)
                                     <option value="{{$key}}">{{$food['name']}}</option>
                                 @endforeach
@@ -108,7 +108,7 @@
                     </tbody>
                     <tbody>
                     <tr>
-                        <td colspan="4" class="text-right"><strong>Total: </strong></td>
+                        <td colspan="4" class="text-right"><strong>{{trans('admin.dish.total_cost')}} </strong></td>
                         <td colspan="2" id="total-label" class="text-left">0</td>
                         <input type="hidden" id="total-cost" name="total_cost"/>
                     </tr>
@@ -121,14 +121,14 @@
 
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('preparing_description', 'Preparing description:') !!}
+            {!! Form::label('preparing_description', trans('admin.dish.preparing_description')) !!}
             {!! Form::textarea('preparing_description', null, ['class' => 'form-control', 'rows' => '3']) !!}
             {!! $errors->first('preparing_description', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::label('cooking_description', 'Cooking description:') !!}
+            {!! Form::label('cooking_description',trans('admin.dish.cooking_description')) !!}
             {!! Form::textarea('cooking_description', null, ['class' => 'form-control', 'rows' => '3']) !!}
             {!! $errors->first('cooking_description', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -252,7 +252,7 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit(isset($model) ? trans('admin.public.update') : trans('admin.public.save'), ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
 </div>
@@ -262,12 +262,12 @@
         <div class="modal-content">
             <div class="modal-body">
                 <p>
-                    Are you sure want to delete this asset?
+                    {{trans('admin.public.confirm_delete')}}
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="deleteCurrentItem()">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" onclick="deleteCurrentItem()">{{trans('admin.public.yes')}}</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('admin.public.no')}}</button>
             </div>
         </div>
     </div>

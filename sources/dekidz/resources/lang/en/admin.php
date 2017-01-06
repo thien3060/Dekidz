@@ -122,12 +122,18 @@ return [
 		],
 	],
 	'public' => [
-		'title_add'=> 'Add',
-		'title_edit' => 'Edit',
-		'title_all' => 'All',
-		'title_Update' => 'Update',
-		'title_Save' => 'Save',
-		'title_Delete' => 'Delete',
+		'add'=> 'Add New',
+		'edit' => 'Edit',
+		'all' => 'All',
+		'update' => 'Update',
+		'save' => 'Save',
+		'delete' => 'Delete',
+		'action' => 'Action',
+		'back' => 'Back',
+		'select' => 'Select',
+		'yes' => 'Yes',
+		'no' => 'No',
+		'confirm_delete' => 'Are you sure want to delete this student?',
 	],
 	'student' => [
 		'no' => 'No',
@@ -150,7 +156,9 @@ return [
 		'admission_date'=> 'Admission Date',
 		'completion_date'=> 'Completion Date',
 		'note' => 'Note',
-		'entry_card'=> 'Entry Card'
+		'entry_card'=> 'Entry Card',
+		'man' => 'Man',
+		'woman' => 'Woman',
 	],
 	'asset' => [
 		'no' => 'No',
@@ -168,13 +176,14 @@ return [
 
 	],
 
-	'dekid_class' => [
+	'class' => [
 		'no' => 'No',
 		'name'=> 'Name',
 		'teacher_id' => 'Teacher',
 		'room_number' => 'Room Number',
 		'grade_id'=> 'Grade',
-		'school_year' => 'School Year'
+		'school_year' => 'School Year',
+		'student_list' => 'List Of Student',
 	],
 
 	'department' => [
@@ -208,13 +217,19 @@ return [
 		'vitaminb1'=> 'Vitamin B1',
 		'vitaminb2'=> 'Vitamin B2',
 		'vitaminpp' => 'Vitamin PP',
-		'vitaminc'=> 'Vitamin C'
+		'vitaminc'=> 'Vitamin C',
+		'cost' => 'Cost',
+		'food_name' => 'Food Name',
+		'quantity' => 'Quantity',
+		'price' => 'Price',
+		'list_food' => 'List Of Food',
 
 	],
 
 	'dish_type' => [
 		'no' => 'No',
-		'name'=> 'Name'
+		'name'=> 'Name',
+		'code'=> 'Code',
 	],
 
 	'energy_need' => [
@@ -242,15 +257,21 @@ return [
 	'export' => [
 		'no' => 'No',
 		'date'=> 'Date',
+		'name' => 'Name',
 		'is_food' => 'Is Food',
-		'created_by' => 'Created By'
+		'quantity' => 'Quantity',
+		'created_by' => 'Created By',
+		'list_food' => 'List Of Food',
 	],
 
 	'export_asset' => [
 		'no' => 'No',
 		'date' => 'Date',
+		'name' => 'Name',
 		'is_food' => 'Is Food',
-		'created_by' => 'Created By'
+		'quantity' => 'Quantity',
+		'created_by' => 'Created By',
+		'list_asset' => 'List Of Asset',
 	],
 
 	'food' => [
@@ -283,7 +304,8 @@ return [
 
 	'food_group' => [
 		'no' => 'No',
-		'name' => 'Name'
+		'name' => 'Name',
+		'code' => 'Code',
 	],
 
 	'food_set' => [
@@ -309,7 +331,7 @@ return [
 		'vitaminb2'=> 'Vitamin B2',
 		'vitaminpp' => 'Vitamin PP',
 		'vitaminc'=> 'Vitamin C',
-		'total_cost'
+		'total_cost'=> 'Total Cost'
 	],
 
 	'food_set_type' => [

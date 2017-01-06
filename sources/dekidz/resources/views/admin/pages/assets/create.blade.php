@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Add New Asset
+        {{ trans('admin.public.add') }}
         &middot;
-        <small>{!! link_to_route('admin.assets.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.assets.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

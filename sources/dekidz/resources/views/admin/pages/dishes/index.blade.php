@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Dishes
+        {{trans('admin.public.all')}}
         &middot;
-        <small>{!! link_to_route('admin.dishes.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.dishes.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,13 +12,13 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Name</th>
-        <th>Dish type</th>
-        <th>Chef</th>
-        <th>Total cost</th>
-        <th>Prepare Description</th>
-        <th>Cooking Description</th>
+        <th>{{trans('admin.dish.no')}}</th>
+        <th>{{trans('admin.dish.name')}}</th>
+        <th>{{trans('admin.dish.type_id')}}</th>
+        <th>{{trans('admin.dish.chef')}}</th>
+        <th>{{trans('admin.dish.total_cost')}}</th>
+        <th>{{trans('admin.dish.preparing_description')}}</th>
+        <th>{{trans('admin.dish.cooking_description')}}</th>
 
         {{--<th>Protid DV</th>--}}
         {{--<th>Protid TV</th>--}}
@@ -34,7 +34,7 @@
         {{--<th>Vatamin PP</th>--}}
         {{--<th>Vatamin C</th>--}}
 
-        <th class="text-center">Action</th>
+        <th class="text-center">{{trans('admin.public.action')}}</th>
         </thead>
         <tbody>
         @foreach ($dishes as $dish)
@@ -62,7 +62,7 @@
                 {{--<td>{!! $dish->vitaminpp !!}</td>--}}
                 {{--<td>{!! $dish->vitaminc !!}</td>--}}
                 <td class="text-center">
-                    <a href="{!! route('admin.dishes.edit', $dish->id) !!}">Edit</a>
+                    <a href="{!! route('admin.dishes.edit', $dish->id) !!}">{{trans('admin.public.edit')}}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $dish, 'name' => 'dishes'])
                 </td>

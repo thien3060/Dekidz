@@ -2,22 +2,22 @@
 
 @section('content-header')
     <h1>
-        All classes
+        {{ trans('admin.public.all') }}
         &middot;
-        <small>{!! link_to_route('admin.classes.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.classes.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
 @section('content')
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Name</th>
-        <th>Grade</th>
-        <th>Teacher name</th>
-        <th>Room number</th>
-        <th>School Year</th>
-        <th class="text-center">Action</th>
+        <th>{{trans('admin.class.no')}}</th>
+        <th>{{trans('admin.class.name')}}</th>
+        <th>{{trans('admin.class.grade_id')}}</th>
+        <th>{{trans('admin.class.teacher_id')}}</th>
+        <th>{{trans('admin.class.room_number')}}</th>
+        <th>{{trans('admin.class.school_year')}}</th>
+        <th class="text-center">{{trans('admin.public.action')}}</th>
         </thead>
         <tbody>
         @foreach ($classes as $class)
@@ -29,7 +29,7 @@
                 <td>{!! $class->room_number !!}</td>
                 <td>{!! $class->school_year !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.classes.edit', $class->id) !!}">Edit</a>
+                    <a href="{!! route('admin.classes.edit', $class->id) !!}">{{trans('admin.public.edit')}}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $class, 'name' => 'classes'])
                 </td>

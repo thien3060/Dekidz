@@ -2,19 +2,19 @@
 
 @section('content-header')
     <h1>
-        All foodgroups
+        {{trans('admin.public.all')}}
         &middot;
-        <small>{!! link_to_route('admin.foodgroups.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.foodgroups.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
 @section('content')
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Code</th>
-        <th>Name</th>
-        <th class="text-center">Action</th>
+        <th>{{trans('admin.food_group.no')}}</th>
+        <th>{{trans('admin.food_group.code')}}</th>
+        <th>{{trans('admin.food_group.name')}}</th>
+        <th class="text-center">{{trans('admin.public.action')}}</th>
         </thead>
         <tbody>
         @foreach ($foodgroups as $foodgroup)
@@ -23,7 +23,7 @@
                 <td>{!! $foodgroup->code !!}</td>
                 <td>{!! $foodgroup->name !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.foodgroups.edit', $foodgroup->id) !!}">Edit</a>
+                    <a href="{!! route('admin.foodgroups.edit', $foodgroup->id) !!}">{{trans('admin.public.edit')}}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $foodgroup, 'name' => 'foodgroups'])
                 </td>

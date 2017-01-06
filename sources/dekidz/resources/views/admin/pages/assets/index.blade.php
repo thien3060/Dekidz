@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All assets
+        {{trans('admin.public.all')}}
         &middot;
-        <small>{!! link_to_route('admin.assets.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.assets.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -27,7 +27,7 @@
                 <td>{!! $asset->maintenance_mode !!}</td>
                 <td>{!! $asset->unit !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.assets.edit', $asset->id) !!}">Edit</a>
+                    <a href="{!! route('admin.assets.edit', $asset->id) !!}">{{trans('admin.public.edit')}}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $asset, 'name' => 'assets'])
                 </td>

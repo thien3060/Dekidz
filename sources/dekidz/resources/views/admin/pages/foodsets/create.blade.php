@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Add Food Set
+       {{trans('admin.public.add')}}
         &middot;
-        <small>{!! link_to_route('admin.foodsets.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.foodsets.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

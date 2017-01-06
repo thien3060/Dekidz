@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Foods
+        {{trans('admin.public.all')}}
         &middot;
-        <small>{!! link_to_route('admin.foods.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.foods.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,15 +12,15 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Name</th>
-        <th>Food Group</th>
-        <th>Animal Source</th>
-        <th>Quantity</th>
-        <th>Unit</th>
-        <th>Price</th>
+        <th>{{trans('admin.food.no')}}</th>
+        <th>{{trans('admin.food.name')}}</th>
+        <th>{{trans('admin.food.food_group_id')}}</th>
+        <th>{{trans('admin.food.animal_source')}}</th>
+        <th>{{trans('admin.food.quantity')}}</th>
+        <th>{{trans('admin.food.unit')}}</th>
+        <th>{{trans('admin.food.price')}}</th>
 
-        <th class="text-center">Action</th>
+        <th class="text-center">{{trans('admin.public.action')}}</th>
         </thead>
         <tbody>
         @foreach ($foods as $food)
@@ -33,7 +33,7 @@
                 <td>{!! $food->unit !!}</td>
                 <td>{!! $food->price !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.foods.edit', $food->id) !!}">Edit</a>
+                    <a href="{!! route('admin.foods.edit', $food->id) !!}">{{trans('admin.public.edit')}}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $food, 'name' => 'foods'])
                 </td>

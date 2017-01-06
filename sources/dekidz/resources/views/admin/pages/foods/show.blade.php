@@ -4,7 +4,7 @@
     <h1>
         Detail Info
         &middot;
-        <small>{!! link_to_route('admin.foods.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.foods.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 
