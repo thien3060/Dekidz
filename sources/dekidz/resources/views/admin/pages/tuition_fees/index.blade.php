@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Tuition Fees
+        {{ trans('admin.menus.tuition_fee.all') }}
         &middot;
-        <small>{!! link_to_route('admin.tuition_fees.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.tuition_fees.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,14 +12,14 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Student</th>
-        <th>Dept</th>
-        <th>Paid</th>
-        <th>Year</th>
-        <th>Month</th>
+        <th>{{ trans('admin.tuition_fee.no') }}</th>
+        <th>{{ trans('admin.tuition_fee.student_id') }}</th>
+        <th>{{ trans('admin.tuition_fee.debt') }}</th>
+        <th>{{ trans('admin.tuition_fee.paid') }}</th>
+        <th>{{ trans('admin.tuition_fee.year') }}</th>
+        <th>{{ trans('admin.tuition_fee.month') }}</th>
 
-        <th class="text-center">Action</th>
+        <th class="text-center">{{  trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($tuition_fees as $tuition_fee)
@@ -31,7 +31,7 @@
                 <td>{!! $tuition_fee->year !!}</td>
                 <td>{!! $tuition_fee->month !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.tuition_fees.edit', $tuition_fee->id) !!}">Edit</a>
+                    <a href="{!! route('admin.tuition_fees.edit', $tuition_fee->id) !!}">{{  trans('admin.public.edit') }}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $tuition_fee, 'name' => 'tuition_fees'])
                 </td>

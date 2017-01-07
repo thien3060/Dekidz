@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Edit
+        {{ trans('admin.menus.tuition_fee.edit') }}
         &middot;
-        <small>{!! link_to_route('admin.tuition_fees.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.tuition_fees.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

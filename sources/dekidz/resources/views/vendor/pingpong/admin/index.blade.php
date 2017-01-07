@@ -2,8 +2,8 @@
 
 @section('content-header')
 	<h1>
-		Dashboard
-		<small>Control panel</small>
+		{{ trans('admin.menus.dashboard.title') }}
+		<small>{{ trans('admin.dashboard.control') }}</small>
 	</h1>
 @stop
 
@@ -20,14 +20,14 @@
 				</h3>
 
 				<p>
-					All Students
+					{{ trans('admin.dashboard.student') }}
 				</p>
 			</div>
 			<div class="icon">
 				<i class="fa fa-users"></i>
 			</div>
 			<a href="{!! route('admin.students.index') !!}" class="small-box-footer">
-				More info <i class="fa fa-arrow-circle-right"></i>
+				{{ trans('admin.dashboard.more_info') }} <i class="fa fa-arrow-circle-right"></i>
 			</a>
 		</div>
 	</div>
@@ -41,14 +41,14 @@
 				</h3>
 
 				<p>
-					All Articles
+					{{ trans('admin.dashboard.article') }}
 				</p>
 			</div>
 			<div class="icon">
 				<i class="fa fa-book"></i>
 			</div>
 			<a href="{!! route('admin.articles.index') !!}" class="small-box-footer">
-				More info <i class="fa fa-arrow-circle-right"></i>
+				{{ trans('admin.dashboard.more_info') }} <i class="fa fa-arrow-circle-right"></i>
 			</a>
 		</div>
 	</div>
@@ -62,14 +62,14 @@
 				</h3>
 
 				<p>
-					All Staffs
+					{{ trans('admin.dashboard.staff') }}
 				</p>
 			</div>
 			<div class="icon">
 				<i class="fa fa-flag"></i>
 			</div>
 			<a href="{!! route('admin.staffs.index') !!}" class="small-box-footer">
-				More info <i class="fa fa-arrow-circle-right"></i>
+				{{ trans('admin.dashboard.more_info') }} <i class="fa fa-arrow-circle-right"></i>
 			</a>
 		</div>
 	</div>
@@ -83,14 +83,14 @@
 				</h3>
 
 				<p>
-					All Users
+					{{ trans('admin.dashboard.user') }}
 				</p>
 			</div>
 			<div class="icon">
 				<i class="ion ion-pie-graph"></i>
 			</div>
 			<a href="!! route('admin.users.index') !!}" class="small-box-footer">
-				More info <i class="fa fa-arrow-circle-right"></i>
+				{{ trans('admin.dashboard.more_info') }} <i class="fa fa-arrow-circle-right"></i>
 			</a>
 		</div>
 	</div>

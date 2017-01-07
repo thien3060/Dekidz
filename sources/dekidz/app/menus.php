@@ -6,7 +6,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     $menu->enableOrdering();
     $menu->setPresenter('Pingpong\Admin\Presenters\SidebarMenuPresenter');
     //Dashboard
-    $menu->route('admin.home', trans('admin.menus.dashboard'), [], 0, ['icon' => 'fa fa-dashboard']);
+    $menu->route('admin.home', trans('admin.menus.dashboard.title'), [], 0, ['icon' => 'fa fa-dashboard']);
 
     //Students
     $menu->dropdown(trans('admin.menus.students.title'), function ($sub) {

@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Add New Rem In
+        {{ trans('admin.rem_in.create') }}
         &middot;
-        <small>{!! link_to_route('admin.rem_ins.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.rem_ins.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

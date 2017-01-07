@@ -7,9 +7,9 @@
 <div class="row">
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('student_id', 'Student:') !!}
+            {!! Form::label('student_id', trans('admin.tuition_fee.student_id').':') !!}
             <select class="form-control student-id" name="student_id">
-                <option value="0">Select student</option>
+                <option value="0">{{ trans('admin.tuition_fee.select') }}</option>
                 @foreach($students as $key => $student)
                     <option value="{{$key}}" @if($key == @$model->student_id) selected="selected" @endif>{{$student}}</option>
                 @endforeach
@@ -20,28 +20,28 @@
 
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('debt', 'Dept:') !!}
+            {!! Form::label('debt', trans('admin.tuition_fee.debt').':') !!}
             {!! Form::text('debt', null, ['class' => 'form-control']) !!}
             {!! $errors->first('debt', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('paid', 'Paid:') !!}
+            {!! Form::label('paid', trans('admin.tuition_fee.paid').':') !!}
             {!! Form::text('paid', null, ['class' => 'form-control']) !!}
             {!! $errors->first('paid', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('year', 'Year:') !!}
+            {!! Form::label('year', trans('admin.tuition_fee.year').':') !!}
             {!! Form::text('year', null, ['class' => 'form-control']) !!}
             {!! $errors->first('year', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('month', 'Month:') !!}
+            {!! Form::label('month', trans('admin.tuition_fee.month').':') !!}
             {!! Form::text('month', null, ['class' => 'form-control']) !!}
             {!! $errors->first('month', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -51,7 +51,7 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="form-group">
-            {!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit(isset($model) ? trans('admin.public.update') : trans('admin.public.save'), ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
 </div>

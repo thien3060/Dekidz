@@ -6,12 +6,12 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('reason', 'Reason:') !!}
+            {!! Form::label('reason', trans('admin.rem_in.reason').':') !!}
             {!! Form::text('reason', null, ['class' => 'form-control']) !!}
             {!! $errors->first('reason', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('date', 'Date:') !!}
+            {!! Form::label('date', trans('admin.rem_in.date').':') !!}
             <div class="input-group date">
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
@@ -21,22 +21,22 @@
             {!! $errors->first('date', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('received', 'Received:') !!}
+            {!! Form::label('received', trans('admin.rem_in.received').':') !!}
             {!! Form::text('received', null, ['class' => 'form-control']) !!}
             {!! $errors->first('received', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('debt', 'Dept:') !!}
+            {!! Form::label('debt', trans('admin.rem_in.debt').':') !!}
             {!! Form::text('debt', null, ['class' => 'form-control']) !!}
             {!! $errors->first('debt', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('total', 'Total:') !!}
+            {!! Form::label('total', trans('admin.rem_in.total').':') !!}
             {!! Form::text('total', null, ['class' => 'form-control']) !!}
             {!! $errors->first('total', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('note', 'Note:') !!}
+            {!! Form::label('note', trans('admin.rem_in.note').':') !!}
             {!! Form::textarea('note', null, ['class' => 'form-control', 'id' => 'ckeditor']) !!}
             {!! $errors->first('note', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -45,7 +45,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit(isset($model) ? trans('admin.public.update') : trans('admin.public.save'), ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
 </div>

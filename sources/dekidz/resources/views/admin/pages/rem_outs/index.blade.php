@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Rem Out
+        {{ trans('admin.rem_out.all') }}
         &middot;
-        <small>{!! link_to_route('admin.rem_outs.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.rem_outs.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,14 +12,14 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Reason</th>
-        <th>Code</th>
-        <th>Date</th>
-        <th>Paid</th>
-        <th>Debt</th>
-        <th>Total</th>
-        <th class="text-center">Action</th>
+        <th>{{ trans('admin.rem_out.no') }}</th>
+        <th>{{ trans('admin.rem_out.reason') }}</th>
+        <th>{{ trans('admin.rem_out.code') }}</th>
+        <th>{{ trans('admin.rem_out.date') }}</th>
+        <th>{{ trans('admin.rem_out.paid') }}</th>
+        <th>{{ trans('admin.rem_out.debt') }}</th>
+        <th>{{ trans('admin.rem_out.total') }}</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($rem_outs as $rem_out)
@@ -32,7 +32,7 @@
                 <td>{!! $rem_out->debt !!}</td>
                 <td>{!! $rem_out->total !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.rem_outs.edit', $rem_out->id) !!}">Edit</a>
+                    <a href="{!! route('admin.rem_outs.edit', $rem_out->id) !!}">{{ trans('admin.public.edit') }}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $rem_out, 'name' => 'rem_outs'])
                 </td>

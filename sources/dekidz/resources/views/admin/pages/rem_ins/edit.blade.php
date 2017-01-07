@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Edit
+        {{ trans('admin.rem_in.edit') }}
         &middot;
-        <small>{!! link_to_route('admin.rem_ins.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.rem_ins.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

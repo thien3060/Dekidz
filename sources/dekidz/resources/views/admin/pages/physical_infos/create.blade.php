@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Add New Physical Info
+        {{ trans('admin.menus.physical_infos.create') }}
         &middot;
-        <small>{!! link_to_route('admin.physical_infos.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.physical_infos.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

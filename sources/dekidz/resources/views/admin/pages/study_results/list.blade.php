@@ -1,8 +1,8 @@
 <table class="table">
     <thead>
-    <th width="5%">No</th>
-    <th>Student Name</th>
-    <th>Points</th>
+    <th width="5%">{{ trans('admin.study_result.no') }}</th>
+    <th>{{ trans('admin.study_result.name') }}</th>
+    <th>{{ trans('admin.study_result.point') }}</th>
     </thead>
     <tbody>
     <?php $no = 1 ?>

@@ -1,5 +1,5 @@
 <a data-toggle="modal" href="#modal-delete-{!! $data->id !!}">
-  Delete
+  {{ trans('admin.public.delete') }}
 </a>
 <div id="modal-delete-{!! $data->id !!}" class="modal text-left fade">
   <div class="modal-dialog">

@@ -2,7 +2,9 @@
 
 return [
 	'menus' => [
-		'dashboard' => 'Trang Chủ',
+		'dashboard' => [
+			'title' => 'Trang Chủ',
+		],
 		'students' => [
 			'title' => 'Trẻ',
 			'all' => 'Trẻ',
@@ -15,11 +17,17 @@ return [
 			'all' => 'Khối',
 			'create' => 'Tạo'
 		],
-
+		'tuition_fee' => [
+			'title' => 'Học Phí',
+			'all' => 'Học Phí',
+			'create' => 'Tạo Thông Tin Học Phí',
+			'edit' => 'Sửa Thông Tin  Học Phí'
+		],
 		'physical_infos' => [
 			'title' => 'Thông Tin Thể Chất Của Trẻ',
 			'all' => 'Thông Tin Thể Chất',
-			'create' => 'Tạo'
+			'create' => 'Tạo Thông Tin Thể Chất',
+			'edit' => 'Sửa Thông tin Thể Chất'
 		],
 		'classes' => [
 			'title' => 'Lớp',
@@ -133,7 +141,15 @@ return [
 		'select' => 'Chọn',
 		'yes' => 'Có',
 		'no' => 'Không',
-		'confirm_delete' => 'Bạn Có Muốn Xóa ?',
+		'confirm_delete' => 'Bạn Có Muốn Xóa ?'
+	],
+	'dashboard' => [
+		'control' => 'Bảng kiểm soát',
+		'student' => 'Tất cả trẻ',
+		'article' => 'Tất cả bài viết',
+		'staff' => 'Tất cả nhân viên',
+		'user' => 'Tất cả người dùng',
+		'more_info' => 'Xem thêm'
 	],
 	'student' => [
 		'no' => 'STT',
@@ -352,7 +368,14 @@ return [
 		'height' => 'Chiều Cao',
 		'weight' => 'Cân Nặng',
 		'gender' => 'Giới Tính',
-		'month' => 'Tháng Tuổi'
+		'month' => 'Tháng Tuổi',
+		'height_chart' => 'Biểu Đồ Chiều Cao',
+		'weight_chart' => 'Biểu Đồ Cân Nặng',
+		'student' => 'Trẻ',
+		'select' => 'Chọn Trẻ',
+		'send_email' => 'Gửi Email',
+		'physical_info' => 'Thông Tin Thể Chất Của Trẻ',
+		'standard_index' => 'Chỉ Số Chuẩn'
 	],
 
 	'import' => [
@@ -394,7 +417,8 @@ return [
 		'age' => 'Tuổi',
 		'height' => 'Chiều Cao',
 		'weight' => 'Cân Nặng',
-		'BMI' => 'BMI'
+		'BMI' => 'BMI',
+		'select' => 'Chọn trẻ'
 	],
 
 	'rem_in' => [
@@ -405,7 +429,10 @@ return [
 		"received" => 'Số Tiền Nhận Được',
 		"debt" => 'Số Tiền Nợ',
 		"total" => 'Tổng Giá Trị',
-		"note" => 'Lưu Ý'
+		"note" => 'Lưu Ý',
+		'all' => 'Phiếu Thu',
+		'create' => 'Tạo Phiếu Thu',
+		'edit' => 'Sửa Phiếu Thu'
 	],
 
 	'rem_out' => [
@@ -415,7 +442,10 @@ return [
 		"date" => 'Ngày Lập',
 		"paid" => 'Số Tiền TRả',
 		"debt" => 'Số Tiền Nợ',
-		"total" => 'Tổng Giá Trị'
+		"total" => 'Tổng Giá Trị',
+		'all' => 'Phiếu Chi',
+		'create' => 'Tạo Phiếu Chi',
+		'edit' => 'Sửa Phiếu Chi'
 	],
 
 	'salary' => [
@@ -459,7 +489,13 @@ return [
 		'no' => 'STT',
 		'class_id' => 'Lớp',
 		'semester' => 'Học Kì',
-		'lesson_id' => 'Môn Học'
+		'lesson_id' => 'Môn Học',
+		'all' => 'Kết Quả Học Tập',
+		'list' => 'Danh Sách Trẻ',
+		'name' => 'Tên Trẻ',
+		'point' => 'Điểm số',
+		'select_class' => 'Chọn Lớp',
+		'select_lesson' => 'Chọn Buổi Học'
 	],
 
 	'subject_topic' => [
@@ -490,7 +526,8 @@ return [
 		'debt' => 'Nợ',
 		'paid' => 'Trả',
 		'year' => 'Năm',
-		'month' => 'Tháng'
+		'month' => 'Tháng',
+		'select' => 'Chọn trẻ'
 	],
 
 ];

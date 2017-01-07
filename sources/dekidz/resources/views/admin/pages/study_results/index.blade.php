@@ -11,9 +11,9 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="form-group">
-                {!! Form::label('class_id', 'Class:') !!}
+                {!! Form::label('class_id', trans('admin.study_result.class_id').':') !!}
                 <select class="form-control gender" name="class_id" id="class">
-                    <option value="0">Select class</option>
+                    <option value="0">{{ trans('admin.study_result.select_class') }}</option>
                     @foreach($classes as $id => $name)
                         <option value="{{ $id }}" @if(@$model['class_id'] == $id)  selected="selected" @endif>{{ $name }}</option>
                     @endforeach
@@ -23,7 +23,7 @@
         </div>
         <div class="col-sm-4">
             <div class="form-group">
-                {!! Form::label('semester', 'Semester:') !!}
+                {!! Form::label('semester', trans('admin.study_result.semester').':') !!}
                 <select class="form-control gender" name="semester" id="semester">
                     <option value="1" @if(@$model['semester'] == 1)  selected="selected" @endif>1</option>
                     <option value="2" @if(@$model['semester'] == 2)  selected="selected" @endif>2</option>
@@ -33,9 +33,9 @@
         </div>
         <div class="col-sm-4">
             <div class="form-group">
-                {!! Form::label('lesson_id', 'Lesson:') !!}
+                {!! Form::label('lesson_id', trans('admin.study_result.lesson_id').':') !!}
                 <select class="form-control gender" name="lesson_id" id="lesson">
-                    <option value="0">Select Lesson</option>
+                    <option value="0">{{ trans('admin.study_result.select_lesson') }}</option>
                 </select>
                 {!! $errors->first('lesson_id', '<div class="text-danger">:message</div>') !!}
             </div>
@@ -45,7 +45,7 @@
         <div class="col-sm-8">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Student list</h3>
+                    <h3 class="box-title">{{ trans('admin.study_result.list') }}</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body" id="student-list">
@@ -56,7 +56,7 @@
     </div>
 
     <div class="form-group">
-        {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit(trans('admin.public.save'), ['class' => 'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
 @stop

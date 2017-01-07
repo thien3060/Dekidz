@@ -2,15 +2,15 @@
     <section class="col-lg-6 connectedSortable" id="weight-chart-wrapper">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs pull-right">
-                <li class="pull-left header"><i class="fa fa-inbox"></i>Student's physical info</li>
+                <li class="pull-left header"><i class="fa fa-inbox"></i>{{ trans('admin.health_stadard_index.physical_info') }}</li>
             </ul>
             <div class="tab-content no-padding">
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Month</th>
-                        <th>Height</th>
-                        <th>Weight</th>
+                        <th>{{ trans('admin.health_stadard_index.month') }}</th>
+                        <th>{{ trans('admin.health_stadard_index.height') }}</th>
+                        <th>{{ trans('admin.health_stadard_index.weight') }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -29,15 +29,15 @@
     <section class="col-lg-6 connectedSortable" id="weight-chart-wrapper">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs pull-right">
-                <li class="pull-left header"><i class="fa fa-inbox"></i>Standard index</li>
+                <li class="pull-left header"><i class="fa fa-inbox"></i>{{ trans('admin.health_stadard_index.standard_index') }}</li>
             </ul>
             <div class="tab-content no-padding">
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Month</th>
-                        <th>Height</th>
-                        <th>Weight</th>
+                        <th>{{ trans('admin.health_stadard_index.month') }}</th>
+                        <th>{{ trans('admin.health_stadard_index.height') }}</th>
+                        <th>{{ trans('admin.health_stadard_index.weight') }}</th>
                     </tr>
                     </thead>
                     <tbody>

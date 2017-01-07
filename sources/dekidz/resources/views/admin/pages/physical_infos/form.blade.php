@@ -6,9 +6,9 @@
 <div class="row">
     <div class="col-sm-4">
             <div class="form-group">
-                {!! Form::label('student_id', 'Student:') !!}
+                {!! Form::label('student_id', trans('admin.physical_info.student_id').':') !!}
                 <select class="form-control student-id" name="student_id">
-                    <option value="0">Select student</option>
+                    <option value="0">{{ trans('admin.physical_info.select') }}</option>
                     @foreach($student_ids as $key => $group)
                         <option value="{{$key}}" @if($key == @$model->student_id) selected="selected" @endif>{{$group}}</option>
                     @endforeach
@@ -18,28 +18,28 @@
     </div>
     <div class="col-sm-4">
             <div class="form-group">
-                {!! Form::label('age', 'Age:') !!}
+                {!! Form::label('age', trans('admin.physical_info.age').':') !!}
                 {!! Form::text('age', null, ['class' => 'form-control']) !!}
                 {!! $errors->first('age', '<div class="text-danger">:message</div>') !!}
             </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('height', 'Height:') !!}
+            {!! Form::label('height', trans('admin.physical_info.height').':') !!}
             {!! Form::text('height', null, ['class' => 'form-control']) !!}
             {!! $errors->first('height', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('weight', 'Weight:') !!}
+            {!! Form::label('weight', trans('admin.physical_info.weight').':') !!}
             {!! Form::text('weight', null, ['class' => 'form-control']) !!}
             {!! $errors->first('weight', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
-            {!! Form::label('BMI', 'BMI:') !!}
+            {!! Form::label('BMI', trans('admin.physical_info.BMI').':') !!}
             {!! Form::text('BMI', null, ['class' => 'form-control', 'readonly' => 'true']) !!}
             {!! $errors->first('BMI', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -48,7 +48,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit(isset($model) ? trans('admin.public.update') : trans('admin.public.save'), ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
 </div>
