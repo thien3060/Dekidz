@@ -11,12 +11,12 @@
 @section('content')
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Maintenance mode</th>
-        <th>Unit</th>
-        <th class="text-center">Action</th>
+        <th>{{ trans('admin.asset.no') }}</th>
+        <th>{{ trans('admin.asset.name') }}</th>
+        <th>{{ trans('admin.asset.quantity') }}</th>
+        <th>{{ trans('admin.asset.maintenance_mode') }}</th>
+        <th>{{ trans('admin.asset.unit') }}</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($assets as $asset)

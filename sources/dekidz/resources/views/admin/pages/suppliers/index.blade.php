@@ -2,22 +2,22 @@
 
 @section('content-header')
     <h1>
-        All suppliers
+        {{ trans('admin.menus.repository.suppliers.all') }}
         &middot;
-        <small>{!! link_to_route('admin.suppliers.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.suppliers.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
 @section('content')
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Product Type</th>
-        <th class="text-center">Action</th>
+        <th>{{ trans('admin.supplier.no') }}</th>
+        <th>{{ trans('admin.supplier.name') }}</th>
+        <th>{{ trans('admin.supplier.type') }}</th>
+        <th>{{ trans('admin.supplier.email') }}</th>
+        <th>{{ trans('admin.supplier.phone') }}</th>
+        <th>{{ trans('admin.supplier.product_type') }}</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($suppliers as $supplier)
@@ -29,7 +29,7 @@
                 <td>{!! $supplier->phone !!}</td>
                 <td>{!! $supplier->product_type !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.suppliers.edit', $supplier->id) !!}">Edit</a>
+                    <a href="{!! route('admin.suppliers.edit', $supplier->id) !!}">{{ trans('admin.public.edit') }}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $supplier, 'name' => 'suppliers'])
                 </td>

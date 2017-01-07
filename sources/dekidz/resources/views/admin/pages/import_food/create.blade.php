@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Add Import
+        {{ trans('admin.import_food.create') }}
         &middot;
-        <small>{!! link_to_route('admin.import_food.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.import_food.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

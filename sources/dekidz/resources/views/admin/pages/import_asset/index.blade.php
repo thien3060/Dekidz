@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Asset Imports
+        {{ trans('admin.import_asset.all') }}
         &middot;
-        <small>{!! link_to_route('admin.import_asset.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.import_asset.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,13 +12,11 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Import Date</th>
-        <th>Cost</th>
-        <th>Created By</th>
-        {{--<th>Created At</th>--}}
-        {{--<th>Updated At</th>--}}
-        <th class="text-center">Action</th>
+        <th>{{ trans('admin.import_asset.no') }}</th>
+        <th>{{ trans('admin.import_asset.date') }}</th>
+        <th>{{ trans('admin.import_asset.cost') }}</th>
+        <th>{{ trans('admin.import_asset.created_by') }}</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($imports as $import)

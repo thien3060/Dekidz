@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Edit
+        {{ trans('admin.import_asset.edit') }}
         &middot;
-        <small>{!! link_to_route('admin.import_asset.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.import_asset.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

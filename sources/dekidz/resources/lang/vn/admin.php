@@ -50,7 +50,8 @@ return [
 			'suppliers' => [
 				'title' => 'Nhà Cung Cấp',
 				'all' => 'Nhà Cung Cấp',
-				'create' => 'Tạo',
+				'create' => 'Tạo Nhà Cung Cấp',
+				'edit' => 'Sửa Nhà Cung Cấp',
 			],
 			'import' => [
 				'food' => 'Phiếu Nhập Thực Phẩm',
@@ -378,12 +379,37 @@ return [
 		'standard_index' => 'Chỉ Số Chuẩn'
 	],
 
-	'import' => [
+	'import_food' => [
 		'no' => 'STT',
 		'date' => 'Ngày',
+		'name' => 'Tên Thực Phẩm',
 		'total_cost' => 'Tổng Giá Trị',
 		'is_food' => 'Là Thực Phẩm',
-		'created_by' => 'Tạo Bởi'
+		'created_by' => 'Tạo Bởi',
+		'all' => 'Nhập Thực Phẩm',
+		'create' => 'Nhập Thực Phẩm Mới',
+		'list' => 'Danh Sách Thực Phẩm',
+		'quantity' => 'Số Lượng',
+		'price' => 'Giá',
+		'cost' => 'Thành Tiền',
+		'total' => 'Tổng Cộng',
+		'select' => 'Chọn Thực Phẩm'
+	],
+
+	'import_asset' => [
+		'no' => 'STT',
+		'date' => 'Ngày',
+		'name' => 'Tên CSVC',
+		'total_cost' => 'Tổng Giá Trị',
+		'created_by' => 'Tạo Bởi',
+		'all' => 'Nhập CSVC',
+		'create' => 'Nhập CSVC Mới',
+		'list' => 'Danh Sách CSVC',
+		'quantity' => 'Số Lượng',
+		'price' => 'Giá',
+		'cost' => 'Thành Tiền',
+		'total' => 'Tổng Cộng',
+		'select' => 'Chọn CSVC'
 	],
 
 	'lesson' => [
