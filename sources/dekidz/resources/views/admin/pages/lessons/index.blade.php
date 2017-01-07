@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Lessons
+        {{ trans('admin.lesson.all') }}
         &middot;
-        <small>{!! link_to_route('admin.lessons.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.lessons.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,15 +12,15 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Subject Topic</th>
-        <th>Lesson name</th>
-        <th>Lesson goal</th>
-        <th>Kid activity</th>
-        <th>Teach activity</th>
-        <th>Author</th>
+        <th>{{ trans('admin.lesson.no') }}</th>
+        <th>{{ trans('admin.lesson.subject_topic_id') }}</th>
+        <th>{{ trans('admin.lesson.lesson_name') }}</th>
+        <th>{{ trans('admin.lesson.lesson_goal') }}</th>
+        <th>{{ trans('admin.lesson.teach_activity') }}</th>
+        <th>{{ trans('admin.lesson.kid_activity') }}</th>
+        <th>{{ trans('admin.lesson.author') }}</th>
 
-        <th class="text-center">Action</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($lessons as $lesson)
@@ -33,7 +33,7 @@
                 <td>{!! $lesson->kid_activity !!}</td>
                 <td>{!! $lesson->author !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.lessons.edit', $lesson->id) !!}">Edit</a>
+                    <a href="{!! route('admin.lessons.edit', $lesson->id) !!}">{{ trans('admin.public.edit') }}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $lesson, 'name' => 'lessons'])
                 </td>

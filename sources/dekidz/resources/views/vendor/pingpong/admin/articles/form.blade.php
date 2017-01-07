@@ -12,18 +12,18 @@
 	@endif
 @endif
 	<div class="form-group">
-		{!! Form::label('title', 'Title:') !!}
+		{!! Form::label('title', trans('admin.article.title').':') !!}
 		{!! Form::text('title', null, ['class' => 'form-control']) !!}
 		{!! $errors->first('title', '<div class="text-danger">:message</div>') !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('slug', 'Slug:') !!}
+		{!! Form::label('slug', trans('admin.article.slug').':') !!}
 		{!! Form::text('slug', null, ['class' => 'form-control']) !!}
 		{!! $errors->first('slug', '<div class="text-danger">:message</div>') !!}
 	</div>
 	@if(! isOnPages())
 	<div class="form-group">
-		{!! Form::label('category_id', 'Category:') !!}
+		{!! Form::label('category_id', trans('admin.article.category').':') !!}
 		{!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
 		{!! $errors->first('category_id', '<div class="text-danger">:message</div>') !!}
 	</div>
@@ -31,17 +31,17 @@
 	{!! Form::hidden('type', 'page') !!}
 	@endif
 	<div class="form-group">
-		{!! Form::label('description', 'Description:') !!}
+		{!! Form::label('description', trans('admin.article.description').':') !!}
 		{!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 		{!! $errors->first('description', '<div class="text-danger">:message</div>') !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('body', 'Body:') !!}
+		{!! Form::label('body', trans('admin.article.body').':') !!}
 		{!! Form::textarea('body', null, ['class' => 'form-control', 'id' => 'ckeditor']) !!}
 		{!! $errors->first('body', '<div class="text-danger">:message</div>') !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('image', 'Image:') !!}
+		{!! Form::label('image', trans('admin.article.image').':') !!}
 		{!! Form::file('image', ['class' => 'form-control']) !!}
 		{!! $errors->first('image', '<div class="text-danger">:message</div>') !!}
 	</div>
@@ -53,7 +53,7 @@
 	</div>
 	@endif
 	<div class="form-group">
-		{!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit(isset($model) ? trans('admin.public.update') : trans('admin.public.save'), ['class' => 'btn btn-primary']) !!}
 	</div>
 {!! Form::close() !!}
 

@@ -2,12 +2,12 @@
 
 @section('content-header')
 	<h1>
-		Edit
+		{{ trans('admin.article.edit') }}
 		&middot;
 		@if(isOnPages())
-		<small>{!! link_to_route('admin.pages.index', 'Back') !!}</small>
+		<small>{!! link_to_route('admin.pages.index', trans('admin.public.back')) !!}</small>
 		@else
-		<small>{!! link_to_route('admin.articles.index', 'Back') !!}</small>
+		<small>{!! link_to_route('admin.articles.index', trans('admin.public.back')) !!}</small>
 		@endif
 	</h1>
 @stop

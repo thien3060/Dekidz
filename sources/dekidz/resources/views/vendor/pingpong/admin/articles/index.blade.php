@@ -3,9 +3,9 @@
 @section('content-header')
 	@if( ! isOnPages())
 	<h1>
-		All Articles ({!! $articles->count() !!})
+		{{ trans('admin.article.all') }} ({!! $articles->count() !!})
 		&middot;
-		<small>{!! link_to_route('admin.articles.create', 'Add New') !!}</small>
+		<small>{!! link_to_route('admin.articles.create', trans('admin.public.add')) !!}</small>
 	</h1>
 	@else
 	<h1>
@@ -20,15 +20,15 @@
 
 	<table class="table">
 		<thead>
-			<th>No</th>
-			<th>Title</th>
-			<th>Author</th>
-			<th>Description</th>
+			<th>{{ trans('admin.article.no') }}</th>
+			<th>{{ trans('admin.article.title') }}</th>
+			<th>{{ trans('admin.article.author') }}</th>
+			<th>{{ trans('admin.article.description') }}</th>
 			@if( ! isOnPages())
-			<th>Category</th>
+			<th>{{ trans('admin.article.category') }}</th>
 			@endif
-			<th>Created At</th>
-			<th class="text-center">Action</th>
+			<th>{{ trans('admin.article.created_at') }}</th>
+			<th class="text-center">{{ trans('admin.public.action') }}</th>
 		</thead>
 		<tbody>
 			@foreach ($articles as $article)
@@ -43,11 +43,11 @@
 				<td>{!! $article->created_at !!}</td>
 				<td class="text-center">
 					@if(isOnPages())
-						<a href="{!! route('admin.pages.edit', $article->id) !!}">Edit</a>
+						<a href="{!! route('admin.pages.edit', $article->id) !!}">{{ trans('admin.public.edit') }}</a>
 						&middot;
 						@include('admin::partials.modal', ['data' => $article, 'name' => 'pages'])
 					@else
-						<a href="{!! route('admin.articles.edit', $article->id) !!}">Edit</a>
+						<a href="{!! route('admin.articles.edit', $article->id) !!}">{{ trans('admin.public.edit') }}</a>
 						&middot;
 						@include('admin::partials.modal', ['data' => $article, 'name' => 'articles'])
 					@endif

@@ -142,6 +142,7 @@ return [
 		'select' => 'Chọn',
 		'yes' => 'Có',
 		'no' => 'Không',
+		'cancel' => 'Huỷ',
 		'confirm_delete' => 'Bạn Có Muốn Xóa ?'
 	],
 	'dashboard' => [
@@ -419,13 +420,25 @@ return [
 		'lesson_goal' => 'Mục Tiêu Bài Học',
 		'teach_activity' => 'Hoạt Động Giảng Dạy',
 		'kid_activity' => 'Hoạt Động Của Trẻ',
-		'author' => 'Tác Giả'
+		'author' => 'Tác Giả',
+		'all' => 'Bài Giảng',
+		'create' => 'Tạo Bài Giảng',
+		'edit' => 'Sửa Bài Giảng',
+		'select' => 'Chọn Chủ Đề'
 	],
 
 	'maintenance_ballot' => [
 		'no' => 'STT',
 		'created_by'=> 'Tạo Bởi',
-		'date'=> 'Ngày'
+		'date'=> 'Ngày',
+		'all' => 'Phiếu Bào Hành',
+		'create' => 'Thêm Phiếu Bảo Hành Mới',
+		'edit' => 'sửa Phiếu Bảo Hành',
+		'list' => 'Danh Sách CSVC',
+		'quantity' => 'Số Lượng',
+		'name' => 'Tên',
+		'status' => 'Trạng Thái',
+		'select' => 'Chọn CSVC'
 	],
 
 	'menu' => [
@@ -528,7 +541,10 @@ return [
 		'no' => 'STT',
 		'code' => 'Mã',
 		'name' => 'Tên',
-		'description' => 'Mô Tả'
+		'description' => 'Mô Tả',
+		'all' => 'Chủ Đề Môn Học',
+		'create' => 'Tạo Chủ Đề Môn Học',
+		'edit' => 'Sửa Chủ Đề Môn Học'
 	],
 
 	'supplier' => [
@@ -543,7 +559,16 @@ return [
 	'teach_schedule' => [
 		'no' => 'STT',
 		'class_id' => 'Lớp',
-		'semester' => 'Học Kì'
+		'semester' => 'Học Kì',
+		'all' => 'Thời Khoá Biểu',
+		'day_period' => 'Ngày/Tiết',
+		'mon' => 'Thứ 2',
+		'tue' => 'Thứ 3',
+		'wed' => 'Thứ 4',
+		'thu' => 'Thứ 5',
+		'fri' => 'Thứ 6',
+		'teacher' => 'Giáo Viên',
+		'lesson' => 'Môn Học'
 	],
 
 	'tuition_fee' => [
@@ -554,6 +579,22 @@ return [
 		'year' => 'Năm',
 		'month' => 'Tháng',
 		'select' => 'Chọn trẻ'
+	],
+
+	'article' => [
+		'all' => 'Bài Viết',
+		'create' => 'Tạo Bài Viết',
+		'edit' => 'Sửa Bài Viết',
+		'no' => 'STT',
+		'title' => 'Tựa Đề',
+		'author' => 'Tác Giả',
+		'description' => 'Mô Tả',
+		'category' => 'Chủ Đề',
+		'created_at' => 'Ngày Tạo',
+		'slug' => 'Mã',
+		'body' => 'Nội Dung',
+		'image' => 'Hình Ảnh',
+		'select' => 'Chọn Chủ Đề'
 	],
 
 ];

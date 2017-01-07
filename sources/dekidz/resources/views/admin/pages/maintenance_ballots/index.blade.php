@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All
+        {{ trans('admin.maintenance_ballot.all') }}
         &middot;
-        <small>{!! link_to_route('admin.maintenance_ballots.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.maintenance_ballots.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,10 +12,9 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Maintenance Date</th>
-        {{--<th>Created By</th>--}}
-        <th class="text-center">Action</th>
+        <th>{{ trans('admin.maintenance_ballot.no') }}</th>
+        <th>{{ trans('admin.maintenance_ballot.date') }}</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($maintenance_ballots as $maintenance_ballot)
@@ -24,7 +23,7 @@
                 <td>{!! $maintenance_ballot->date !!}</td>
                 {{--<td>{!! $maintenance_ballot->created_by !!}</td>--}}
                 <td class="text-center">
-                    <a href="{!! route('admin.maintenance_ballots.edit', $maintenance_ballot->id) !!}">Edit</a>
+                    <a href="{!! route('admin.maintenance_ballots.edit', $maintenance_ballot->id) !!}">{{ trans('admin.public.edit') }}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $maintenance_ballot, 'name' => 'maintenance_ballots'])
                 </td>

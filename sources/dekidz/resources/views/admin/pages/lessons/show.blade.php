@@ -2,40 +2,40 @@
 
 @section('content-header')
     <h1>
-        Detail Info
+        {{ trans('admin.lesson.all') }}
         &middot;
-        <small>{!! link_to_route('admin.lessons.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.lessons.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 
 @section('content')
     <table>
         <tr>
-            <td>Name: </td>
+            <td>{{ trans('admin.lesson.lesson_name') }}: </td>
             <td>{{$lesson->name}}</td>
         </tr>
         <tr>
-            <td>Subject topic: </td>
+            <td>{{ trans('admin.lesson.subject_topic_id') }}: </td>
             <td>{{$lesson->subject_topic_id}}</td>
         </tr>
         <tr>
-            <td>Lesson name: </td>
+            <td>{{ trans('admin.lesson.lesson_name') }}: </td>
             <td>{{$lesson->lesson_name}}</td>
         </tr>
         <tr>
-            <td>Lesson goal: </td>
+            <td>{{ trans('admin.lesson.lesson_goal') }}: </td>
             <td>{{$lesson->lesson_goal}}</td>
         </tr>
         <tr>
-            <td>Kid activity: </td>
+            <td>{{ trans('admin.lesson.kid_activity') }}: </td>
             <td>{{$lesson->kid_activity}}</td>
         </tr>
         <tr>
-            <td>Teach activity: </td>
+            <td>{{ trans('admin.lesson.teach_activity') }}: </td>
             <td>{{$lesson->teach_activity}}</td>
         </tr>
         <tr>
-            <td>Author: </td>
+            <td>{{ trans('admin.lesson.author') }}: </td>
             <td>{{$lesson->author}}</td>
         </tr>
     </table>

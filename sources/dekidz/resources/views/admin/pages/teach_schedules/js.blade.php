@@ -41,7 +41,7 @@
     function updateTimeTable() {
         current_schedule_detail.forEach(function (element, index, array) {
             $('.schedule[data-day="'+ element.day +'"][data-period="'+ element.period +'"]')
-                    .html('Teacher: '+ teacher_list[element.teacher] +'<br> Lesson: ' + lesson_list[element.lesson])
+                    .html('{{ trans('admin.teach_schedule.teacher') }}: '+ teacher_list[element.teacher] +'<br> {{ trans('admin.teach_schedule.lesson') }}: ' + lesson_list[element.lesson])
                     .data('teacher', element.teacher)
                     .data('lesson', element.lesson);
         });

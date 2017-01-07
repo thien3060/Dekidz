@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Edit
+        {{ trans('admin.maintenance_ballot.edit') }}
         &middot;
-        <small>{!! link_to_route('admin.maintenance_ballots.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.maintenance_ballots.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

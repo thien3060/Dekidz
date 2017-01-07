@@ -1,12 +1,12 @@
 <table id="time-table" class="table table-bordered table-striped dataTable">
     <thead>
         <tr role="row">
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 5%;">Day/Period</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Mon</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Tue</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Wed</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Thu</th>
-            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">Fri</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 5%;">{{ trans('admin.teach_schedule.day_period') }}</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">{{ trans('admin.teach_schedule.mon') }}</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">{{ trans('admin.teach_schedule.tue') }}</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">{{ trans('admin.teach_schedule.wed') }}</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">{{ trans('admin.teach_schedule.thu') }}</th>
+            <th tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 19%;">{{ trans('admin.teach_schedule.fri') }}</th>
         </tr>
     </thead>
     <tbody>

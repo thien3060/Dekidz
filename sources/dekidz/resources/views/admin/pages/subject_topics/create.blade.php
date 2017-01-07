@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Add New Subject Topic
+        {{ trans('admin.subject_topic.create') }}
         &middot;
-        <small>{!! link_to_route('admin.subject_topics.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.subject_topics.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Subject topics
+        {{ trans('admin.subject_topic.all') }}
         &middot;
-        <small>{!! link_to_route('admin.subject_topics.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.subject_topics.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,11 +12,11 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th class="text-center">Action</th>
+        <th>{{ trans('admin.subject_topic.no') }}</th>
+        <th>{{ trans('admin.subject_topic.code') }}</th>
+        <th>{{ trans('admin.subject_topic.name') }}</th>
+        <th>{{ trans('admin.subject_topic.description') }}</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($subject_topics as $subject_topic)
@@ -26,7 +26,7 @@
                 <td>{!! $subject_topic->name !!}</td>
                 <td>{!! $subject_topic->description !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.subject_topics.edit', $subject_topic->id) !!}">Edit</a>
+                    <a href="{!! route('admin.subject_topics.edit', $subject_topic->id) !!}">{{ trans('admin.public.edit') }}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $subject_topic, 'name' => 'subject_topics'])
                 </td>

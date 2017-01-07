@@ -6,17 +6,17 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('name', 'Name:') !!}
+            {!! Form::label('name', trans('admin.subject_topic.name').':') !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
             {!! $errors->first('name', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::label('description', 'Description:') !!}
+            {!! Form::label('description', trans('admin.subject_topic.description').':') !!}
             {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'ckeditor']) !!}
             {!! $errors->first('description', '<div class="text-danger">:message</div>') !!}
         </div>
         <div class="form-group">
-            {!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit(isset($model) ? trans('admin.public.update') : trans('admin.public.save'), ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
 </div>
