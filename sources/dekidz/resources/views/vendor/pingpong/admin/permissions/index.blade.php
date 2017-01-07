@@ -3,9 +3,9 @@
 @section('content-header')
 	
 	<h1>
-		All Permissions ({!! $permissions->count() !!})
+		{{ trans('admin.permission.all') }} ({!! $permissions->count() !!})
 		&middot;
-		<small>{!! link_to_route('admin.permissions.create', 'Add New') !!}</small>
+		<small>{!! link_to_route('admin.permissions.create', trans('admin.public.add')) !!}</small>
 	</h1>
 	
 @stop
@@ -14,12 +14,12 @@
 
 	<table class="table">
 		<thead>
-			<th>No</th>
-			<th>Name</th>
-			<th>Alias</th>
-			<th>Description</th>
-			<th>Created At</th>
-			<th class="text-center">Action</th>
+			<th>{{ trans('admin.permission.no') }}</th>
+			<th>{{ trans('admin.permission.name') }}</th>
+			<th>{{ trans('admin.permission.alias') }}</th>
+			<th>{{ trans('admin.permission.description') }}</th>
+			<th>{{ trans('admin.permission.created_at') }}</th>
+			<th class="text-center">{{ trans('admin.public.action') }}</th>
 		</thead>
 		<tbody>
 			@foreach ($permissions as $permission)
@@ -30,7 +30,7 @@
 				<td>{!! $permission->description !!}</td>
 				<td>{!! $permission->created_at !!}</td>
 				<td class="text-center">
-					<a href="{!! route('admin.permissions.edit', $permission->id) !!}">Edit</a>
+					<a href="{!! route('admin.permissions.edit', $permission->id) !!}">{{ trans('admin.public.edit') }}</a>
 					&middot;
 					@include('admin::partials.modal', ['data' => $permission, 'name' => 'permissions'])
 				</td>

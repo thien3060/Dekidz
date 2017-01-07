@@ -4,9 +4,9 @@
 	
 	
 	<h1>
-		Add New
+		{{ trans('admin.user.create') }}
 		&middot;
-		<small>{!! link_to_route('admin.users.index', 'Back') !!}</small>
+		<small>{!! link_to_route('admin.users.index', trans('admin.public.back')) !!}</small>
 	</h1>
 
 @stop

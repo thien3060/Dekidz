@@ -9,7 +9,7 @@
 <div class="row">
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('name', 'Name:') !!}
+            {!! Form::label('name', trans('admin.food_set.name').':') !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
             {!! $errors->first('name', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -17,9 +17,9 @@
 
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('type_id', 'Food Set type:') !!}
+            {!! Form::label('type_id', trans('admin.food_set.type_id').':') !!}
             <select class="form-control type-id" name="type_id">
-                <option value="0">Select group</option>
+                <option value="0">{{ trans('admin.food_set.select_category') }}</option>
                 @foreach($foodsettypes as $key => $name)
                     <option value="{{$key}}" @if($key == @$model->type_id) selected="selected" @endif>{{$name}}</option>
                 @endforeach
@@ -30,7 +30,7 @@
 
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('age', 'Age:') !!}
+            {!! Form::label('age', trans('admin.food_set.age').':') !!}
             {!! Form::text('age', null, ['class' => 'form-control']) !!}
             {!! $errors->first('age', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -38,7 +38,7 @@
 
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('quantity', 'Quantity:') !!}
+            {!! Form::label('quantity', trans('admin.food_set.quantity').':') !!}
             {!! Form::text('quantity', null, ['class' => 'form-control']) !!}
             {!! $errors->first('quantity', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -46,7 +46,7 @@
 
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::label('description', 'Description:') !!}
+            {!! Form::label('description', trans('admin.food_set.description').':') !!}
             {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => '3']) !!}
             {!! $errors->first('description', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -56,19 +56,19 @@
     <div class="col-sm-12">
         <div class="box box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title">Dish list</h3>
-                <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">Add</button>
+                <h3 class="box-title">{{ trans('admin.food_set.list') }}</h3>
+                <button type="button" class="btn btn-success asset-delete" onclick="addRow()" style="margin: 5px">{{trans('admin.public.add')}}</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body text-center">
                 <table class="table">
                     <thead>
-                    <th>#</th>
-                    <th>Dish Name</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Cost</th>
-                    <th class="text-center">Action</th>
+                    <th>{{ trans('admin.food_set.no') }}</th>
+                    <th>{{ trans('admin.food_set.dish_name') }}</th>
+                    <th>{{ trans('admin.food_set.quantity') }}</th>
+                    <th>{{ trans('admin.food_set.price') }}</th>
+                    <th>{{ trans('admin.food_set.cost') }}</th>
+                    <th class="text-center">{{ trans('admin.public.action') }}</th>
                     </thead>
                     <tbody id="asset-list">
                     <?php $k = -1;?>
@@ -78,20 +78,20 @@
                                     <td class="asset-id">{{$k + 1}}</td>
                                     <td>
                                         <select onchange="selectAsset(this);" class="form-control asset-name" name="asset-name[]">
-                                            <option value="0">Select Dish</option>
+                                            <option value="0">{{ trans('admin.food_set.select_dish') }}</option>
                                             @foreach($assets as $key => $asset)
                                                 <option value="{{$key}}" @if($asset['id'] == $dish->id) selected="selected" @endif>{{$asset['name']}}</option>
                                             @endforeach
                                         </select>
                                     </td>
                                     <td>
-                                        <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Dish's quantity" name="asset-quantity[]" type="number"  value="{{$dish->pivot->quantity}}">
+                                        <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="{{ trans('admin.food_set.quantity') }}" name="asset-quantity[]" type="number"  value="{{$dish->pivot->quantity}}">
                                     </td>
                                     <td>
-                                        <input class="form-control asset-price" name="asset-price[]" readonly onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Dish's price" type="number" value="{{$dish->pivot->price}}">
+                                        <input class="form-control asset-price" name="asset-price[]" readonly onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="{{ trans('admin.food_set.price') }}" type="number" value="{{$dish->pivot->price}}">
                                     </td>
                                     <td>
-                                        <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
+                                        <input readonly class="form-control asset-cost" placeholder="{{ trans('admin.food_set.cost') }}" value="0" name="asset-cost[]" type="number">
                                     </td>
                                     <td style="text-align: center">
                                         <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -104,20 +104,20 @@
                             <td class="asset-id">{{$k + 2}}</td>
                             <td>
                                 <select onchange="selectAsset(this);" class="form-control asset-name" name="asset-name[]">
-                                    <option value="0" selected="selected">Select Dish</option>
+                                    <option value="0" selected="selected">{{ trans('admin.food_set.select_dish') }}</option>
                                     @foreach($assets as $key => $asset)
                                         <option value="{{$key}}">{{$asset['name']}}</option>
                                     @endforeach
                                 </select>
                             </td>
                             <td>
-                                <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Dish's quantity" name="asset-quantity[]" type="number">
+                                <input class="form-control asset-quantity" onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="{{ trans('admin.food_set.quantity') }}" name="asset-quantity[]" type="number">
                             </td>
                             <td>
-                                <input class="form-control asset-price" name="asset-price[]" readonly onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="Dish's price" type="number">
+                                <input class="form-control asset-price" name="asset-price[]" readonly onkeyup="updateCost(this);" onchange="updateCost(this);" placeholder="{{ trans('admin.food_set.price') }}" type="number">
                             </td>
                             <td>
-                                <input readonly class="form-control asset-cost" placeholder="Asset's cost" value="0" name="asset-cost[]" type="number">
+                                <input readonly class="form-control asset-cost" placeholder="{{ trans('admin.food_set.cost') }}" value="0" name="asset-cost[]" type="number">
                             </td>
                             <td style="text-align: center">
                                 <button type="button" class="btn btn-danger asset-delete" onclick="confirmDelete(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -126,7 +126,7 @@
                     </tbody>
                     <tbody>
                         <tr>
-                            <td colspan="4" class="text-right"><strong>Total: </strong></td>
+                            <td colspan="4" class="text-right"><strong>{{ trans('admin.food_set.total') }}: </strong></td>
                             <td colspan="2" id="total-label" class="text-left">0</td>
                             <input type="hidden" id="total-cost" name="total_cost"/>
                         </tr>
@@ -265,12 +265,12 @@
         <div class="modal-content">
             <div class="modal-body">
                 <p>
-                    Are you sure want to delete this asset?
+                    trans('admin.public.confirm_delete')
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="deleteCurrentItem()">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" onclick="deleteCurrentItem()">{{trans('admin.public.yes')}}</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('admin.public.no')}}</button>
             </div>
         </div>
     </div>

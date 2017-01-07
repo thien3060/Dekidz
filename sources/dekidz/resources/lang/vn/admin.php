@@ -350,7 +350,14 @@ return [
 		'vitaminb2'=> 'Vitamin B2',
 		'vitaminpp' => 'Vitamin PP',
 		'vitaminc'=> 'Vitamin C',
-		'total_cost' => 'Tổng Giá'
+		'total_cost' => 'Tổng Giá',
+		'select_category' => 'Chọn Nhóm',
+		'select_dish' => 'Chọn Món Ăn',
+		'list' => 'Danh Sách Món Ăn',
+		'dish_name' => 'Tên Món Ăn',
+		'price' => 'Giá',
+		'cost' => 'Thành Tiền',
+		'total' => 'Tổng Cộng'
 	],
 
 	'food_set_type' => [
@@ -494,7 +501,9 @@ return [
 		"wage_index" => 'Hệ Số Lương',
 		"bonus"=> 'Thưởng',
 		"minus" => 'Phạt',
-		"salary" => 'Lương'
+		"salary" => 'Lương',
+		'all' => 'Lương Nhân Viên',
+		'edit' => 'Thay Đổi Lương'
 	],
 
 	'staff' => [
@@ -516,6 +525,11 @@ return [
 		"working_status" => 'Tình Trạng Làm Việc',
 		"start_day" => 'Ngày Vào Làm',
 		"type_of_contract" => 'Loại Hợp Đồng',
+		'all' => 'Nhân Viên',
+		'create' => 'Tạo Nhân Viên',
+		'edit' => 'Sửa Nhân Viên',
+		'select_department' => 'Chọn Phòng Ban',
+		'select_position' => 'Chọn Vị Trí'
 	],
 
 	'staff_type' => [
@@ -597,4 +611,49 @@ return [
 		'select' => 'Chọn Chủ Đề'
 	],
 
+	'position' => [
+		'all' => 'Vị Trí',
+		'create' => 'Tạo Vị Trí',
+		'edit' => 'Sửa Vị Trí',
+		'no' => 'STT',
+		'name' => 'Tên Vị Trí',
+		'description' => 'Mô Tả',
+	],
+
+	'user' => [
+		'all' => 'Người Dùng',
+		'create' => 'Tạo Người Dùng',
+		'edit' => 'Sửa Người Dùng',
+		'no' => 'STT',
+		'name' => 'Tên Người Dùng',
+		'email' => 'Email',
+		'created_at' => 'Ngày Tạo',
+		'password' => 'Mật Khẩu',
+		'role' => 'Vai Trò',
+		'select' => 'Chọn Vai Trò'
+	],
+
+	'role' => [
+		'all' => 'Vai Trò',
+		'create' => 'Tạo Vai Trò',
+		'edit' => 'Sửa Vai Trò',
+		'no' => 'STT',
+		'name' => 'Tên Vai Trò',
+		'alias' => 'Kí Hiệu',
+		'description' => 'Mô Tả',
+		'permission' => 'Quyền',
+		'created_at' => 'Ngày Tạo',
+		'select' => 'Chọn Quyền'
+	],
+
+	'permission' => [
+		'all' => 'Quyền',
+		'create' => 'Tạo Quyền',
+		'edit' => 'Sửa Quyền',
+		'no' => 'STT',
+		'name' => 'Tên Quyền',
+		'alias' => 'Kí Hiệu',
+		'description' => 'Mô Tả',
+		'created_at' => 'Ngày Tạo',
+	],
 ];

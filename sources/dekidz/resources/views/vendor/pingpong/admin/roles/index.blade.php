@@ -2,9 +2,9 @@
 
 @section('content-header')
 	<h1>
-		All Roles ({!! $roles->count() !!})
+		{{ trans('admin.role.all') }} ({!! $roles->count() !!})
 		&middot;
-		<small>{!! link_to_route('admin.roles.create', 'Add New') !!}</small>
+		<small>{!! link_to_route('admin.roles.create', trans('admin.public.add')) !!}</small>
 	</h1>
 @stop
 
@@ -12,13 +12,13 @@
 
 	<table class="table">
 		<thead>
-			<th>No</th>
-			<th>Name</th>
-			<th>Alias</th>
-			<th>Description</th>
-			<th>Permissions</th>
-			<th>Created At</th>
-			<th class="text-center">Action</th>
+			<th>{{ trans('admin.role.no') }}</th>
+			<th>{{ trans('admin.role.name') }}</th>
+			<th>{{ trans('admin.role.alias') }}</th>
+			<th>{{ trans('admin.role.description') }}</th>
+			<th>{{ trans('admin.role.permission') }}</th>
+			<th>{{ trans('admin.role.created_at') }}</th>
+			<th class="text-center">{{ trans('admin.public.action') }}</th>
 		</thead>
 		<tbody>
 			@foreach ($roles as $role)
@@ -34,7 +34,7 @@
 				</td>
 				<td>{!! $role->created_at !!}</td>
 				<td class="text-center">
-					<a href="{!! route('admin.roles.edit', $role->id) !!}">Edit</a>
+					<a href="{!! route('admin.roles.edit', $role->id) !!}">{{ trans('admin.public.edit') }}</a>
 					&middot;
 					@include('admin::partials.modal', ['data' => $role, 'name' => 'roles'])
 				</td>

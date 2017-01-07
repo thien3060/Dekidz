@@ -12,12 +12,12 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Age</th>
-        <th>Quantity</th>
-        <th>Description</th>
+        <th>{{ trans('admin.food_set.no') }}</th>
+        <th>{{ trans('admin.food_set.name') }}</th>
+        <th>{{ trans('admin.food_set.type_id') }}</th>
+        <th>{{ trans('admin.food_set.age') }}</th>
+        <th>{{ trans('admin.food_set.quantity') }}</th>
+        <th>{{ trans('admin.food_set.description') }}</th>
         {{--<th>Cal</th>--}}
         {{--<th>Cal needed</th>--}}
         {{--<th>Protid</th>--}}
@@ -36,7 +36,7 @@
         {{--<th>Protid TV</th>--}}
         {{--<th>Lipid DV</th>--}}
         {{--<th>Lipid TV</th>--}}
-        <th>Total cost</th>
+        <th>{{ trans('admin.food_set.total_cost') }}</th>
 
         <th class="text-center">{{trans('admin.public.action')}}</th>
         </thead>

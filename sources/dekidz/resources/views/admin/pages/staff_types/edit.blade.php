@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Edit
+        {{ trans('admin.position.edit') }}
         &middot;
-        <small>{!! link_to_route('admin.staff_types.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.staff_types.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 

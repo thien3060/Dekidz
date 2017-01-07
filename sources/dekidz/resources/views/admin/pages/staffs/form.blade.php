@@ -6,23 +6,23 @@
 <div class="row">
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('name', 'Name:') !!}
+            {!! Form::label('name', trans('admin.staff.name').':') !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
             {!! $errors->first('name', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('code', 'Number:') !!}
+            {!! Form::label('code', trans('admin.staff.code').':') !!}
             {!! Form::text('code', null, ['class' => 'form-control']) !!}
             {!! $errors->first('code', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('gender', 'Gender:') !!}
+            {!! Form::label('gender', trans('admin.staff.gender').':') !!}
             <select class="form-control gender" name="gender">
-                <option value="0">Nu</option>
+                <option value="0">Nữ</option>
                 <option value="1" @if (@$model->gender == 1) selected="selected" @endif>Nam</option>
             </select>
             {!! $errors->first('gender', '<div class="text-danger">:message</div>') !!}
@@ -30,7 +30,7 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('dob', 'DOB:') !!}
+            {!! Form::label('dob', trans('admin.staff.dob').':') !!}
             <div class="input-group date">
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
@@ -42,30 +42,30 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('identity_card', 'Identity Number:') !!}
+            {!! Form::label('identity_card', trans('admin.staff.identity_card').':') !!}
             {!! Form::text('identity_card', null, ['class' => 'form-control']) !!}
             {!! $errors->first('identity_card', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('religion', 'Religion:') !!}
+            {!! Form::label('religion', trans('admin.staff.religion').':') !!}
             {!! Form::text('religion', null, ['class' => 'form-control']) !!}
             {!! $errors->first('religion', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('address', 'Address:') !!}
+            {!! Form::label('address', trans('admin.staff.address').':') !!}
             {!! Form::text('address', null, ['class' => 'form-control']) !!}
             {!! $errors->first('address', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('department_id', 'Department:') !!}
+            {!! Form::label('department_id', trans('admin.staff.department_id').':') !!}
             <select class="form-control department-id" name="department_id">
-                <option value="0">Select department</option>
+                <option value="0">{{ trans('admin.staff.select_department') }}</option>
                 @foreach($departments as $key => $group)
                     <option value="{{$key}}" @if($key == @$model->department_id) selected="selected" @endif>{{$group}}</option>
                 @endforeach
@@ -75,9 +75,9 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('position', 'Position:') !!}
+            {!! Form::label('position', trans('admin.staff.position').':') !!}
             <select class="form-control" name="position">
-                <option value="0">Select position</option>
+                <option value="0">{{ trans('admin.staff.select_position') }}</option>
                 @foreach($positions as $key => $position)
                     <option value="{{$key}}" @if($key == @$model->position) selected="selected" @endif>{{$position}}</option>
                 @endforeach
@@ -87,28 +87,28 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('issued_by', 'Issued By:') !!}
+            {!! Form::label('issued_by', trans('admin.staff.issued_by').':') !!}
             {!! Form::text('issued_by', null, ['class' => 'form-control']) !!}
             {!! $errors->first('issued_by', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('phone', 'Phone:') !!}
+            {!! Form::label('phone', trans('admin.staff.phone').':') !!}
             {!! Form::text('phone', null, ['class' => 'form-control']) !!}
             {!! $errors->first('phone', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('email', 'Email:') !!}
+            {!! Form::label('email', trans('admin.staff.email').':') !!}
             {!! Form::text('email', null, ['class' => 'form-control']) !!}
             {!! $errors->first('email', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('degree', 'Degree:') !!}
+            {!! Form::label('degree', trans('admin.staff.degree').':') !!}
             {!! Form::text('degree', null, ['class' => 'form-control']) !!}
             {!! $errors->first('degree', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -116,24 +116,24 @@
 
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('is_leaguer', 'Is leaguer:') !!}
+            {!! Form::label('is_leaguer', trans('admin.staff.is_leaguer').':') !!}
             <select class="form-control is-leaguer" name="is_leaguer">
-                <option value="0">No</option>
-                <option value="1" @if (@$model->is_leaguer == 1) selected="selected" @endif>Yes</option>
+                <option value="0">{{trans('admin.public.no')}}</option>
+                <option value="1" @if (@$model->is_leaguer == 1) selected="selected" @endif>{{trans('admin.public.yes')}}</option>
             </select>
             {!! $errors->first('is_leaguer', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('working_status', 'Working Status:') !!}
+            {!! Form::label('working_status', trans('admin.staff.working_status').':') !!}
             {!! Form::text('working_status', null, ['class' => 'form-control']) !!}
             {!! $errors->first('working_status', '<div class="text-danger">:message</div>') !!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('start_day', 'Start date:') !!}
+            {!! Form::label('start_day', trans('admin.staff.start_day').':') !!}
             <div class="input-group date">
                 <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
@@ -145,7 +145,7 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group">
-            {!! Form::label('type_of_contract', 'Type of contract:') !!}
+            {!! Form::label('type_of_contract', trans('admin.staff.type_of_contract').':') !!}
             {!! Form::text('type_of_contract', null, ['class' => 'form-control']) !!}
             {!! $errors->first('type_of_contract', '<div class="text-danger">:message</div>') !!}
         </div>
@@ -154,7 +154,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            {!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit(isset($model) ? trans('admin.public.update') : trans('admin.public.save'), ['class' => 'btn btn-primary']) !!}
         </div>
     </div>
 </div>

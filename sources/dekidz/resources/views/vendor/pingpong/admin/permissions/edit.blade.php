@@ -3,9 +3,9 @@
 @section('content-header')
 	
 	<h1>
-		Edit
+		{{ trans('admin.permission.edit') }}
 		&middot;
-		<small>{!! link_to_route('admin.permissions.index', 'Back') !!}</small>
+		<small>{!! link_to_route('admin.permissions.index', trans('admin.public.back')) !!}</small>
 	</h1>
 	
 @stop

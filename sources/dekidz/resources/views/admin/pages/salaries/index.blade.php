@@ -2,7 +2,7 @@
 
 @section('content-header')
     <h1>
-        All Staff's Salaries
+        {{ trans('admin.salary.all') }}
     </h1>
 @stop
 
@@ -10,14 +10,14 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Name</th>
-        <th>Base Salary</th>
-        <th>Wage Index</th>
-        <th>Bonus</th>
-        <th>Minus</th>
-        <th>Salary</th>
-        <th class="text-center">Action</th>
+        <th>{{ trans('admin.salary.no') }}</th>
+        <th>{{ trans('admin.salary.staff_id') }}</th>
+        <th>{{ trans('admin.salary.base_salary') }}y</th>
+        <th>{{ trans('admin.salary.wage_index') }}</th>
+        <th>{{ trans('admin.salary.bonus') }}</th>
+        <th>{{ trans('admin.salary.minus') }}</th>
+        <th>{{ trans('admin.salary.salary') }}</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($salaries as $salary)
@@ -30,7 +30,7 @@
                 <td>{!! $salary->minus !!}</td>
                 <td>{!! $salary->salary !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.salaries.edit', $salary->id) !!}">Edit</a>
+                    <a href="{!! route('admin.salaries.edit', $salary->id) !!}">{{ trans('admin.public.edit') }}</a>
                 </td>
             </tr>
             <?php $no++ ;?>

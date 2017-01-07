@@ -2,9 +2,9 @@
 
 @section('content-header')
 	<h1>
-		{!! $title or 'All Users' !!} ({!! $users->count() !!})
+		{!! $title or trans('admin.user.all') !!} ({!! $users->count() !!})
 		&middot;
-		<small>{!! link_to_route('admin.users.create', 'Add New') !!}</small>
+		<small>{!! link_to_route('admin.users.create', trans('admin.public.add')) !!}</small>
 	</h1>
 @stop
 
@@ -16,11 +16,11 @@
 
 	<table class="table">
 		<thead>
-			<th>No</th>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Created At</th>
-			<th class="text-center">Action</th>
+			<th>{{ trans('admin.user.no') }}</th>
+			<th>{{ trans('admin.user.name') }}</th>
+			<th>{{ trans('admin.user.email') }}</th>
+			<th>{{ trans('admin.user.created_at') }}</th>
+			<th class="text-center">{{ trans('admin.public.action') }}</th>
 		</thead>
 		<tbody>
 			@foreach ($users as $user)
@@ -30,7 +30,7 @@
 				<td>{!! $user->email !!}</td>
 				<td>{!! $user->created_at !!}</td>
 				<td class="text-center">
-					<a href="{!! route('admin.users.edit', $user->id) !!}">Edit</a>
+					<a href="{!! route('admin.users.edit', $user->id) !!}">{{ trans('admin.public.edit') }}</a>
 					&middot;
 					@include('admin::partials.modal', ['data' => $user, 'name' => 'users'])
 				</td>

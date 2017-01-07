@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Staffs
+        {{ trans('admin.staff.all') }}
         &middot;
-        <small>{!! link_to_route('admin.staffs.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.staffs.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,17 +12,17 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Name</th>
-        <th>Code</th>
-        <th>Gender</th>
-        <th>Dob</th>
-        <th>Address</th>
-        <th>Identity Number</th>
-        <th>Department</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th class="text-center">Action</th>
+        <th>{{ trans('admin.staff.no') }}</th>
+        <th>{{ trans('admin.staff.name') }}</th>
+        <th>{{ trans('admin.staff.code') }}</th>
+        <th>{{ trans('admin.staff.gender') }}</th>
+        <th>{{ trans('admin.staff.dob') }}</th>
+        <th>{{ trans('admin.staff.address') }}</th>
+        <th>{{ trans('admin.staff.identity_card') }}</th>
+        <th>{{ trans('admin.staff.department_id') }}</th>
+        <th>{{ trans('admin.staff.phone') }}</th>
+        <th>{{ trans('admin.staff.email') }}</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($staffs as $staff)
@@ -38,7 +38,7 @@
                 <td>{!! $staff->phone !!}</td>
                 <td>{!! $staff->email !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.staffs.edit', $staff->id) !!}">Edit</a>
+                    <a href="{!! route('admin.staffs.edit', $staff->id) !!}">{{ trans('admin.public.edit') }}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $staff, 'name' => 'staffs'])
                 </td>
