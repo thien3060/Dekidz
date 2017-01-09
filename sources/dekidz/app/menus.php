@@ -28,6 +28,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
     $menu->dropdown(trans('admin.menus.finances.title'), function ($sub) {
         $sub->route('admin.rem_ins.index', trans('admin.menus.finances.rem_in'), [], 1);
         $sub->route('admin.rem_outs.index', trans('admin.menus.finances.rem_out'), [], 2);
+        $sub->route('admin.rem_report', trans('admin.rem_report.all'), [], 3);
     }, 3, ['icon' => 'fa fa-usd'], 'manage_finances');
 
     //Repository

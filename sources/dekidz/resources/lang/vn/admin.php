@@ -672,4 +672,17 @@ return [
 		'description' => 'Mô Tả',
 		'created_at' => 'Ngày Tạo',
 	],
+
+	'rem_report' => [
+		'all' => 'Báo Cáo Thu Chi',
+		'message' => 'Từ ngày :from đến ngày :to',
+		'no' => 'STT',
+		'code' => 'Mã',
+		'date' => 'Ngày',
+		'reason' => 'Lý Do',
+		'amount' => 'Số Tiền',
+		'rem_in' => 'Danh Sách Thu',
+		'rem_out' => 'Danh Sách Chi',
+		'total' => 'Tổng Cộng'
+	]
 ];
