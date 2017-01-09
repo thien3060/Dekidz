@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        All Menus
+        {{trans('admin.menu.all')}}
         &middot;
-        <small>{!! link_to_route('admin.menus.create', 'Add New') !!}</small>
+        <small>{!! link_to_route('admin.menus.create', trans('admin.public.add')) !!}</small>
     </h1>
 @stop
 
@@ -12,13 +12,13 @@
 
     <table class="table">
         <thead>
-        <th>No</th>
-        <th>Date</th>
-        <th>Breakfast</th>
-        <th>Lunch</th>
-        <th>Mid Afternoon</th>
-        <th>Create At</th>
-        <th class="text-center">Action</th>
+        <th>{{trans('admin.menu.no')}}</th>
+        <th>{{trans('admin.menu.date')}}</th>
+        <th>{{trans('admin.menu.breakfast_id')}}</th>
+        <th>{{trans('admin.menu.lunch_id')}}</th>
+        <th>{{trans('admin.menu.mid_afternoon_id')}}</th>
+        <th>{{trans('admin.menu.created_at')}}</th>
+        <th class="text-center">{{ trans('admin.public.action') }}</th>
         </thead>
         <tbody>
         @foreach ($menus as $menu)
@@ -30,7 +30,7 @@
                 <td>{!! $mid_afternoon[$menu->mid_afternoon_id]['name'] !!}</td>
                 <td>{!! $menu->created_at !!}</td>
                 <td class="text-center">
-                    <a href="{!! route('admin.menus.edit', $menu->id) !!}">Edit</a>
+                    <a href="{!! route('admin.menus.edit', $menu->id) !!}">{{trans('admin.public.edit')}}</a>
                     &middot;
                     @include('admin::partials.modal', ['data' => $menu, 'name' => 'menus'])
                 </td>

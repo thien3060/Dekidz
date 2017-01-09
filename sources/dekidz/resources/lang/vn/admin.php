@@ -362,7 +362,11 @@ return [
 
 	'food_set_type' => [
 		'no' => 'STT',
-		'name' => 'Tên'
+		'code' => 'Mã',
+		'name' => 'Tên',
+		'all' => 'Loại Suất Ăn',
+		'create' => 'Tạo Suất Ăn Mới',
+		'edit' => 'Sửa Suất '
 	],
 
 	'grade' => [
@@ -449,11 +453,23 @@ return [
 	],
 
 	'menu' => [
+		'all' => 'Thực Đơn',
+		'create' => 'Tạo Thực Đơn Mới',
+		'edit' => 'Sửa Thực Đơn',
 		'no' => 'STT',
 		'date' => 'Ngày',
 		'breakfast_id' => 'Bữa Sáng',
 		'lunch_id'=> 'Bữa Trưa',
-		'mid_afternoon_id' => 'Bữa Xế'
+		'mid_afternoon_id' => 'Bữa Xế',
+		'created_at' => 'Ngày Tạo',
+		'age' => 'Tuổi',
+		'select_food_set' => 'Chọn Phần Ăn',
+		'list_food_set' => 'Danh Sách Phần Ăn',
+		'total' => 'Tổng Cộng',
+		'needed' => 'Cần Thiết',
+		'nutrition_requirement' => 'Dinh Dưỡng Cần Thiết',
+		'time' => 'Thời Gian',
+		'food_set' => 'Phần ăn'
 	],
 
 	'physical_info' => [

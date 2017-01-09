@@ -2,9 +2,9 @@
 
 @section('content-header')
     <h1>
-        Add New Menu
+        {{ trans('admin.menu.create') }}
         &middot;
-        <small>{!! link_to_route('admin.menus.index', 'Back') !!}</small>
+        <small>{!! link_to_route('admin.menus.index', trans('admin.public.back')) !!}</small>
     </h1>
 @stop
 
