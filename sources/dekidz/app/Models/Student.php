@@ -37,6 +37,10 @@ class Student extends Model
         return DB::table('students')->count();
     }
     
+    public function dekidzClass(){
+        return $this->belongsToMany('App\Models\DekidzClass', 'class_detail', 'class_id', 'student_id');
+    }
+    
     public function physical_info(){
         return $this->hasMany('App\Models\PhysicalInfo', 'student_id');
     }

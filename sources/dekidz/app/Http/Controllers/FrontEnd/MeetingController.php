@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Models\Camera;
+use App\Models\Lesson;
+use App\Models\Staff;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -56,5 +59,21 @@ class MeetingController extends BaseController
         $camera = Camera::find(Input::get('id'));
 
         return $camera;
+    }
+    
+    public function getTeachSchedule()
+    {
+        $lessons = Lesson::withTrashed()->lists('lesson_name', 'id');
+        $teachers = Staff::whereHas('type', function ($query){
+            $query->where('name', '=', 'Teacher');
+        })->lists('staffs.name', 'staffs.id');
+        $class = null;
+        if(Auth::check()){
+            $student = Student::where('email', '=', Auth::user()->email)->first();
+            if($student != null){
+                $class = $student->dekidzClass->last();
+            }
+        }
+        return $this->view('frontend.pages.teach_schedule', compact('class', 'lessons', 'teachers'));
     }
 }

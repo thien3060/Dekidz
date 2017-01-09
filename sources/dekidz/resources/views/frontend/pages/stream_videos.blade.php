@@ -35,7 +35,7 @@
                     </div>
                 </div>
             @else
-                <h3>Please Login</h3>
+                <h3>Xin vui lòng đăng nhập</h3>
             @endif
         </div>
         <br>

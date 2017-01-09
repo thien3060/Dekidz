@@ -67,6 +67,9 @@
                         <li {{ (Request::is('aboutus2') ? 'class=active' : '') }}>
                             <a href="/stream_videos">Theo dõi video</a>
                         </li>
+                        <li {{ (Request::is('aboutus2') ? 'class=active' : '') }}>
+                            <a href="/teach_schedule">Xem thời khóa biểu</a>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="/coming-soon">Tuyển sinh</a></li>
