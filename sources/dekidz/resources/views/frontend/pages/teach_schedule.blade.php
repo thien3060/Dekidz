@@ -41,6 +41,10 @@
         .schedule:hover{
             background-color: #e9e9e9 !important;
         }
+
+        .tooltip{
+            position: absolute;
+        }
     </style>
 @endsection
 
@@ -49,7 +53,9 @@
     <script>
         var teacher_list = {!! @json_encode($teachers) !!};
         var lesson_list = {!! @json_encode($lessons) !!};
+        var lesson_goals = {!! @json_encode($lesson_goals) !!};
         var current_schedule_detail;
+        console.log(lesson_goals);
 
         getTable(1);
         getTable(2);
@@ -61,20 +67,26 @@
                 current_schedule_detail = data;
                 clearTable(semester);
                 updateTimeTable(semester);
+                setToolTip();
             });
         }
 
         function updateTimeTable(semester) {
             current_schedule_detail.forEach(function (element, index, array) {
-                $('time-table'+semester+' .schedule[data-day="'+ element.day +'"][data-period="'+ element.period +'"]')
+                $('#time-table'+semester+' .schedule[data-day="'+ element.day +'"][data-period="'+ element.period +'"]')
                         .html('{{ trans('admin.teach_schedule.teacher') }}: '+ teacher_list[element.teacher] +'<br> {{ trans('admin.teach_schedule.lesson') }}: ' + lesson_list[element.lesson])
-                        .data('teacher', element.teacher)
-                        .data('lesson', element.lesson);
+                        .attr('title', 'Nội Dung: '+lesson_goals[element.lesson]);
             });
         }
 
         function clearTable(semester) {
-            $('time-table'+semester+' .schedule').html('');
+            $('#time-table'+semester+' .schedule').html('');
+        }
+
+        function setToolTip() {
+            $('[data-toggle="tooltip"]').tooltip({
+                container : 'body'
+            });
         }
     </script>
     @endif

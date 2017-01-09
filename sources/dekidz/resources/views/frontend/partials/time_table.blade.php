@@ -16,7 +16,7 @@
             <tr>
                 <td>{{$p}}</td>
                 @for($d = 2; $d <= 6; $d++)
-                    <td class="schedule" data-day="{{$d}}" data-period="{{$p}}"></td>
+                    <td class="schedule" data-day="{{$d}}" data-period="{{$p}}" data-toggle="tooltip" title="" data-container="body"></td>
                 @endfor
             </tr>
         @endfor
@@ -42,7 +42,7 @@
             <tr>
                 <td>{{$p}}</td>
                 @for($d = 2; $d <= 6; $d++)
-                    <td class="schedule" data-day="{{$d}}" data-period="{{$p}}"></td>
+                    <td class="schedule" data-day="{{$d}}" data-period="{{$p}}" data-toggle="tooltip" title="" data-container="body"></td>
                 @endfor
             </tr>
         @endfor

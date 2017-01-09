@@ -64,6 +64,7 @@ class MeetingController extends BaseController
     public function getTeachSchedule()
     {
         $lessons = Lesson::withTrashed()->lists('lesson_name', 'id');
+        $lesson_goals = Lesson::withTrashed()->lists('lesson_goal', 'id');
         $teachers = Staff::whereHas('type', function ($query){
             $query->where('name', '=', 'Teacher');
         })->lists('staffs.name', 'staffs.id');
@@ -74,6 +75,6 @@ class MeetingController extends BaseController
                 $class = $student->dekidzClass->last();
             }
         }
-        return $this->view('frontend.pages.teach_schedule', compact('class', 'lessons', 'teachers'));
+        return $this->view('frontend.pages.teach_schedule', compact('class', 'lessons', 'teachers', 'lesson_goals'));
     }
 }
