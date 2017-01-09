@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\DekidzClass;
 use App\Models\RemIn;
 use App\Models\RemOut;
-use App\Validation\Asset\CreateRequest;
-use App\Validation\Asset\UpdateRequest;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Http\Requests;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
 
 class ReportsController extends BaseController
@@ -29,5 +26,16 @@ class ReportsController extends BaseController
         $rem_outs = RemOut::where('date', '>=', $from)->orderBy('date', 'asc')->get();
         $total_out = RemOut::where('date', '>=', $from)->sum('total');
         return $this->view('pages.reports.rem_report', compact('from', 'to', 'rem_ins', 'total_in', 'rem_outs', 'total_out'));
+    }
+    
+    public function ageReport()
+    {
+        $classes = DekidzClass::lists('name', 'id');
+        $class_id = Input::get('class_id', 0);
+        $class = null;
+        if($class_id != 0){
+            $class = DekidzClass::where('id', '=', $class_id)->first();
+        }
+        return $this->view('pages.reports.age_report', compact('class', 'classes'));
     }
 }

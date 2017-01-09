@@ -31,8 +31,8 @@ return [
 		],
 		'classes' => [
 			'title' => 'Lớp',
-			'all' => 'Lớp',
-			'create' => 'Tạo',
+			'all' => 'Danh Sách Lớp',
+			'create' => 'Tạo Lớp Mới',
 			'study_result' => 'Kết Quả Học Tập'
 		],
 		'finances' => [
@@ -684,5 +684,15 @@ return [
 		'rem_in' => 'Danh Sách Thu',
 		'rem_out' => 'Danh Sách Chi',
 		'total' => 'Tổng Cộng'
+	],
+
+	'age_report' => [
+		'all' => 'Thống Kê Tuổi',
+		'no' => 'STT',
+		'name' => 'Tên',
+		'dob' => 'Ngày Sinh',
+		'age' => 'Tuổi(Tháng)',
+		'list' => 'Danh Sách Học Sinh',
+		'average' => 'Độ Tuổi Trung Bình'
 	]
 ];

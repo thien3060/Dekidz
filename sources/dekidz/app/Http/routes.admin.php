@@ -377,6 +377,7 @@ Route::group(['middleware' => config('admin.filter.auth')], function () {
     Route::post('send_health_index', 'HealthStandardIndexsController@sendHealthInfo')->name('admin.send_health_index');
 
     Route::get('rem_report', 'ReportsController@remReport')->name('admin.rem_report');
+    Route::get('age_report', 'ReportsController@ageReport')->name('admin.age_report');
 });
 
 Route::get('oauth/google', 'OAuthController@redirectToGoogleProvider')->name('login.google');

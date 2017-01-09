@@ -22,6 +22,7 @@ $leftMenu = Menu::create('admin-menu', function ($menu) {
         $sub->route('admin.classes.index', trans('admin.menus.classes.all'), [], 1);
         $sub->route('admin.classes.create', trans('admin.menus.classes.create'), [], 2);
         $sub->route('admin.study_results.index', trans('admin.menus.classes.study_result'), [], 3);
+        $sub->route('admin.age_report', trans('admin.age_report.all'), [], 4);
     }, 2, ['icon' => 'fa fa-graduation-cap'], 'manage_classes');
 
     //Finances
