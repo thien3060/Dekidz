@@ -38,7 +38,7 @@ class Student extends Model
     }
     
     public function dekidzClass(){
-        return $this->belongsToMany('App\Models\DekidzClass', 'class_detail', 'class_id', 'student_id');
+        return $this->belongsToMany('App\Models\DekidzClass', 'class_detail', 'student_id', 'class_id');
     }
     
     public function physical_info(){
