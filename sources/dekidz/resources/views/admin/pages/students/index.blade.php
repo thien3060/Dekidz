@@ -17,6 +17,7 @@
         <th>{{ trans('admin.student.email') }}</th>
         <th>{{ trans('admin.student.dob') }}</th>
         <th>{{ trans('admin.student.address') }}</th>
+        <th>{{ trans('admin.student.class') }}</th>
         <th>{{ trans('admin.student.father_phone') }}</th>
         <th>{{ trans('admin.student.mother_phone') }}</th>
         <th>{{ trans('admin.student.admission_date') }}</th>
@@ -31,6 +32,7 @@
                 <td>{!! $student->email !!}</td>
                 <td>{!! $student->dob !!}</td>
                 <td>{!! $student->address !!}</td>
+                <td>{!! $student->dekidzClass->sortBy('created_at')->last()['name'] !!}</td>
                 <td>{!! $student->father_phone !!}</td>
                 <td>{!! $student->mother_phone !!}</td>
                 <td>{!! $student->admission_date !!}</td>

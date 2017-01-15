@@ -160,6 +160,7 @@ return [
 		'gender' => 'Giới Tính',
 		'dob' => 'Ngày Sinh',
 		'address' => 'Địa Chỉ',
+		'class' => 'Lớp',
 		'nation'=> 'Quốc Tịch',
 		'religion' => 'Tôn Giáo',
 		'father_name' => 'Tên Cha',

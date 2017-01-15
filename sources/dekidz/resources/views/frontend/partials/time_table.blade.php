@@ -1,4 +1,5 @@
 <div class="row">
+    <h3>Học sinh: {{ @$student->name }}<br>Lớp: {{@$class->name}}</h3>
     <h3>Học kì 1</h3>
     <table id="time-table1" class="table table-bordered table-striped dataTable">
         <thead>

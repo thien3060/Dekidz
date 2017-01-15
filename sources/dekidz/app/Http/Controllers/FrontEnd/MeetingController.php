@@ -72,9 +72,9 @@ class MeetingController extends BaseController
         if(Auth::check()){
             $student = Student::where('email', '=', Auth::user()->email)->first();
             if($student != null){
-                $class = $student->dekidzClass->last();
+                $class = $student->dekidzClass->sortBy('created_at')->last();
             }
         }
-        return $this->view('frontend.pages.teach_schedule', compact('class', 'lessons', 'teachers', 'lesson_goals'));
+        return $this->view('frontend.pages.teach_schedule', compact('student', 'class', 'lessons', 'teachers', 'lesson_goals'));
     }
 }
