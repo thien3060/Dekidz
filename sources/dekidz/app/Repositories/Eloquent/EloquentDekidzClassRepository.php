@@ -82,7 +82,7 @@ class EloquentDekidzClassRepository implements DekidzClassRepository
     public function update(array $data, $id)
     {
         $dekidzClass = $this->findById($id);
-        return $dekidzClass->update($data);
+        $dekidzClass->update($data);
         $dekidzClass->students()->detach();
 
         for($i = 0; $i < count($data['asset-name']); $i++){
