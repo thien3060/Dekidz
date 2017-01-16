@@ -1,5 +1,5 @@
 @if(isset($model))
-    {!! Form::model($model, ['route' => ['admin.cameras.update', $model->id]]) !!}
+    {!! Form::model($model, ['method' => 'PUT', 'route' => ['admin.cameras.update', $model->id]]) !!}
 @else
     {!! Form::open(['route' => 'admin.cameras.store']) !!}
 @endif

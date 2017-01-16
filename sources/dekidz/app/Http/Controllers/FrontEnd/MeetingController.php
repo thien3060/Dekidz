@@ -9,6 +9,7 @@ use App\Models\Student;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -29,7 +30,7 @@ class MeetingController extends BaseController
      */
     public function meeting()
     {
-        $kandyUser = KandyLaravel::getUser(Auth::id());
+        $kandyUser = DB::table('kandy_users')->where('main_user_id', '=', Auth::id())->first();
         return view('frontend.pages.meeting', compact("kandyUser"));
     }
 
