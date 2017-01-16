@@ -10,7 +10,8 @@ return [
 			'all' => 'Trẻ',
 			'create' => 'Tạo',
 			'tuition_fee' => 'Học Phí',
-			'health_index' => 'Chỉ Số Sức Khỏe'
+			'health_index' => 'Chỉ Số Sức Khỏe',
+			'standard_index' => 'Chỉ số chuẩn'
 		],
 		'grades' => [
 			'title' => 'Khối',

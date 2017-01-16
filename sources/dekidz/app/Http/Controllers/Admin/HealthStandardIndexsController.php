@@ -18,9 +18,12 @@ class HealthStandardIndexsController extends BaseController
 {
     public function index(Request $request){
         $students = Student::all();
-
-
         return $this->view('pages.health_standard_index.index', compact('students'));
+    }
+    
+    public function showStandardIndex(){
+        $health_index = HealthStandardIndex::all();
+        return $this->view('pages.health_standard_index.standard_index', compact('health_index'));
     }
     
     public function getHealthIndex(Request $request){
